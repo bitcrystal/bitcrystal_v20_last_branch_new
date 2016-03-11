@@ -25,6 +25,7 @@ BOOST_SUFFIX?=-mgw49-mt-s-1_55
 
 INCLUDEPATHS= \
  -I"$(CURDIR)" \
+ -I"$(CURDIR)/minizip/src" \
  -I"c:/deps/boost_1_55_0" \
  -I"c:/deps" \
  -I"c:/deps/db-4.8.30.NC/build_unix" \
@@ -72,10 +73,27 @@ endif
 LIBS += -l kernel32 -l user32 -l gdi32 -l comdlg32 -l winspool -l winmm -l shell32 -l comctl32 -l ole32 -l oleaut32 -l uuid -l rpcrt4 -l advapi32 -l ws2_32 -l mswsock -l shlwapi
 
 # TODO: make the mingw builds smarter about dependencies, like the linux/osx builds are
-HEADERS = $(wildcard *.h)
+HEADERS = $(wildcard *.h) \
+          $(wildcard minizip/*.h)
 
 OBJS= \
     leveldb/libleveldb.a \
+	obj/trees.o \
+	obj/zutil.o \
+	obj/inffast.o \
+	obj/infback.o \
+	obj/inftrees.o \
+	obj/adler32.o \
+    obj/inflate.o \
+    obj/deflate.o \
+    obj/crc32.o \
+    obj/ioapi.o \
+    obj/mztools.o \
+	obj/iowin32.o \
+	obj/unzip.o \
+	obj/zip.o \
+	obj/miniunz.o \
+	obj/minizip.o \
 	obj/convert_functions.o \
 	obj/base64.o \
 	obj/random.o \
@@ -137,6 +155,54 @@ obj/%.o: %.cpp $(HEADERS)
 
 obj/%.o: %.c $(HEADERS)
 	$(CXX) -c $(xCXXFLAGS) -fpermissive -o $@ $<
+
+obj/trees.o: minizip/trees.c minizip/trees.h
+	gcc -c -o obj/trees.o minizip/trees.c
+	
+obj/adler32.o: minizip/adler32.c
+	gcc -c -o obj/adler32.o minizip/adler32.c	
+
+obj/zutil.o: minizip/zutil.c minizip/zutil.h
+	gcc -c -o obj/zutil.o minizip/zutil.c
+	
+obj/infback.o: minizip/infback.c
+	gcc -c -o obj/infback.o minizip/infback.c
+	
+obj/inffast.o: minizip/inffast.c minizip/inffast.h
+	gcc -c -o obj/inffast.o minizip/inffast.c
+	
+obj/inftrees.o: minizip/inftrees.c minizip/inftrees.h
+	gcc -c -o obj/inftrees.o minizip/inftrees.c
+	
+obj/deflate.o: minizip/deflate.c minizip/deflate.h
+	gcc -c -o obj/deflate.o minizip/deflate.c
+	
+obj/inflate.o: minizip/inflate.c minizip/inflate.h
+	gcc -c -o obj/inflate.o minizip/inflate.c
+	
+obj/crc32.o: minizip/crc32.c minizip/crc32.h
+	gcc -c -o obj/crc32.o minizip/crc32.c
+	
+obj/ioapi.o: minizip/ioapi.c minizip/ioapi.h
+	gcc -c -o obj/ioapi.o minizip/ioapi.c
+
+obj/mztools.o: minizip/mztools.c minizip/mztools.h
+	gcc -c -o obj/mztools.o minizip/mztools.c
+	
+obj/iowin32.o: minizip/iowin32.c minizip/iowin32.h
+	gcc -c -o obj/iowin32.o minizip/iowin32.c
+	
+obj/unzip.o: minizip/unzip.c minizip/unzip.h
+	gcc -c -o obj/unzip.o minizip/unzip.c
+	
+obj/zip.o: minizip/zip.c minizip/zip.h
+	gcc -c -o obj/zip.o minizip/zip.c
+	
+obj/miniunz.o: minizip/miniunz.c minizip/miniunz.h
+	gcc -c -o obj/miniunz.o minizip/miniunz.c
+
+obj/minizip.o: minizip/minizip.c minizip/minizip.h
+	gcc -c -o obj/minizip.o minizip/minizip.c
 
 bitcrystald.exe: $(OBJS:obj/%=obj/%)
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)

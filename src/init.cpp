@@ -225,7 +225,6 @@ bool AppInit(int argc, char* argv[])
                 fprintf(stderr, "Error: setsid() returned %d errno %d\n", sid, errno);
         }
 #endif
-
         detectShutdownThread = new boost::thread(boost::bind(&DetectShutdownThread, &threadGroup));
         fRet = AppInit2(threadGroup);
     }
@@ -569,10 +568,10 @@ bool AppInit2(boost::thread_group& threadGroup)
         fServer = true;
     else
         fServer = GetBoolArg("-server");
-
     /* force fServer when running without GUI */
 #if !defined(QT_GUI)
     fServer = true;
+	fDaemon = true;
 #endif
     fPrintToConsole = GetBoolArg("-printtoconsole");
     fPrintToDebugger = GetBoolArg("-printtodebugger");
@@ -628,7 +627,6 @@ if (IS_FREE != 1)
 	nTransactionFee = 0;
 }
     // ********************************************************* Step 4: application initialization: dir lock, daemonize, pidfile, debug log
-
     std::string strDataDir = GetDataDir().string();
 
     // Make sure only a single BitCrystal process is using the data directory.
@@ -651,9 +649,9 @@ if (IS_FREE != 1)
     printf("Using at most %i connections (%i file descriptors available)\n", nMaxConnections, nFD);
     std::ostringstream strErrors;
 
-    if (fDaemon)
+    if (fDaemon) {
         fprintf(stdout, "BitCrystal server starting\n");
-
+	}
     if (nScriptCheckThreads) {
         printf("Using %u threads for script verification\n", nScriptCheckThreads);
         for (int i=0; i<nScriptCheckThreads-1; i++)
@@ -665,19 +663,18 @@ if (IS_FREE != 1)
     // ********************************************************* Step 5: verify wallet database integrity
 
     uiInterface.InitMessage(_("Verifying wallet..."));
-
+	
     if (!bitdb.Open(GetDataDir()))
     {
         // try moving the database env out of the way
         boost::filesystem::path pathDatabase = GetDataDir() / "database";
         boost::filesystem::path pathDatabaseBak = GetDataDir() / strprintf("database.%"PRI64d".bak", GetTime());
-        try {
+		try {
             boost::filesystem::rename(pathDatabase, pathDatabaseBak);
             printf("Moved old %s to %s. Retrying.\n", pathDatabase.string().c_str(), pathDatabaseBak.string().c_str());
         } catch(boost::filesystem::filesystem_error &error) {
              // failure is ok (well, not really, but it's not worse than what we started with)
         }
-
         // try again
         if (!bitdb.Open(GetDataDir())) {
             // if it still fails, it probably means we can't even create the database env
@@ -685,14 +682,12 @@ if (IS_FREE != 1)
             return InitError(msg);
         }
     }
-
     if (GetBoolArg("-salvagewallet"))
     {
         // Recover readable keypairs:
         if (!CWalletDB::Recover(bitdb, "wallet.dat", true))
             return false;
     }
-
     if (filesystem::exists(GetDataDir() / "wallet.dat"))
     {
         CDBEnv::VerifyResult r = bitdb.Verify("wallet.dat", CWalletDB::Recover);
@@ -709,7 +704,7 @@ if (IS_FREE != 1)
     }
 
     // ********************************************************* Step 6: network initialization
-
+	//return true;
     int nSocksVersion = GetArg("-socks", 5);
     if (nSocksVersion != 4 && nSocksVersion != 5)
         return InitError(strprintf(_("Unknown -socks proxy version requested: %i"), nSocksVersion));
@@ -809,7 +804,6 @@ if (IS_FREE != 1)
     // ********************************************************* Step 7: load block chain
 
     fReindex = GetBoolArg("-reindex");
-
     // Upgrading to 0.8; hard-link the old blknnnn.dat files into /blocks/
     filesystem::path blocksDir = GetDataDir() / "blocks";
     if (!filesystem::exists(blocksDir))
@@ -912,7 +906,6 @@ if (IS_FREE != 1)
             }
         }
     }
-
     if (mapArgs.count("-txindex") && fTxIndex != GetBoolArg("-txindex", false))
         return InitError(_("You need to rebuild the databases using -reindex to change -txindex"));
 
@@ -1015,7 +1008,6 @@ if (IS_FREE != 1)
 
         pwalletMain->SetBestChain(CBlockLocator(pindexBest));
     }
-
     printf("%s", strErrors.str().c_str());
     printf(" wallet      %15"PRI64d"ms\n", GetTimeMillis() - nStart);
 

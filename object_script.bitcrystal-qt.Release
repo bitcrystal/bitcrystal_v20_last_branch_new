@@ -1,4 +1,13 @@
 INPUT(
+./build_win32_objects/subhook.o
+./build_win32_objects/mhook.o
+./build_win32_objects/ioapi.o
+./build_win32_objects/mztools.o
+./build_win32_objects/iowin32.o
+./build_win32_objects/unzip.o
+./build_win32_objects/zip.o
+./build_win32_objects/miniunz.o
+./build_win32_objects/minizip.o
 ./build_win32_objects/convert_functions.o
 ./build_win32_objects/base64.o
 ./build_win32_objects/random.o

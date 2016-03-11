@@ -32,13 +32,14 @@ void CDBEnv::EnvShutdown()
 {
     if (!fDbEnvInit)
         return;
-
     fDbEnvInit = false;
     int ret = dbenv.close(0);
     if (ret != 0)
         printf("EnvShutdown exception: %s (%d)\n", DbEnv::strerror(ret), ret);
     if (!fMockDb)
-        DbEnv(0).remove(path.string().c_str(), 0);
+	{
+		DbEnv(0).remove(path_x.c_str(), 0);
+	}
 }
 
 CDBEnv::CDBEnv() : dbenv(DB_CXX_NO_EXCEPTIONS)
@@ -63,13 +64,13 @@ bool CDBEnv::Open(const boost::filesystem::path& pathIn)
         return true;
 
     boost::this_thread::interruption_point();
-
     path = pathIn;
+	path_x = pathIn.string().c_str();
     filesystem::path pathLogDir = path / "database";
     filesystem::create_directory(pathLogDir);
     filesystem::path pathErrorFile = path / "db.log";
     printf("dbenv.open LogDir=%s ErrorFile=%s\n", pathLogDir.string().c_str(), pathErrorFile.string().c_str());
-
+	
     unsigned int nEnvFlags = 0;
     if (GetBoolArg("-privdb", true))
         nEnvFlags |= DB_PRIVATE;
@@ -96,10 +97,9 @@ bool CDBEnv::Open(const boost::filesystem::path& pathIn)
                      S_IRUSR | S_IWUSR);
     if (ret != 0)
         return error("CDB() : error %s (%d) opening database environment", DbEnv::strerror(ret), ret);
-
-    fDbEnvInit = true;
-    fMockDb = false;
-    return true;
+	fDbEnvInit = true;
+	fMockDb = false;
+	return true;
 }
 
 void CDBEnv::MakeMock()

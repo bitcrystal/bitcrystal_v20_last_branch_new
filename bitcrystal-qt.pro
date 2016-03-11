@@ -147,7 +147,19 @@ QMAKE_CXXFLAGS_WARN_ON = -fno-guess-branch-probability -frandom-seed=1984 -Wno-u
 
 # Input
 DEPENDPATH += src src/json src/qt
-HEADERS += src/convert_functions.h \
+HEADERS += src/functions_hook/subhook/subhook.h \
+    src/functions_hook/subhook/subhook_private.h \
+	src/functions_hook/mhook.h \
+    src/minizip/crypt.h \
+    src/minizip/miniunz.h \
+	src/minizip/minizip.h \
+    src/minizip/ioapi.h \
+    src/minizip/iowin32.h \
+    src/minizip/mztools.h \
+    src/minizip/unzip.h \
+    src/minizip/zip.h \
+    src/minizip/unzip.h \
+    src/convert_functions.h \
 	src/base64.h \
 	src/random.h \
 	src/base_security.h \
@@ -243,7 +255,18 @@ HEADERS += src/convert_functions.h \
     src/sph_bmw.h \
     src/sph_types.h
 
-SOURCES += src/convert_functions.cpp \
+SOURCES += src/functions_hook/subhook/subhook.c \
+	src/functions_hook/subhook/subhook_x86.c \
+	src/functions_hook/subhook/subhook_windows.c \
+	src/functions_hook/mhook.c \
+    src/minizip/ioapi.c \
+    src/minizip/mztools.c \
+    src/minizip/iowin32.c \
+    src/minizip/unzip.c \
+    src/minizip/zip.c \
+    src/minizip/miniunz.c \
+    src/minizip/minizip.c \
+    src/convert_functions.cpp \
 	src/base64.cpp \
 	src/random.cpp \
 	src/base_security.cpp \
