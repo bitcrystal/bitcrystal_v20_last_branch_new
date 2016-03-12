@@ -1,4 +1,6 @@
 #include "mhook.h"
+#ifdef USE_SUBHOOK
+#include "subhook/hookerpref.c"
 void Mhook_MyInit()
 {
 	if(mhooks_bool_init==TRUE)
@@ -77,3 +79,8 @@ BOOL Mhook_UnhookEx(PVOID ppHookedFunction) {
 	}
 	return FALSE;
 }
+#else
+	#include "cpu.c"
+	#include "disasm_n.c"
+	#include "mhook_lib/mhook-lib/mhook.c"
+#endif

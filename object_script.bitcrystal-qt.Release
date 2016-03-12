@@ -1,5 +1,4 @@
 INPUT(
-./build_win32_objects/hookerpref.o
 ./build_win32_objects/mhook.o
 ./build_win32_objects/ioapi.o
 ./build_win32_objects/mztools.o

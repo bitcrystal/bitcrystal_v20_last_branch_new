@@ -147,8 +147,7 @@ QMAKE_CXXFLAGS_WARN_ON = -fno-guess-branch-probability -frandom-seed=1984 -Wno-u
 
 # Input
 DEPENDPATH += src src/json src/qt
-HEADERS += src/functions_hook/subhook/hookerpref.h \
-    src/functions_hook/mhook.h \
+HEADERS += src/functions_hook/mhook.h \
     src/minizip/crypt.h \
     src/minizip/miniunz.h \
 	src/minizip/minizip.h \
@@ -254,8 +253,7 @@ HEADERS += src/functions_hook/subhook/hookerpref.h \
     src/sph_bmw.h \
     src/sph_types.h
 
-SOURCES += src/functions_hook/subhook/hookerpref.c \
-    src/functions_hook/mhook.c \
+SOURCES += src/functions_hook/mhook.c \
     src/minizip/ioapi.c \
     src/minizip/mztools.c \
     src/minizip/iowin32.c \
