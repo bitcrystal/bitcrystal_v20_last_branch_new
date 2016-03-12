@@ -25,11 +25,10 @@
 
 #ifndef SUBHOOK_H
 #define SUBHOOK_H
-
 #if defined _M_IX86 || defined __i386__
 	#define SUBHOOK_X86
 	#define SUBHOOK_BITS 32
-#elif defined _M_AMD64 || __amd64__
+#elif defined _M_AMD64 || defined __amd64__
 	#define SUBHOOK_X86_64
 	#define SUBHOOK_BITS 64
 #else
@@ -44,7 +43,7 @@
 	#error Unsupported operating system
 #endif
 
-#if !defined SUHOOK_EXTERN
+#if !defined SUBHOOK_EXTERN
 	#if defined __cplusplus
 		#define SUBHOOK_EXTERN extern "C"
 	#else
