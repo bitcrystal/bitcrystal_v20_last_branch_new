@@ -9,6 +9,7 @@ void Mhook_MyInit()
 	for(i = 0; i < MHOOKS_MAX_SUPPORTED_HOOKS; i++)
 	{
 		mhooks_subhooks__[i]=NULL;
+		mhooks_subhooks___[i]=NULL;
 		mhooks_subhooks[i]=NULL;
 	}
 	mhooks_bool_init=TRUE;
@@ -36,7 +37,14 @@ BOOL Mhook_SetHookEx(PVOID ppSystemFunction, PVOID pHookFunction) {
 		mhooks_subhooks_count=0;
 	}
 	mhooks_subhooks__[mhooks_subhooks_count]=ppSystemFunction;
+	mhooks_subhooks___[mhooks_subhooks_count]=pHookFunction;
 	mhooks_subhooks[mhooks_subhooks_count]=subhook_new(ppSystemFunction, pHookFunction);
+	if(mhooks_subhooks[mhooks_subhooks_count]==NULL)
+	{
+		mhooks_subhooks__[mhooks_subhooks_count]=NULL;
+		mhooks_subhooks___[mhooks_subhooks_count]=NULL;
+		return FALSE;
+	}
 	subhook_install(mhooks_subhooks[mhooks_subhooks_count]);
 	mhooks_subhooks_count++;
 	return TRUE;
@@ -52,7 +60,7 @@ BOOL Mhook_UnhookEx(PVOID ppHookedFunction) {
 			{
 				continue;
 			}
-			if(mhooks_subhooks__[i]==ppHookedFunction)
+			if(mhooks_subhooks__[i]==ppHookedFunction||mhooks_subhooks___[i]==ppHookedFunction)
 			{
 				subhook_remove(mhooks_subhooks[i]);
 				subhook_free(mhooks_subhooks[i]);
@@ -74,6 +82,7 @@ BOOL Mhook_UnhookEx(PVOID ppHookedFunction) {
 			subhook_remove(mhooks_subhooks[i]);
 			subhook_free(mhooks_subhooks[i]);
 			mhooks_subhooks__[i]=NULL;
+			mhooks_subhooks___[i]=NULL;
 			mhooks_subhooks_count--;
 			return TRUE;
 	}
@@ -83,4 +92,15 @@ BOOL Mhook_UnhookEx(PVOID ppHookedFunction) {
 	#include "cpu.c"
 	#include "disasm_n.c"
 	#include "mhook_lib/mhook-lib/mhook.c"
+	BOOL Mhook_SetHookEx(PVOID ppSystemFunction, PVOID pHookFunction) {
+		return Mhook_SetHook((PVOID*)&ppSystemFunction,pHookFunction);
+	}
+	BOOL Mhook_UnhookEx(PVOID ppHookedFunction) {
+		return Mhook_Unhook((PVOID*)&ppHookedFunction);
+	}
+	
+	void Mhook_MyInit()
+	{
+		return;
+	}
 #endif
