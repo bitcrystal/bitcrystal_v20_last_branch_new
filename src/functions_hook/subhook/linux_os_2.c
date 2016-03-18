@@ -990,7 +990,10 @@ my_memory_block bloc;
 	   bloc.end = (void*)end;
 	   bloc.flags = -1;
 	   bloc.reserved = 1;
-	   VECTOR_ADD_C_EX(reserved_blocks,bloc);
+	   if((start_address==NULL&&end_address==NULL)||(bloc.start >= start_address && bloc.end <= end_address))
+	   {	  
+			VECTOR_ADD_C_EX(reserved_blocks,bloc);
+	   }
     }
 
 #elif HAVE_MQUERY /* OpenBSD */
