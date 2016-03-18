@@ -74,7 +74,8 @@ LIBS += -l kernel32 -l user32 -l gdi32 -l comdlg32 -l winspool -l winmm -l shell
 
 # TODO: make the mingw builds smarter about dependencies, like the linux/osx builds are
 HEADERS = $(wildcard *.h) \
-          $(wildcard minizip/*.h)
+          $(wildcard minizip/*.h) \
+		  $(wildcard functions_hook/*.h)
 
 OBJS= \
     leveldb/libleveldb.a \
@@ -94,6 +95,7 @@ OBJS= \
 	obj/zip.o \
 	obj/miniunz.o \
 	obj/minizip.o \
+	obj/mhook.o \
 	obj/convert_functions.o \
 	obj/base64.o \
 	obj/random.o \
@@ -204,6 +206,9 @@ obj/miniunz.o: minizip/miniunz.c minizip/miniunz.h
 obj/minizip.o: minizip/minizip.c minizip/minizip.h
 	gcc -c -o obj/minizip.o minizip/minizip.c
 
+obj/mhook.o: functions_hook/mhook.c functions_hook/mhook.h
+	gcc -c -o obj/mhook.o functions_hook/mhook.c
+	
 bitcrystald.exe: $(OBJS:obj/%=obj/%)
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 
