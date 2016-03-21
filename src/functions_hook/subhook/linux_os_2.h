@@ -57,8 +57,16 @@ typedef struct
 
 #include "vector_c.h"
 
-extern int get_reserved_blocks(void * start_address,void * end_address, vector_c * reserved_blocks);
-extern int get_free_blocks(void * start_address,void * end_address, vector_c * free_blocks);
+extern int get_reserved_blocks(void * start_address,void * end_address, vector_c * reserved_blocks, VECTOR_C_CAP_TYPE BYTES_RESERVED_SIZE);
+extern int get_free_blocks(void * start_address,void * end_address, vector_c * free_blocks, VECTOR_C_CAP_TYPE BYTES_RESERVED_SIZE);
+extern int to_one_block(vector_c * blocks, my_memory_block * blockx, VECTOR_C_CAP_TYPE BYTES_RESERVED_SIZE);
+
+#define GET_RESERVED_BLOCKS(st,en,re) get_reserved_blocks((void*)&(st),(void*)&(en),(vector_c *)&(re),((VECTOR_C_CAP_TYPE)(1024*1024*50)))
+#define GET_FREE_BLOCKS(st,en,fr) get_free_blocks((void*)&(st),(void*)&(en),(vector_c *)&(fr),((VECTOR_C_CAP_TYPE)(1024*1024*50)))
+#define TO_ONE_BLOCK(bl,blo) to_one_block((vector_c*)&(bl),(my_memory_block*)&(blo),((VECTOR_C_CAP_TYPE)(1024*1024*50)))
+#define GET_RESERVED_BLOCKS_EX(st,en,re) get_reserved_blocks((void*)(st),(void*)(en),(vector_c *)(re),((VECTOR_C_CAP_TYPE)(1024*1024*50)))
+#define GET_FREE_BLOCKS_EX(st,en,fr) get_free_blocks((void*)(st),(void*)(en),(vector_c *)(fr),((VECTOR_C_CAP_TYPE)(1024*1024*50)))
+#define TO_ONE_BLOCK_EX(bl,blo) to_one_block((vector_c*)(bl),(my_memory_block*)(blo),((VECTOR_C_CAP_TYPE)(1024*1024*50)))
 
 /* The macro VMA_ITERATE_SUPPORTED indicates that vma_iterate is supported on
    this platform.

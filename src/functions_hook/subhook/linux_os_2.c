@@ -591,9 +591,29 @@ vma_iterate (vma_iterate_callback_fn callback, void *data)
 #endif
 }
 
-int get_reserved_blocks(void * start_address,void * end_address, vector_c * reserved_blocks)
+int get_reserved_blocks(void * start_address,void * end_address, vector_c * reserved_blocks , VECTOR_C_CAP_TYPE BYTES_RESERVED_SIZE)
 {
+	int z = VECTOR_IS_GOOD_POINTER_C_EX(reserved_blocks);
+	if(z==0)
+		return 0;
+	unsigned long long t1=(unsigned long long)start_address;
+	unsigned long long t2=(unsigned long long)end_address;
+	unsigned long long ttt=0;
+	if(t1!=t2)
+	{
+		if(t1>t2)
+		{
+			ttt=t2;
+			t2=t1;
+			t1=ttt;
+			start_address=(void*)t1;
+			end_address=(void*)t2;
+		}
+	} else if(t1!=0) {
+		return 0;
+	}
 VECTOR_INIT_C_EX(reserved_blocks);
+VECTOR_RESERVE_CFS_EX(reserved_blocks,(BYTES_RESERVED_SIZE));
 my_memory_block bloc;
 #if defined __linux__ /* || defined __CYGWIN__ */
 
@@ -634,9 +654,9 @@ my_memory_block bloc;
 	  bloc.end = (void*)end;
 	  bloc.flags = flags;
 	  bloc.reserved = 1;
-	  if((start_address==NULL&&end_address==NULL)||(bloc.start >= start_address && bloc.end <= end_address))
-	  {	  
-		VECTOR_ADD_C_EX(reserved_blocks,bloc);
+	  if((start_address==NULL&&end_address==NULL)||((((unsigned long long)bloc.start) >= ((unsigned long long)start_address)) && ((end_address==NULL) || (((unsigned long long)bloc.end) <= ((unsigned long long)end_address))))) {	   
+	  {
+		VECTOR_ADD_C_STRUCT((*reserved_blocks),bloc,temp);
 	  }
     }
   rof_close (&rof);
@@ -687,9 +707,9 @@ my_memory_block bloc;
 	  bloc.end = (void*)end;
 	  bloc.flags = flags;
 	  bloc.reserved = 1;
-	  if((start_address==NULL&&end_address==NULL)||(bloc.start >= start_address && bloc.end <= end_address))
-	  {	  
-		VECTOR_ADD_C_EX(reserved_blocks,bloc);
+	  if((start_address==NULL&&end_address==NULL)||((((unsigned long long)bloc.start) >= ((unsigned long long)start_address)) && ((end_address==NULL) || (((unsigned long long)bloc.end) <= ((unsigned long long)end_address))))) {	   
+	  {
+		VECTOR_ADD_C_STRUCT((*reserved_blocks),bloc,temp);
 	  }
     }
   rof_close (&rof);
@@ -789,9 +809,9 @@ my_memory_block bloc;
 		    bloc.end = (void*)auxmap_start;
 			bloc.flags = flags;
 			bloc.reserved = 1;
-			if((start_address==NULL&&end_address==NULL)||(bloc.start >= start_address && bloc.end <= end_address))
-			{	  
-				VECTOR_ADD_C_EX(reserved_blocks,bloc);
+			if((start_address==NULL&&end_address==NULL)||((((unsigned long long)bloc.start) >= ((unsigned long long)start_address)) && ((end_address==NULL) || (((unsigned long long)bloc.end) <= ((unsigned long long)end_address))))) {	   
+			{
+				VECTOR_ADD_C_STRUCT((*reserved_blocks),bloc,temp);
 			}
 		  }
           if (auxmap_end - 1 < end - 1)
@@ -800,9 +820,9 @@ my_memory_block bloc;
 			bloc.end = (void*)end;
 			bloc.flags = flags;
 			bloc.reserved = 1;
-			if((start_address==NULL&&end_address==NULL)||(bloc.start >= start_address && bloc.end <= end_address))
-			{	  
-				VECTOR_ADD_C_EX(reserved_blocks,bloc);
+			if((start_address==NULL&&end_address==NULL)||((((unsigned long long)bloc.start) >= ((unsigned long long)start_address)) && ((end_address==NULL) || (((unsigned long long)bloc.end) <= ((unsigned long long)end_address))))) {	   
+			{
+				VECTOR_ADD_C_STRUCT((*reserved_blocks),bloc,temp);
 			}
 	      }
         }
@@ -812,9 +832,9 @@ my_memory_block bloc;
 			bloc.end = (void*)end;
 			bloc.flags = flags;
 			bloc.reserved = 1;
-			if((start_address==NULL&&end_address==NULL)||(bloc.start >= start_address && bloc.end <= end_address))
-			{	  
-				VECTOR_ADD_C_EX(reserved_blocks,bloc);
+			if((start_address==NULL&&end_address==NULL)||((((unsigned long long)bloc.start) >= ((unsigned long long)start_address)) && ((end_address==NULL) || (((unsigned long long)bloc.end) <= ((unsigned long long)end_address))))) {	   
+			{
+				VECTOR_ADD_C_STRUCT((*reserved_blocks),bloc,temp);
 			}
         }
     }
@@ -889,10 +909,10 @@ my_memory_block bloc;
 		bloc.end = (void*)(address+size);
 		bloc.flags = flags;
 		bloc.reserved = 1;
-		if((start_address==NULL&&end_address==NULL)||(bloc.start >= start_address && bloc.end <= end_address))
-		{	  
-			VECTOR_ADD_C_EX(reserved_blocks,bloc);
-		}
+	    if((start_address==NULL&&end_address==NULL)||((((unsigned long long)bloc.start) >= ((unsigned long long)start_address)) && ((end_address==NULL) || (((unsigned long long)bloc.end) <= ((unsigned long long)end_address))))) {	   
+	    {
+			VECTOR_ADD_C_STRUCT((*reserved_blocks),bloc,temp);
+	    }
     }
 
 #elif (defined _WIN32 || defined __WIN32__) || defined __CYGWIN__
@@ -919,16 +939,16 @@ my_memory_block bloc;
 			bloc.end = (void*)end;
 			bloc.flags = -1;
 			bloc.reserved = 1;
-			if((start_address==NULL&&end_address==NULL)||(bloc.start >= start_address && bloc.end <= end_address))
-			{	  
-				VECTOR_ADD_C_EX(reserved_blocks,bloc);
+			if((start_address==NULL&&end_address==NULL)||((((unsigned long long)bloc.start) >= ((unsigned long long)start_address)) && ((end_address==NULL) || (((unsigned long long)bloc.end) <= ((unsigned long long)end_address))))) {	   
+			{
+				VECTOR_ADD_C_STRUCT((*reserved_blocks),bloc,temp);
 			}
 		  } else {
             unsigned long long start, end;
             unsigned int flags;
 
             start = (unsigned long long)info.BaseAddress;
-            end = (unsigned long long)(start + info.RegionSize);
+            end = (unsigned long long)(start + info.RegionSize -1);
             switch (info.Protect & ~(PAGE_GUARD|PAGE_NOCACHE))
               {
               case PAGE_READONLY:
@@ -958,9 +978,9 @@ my_memory_block bloc;
 			  bloc.end = (void*)end;
 			  bloc.flags = flags;
 			  bloc.reserved = 1;
-			  if((start_address==NULL&&end_address==NULL)||(bloc.start >= start_address && bloc.end <= end_address))
-			  {	  
-					VECTOR_ADD_C_EX(reserved_blocks,bloc);
+		      if((start_address==NULL&&end_address==NULL)||((((unsigned long long)bloc.start) >= ((unsigned long long)start_address)) && ((end_address==NULL) || (((unsigned long long)bloc.end) <= ((unsigned long long)end_address))))) {	   
+	          {
+				VECTOR_ADD_C_STRUCT((*reserved_blocks),bloc,temp);
 			  }
           }
       address = (unsigned long long)(info.BaseAddress + info.RegionSize);
@@ -990,9 +1010,9 @@ my_memory_block bloc;
 	   bloc.end = (void*)end;
 	   bloc.flags = -1;
 	   bloc.reserved = 1;
-	   if((start_address==NULL&&end_address==NULL)||(bloc.start >= start_address && bloc.end <= end_address))
-	   {	  
-			VECTOR_ADD_C_EX(reserved_blocks,bloc);
+	   if((start_address==NULL&&end_address==NULL)||((((unsigned long long)bloc.start) >= ((unsigned long long)start_address)) && ((end_address==NULL) || (((unsigned long long)bloc.end) <= ((unsigned long long)end_address))))) {	   
+	   {
+			VECTOR_ADD_C_STRUCT((*reserved_blocks),bloc,temp);
 	   }
     }
 
@@ -1030,8 +1050,10 @@ my_memory_block bloc;
 			bloc.end = (void*)end;
 			bloc.flags = 0;
 			bloc.reserved = 1;
-			VECTOR_ADD_C_EX(reserved_blocks,bloc);
-
+			if((start_address==NULL&&end_address==NULL)||((((unsigned long long)bloc.start) >= ((unsigned long long)start_address)) && ((end_address==NULL) || (((unsigned long long)bloc.end) <= ((unsigned long long)end_address)))))
+			{	 
+				VECTOR_ADD_C_STRUCT((*reserved_blocks),bloc,temp);
+			}
           if (address < pagesize) /* wrap around? */
             break;
         }
@@ -1091,7 +1113,170 @@ my_memory_block bloc;
       if (address + pagesize - 1 < pagesize) /* wrap around? */
         break;
     }
-
+	return 1;
 #endif
+}
+
+int get_free_blocks(void * start_address,void * end_address, vector_c * free_blocks, VECTOR_C_CAP_TYPE BYTES_RESERVED_SIZE)
+{
+	int z = VECTOR_IS_GOOD_POINTER_C_EX(free_blocks);
+	if(z==0)
+		return 0;
+	VECTOR_INIT_C_EX(free_blocks);
+	VECTOR_RESERVE_CFS_EX(free_blocks,(BYTES_RESERVED_SIZE));
+	vector_c new_blocks;
+	VECTOR_INIT_C_EX(new_blocks);
+	VECTOR_RESERVE_CFS_EX(new_blocks,(BYTES_RESERVED_SIZE));
+	unsigned long long t1=(unsigned long long)start_address;
+	unsigned long long t2=(unsigned long long)end_address;
+	unsigned long long ttt=0;
+	if(t1!=t2)
+	{
+		if(t1>t2)
+		{
+			ttt=t2;
+			t2=t1;
+			t1=ttt;
+			start_address=(void*)t1;
+			end_address=(void*)t2;
+		}
+	} else if(t1!=0) {
+		return 0;
+	}
+	vector_c reserved_blocks;
+	int x = get_reserved_blocks(start_address,end_address,&reserved_blocks,BYTES_RESERVED_SIZE);
+	if(x==0)
+		return 0;
+	VECTOR_C_CAP_TYPE total = VECTOR_TOTAL_C(reserved_blocks);
+	VECTOR_C_CAP_TYPE i;
+	void * item;
+	my_memory_block * my_mem_block;
+	struct_saver * ss = NULL;
+	void * last_address;
+	unsigned long long temper = 0;
+	unsigned long long temper2 = 0;
+	my_memory_block bloc;
+	bloc.reserved=0;
+	bloc.flags=0;
+	unsigned long long j;
+	unsigned long long k;
+	unsigned long long isss[total];
+	unsigned long long isss_n[total];
+	unsigned long long isss_p=0;
+	unsigned long long isss_p_n=0;
+	unsigned long long isss_x[total];
+	unsigned long long isss_y[total];
+	for(i = 0; i < total; i++)
+	{
+		isss[i]=0;
+		isss_n[i]=0;
+		isss_x[i]=0;
+		isss_y[i]=0;
+	}
+	for(i = 0; i < total; i++)
+	{
+		ss = VECTOR_GET_C_STRUCT(reserved_blocks,i);
+		if(ss==NULL)
+		{
+			continue;
+		}
+		my_mem_block=(my_memory_block*)ss->item;
+		temper=(((unsigned long long)my_mem_block->start_address));
+		temper2=(((unsigned long long)my_mem_block->end_address));
+		if(temper>isss[(isss_p-isss_p_n)]&&temper2>isss_n[(isss_p-isss_p_n)])
+		{
+			isss[(isss_p)]=temper;
+			isss_n[(isss_p)]=temper2;
+			isss_p++;
+			isss_p_n=1;
+		} else {
+			for(j=0; j < isss_p; j++)
+			{
+				if(temper>isss[(j)]&&temper2>isss_n[(j)])
+				{
+					continue;
+				} else {
+					for(k = 0; k < j; k++)
+					{
+						isss_x[(k)]=isss[(k)];
+						isss_y[(k)]=isss_n[(k)];
+					}
+					isss_x[(j)]=temper;
+					isss_y[(j)]=temper2;
+					isss_p++;
+					for(k = j + 1; k < isss_p; k++)
+					{
+						isss_x[(k)]=isss[(k-1)];
+						isss_y[(k)]=isss_n[(k-1)];
+					}
+					for(k=0; k < isss_p; k++)
+					{
+						isss[(k)]=isss_x[(k)];
+						isss_n[(k)]=isss_y[(k)];
+					}
+					j=isss_p;
+				}
+			}
+		}
+	}
+	
+	return 1;
+}
+
+int to_one_block(vector_c * blocks, my_memory_block * blockx, VECTOR_C_CAP_TYPE BYTES_RESERVED_SIZE)
+{
+	int x = VECTOR_IS_GOOD_POINTER_C_EX(blocks);
+	if(x==0)
+		return 0;
+	int y = VECTOR_IS_GOOD_POINTER_C_EX(blockx);
+	if(y==0)
+		return 0;
+	//VECTOR_INIT_C_EX(blocks);
+	//VECTOR_RESERVE_CFS_EX(blocks,(BYTES_RESERVED_SIZE));
+	unsigned long long total = VECTOR_TOTAL_C_EX(blocks);
+	unsigned long long temper=0;
+	unsigned long long temper2=0;
+	unsigned long long t1;
+	unsigned long long t2;
+	my_memory_block * my_mem_block;
+	my_memory_block bloc;
+	for(i = 0; i < total; i++)
+	{
+		ss = VECTOR_GET_C_STRUCT((*blocks),i);
+		if(ss==NULL)
+		{ 
+			continue;
+		}
+		my_mem_block=(my_memory_block*)ss->item;
+		temper=((unsigned long long)my_mem_block->start_address);
+		temper2=((unsigned long long)my_mem_block->end_address);
+		
+		if(t1==0&&t2==0)
+		{
+			blockx->reserved=my_mem_block->reserved;
+			blockx->flags=my_mem_block->flags;
+			t1=temper;
+			t2=temper2;
+		} else {
+			if(temper>t2)
+			{
+				t2=temper;
+			}
+			if(temper<t1)
+			{
+				t1=temper;
+			}
+			if(temper2>t2)
+			{
+				t2=temper2;
+			}
+			if(temper2<t1)
+			{
+				t1=temper2;
+			}
+		}
+		blockx->start_address=(void*)t1;
+		blockx->end_address=(void*)t2;
+		return 1;
 }
 #endif 
