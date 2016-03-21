@@ -1,4 +1,5 @@
 #include "my_static_malloc.h"
+#include "malloc_redesign.c"
 void * my_mmap(_my_mmap * my)
 {
 	if(my==NULL)
@@ -24,31 +25,40 @@ void * my_mmap(_my_mmap * my)
 		}
 		unsigned long long szz = (unsigned long long)sz;
 		my->page_offset = (my->size / szz);
-		my->page_offset=(my->page_offset)+1);
+		if((my->size % szz) !=0)
+		{
+			my->page_offset+=1;
+		}
 		my->page_size=szz;
 		my->fixxed_page_offset=my->page_offset*my->page_size;
-		if(can_read==1&&can_write==1&&can_exec==1)
+		if(my->use_standard_flags<=0)
 		{
-			my->flags=MY_VMA_ALL_ACCESS;
-		} else if (can_read==0&&can_write==0&&can_exec==0)
+			if(can_read==1&&can_write==1&&can_exec==1)
+			{
+				my->flags=MY_VMA_ALL_ACCESS;
+			} else if (can_read==0&&can_write==0&&can_exec==0)
+			{
+				my->flags=MY_VMA_NO_ACCESS;
+			}
+			if(my->flags>=MY_VMA_ALL_ACCESS) {
+				my->flags=(PROT_READ|PROT_WRITE|PROT_EXEC);
+			} else if(my->flags==MY_VMA_NO_ACCESS) {
+				my->flags=(PROT_NONE);
+			} else {
+				my->flags=VMA_NO_ACCESS;
+				if(can_read==1)
+					my->flags|=(PROT_READ);
+				if(can_write==1)
+					my->flags|=(PROT_WRITE);
+				if(can_exec==1)
+					my->flags|=(PROT_EXEC);
+			}
+		}
+		if(my->use_standard_extra_flags<=0)
 		{
-			my->flags=MY_VMA_NO_ACCESS;
-		}
-		if(my->flags>=MY_VMA_ALL_ACCESS) {
-			my->flags=(PROT_READ|PROT_WRITE|PROT_EXEC);
-		} else if(my->flags==MY_VMA_NO_ACCESS) {
-			my->flags=(PROT_NONE);
-		} else {
-			my->flags=VMA_NO_ACCESS;
-			if(can_read==1)
-				my->flags|=(PROT_READ);
-			if(can_write==1)
-				my->flags|=(PROT_WRITE);
-			if(can_exec==1)
-				my->flags|=(PROT_EXEC);
-		}
-		if(my->extraflags==MY_VMA_NO_ACCESS||my->extraflags>=MY_VMA_ALL_ACCESS) {
-			my->extraflags=(MAP_PRIVATE | MAP_ANONYMOUS);
+			if(my->extraflags==MY_VMA_NO_ACCESS||my->extraflags>=MY_VMA_ALL_ACCESS) {
+				my->extraflags=(MAP_PRIVATE | MAP_ANONYMOUS);
+			}
 		}
 		if(my->use_fd<=0)
 		{
@@ -70,28 +80,39 @@ void * my_mmap(_my_mmap * my)
 			return xxx;
 		}
 	#elif defined(OS_WIN)
-		if(can_read==1&&can_write==1&&can_exec==1)
-		{
-			my->flags=MY_VMA_ALL_ACCESS;
-		} else if (can_read==0&&can_write==0&&can_exec==0)
-		{
-			my->flags=MY_VMA_NO_ACCESS;
+		if(my->size==0) {
+			return NULL;
 		}
-		if(my->flags>=MY_VMA_ALL_ACCESS) {
-			my->flags=(PAGE_READWRITE|PAGE_EXECUTE);
-		} else if(my->flags==MY_VMA_NO_ACCESS) {
-			my->flags=(PAGE_NOACCESS);
-		} else {
-			my->flags=VMA_NO_ACCESS;
-			if(can_read==1)
-				my->flags|=(PAGE_READWRITE);
-			if(can_write==1)
-				my->flags|=(PAGE_READWRITE);
-			if(can_exec==1)
-				my->flags|=(PAGE_EXECUTE);
+		if(my->use_standard_flags<=0)
+		{
+			if(can_read==1&&can_write==1&&can_exec==1)
+			{
+				my->flags=MY_VMA_ALL_ACCESS;
+			} else if (can_read==0&&can_write==0&&can_exec==0)
+			{
+				my->flags=MY_VMA_NO_ACCESS;
+			}
+			if(my->flags>=MY_VMA_ALL_ACCESS) {
+				my->flags=(PAGE_READWRITE);
+			} else if(my->flags==MY_VMA_NO_ACCESS) {
+				my->flags=(PAGE_NOACCESS);
+			} else {
+				my->flags=VMA_NO_ACCESS;
+				if(can_read==1)
+					my->flags|=(PAGE_READONLY);
+				if(can_write==1)
+					my->flags|=(PAGE_READWRITE);
+				if(can_exec==1)
+					my->flags|=(PAGE_READWRITE);
+			}
 		}
-		if(my->extraflags==MY_VMA_NO_ACCESS||my->extraflags>=MY_VMA_ALL_ACCESS) {
-			my->extraflags=(MEM_RESERVE | MEM_COMMIT);
+		if(my->use_standard_extra_flags<=0)
+		{
+			if(can_write==1) {
+				my->extraflags=(MEM_COMMIT|MEM_RESERVE);
+			} else {
+				my->extraflags=(MEM_RESERVE);
+			}
 		}
 		if(my->use_fd<=0)
 		{
@@ -101,6 +122,21 @@ void * my_mmap(_my_mmap * my)
 		{
 			my->offset=0;
 		}
+		SYSTEM_INFO systemInfo;
+		GetSystemInfo((LPSYSTEM_INFO)&systemInfo);
+		SIZE_T sz = (systemInfo.dwPageSize);
+		if(sz<=0)
+		{
+			return NULL;
+		}
+		unsigned long long szz = (unsigned long long)sz;
+		my->page_offset = (my->size / szz);
+		if((my->size % szz) !=0)
+		{
+			my->page_offset+=1;
+		}
+		my->page_size=szz;
+		my->fixxed_page_offset=my->page_offset*my->page_size;
 		if(my->calculate_only_paramaters>=1)
 		{
 			return NULL;
@@ -131,6 +167,8 @@ void * lite_my_mmap(void * addr, unsigned long long size)
 	my.use_fixxed_offset=0;
 	my.calculate_only_parameters=0;
 	my.calculate_only_common_parameters=0;
+	my.use_standard_flags=0;
+	my.use_standard_extra_flags=0;
 	return my_mmap(&my);
 }
 
@@ -238,3 +276,83 @@ void _wfree(my_memory_block_mmap * mm)
 	my____free(mm);
 	return;
 }
+#ifndef OS_WIN
+#ifdef USE_MMAP_HOOK
+int get_mmap_struct_of_params(void *addr, size_t len, int prot, int flags, int fd, off_t offset,_my_mmap * x)
+{
+	if(x==NULL)
+		return 0;
+	x->extra=NULL;
+	x->extra_size=0;
+	x->flags=0;
+	x->use_fd=1;
+	x->use_offset=1;
+	x->use_fixxed_offset=1;
+	x->calculate_only_parameters=0;
+	x->calculate_only_common_parameters=0;
+	x->use_standard_flags=1;
+	x->use_standard_extra_flags=1;
+	x->addr=addr;
+	x->size=(unsigned long long)len;
+	x->flags=prot;
+	x->extraflags=flags;
+	x->fd=fd;
+	x->offset=(unsigned long long)offset;
+	return 1;
+	
+}
+void * mmap_hook(void *addr, size_t len, int prot, int flags, int fd, off_t offset)
+{
+	_my_mmap x;
+	int xy= get_mmap_struct_of_params(addr,len,prot,flags,fd,offset,&x);
+	if(xy==0)
+		return NULL;
+	return my_mmap(&x);	
+}
+#else
+int get_mmap_struct_of_params(void *addr, size_t len, int prot, int flags, int fd, off_t offset,_my_mmap * x)
+{
+	return 0;
+}
+void * mmap_hook(void *addr, size_t len, int prot, int flags, int fd, off_t offset)
+{
+	return mmap(addr,len,prot,flags,offset);
+}
+#endif
+int _create_memory_block(void * addr, unsigned long long size, my_memory_block_mmap * x)
+{
+	if(x==NULL)
+		return 0;
+	x->ret=0;
+	void * xx = AllocateAddressSpace(addr, size);
+	if(xx==NULL)
+		return 0;
+	xx=CommitMemory(addr,size);
+	if(xx==NULL)
+		return 0;
+	x->allocated_memory=xx;
+	x->allocated_memory_pointer=xx;
+	x->allocated_memory_offset=0;
+	x->allocated_memory_size=0;
+	x->allocated_memory_reserved_size=0;
+	x->ret=1;
+	return 1;
+}
+
+int _destroy_memory_block(my_memory_block_mmap * x)
+{
+	if(x==NULL)
+		return 0;
+	if(x->ret!=1)
+		return 0;
+	DecommitMemory(x->allocated_memory,x->allocated_memory_reserved_size);
+	FreeAddressSpace(x->allocated_memory, x->allocated_memory_reserved_size);
+	x->allocated_memory=NULL;
+	x->allocated_memory_pointer=NULL;
+	x->allocated_memory_offset=0;
+	x->allocated_memory_size=0;
+	x->allocated_memory_reserved_size=0;
+	x->ret=0;
+	return 1;
+}
+#endif
