@@ -115,4 +115,16 @@ LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType
 #endif
 #define _LONG_PTR(a) ((LONG_PTR)((a)))
 #define _ULONG_PTR(a) ((ULONG_PTR)((a)))
+typedef struct _vma_it_func
+{
+	unsigned long long start_address;
+	unsigned long long end_address;
+	unsigned long long page_size;
+	unsigned long long page_alignment_size;
+	unsigned long long size;
+	unsigned long long base_start_address;
+	unsigned long long base_end_address;
+	unsigned int base_flags;
+} vma_it_func;
+int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
 #endif

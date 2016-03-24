@@ -118,6 +118,19 @@ static int my___grep(const char * filename, const char * keyword, const char * g
 		return counter;
 	}
 #endif
+int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags){
+	vma_it_func * x = (vma_it_func*)data;
+	if(x->start_address>=start)
+	{
+		x->base_start_address=start;
+		x->base_end_address=end;
+		x->base_flags=flags;
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
 LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect)
 {
 	#ifdef IS_LINUX_OS_DEFINED
@@ -179,36 +192,42 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 			nsize_++;
 		}
 		nsize_ = nsize_ * pagesize;
-		#ifdef LINUX_RELATIVES_PAGING
-			unsigned  long long psp = 0;
-			int x = 0;
-			for(psp = 0; psp <= nsize_; psp+=pagesize)
-			{
-				x = msync(address, (size_t)(psp+pagesize), 0);
-				errno_=errno;
-				if(x==-1&&errno_=ENOMEM)
-				{
-					continue;
-				} else {
-					break;
-				}
-			}
-			return (SIZE_T)psp;
-		#else
-			int x = 0;
-			x = msync(address, (size_t)(nsize_), 0);
+		unsigned  long long psp = 0;
+		int x = 0;
+		for(psp = 0; psp <= nsize_; psp+=pagesize)
+		{
+			x = msync(address, (size_t)(psp+pagesize), 0);
 			errno_=errno;
-			lpBuffer->BaseAddress;
-			lpBuffer->RegionSize=nsize_;
-			lpBuffer->
-			
 			if(x==-1&&errno_=ENOMEM)
 			{
-				return (SIZE_T)nsize_;
+				continue;
 			} else {
-				return (SIZE_T)0;
+				break;
 			}
-		#endif
+		}
+		vma_it_func zz;
+		zz.start_address=(unsigned long long)address;
+		zz.end_address=(unsigned long long)(address+nsize_);
+		zz.size=(unsigned long long)dwLength;
+		zz.page_size=page_size;
+		zz.page_alignment_size=nsize_;
+		zz.free_pages=(psp/page_size);
+		zz.free_pages_size=psp;
+		zz.reserved_pages_size=(nsize_-psp);
+		zz.reserved_pages=(reserved_pages_size/page_size);
+		int y = vma_iterate((void*)&zz,&vma_iterate_func);
+		x = msync(address, (size_t)(nsize_), 0);
+		errno_=errno;
+		if(x==-1&&errno_=ENOMEM)
+		{
+			zz.complete_free_region=1;
+		} else {
+			zz.complete_free_region=0;
+		}
+		lpBuffer->BaseAddress;
+		lpBuffer->RegionSize=nsize_;
+		lpBuffer->
+		return sizeof(*lpBuffer);
 	#endif
 }
 #endif
