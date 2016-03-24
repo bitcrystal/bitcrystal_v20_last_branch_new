@@ -26,7 +26,7 @@ BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PD
 	#endif
 	return FALSE;
 }
-SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength) {
+/*SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength) {
 	#ifdef IS_LINUX_OS_DEFINED
 		vector_c free_blocks;
 		int r = GET_FREE_BLOCKS_EX(lpAddress, 0, (&free_blocks));
@@ -53,5 +53,52 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 		
 	#endif
 	return (SIZE_T)0;
+}*/
+SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength) {
+	#ifdef IS_LINUX_OS_DEFINED
+		#include <errno.h>
+		#if defined(ENOMEM) && !defined(EFAULT)
+			#define EFAULT ENOMEM
+		#elif defined(EFAULT) && !defined(ENOMEM)
+			#define ENOMEM EFAULT
+		#endif
+		unsigned long long pagesize;
+
+		pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
+		void * address = (void *)(((unsigned long long)lpAddress) & ~(pagesize - 1));
+		int errno_ = 0;
+		unsigned long long nsize_ = (((unsigned long long)dwLength) / pagesize);
+		if(((unsigned long long)(nsize_ % pagesize))!=0)
+		{
+			nsize_++;
+		}
+		nsize_ = nsize_ * pagesize;
+		#ifdef LINUX_RELATIVES_PAGING
+			unsigned  long long psp = 0;
+			int x = 0;
+			for(psp = 0; psp <= nsize_; psp+=pagesize)
+			{
+				x = msync(address, (size_t)(psp+pagesize), 0);
+				errno_=errno;
+				if(x==-1&&errno_=ENOMEM)
+				{
+					continue;
+				} else {
+					break;
+				}
+			}
+			return (SIZE_T)psp;
+		#else
+			int x = 0;
+			x = msync(address, (size_t)(nsize_), 0);
+			errno_=errno;
+			if(x==-1&&errno_=ENOMEM)
+			{
+				return (SIZE_T)nsize_;
+			} else {
+				return (SIZE_T)0;
+			}
+		#endif
+	#endif
 }
 #endif

@@ -154,10 +154,18 @@ rof_close (struct rofile *rof)
   close (rof->fd);
 }
 
+
+static char read_n_rof(struct rofile *rof)
+{
+	char x = 0;
+	do
+	{
+		x = rof_getchar(rof);
+	} while(x == '\t' || x == ' ');
+	return x;
+}
 #endif
 
-
-void
 vma_iterate (vma_iterate_callback_fn callback, void *data)
 {
 #if defined __linux__ /* || defined __CYGWIN__ */
@@ -192,11 +200,12 @@ vma_iterate (vma_iterate_callback_fn callback, void *data)
       c = rof_getchar (&rof);
       if (c == 'x')
         flags |= VMA_PROT_EXECUTE;
-      while (c = rof_getchar (&rof), c != -1 && c != '\n')
-        ;
-
-      if (callback (data, (unsigned long long)start, (unsigned long long)end, flags))
+	
+	  if (callback (data, (unsigned long long)start, (unsigned long long)end, flags))
         break;
+		
+	   while (c = rof_getchar (&rof), c != -1 && c != '\n')
+        ;
     }
   rof_close (&rof);
 
@@ -239,11 +248,12 @@ vma_iterate (vma_iterate_callback_fn callback, void *data)
       c = rof_getchar (&rof);
       if (c == 'x')
         flags |= VMA_PROT_EXECUTE;
-      while (c = rof_getchar (&rof), c != -1 && c != '\n')
-        ;
 
-      if (callback (data, (unsigned long long)start, (unsigned long long)end, flags))
+	  if (callback (data, (unsigned long long)start, (unsigned long long)end, flags))
         break;
+		
+      while (c = rof_getchar (&rof), c != -1 && c != '\n')
+	  ;
     }
   rof_close (&rof);
 
@@ -647,8 +657,172 @@ my_memory_block bloc;
       c = rof_getchar (&rof);
       if (c == 'x')
         flags |= VMA_PROT_EXECUTE;
-      while (c = rof_getchar (&rof), c != -1 && c != '\n')
-        ;
+	  int break_state = 0;
+	  c=read_n_rof(&rof);
+	  if (c == 'p')
+	  {
+		flags |= VMA_PROT_PRIVATE;
+	  } else if (c == 's')
+	  {
+		flags |= VMA_PROT_SHARED;
+	  } else if (c == -1 || c == '\n')
+	  {
+		break_state=1;
+	  } else {
+		break_state=0;
+	  }
+	  #define MY_MAX_LENGTH 1024
+	  char dd[MY_MAX_LENGTH];
+	  char de[MY_MAX_LENGTH+1];
+	  unsigned long long xi=0;
+	  memset(dd,0,MY_MAX_LENGTH);
+	  if(break_state==0)
+	  {
+		c=read_n_rof(&rof);
+		if(c=='\n'||c==-1)
+		{
+			break_state=1;
+		} else {
+			while (c!='\t'||c!=' '&&c!='\n'&&c!=-1)
+			{
+				if((xi+1)>=MY_MAX_LENGTH)
+				{
+					xi = MY_MAX_LENGTH-1;
+				}
+				dd[xi++]=c;
+				c=rof_getchar(&rof);
+			}
+			if((xi+1)>=MY_MAX_LENGTH)
+			{
+				xi = MY_MAX_LENGTH-1;
+			}
+			dd[xi++]=0;
+			if(c=='\n'||c==-1)
+			{
+				break_state=1;
+			} else {
+				c=read_n_rof(&rof);
+				while (c != '\t'&&c!=' '&&c!='\n'&&c!=-1)
+				{
+					if((xi+1)>=MY_MAX_LENGTH)
+					{
+						xi = MY_MAX_LENGTH-1;
+					}
+					dd[xi++]=c;
+					c = rof_getchar (&rof);
+				}
+				if((xi+1)>=MY_MAX_LENGTH)
+				{
+					xi = MY_MAX_LENGTH-1;
+				}
+				dd[xi++]=0;
+				 //7fff881ff000-7fff88200000 r-xp 00000000 00:00 0                          [vdso]
+				if(c=='\n'||c==-1)
+				{
+					break_state=1;
+				} else {
+					c=read_n_rof(&rof);
+					while (c != '\t'&&c!=' '&&c!='\n'&&c!=-1)
+					{
+						if((xi+1)>=MY_MAX_LENGTH)
+						{
+							xi = MY_MAX_LENGTH-1;
+						}
+						dd[xi++]=c;
+						c = rof_getchar (&rof);
+					}
+					if((xi+1)>=MY_MAX_LENGTH)
+					{
+						xi = MY_MAX_LENGTH-1;
+					}		
+					dd[xi++]=0;
+					if(c=='\n'||c==-1)
+					{
+						break_state=1;
+					} else {
+						c=read_n_rof(&rof);
+						while (c != '\t'&&c!=' '&&c!='\n'&&c!=-1)
+						{
+							if((xi+1)>=MY_MAX_LENGTH)
+							{
+								xi = MY_MAX_LENGTH-1;
+							}
+							dd[xi++]=c;
+							c = rof_getchar (&rof);
+						}
+						if((xi+1)>=MY_MAX_LENGTH)
+						{
+							xi = MY_MAX_LENGTH-1;
+						}
+						dd[xi++]=0;
+						if(c=='\n'||c==-1)
+						{
+							break_state=1;
+						} else {
+							c=read_n_rof(&rof);
+							while (c != '\t'&&c!=' '&&c!='\n'&&c!=-1)
+							{
+								if((xi+1)>=MY_MAX_LENGTH)
+								{
+									xi = MY_MAX_LENGTH-1;
+								}		
+								dd[xi++]=c;
+								c = rof_getchar (&rof);
+							}
+							if((xi+1)>=MY_MAX_LENGTH)
+							{
+								xi = MY_MAX_LENGTH-1;
+							}							
+							dd[xi++]=0;
+							if(c=='\n'||c==-1)
+							{
+								break_state=1;
+							} else {
+								c=read_n_rof(&rof);
+								while (c != '\t'&&c!=' '&&c!='\n'&&c!=-1)
+								{
+									if((xi+1)>=MY_MAX_LENGTH)
+									{
+										xi = MY_MAX_LENGTH-1;
+									}
+									dd[xi++]=c;
+									c = rof_getchar (&rof);
+								}
+								if((xi+1)>=MY_MAX_LENGTH)
+								{
+									xi = MY_MAX_LENGTH-1;
+								}
+								dd[xi++]=0;
+								if(c=='\n'||c==-1)
+								{
+									break_state=1;
+								} else {
+									c=read_n_rof(&rof);
+									while (c != '\t'&&c!=' '&&c!='\n'&&c!=-1)
+									{
+										if((xi+1)>=MY_MAX_LENGTH)
+										{
+											xi = MY_MAX_LENGTH-1;
+										}
+										dd[xi++]=c;
+										c = rof_getchar (&rof);
+									}
+									if((xi+1)>=MY_MAX_LENGTH)
+									{
+										xi = MY_MAX_LENGTH-1;
+									}
+									dd[xi++]=0;
+									break_state=1;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	  }
+	  memcpy(de,dd,1024);
+	  de[1024]=0;
 
       bloc.start = (void*)start; 
 	  bloc.end = (void*)end;
@@ -700,8 +874,172 @@ my_memory_block bloc;
       c = rof_getchar (&rof);
       if (c == 'x')
         flags |= VMA_PROT_EXECUTE;
-      while (c = rof_getchar (&rof), c != -1 && c != '\n')
-        ;
+	  int break_state = 0;
+	  c=read_n_rof(&rof);
+	  if (c == 'p')
+	  {
+		flags |= VMA_PROT_PRIVATE;
+	  } else if (c == 's')
+	  {
+		flags |= VMA_PROT_SHARED;
+	  } else if (c == -1 || c == '\n')
+	  {
+		break_state=1;
+	  } else {
+		break_state=0;
+	  }
+	  #define MY_MAX_LENGTH 1024
+	  char dd[MY_MAX_LENGTH];
+	  char de[MY_MAX_LENGTH+1];
+	  unsigned long long xi=0;
+	  memset(dd,0,MY_MAX_LENGTH);
+	  if(break_state==0)
+	  {
+		c=read_n_rof(&rof);
+		if(c=='\n'||c==-1)
+		{
+			break_state=1;
+		} else {
+			while (c!='\t'||c!=' '&&c!='\n'&&c!=-1)
+			{
+				if((xi+1)>=MY_MAX_LENGTH)
+				{
+					xi = MY_MAX_LENGTH-1;
+				}
+				dd[xi++]=c;
+				c=rof_getchar(&rof);
+			}
+			if((xi+1)>=MY_MAX_LENGTH)
+			{
+				xi = MY_MAX_LENGTH-1;
+			}
+			dd[xi++]=0;
+			if(c=='\n'||c==-1)
+			{
+				break_state=1;
+			} else {
+				c=read_n_rof(&rof);
+				while (c != '\t'&&c!=' '&&c!='\n'&&c!=-1)
+				{
+					if((xi+1)>=MY_MAX_LENGTH)
+					{
+						xi = MY_MAX_LENGTH-1;
+					}
+					dd[xi++]=c;
+					c = rof_getchar (&rof);
+				}
+				if((xi+1)>=MY_MAX_LENGTH)
+				{
+					xi = MY_MAX_LENGTH-1;
+				}
+				dd[xi++]=0;
+				 //7fff881ff000-7fff88200000 r-xp 00000000 00:00 0                          [vdso]
+				if(c=='\n'||c==-1)
+				{
+					break_state=1;
+				} else {
+					c=read_n_rof(&rof);
+					while (c != '\t'&&c!=' '&&c!='\n'&&c!=-1)
+					{
+						if((xi+1)>=MY_MAX_LENGTH)
+						{
+							xi = MY_MAX_LENGTH-1;
+						}
+						dd[xi++]=c;
+						c = rof_getchar (&rof);
+					}
+					if((xi+1)>=MY_MAX_LENGTH)
+					{
+						xi = MY_MAX_LENGTH-1;
+					}		
+					dd[xi++]=0;
+					if(c=='\n'||c==-1)
+					{
+						break_state=1;
+					} else {
+						c=read_n_rof(&rof);
+						while (c != '\t'&&c!=' '&&c!='\n'&&c!=-1)
+						{
+							if((xi+1)>=MY_MAX_LENGTH)
+							{
+								xi = MY_MAX_LENGTH-1;
+							}
+							dd[xi++]=c;
+							c = rof_getchar (&rof);
+						}
+						if((xi+1)>=MY_MAX_LENGTH)
+						{
+							xi = MY_MAX_LENGTH-1;
+						}
+						dd[xi++]=0;
+						if(c=='\n'||c==-1)
+						{
+							break_state=1;
+						} else {
+							c=read_n_rof(&rof);
+							while (c != '\t'&&c!=' '&&c!='\n'&&c!=-1)
+							{
+								if((xi+1)>=MY_MAX_LENGTH)
+								{
+									xi = MY_MAX_LENGTH-1;
+								}		
+								dd[xi++]=c;
+								c = rof_getchar (&rof);
+							}
+							if((xi+1)>=MY_MAX_LENGTH)
+							{
+								xi = MY_MAX_LENGTH-1;
+							}							
+							dd[xi++]=0;
+							if(c=='\n'||c==-1)
+							{
+								break_state=1;
+							} else {
+								c=read_n_rof(&rof);
+								while (c != '\t'&&c!=' '&&c!='\n'&&c!=-1)
+								{
+									if((xi+1)>=MY_MAX_LENGTH)
+									{
+										xi = MY_MAX_LENGTH-1;
+									}
+									dd[xi++]=c;
+									c = rof_getchar (&rof);
+								}
+								if((xi+1)>=MY_MAX_LENGTH)
+								{
+									xi = MY_MAX_LENGTH-1;
+								}
+								dd[xi++]=0;
+								if(c=='\n'||c==-1)
+								{
+									break_state=1;
+								} else {
+									c=read_n_rof(&rof);
+									while (c != '\t'&&c!=' '&&c!='\n'&&c!=-1)
+									{
+										if((xi+1)>=MY_MAX_LENGTH)
+										{
+											xi = MY_MAX_LENGTH-1;
+										}
+										dd[xi++]=c;
+										c = rof_getchar (&rof);
+									}
+									if((xi+1)>=MY_MAX_LENGTH)
+									{
+										xi = MY_MAX_LENGTH-1;
+									}
+									dd[xi++]=0;
+									break_state=1;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	  }
+	  memcpy(de,dd,1024);
+	  de[1024]=0;
 
       bloc.start = (void*)start; 
 	  bloc.end = (void*)end;
