@@ -30,6 +30,8 @@ extern "C" {
 #define VMA_PROT_READ    (1<<0)
 #define VMA_PROT_WRITE   (1<<1)
 #define VMA_PROT_EXECUTE (1<<2)
+#define VMA_PROT_PRIVATE (1<<3)
+#define VMA_PROT_SHARED (1<<4)
 
 typedef int (*vma_iterate_callback_fn) (void *data,
                                         unsigned long long start, unsigned long long end,

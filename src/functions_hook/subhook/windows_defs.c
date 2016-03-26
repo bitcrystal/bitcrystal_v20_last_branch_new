@@ -120,13 +120,30 @@ static int my___grep(const char * filename, const char * keyword, const char * g
 #endif
 int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags){
 	vma_it_func * x = (vma_it_func*)data;
-	if(x->start_address>=start)
+	if((x->start_address>=start))
 	{
 		x->base_start_address=start;
 		x->base_end_address=end;
 		x->base_flags=flags;
+		x->ret=1;
 		return 1;
 	} else {
+		x->ret=0;
+		return 0;
+	}
+}
+
+int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags){
+	vma_it_func * x = (vma_it_func*)data;
+	if((x->start_address>=start)&&(end<=x->end_address))
+	{
+		x->base_start_address=start;
+		x->base_end_address=end;
+		x->base_flags=flags;
+		x->ret=1;
+		return 1;
+	} else {
+		x->ret=0;
 		return 0;
 	}
 }
@@ -175,6 +192,10 @@ BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PD
 }*/
 SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength) {
 	#ifdef IS_LINUX_OS_DEFINED
+		if(lpAddress==NULL||lpBuffer==NULL||dwLength<=0)
+			return (SIZE_T)0;
+			
+		memset((void*)lpBuffer,0,sizeof((*lpBuffer)));
 		#include <errno.h>
 		#if defined(ENOMEM) && !defined(EFAULT)
 			#define EFAULT ENOMEM
@@ -182,40 +203,122 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 			#define ENOMEM EFAULT
 		#endif
 		unsigned long long pagesize;
-	
-		pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
-		void * address = (void *)(((unsigned long long)lpAddress) & ~(pagesize - 1));
+		vma_it_func zz;
+		int x=0;
+		int y=0;
 		int errno_ = 0;
-		unsigned long long nsize_ = (((unsigned long long)dwLength) / pagesize);
+		void * address=NULL;
+		void * test_address=NULL;
+		unsigned long long nsize_ =0;
+		unsigned  long long psp = 0;
+		unsigned  long long rpsp = 0;
+		pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
+		address = (void *)(((unsigned long long)lpAddress) & ~(pagesize - 1));
+		nsize_ = (((unsigned long long)dwLength) / pagesize);
 		if(((unsigned long long)(nsize_ % pagesize))!=0)
 		{
 			nsize_++;
 		}
 		nsize_ = nsize_ * pagesize;
-		unsigned  long long psp = 0;
-		int x = 0;
-		for(psp = 0; psp <= nsize_; psp+=pagesize)
+		x = msync(address, (size_t)(nsize_), 0);
+		errno_=errno;
+		if(x==-1&&errno_==ENOMEM)
 		{
-			x = msync(address, (size_t)(psp+pagesize), 0);
-			errno_=errno;
-			if(x==-1&&errno_=ENOMEM)
-			{
-				continue;
-			} else {
-				break;
-			}
+			zz.complete_free_region=1;
+		} else {
+			zz.complete_free_region=0;
 		}
-		vma_it_func zz;
-		zz.start_address=(unsigned long long)address;
-		zz.end_address=(unsigned long long)(address+nsize_);
-		zz.size=(unsigned long long)dwLength;
-		zz.page_size=page_size;
-		zz.page_alignment_size=nsize_;
-		zz.free_pages=(psp/page_size);
-		zz.free_pages_size=psp;
-		zz.reserved_pages_size=(nsize_-psp);
-		zz.reserved_pages=(reserved_pages_size/page_size);
-		int y = vma_iterate((void*)&zz,&vma_iterate_func);
+		if(zz.complete_free_region==0)
+		{
+			x = 0;
+			zz.start_address=(unsigned long long)lpAddress;
+			zz.end_address=(unsigned long long)lpAddress;
+			zz.base_start_address=0;
+			zz.base_end_address=0;
+			vma_iterate(((vma_iterate_callback_fn)&vma_iterate_func),(void*)&zz);
+			if(zz.ret!=1)
+			{
+				zz.ret=0;
+				vma_iterate(((vma_iterate_callback_fn)&vma_iterate_full_addressing_func),(void*)&zz);
+				if(zz.ret!=0)
+				{
+					return 0;
+				}
+				x=1;
+			}
+			if(x==1)
+			{
+				zz.start_address=(unsigned long long)address;
+				zz.end_address=(unsigned long long)(address+nsize_);
+				zz.size=(unsigned long long)dwLength;
+				zz.page_size=page_size;
+				zz.page_alignment_size=nsize_;
+				zz.free_pages=0;
+				zz.free_pages_size=0;
+				zz.reserved_pages_size=nsize_;
+				zz.reserved_pages=(reserved_pages_size/page_size);
+			} else {
+				/*
+			    test_address=(void*)zz.base_start_address;
+				for(rpsp = 0; rpsp < nsize_; rpsp+=pagesize)
+				{
+					x = msync(test_address, (size_t)(rpsp+pagesize), 0);
+					errno_=errno;
+					if(x==-1&&errno_=ENOMEM)
+					{
+						break;
+					} else {
+						continue;
+					}
+				}
+				test_address=(void*)(((unsigned long long)test_address)+rpsp);
+				for(psp = 0; psp < nsize_; psp+=pagesize)
+				{
+					x = msync(test_address, (size_t)(psp+pagesize), 0);
+					errno_=errno;
+					if(x=-1&&errno_=ENOMEM)
+					{
+						continue;
+					} else {
+						break;
+					}
+				}
+			}
+			
+				int partwise_free=0;
+				if(rpsp==0)
+				{
+					partwise_free=1;
+				} else {
+					partwise_free=0;
+				}*/
+				if(zz.base_end_address<=zz.base_start_address)
+					return (SIZE_T)0;
+				psp=(zz.base_end_address-zz.base_start_address);
+				psp+=(psp%pagesize);
+				//vma_it_func zz;
+				zz.start_address=(unsigned long long)zz.base_start_address;
+				zz.end_address=(unsigned long long)(zz.base_end_address);
+				zz.size=(unsigned long long)dwLength;
+				zz.page_size=page_size;
+				zz.page_alignment_size=psp;
+				zz.free_pages=0;
+				zz.free_pages_size=0;
+				zz.reserved_pages_size=psp;
+				zz.reserved_pages=(reserved_pages_size/page_size);
+			}
+		} else {
+			zz.start_address=(unsigned long long)address;
+			zz.end_address=(unsigned long long)(address+nsize_);
+			zz.size=(unsigned long long)dwLength;
+			zz.page_size=page_size;
+			zz.page_alignment_size=nsize_;
+			zz.free_pages=(nsize_/page_size);
+			zz.free_pages_size=nsize_;
+			zz.reserved_pages_size=0;
+			zz.reserved_pages=0;
+		}
+		/*int y = vma_iterate((void*)&zz,&vma_iterate_func);
 		x = msync(address, (size_t)(nsize_), 0);
 		errno_=errno;
 		if(x==-1&&errno_=ENOMEM)
@@ -224,10 +327,50 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 		} else {
 			zz.complete_free_region=0;
 		}
-		lpBuffer->BaseAddress;
-		lpBuffer->RegionSize=nsize_;
-		lpBuffer->
-		return sizeof(*lpBuffer);
+		if(zz.complete_free_region==1)
+		{
+			lpBuffer->BaseAddress=zz.base_start_address;
+			lpBuffer->RegionSize=nsize_;
+			lpBuffer->State=MEM_FREE;
+			
+		} else if(free_pages_size>0)
+		{
+			
+		}*/
+		if(zz.complete_free_region==1)
+		{
+			lpBuffer->BaseAddress=zz.start_address;
+			lpBuffer->RegionSize=zz.page_alignment_size;
+			lpBuffer->State=MEM_FREE;
+		} else {
+		{
+			lpBuffer->BaseAddress=(void*)zz.start_address;
+			lpBuffer->AllocationBase=(void*)zz.base_start_address;
+			if((VMA_PROT_READ | VMA_PROT_WRITE | VMA_PROT_EXECUTE)==flags)
+			{
+				lpBuffer->AllocationProtect=PAGE_EXECUTE_READWRITE;
+			} else if((VMA_PROT_READ | VMA_PROT_EXECUTE)==flags)
+			{
+				lpBuffer->AllocationProtect=PAGE_EXECUTE_READ;
+			} else if((VMA_PROT_READ | VMA_PROT_WRITE)==flags)
+			{
+				lpBuffer->AllocationProtect=PAGE_READWRITE;
+			} else if(VMA_PROT_READ==flags)
+			{
+				lpBuffer->AllocationProtect=PAGE_READONLY;
+			} else if(flags==VMA_PROT_EXEC)
+			{
+				lpBuffer->AllocationProtect=PAGE_EXECUTE;
+			} else if(flags > 0) {
+				lpBuffer->AllocationProtect=PAGE_READWRITE;
+			} else {
+				lpBuffer->AllocationProtect=PAGE_NOACCESS;
+			}
+			lpBuffer->RegionSize=zz.page_alignment_size;
+			lpBuffer->State=(flags&VMA_PRIVATE)?MEM_RESERVE:MEM_COMMIT;
+			lpBuffer->Type=(flags&VMA_PRIVATE)?MEM_PRIVATE:MEM_MAPPED;
+		}
+		return (SIZE_T)sizeof((*lpBuffer));
 	#endif
 }
 #endif

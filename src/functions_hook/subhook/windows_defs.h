@@ -121,10 +121,16 @@ typedef struct _vma_it_func
 	unsigned long long end_address;
 	unsigned long long page_size;
 	unsigned long long page_alignment_size;
+    unsigned long long free_pages;
+    unsigned long long free_pages_size;
+    unsigned long long reserved_pages_size;
+    unsigned long long reserved_pages;
 	unsigned long long size;
 	unsigned long long base_start_address;
 	unsigned long long base_end_address;
 	unsigned int base_flags;
+	unsigned char ret;
 } vma_it_func;
 int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
+int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
 #endif

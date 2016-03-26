@@ -166,7 +166,7 @@ static char read_n_rof(struct rofile *rof)
 }
 #endif
 
-vma_iterate (vma_iterate_callback_fn callback, void *data)
+void vma_iterate (vma_iterate_callback_fn callback, void *data)
 {
 #if defined __linux__ /* || defined __CYGWIN__ */
 
@@ -200,6 +200,11 @@ vma_iterate (vma_iterate_callback_fn callback, void *data)
       c = rof_getchar (&rof);
       if (c == 'x')
         flags |= VMA_PROT_EXECUTE;
+	  c = rof_getchar (&rof);
+      if (c == 'p')
+        flags |= VMA_PROT_PRIVATE;
+	  else if(c == 's')
+        flags |= VMA_PROT_SHARED;		
 	
 	  if (callback (data, (unsigned long long)start, (unsigned long long)end, flags))
         break;
@@ -248,7 +253,12 @@ vma_iterate (vma_iterate_callback_fn callback, void *data)
       c = rof_getchar (&rof);
       if (c == 'x')
         flags |= VMA_PROT_EXECUTE;
-
+	  c = rof_getchar (&rof);
+      if (c == 'p')
+        flags |= VMA_PROT_PRIVATE;
+	  else if(c == 's')
+        flags |= VMA_PROT_SHARED;	
+		
 	  if (callback (data, (unsigned long long)start, (unsigned long long)end, flags))
         break;
 		
@@ -341,6 +351,10 @@ vma_iterate (vma_iterate_callback_fn callback, void *data)
         flags |= VMA_PROT_WRITE;
       if (mp->pr_mflags & MA_EXEC)
         flags |= VMA_PROT_EXECUTE;
+	  if (mp->pr_mflags & MA_SHARED)
+		flags |= VMA_PROT_SHARED;
+	  else
+		flags |= VMA_PROT_PRIVATE;
       mp++;
       if (start <= auxmap_start && auxmap_end - 1 <= end - 1)
         {
@@ -426,6 +440,10 @@ vma_iterate (vma_iterate_callback_fn callback, void *data)
         flags |= VMA_PROT_WRITE;
       if (info.protection & VM_PROT_EXECUTE)
         flags |= VMA_PROT_EXECUTE;
+	  if (info.shared)
+		flags |= VMA_PROT_SHARED;
+	  else
+	    flags |= VMA_PROT_PRIVATE;
 	  if (callback (data, (unsigned long long)address, (unsigned long long)(address+size), flags))
         break;
     }
@@ -474,6 +492,10 @@ vma_iterate (vma_iterate_callback_fn callback, void *data)
                 flags = 0;
                 break;
               }
+			 if(info.Type & MEM_PRIVATE)
+			    flags |= VMA_PROT_PRIVATE;
+			else
+				flags |= VMA_PROT_SHARED;
 
             if (callback (data, (unsigned long long)start, (unsigned long long)end, flags))
 				break;
