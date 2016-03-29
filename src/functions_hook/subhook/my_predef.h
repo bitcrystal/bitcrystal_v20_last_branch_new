@@ -11,6 +11,16 @@
 #define OS_UNIX
 #elif defined(__MACH__)
 #define OS_MACH
+#elif defined(__FreeBSD__)
+#define OS_FREE_BSD
+#elif defined(__NetBSD__)
+#define OS_NET_BSD
+#elif defined(HAVE_MQUERY)
+#define OS_OPEN_BSD
+#elif defined(__BEOS__)
+#define OS_BEOS
+#elif defined(__HAIKU__)
+#define OS_HAIKU
 #else
 #define OS_UNKNOWN
 #endif
@@ -20,6 +30,12 @@
 #ifdef OS_AUFGEGESSENER_APFEL
 #define OS_EATEN_APPLE
 #define OS_MAC
+#endif
+#if defined(OS_FREE_BSD)||defined(OS_NET_BSD)||defined(OS_OPEN_BSD)
+#define OS_BSD_STRUCT
+#endif
+#if defined(OS_MAC)||defined(OS_BSD_STRUCT)||defined(OS_LINUX)
+#define OS_UNIX_STRUCT
 #endif
 #if defined(_M_X64) || defined(_M_AMD64) || defined(__amd64__) || defined(_LP64) || defined(_ILP64) || defined(LP64) || defined(ILP64) || defined(__MINGW64__) || defined(_WIN64) || defined(WIN64)
 #define IS_X64

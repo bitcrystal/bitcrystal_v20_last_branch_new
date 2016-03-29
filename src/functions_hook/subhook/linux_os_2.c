@@ -44,7 +44,7 @@
 # include <OS.h>
 #endif
 
-#if HAVE_MQUERY /* OpenBSD */
+#if defined HAVE_MQUERY /* OpenBSD */
 # include <sys/types.h>
 # include <sys/mman.h> /* mquery */
 #endif

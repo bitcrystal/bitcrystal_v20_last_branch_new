@@ -107,6 +107,126 @@ typedef struct _MEMORY_BASIC_INFORMATION {
   DWORD  Protect;
   DWORD  Type;
 } MEMORY_BASIC_INFORMATION, *PMEMORY_BASIC_INFORMATION;
+
+
+#ifndef CO_MODE
+#if defined(OS_UNIX_STRUCT)
+#define CO_MODE
+#endif
+#endif
+#ifdef CO_MODE
+/*#include <stdint.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>*/
+#include <sys/mman.h>
+#if defined(ENOMEM) && !defined(EFAULT)
+#define EFAULT ENOMEM
+#elif defined(EFAULT) && !defined(ENOMEM)
+#define ENOMEM EFAULT
+#endif
+#ifndef MAP_ANON
+#ifdef MAP_ANONYMOUS
+#define MAP_ANON MAP_ANONYMOUS
+#endif
+#endif
+#ifndef MAP_ANONYMOUS
+#ifdef MAP_ANON
+#define MAP_ANONYMOUS MAP_ANON
+#endif
+#endif
+
+#endif
+
+#ifndef MY__PROT_READ
+
+#if defined(VM_PROT_READ)
+#define MY__PROT_READ VM_PROT_READ
+#elif defined(B_READ_AREA)
+#define MY__PROT_READ B_READ_AREA
+#elif defined(MA_READ)
+#define MY__PROT_READ MA_READ
+#elif defined(PROT_READ)
+#define MY__PROT_READ PROT_READ
+#else
+#define MY__PROT_READ 1
+#endif
+
+#endif
+
+#ifndef MY__PROT_WRITE
+
+#if defined(VM_PROT_WRITE)
+#define MY__PROT_WRITE VM_PROT_WRITE
+#elif defined(B_WRITE_AREA)
+#define MY__PROT_WRITE B_WRITE_AREA
+#elif defined(MA_WRITE)
+#define MY__PROT_WRITE MA_WRITE
+#elif defined(PROT_WRITE)
+#define MY__PROT_WRITE PROT_WRITE
+#else
+#define MY__PROT_WRITE 2
+#endif
+#endif
+
+#endif
+
+#ifndef MY__PROT_EXEC
+
+#if defined(VM_PROT_EXECUTE)
+#define MY__PROT_EXEC VM_PROT_EXECUTE
+#elif defined(B_WRITE_AREA)
+#define MY__PROT_WRITE B_WRITE_AREA
+#elif defined(MA_EXEC)
+#define MY__PROT_EXEC MA_EXEC
+#elif defined(PROT_EXEC)
+#define MY__PROT_EXEC PROT_EXEC
+#else
+#define MY__PROT_EXEC 4
+#endif
+
+#endif
+
+#ifndef MY__PROT_NONE
+
+#if defined(VM_PROT_NONE)
+#define MY__PROT_NONE VM_PROT_NONE
+#elif defined(B_NONE_AREA)
+#define MY__PROT_NONE B_NONE_AREA
+#elif defined(MA_NONE)
+#define MY__PROT_NONE MA_NONE
+#elif defined(PROT_NONE)
+#define MY__PROT_NONE PROT_NONE
+#else
+#define MY__PROT_NONE 0
+#endif
+
+#endif
+
+#ifndef PROT_NONE
+#define PROT_NONE MY__PROT_NONE
+#endif
+#ifndef PROT_READ
+#define PROT_READ MY__PROT_READ
+#endif
+#ifndef PROT_WRITE
+#define PROT_WRITE MY__PROT_WRITE
+#endif
+#ifndef PROT_EXEC
+#define PROT_EXEC MY__PROT_EXEC
+#endif
+
+#define PAGE_READONLY PROT_READ
+#define PAGE_READWRITE (PROT_READ | PROT_WRITE)
+#define PAGE_EXECUTE PROT_EXEC
+#define PAGE_EXECUTE_READ (PROT_READ | PROT_EXEC)
+#define PAGE_EXECUTE_READWRITE (PROT_READ | PROT_WRITE | PROT_EXEC)
+#define PAGE_EXECUTE_WRITECOPY (PROT_READ | PROT_WRITE | PROT_EXEC)
+#define PAGE_NOACCESS PROT_NONE
+
 BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect);
 SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
 LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect);

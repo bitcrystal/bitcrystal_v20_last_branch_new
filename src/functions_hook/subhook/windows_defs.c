@@ -2,17 +2,7 @@
 #ifndef OS_WIN
 #define IS_NOT_WINDOWS
 #ifdef IS_NOT_WINDOWS
-#ifndef IS_LINUX_OS_DEFINED
-	#ifdef __linux__
-		#define IS_LINUX_OS_DEFINED;
-	#endif
-#endif
-#endif
-#ifdef IS_LINUX_OS_DEFINED
-#include "linux_os.h"
-#include "linux_os_2.h
-#endif
-#ifdef IS_NOT_WINDOWS
+#include "linux_os_2.h"
 #include <stdio.h>
 static int my___find(const char * search, const char * string, unsigned long long * size_search_, unsigned long long * size_string_)
 	{
@@ -150,15 +140,129 @@ int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsign
 
 LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect)
 {
-	#ifdef IS_LINUX_OS_DEFINED
-		void * address = mmap((void*)lpAddress, (size_t)dwSize, PROT_NONE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
-		return (LPVOID)address;
+	#ifdef OS_UNIX_STRUCT
+		void * address = (void*)lpAddress;
+		size_t size = (size_t)dwSize;
+		int prot=0;
+		 switch (flProtect & ~(PAGE_GUARD|PAGE_NOCACHE))
+              {
+              case PAGE_READONLY:
+                prot = PROT_READ;
+                break;
+              case PAGE_READWRITE:
+              case PAGE_WRITECOPY:
+                prot = PROT_READ | PROT_WRITE;
+                break;
+              case PAGE_EXECUTE:
+               prot = PROT_EXEC;
+                break;
+              case PAGE_EXECUTE_READ:
+                prot = PROT_READ | PROT_EXEC;
+                break;
+              case PAGE_EXECUTE_READWRITE:
+              case PAGE_EXECUTE_WRITECOPY:
+				prot = PROT_READ | PROT_WRITE | PROT_EXEC;
+                break;
+              case PAGE_NOACCESS:
+              default:
+                prot = PROT_NONE;
+                break;
+              }
+		if(address!=NULL)
+		{
+			if((sysconf(_SC_PAGESIZE)==-1)
+					return NULL;
+			unsigned long pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
+			address = (void *)(((unsigned long long)address) & ~(pagesize - 1));
+			unsigned long nsize_ = (((unsigned long long)size) / pagesize);
+			if(((unsigned long long)(nsize_ % pagesize))!=0)
+			{
+				nsize_++;
+			}
+			nsize_ = nsize_ * pagesize;
+			size=(size_t)nsize_;
+		}
+		
+		if(flAllocationType&MEM_RESERVE)
+		{
+			address=mmap(address, size, PROT_NONE, MAP_PRIVATE|MAP_ANON, -1, 0);
+			if(address==NULL)
+				return NULL;
+			msync(address, size, MS_SYNC|MS_INVALIDATE);
+		}
+		if(flAllocationType&MEM_COMMIT)
+		{
+			address=mmap(address, size, PROT_READ|PROT_WRITE, MAP_FIXED|MAP_SHARED|MAP_ANON, -1, 0);
+			if(address==NULL)
+				return NULL;
+			msync(address, size, MS_SYNC|MS_INVALIDATE);
+		}
+		int r = mprotect(address,size,prot);
+		if(r==-1)
+			return NULL;
+		return address;
+		
 	#endif
 	return NULL;
 }
 BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect) {
-	#ifdef IS_LINUX_OS_DEFINED
-		return TRUE;
+	#ifdef OS_UNIX_STRUCT
+		if(lpAddress==NULL||dwSize<=0||flNewProtect<=0)
+			return FALSE;
+		if(lpflOldProtect==NULL)
+			return FALSE;
+		MEMORY_BASIC_INFORMATION lpBuffer;
+		SIZE_T my_ret = VirtualQuery(lpAddress,&lpBuffer,dwSize);
+		if(my_ret==0||lpBuffer.State==MEM_FREE)
+			return FALSE;
+		void * address = (void*)lpAddress;
+		size_t size = (size_t)dwSize;
+		int prot=0;
+		 switch (flNewProtect & ~(PAGE_GUARD|PAGE_NOCACHE))
+              {
+              case PAGE_READONLY:
+                prot = PROT_READ;
+                break;
+              case PAGE_READWRITE:
+              case PAGE_WRITECOPY:
+                prot = PROT_READ | PROT_WRITE;
+                break;
+              case PAGE_EXECUTE:
+               prot = PROT_EXEC;
+                break;
+              case PAGE_EXECUTE_READ:
+                prot = PROT_READ | PROT_EXEC;
+                break;
+              case PAGE_EXECUTE_READWRITE:
+              case PAGE_EXECUTE_WRITECOPY:
+				prot = PROT_READ | PROT_WRITE | PROT_EXEC;
+                break;
+              case PAGE_NOACCESS:
+              default:
+                prot = PROT_NONE;
+                break;
+              }
+		if(address!=NULL)
+		{
+			if((sysconf(_SC_PAGESIZE)==-1)
+					return NULL;
+			unsigned long pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
+			address = (void *)(((unsigned long long)address) & ~(pagesize - 1));
+			unsigned long nsize_ = (((unsigned long long)size) / pagesize);
+			if(((unsigned long long)(nsize_ % pagesize))!=0)
+			{
+				nsize_++;
+			}
+			nsize_ = nsize_ * pagesize;
+			size=(size_t)nsize_;
+		}
+		
+		int ret = mprotect(address, size, prot);
+		if(ret!=-1)
+		{
+			return TRUE;
+		}
+		return FALSE;
 	#endif
 	return FALSE;
 }
@@ -191,17 +295,12 @@ BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PD
 	return (SIZE_T)0;
 }*/
 SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength) {
-	#ifdef IS_LINUX_OS_DEFINED
+	#ifdef OS_UNIX_STRUCT
 		if(lpAddress==NULL||lpBuffer==NULL||dwLength<=0)
 			return (SIZE_T)0;
-			
+		if((sysconf(_SC_PAGESIZE))==-1)
+			return (SIZE_T)0;
 		memset((void*)lpBuffer,0,sizeof((*lpBuffer)));
-		#include <errno.h>
-		#if defined(ENOMEM) && !defined(EFAULT)
-			#define EFAULT ENOMEM
-		#elif defined(EFAULT) && !defined(ENOMEM)
-			#define ENOMEM EFAULT
-		#endif
 		unsigned long long pagesize;
 		vma_it_func zz;
 		int x=0;
