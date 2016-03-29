@@ -205,6 +205,40 @@ LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType
 	#endif
 	return NULL;
 }
+BOOL WINAPI VirtualFree(LPVOID lpAddress,SIZE_T dwSize,DWORD  dwFreeType)
+{
+	#ifdef OS_UNIX_STRUCT
+		void * address=(void*)lpAddress;
+		size_t size=(size_t)dwSize;
+		if(address!=NULL)
+		{
+			if((sysconf(_SC_PAGESIZE)==-1)
+					return FALSE;
+			unsigned long pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
+			address = (void *)(((unsigned long long)address) & ~(pagesize - 1));
+			unsigned long nsize_ = (((unsigned long long)size) / pagesize);
+			if(((unsigned long long)(nsize_ % pagesize))!=0)
+			{
+				nsize_++;
+			}
+			nsize_ = nsize_ * pagesize;
+			size=(size_t)nsize_;
+		}
+		if(dwFreeType&MEM_DECOMMIT)
+		{
+			mmap(address, size, PROT_NONE, MAP_FIXED|MAP_PRIVATE|MAP_ANON, -1, 0);
+			msync(address, size, MS_SYNC|MS_INVALIDATE);
+		}
+		if(dwFreeType&MEM_RELEASE)
+		{
+			 msync(address, size, MS_SYNC);
+			munmap(address, size);
+		}
+		return TRUE;
+	#endif
+	return FALSE;
+}
+
 BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect) {
 	#ifdef OS_UNIX_STRUCT
 		if(lpAddress==NULL||dwSize<=0||flNewProtect<=0)
@@ -438,7 +472,7 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 		}*/
 		if(zz.complete_free_region==1)
 		{
-			lpBuffer->BaseAddress=zz.start_address;
+			lpBuffer->BaseAddress=(void*)zz.start_address;
 			lpBuffer->RegionSize=zz.page_alignment_size;
 			lpBuffer->State=MEM_FREE;
 		} else {
