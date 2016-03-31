@@ -12,22 +12,26 @@
 #ifdef USE_SUBHOOK
 #include "subhook/hookerpref.h"
 void Mhook_MyInit();
-BOOL Mhook_SetHook(PVOID *ppSystemFunction, PVOID pHookFunction);
-BOOL Mhook_Unhook(PVOID *ppHookedFunction);
+BOOL Mhook_SetHook(PVOID *ppSystemFunctionP, PVOID pHookFunction);
+BOOL Mhook_Unhook(PVOID *ppHookedFunctionP);
 BOOL Mhook_SetHookEx(PVOID ppSystemFunction, PVOID pHookFunction);
 BOOL Mhook_UnhookEx(PVOID ppHookedFunction);
 
 #define MHOOKS_MAX_SUPPORTED_HOOKS	64
 //Old Hooks
-static subhook_t mhooks_subhooks[MHOOKS_MAX_SUPPORTED_HOOKS];
-static PVOID mhooks_subhooks__[MHOOKS_MAX_SUPPORTED_HOOKS];
-static PVOID mhooks_subhooks___[MHOOKS_MAX_SUPPORTED_HOOKS];
-static BOOL mhooks_bool_init = FALSE;
-static int mhooks_subhooks_count = 0;
+subhook_t mhooks_subhooks[MHOOKS_MAX_SUPPORTED_HOOKS];
+BOOL mhooks_bool_init = FALSE;
+int mhooks_subhooks_count = 0;
 #else
-	#include "cpu.h"
-	#include "disasm_n.h"
-	#include "mhook_lib/mhook-lib/mhook.h"
+	#ifdef OS_WIN
+		#include "cpu.h"
+		#include "disasm_n.h"
+		#include "mhook_lib/mhook-lib/mhook.h"
+	#elif defined(OS_UNIX_STRUCT)
+		#include "subhook/windows_defs.h"
+	#else
+		#include "subhook/windows_defs.h"
+	#endif
 	void Mhook_MyInit();
 	BOOL Mhook_SetHookEx(PVOID ppSystemFunction, PVOID pHookFunction);
 	BOOL Mhook_UnhookEx(PVOID ppHookedFunction);

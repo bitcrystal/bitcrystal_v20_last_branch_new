@@ -45,7 +45,11 @@ typedef ULONG_PTR SIZE_T;
 #else
  typedef double ULONGLONG;
 #endif
-typedef unsigned long size_t;
+#ifndef __SIZE_TYPE__
+#define __SIZE_TYPE__ ULONG_PTR
+#endif
+typedef __SIZE_TYPE__ size_t;
+typedef SIZE_T size_t_in_windows;
 typedef unsigned int ULONG32;
 typedef unsigned __int64 ULONG64;
 typedef unsigned short USHORT;
