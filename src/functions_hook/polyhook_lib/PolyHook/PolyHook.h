@@ -823,10 +823,6 @@ void PLH::X86Detour::WriteJMP(DWORD_PTR From, DWORD_PTR To)
 	WriteRelativeJMP(From, To);
 }
 
-int PLH::X86Detour::GetJMPSize()
-{
-	return 5;
-}
 #else
 PLH::X64Detour::X64Detour() :AbstractDetour()
 {
@@ -1353,67 +1349,68 @@ void PLH::VEHHook::UnHook()
 	m_HookTargets.erase(std::remove(m_HookTargets.begin(), m_HookTargets.end(), m_ThisCtx), m_HookTargets.end());
 }
 
-LONG CALLBACK PLH::VEHHook::VEHHandler(EXCEPTION_POINTERS* ExceptionInfo)
+LONG CALLBACK PLH__VEHHook__VEHHandler(PLH__VEHHOOK_ALL_SHIT_POLYHOOK_S * all_shit, EXCEPTION_POINTERS* ExceptionInfo)
 {
 #ifdef _WIN64
 	#define XIP Rip
 #else
 	#define XIP Eip
 #endif // _WIN64
-	std::lock_guard<std::mutex> m_Lock(m_TargetMutex);
+	std::lock_guard<std::mutex> m_Lock(all_shit->m_TargetMutex);
 
 	DWORD ExceptionCode = ExceptionInfo->ExceptionRecord->ExceptionCode;
 	if (ExceptionCode == EXCEPTION_BREAKPOINT)
 	{
-		for (HookCtx& Ctx : m_HookTargets)
+		for (int i = 0; i < all_shit->m_HookTargets_Size;i++)
 		{
-			if(Ctx.m_Type != VEHMethod::INT3_BP)
+			if(((all_shit->m_HookTargets[i]).m_Type) != VEHMethod__INT3_BP)
 				continue;
 
 			//Are we at a breakpoint that we placed?
-			if (ExceptionInfo->ContextRecord->XIP != (DWORD_PTR)Ctx.m_Src)
+			if (ExceptionInfo->ContextRecord->XIP != ((DWORD_PTR)((all_shit->m_HookTargets[i]).m_Src)))
 				continue;
 
 			//Remove Int3 Breakpoint
-			MemoryProtect Protector(Ctx.m_Src, 1, PAGE_EXECUTE_READWRITE);
-			*Ctx.m_Src = Ctx.m_StorageByte;
+			PLH__MemoryProtect__MemoryProtect_Protect(((all_shit->m_HookTargets[i]).m_Src), 1, PAGE_EXECUTE_READWRITE);
+			*((all_shit->m_HookTargets[i]).m_Src) = ((all_shit->m_HookTargets[i]).m_StorageByte);
 			
 			//Set instruction pointer to our callback
-			ExceptionInfo->ContextRecord->XIP = (DWORD_PTR) Ctx.m_Dest;
+			ExceptionInfo->ContextRecord->XIP = ((DWORD_PTR) ((all_shit->m_HookTargets[i]).m_Dest));
 			return EXCEPTION_CONTINUE_EXECUTION;
 		}
 	}else if (ExceptionCode == EXCEPTION_SINGLE_STEP) {
+		
 		//Intel says clear Dr6, windows may do it for us, lets be safe
 		ExceptionInfo->ContextRecord->Dr6 = 0; 
-		for (HookCtx& Ctx : m_HookTargets)
+		for (int i = 0; i < all_shit->m_HookTargets_Size;i++)
 		{
 			
-			if (Ctx.m_Type != VEHMethod::HARDWARE_BP)
+			if (((all_shit->m_HookTargets[i]).m_Type) != VEHMethod__HARDWARE_BP)
 				continue;
 		
 			//Are we at a breakpoint that we placed?
-			if (ExceptionInfo->ContextRecord->XIP != (DWORD_PTR)Ctx.m_Src)
+			if (ExceptionInfo->ContextRecord->XIP != ((DWORD_PTR)((all_shit->m_HookTargets[i]).m_Src)))
 				continue;
 		
 			//Clear the Debug Register
-			ExceptionInfo->ContextRecord->Dr7 &= ~(1 << (2 * Ctx.m_StorageByte));
+			ExceptionInfo->ContextRecord->Dr7 &= ~(1 << (2 * ((all_shit->m_HookTargets[i]).m_StorageByte)));
 
 			//Set instruction pointer to callback
-			ExceptionInfo->ContextRecord->XIP = (DWORD_PTR)Ctx.m_Dest;
+			ExceptionInfo->ContextRecord->XIP = ((DWORD_PTR)((all_shit->m_HookTargets[i]).m_Dest));
 			return EXCEPTION_CONTINUE_EXECUTION;
 		}
 	}else if (ExceptionCode == EXCEPTION_GUARD_PAGE) {
-		for (HookCtx& Ctx : m_HookTargets)
+		for (int i = 0; i < all_shit->m_HookTargets_Size;i++)
 		{
 			//still need to check if exception is in our page
-			if (Ctx.m_Type != VEHMethod::GUARD_PAGE)
+			if (((all_shit->m_HookTargets[i]).m_Type) != VEHMethod__GUARD_PAGE)
 				continue;
 
-			if(!AreInSamePage((BYTE*)ExceptionInfo->ContextRecord->XIP,Ctx.m_Src))
+			if(!PLH__VEHHook__AreInSamePage(((BYTE*)(ExceptionInfo->ContextRecord->XIP)), ((all_shit->m_HookTargets[i]).m_Src) )))
 				continue;
 
-			if (ExceptionInfo->ContextRecord->XIP == (DWORD_PTR)Ctx.m_Src)
-				ExceptionInfo->ContextRecord->XIP = (DWORD_PTR)Ctx.m_Dest;
+			if (ExceptionInfo->ContextRecord->XIP == ((DWORD_PTR)((all_shit->m_HookTargets[i]).m_Dest)))
+				ExceptionInfo->ContextRecord->XIP = ((DWORD_PTR)((all_shit->m_HookTargets[i]).m_Dest));
 
 			return EXCEPTION_CONTINUE_EXECUTION;
 		}
@@ -1422,7 +1419,7 @@ LONG CALLBACK PLH::VEHHook::VEHHandler(EXCEPTION_POINTERS* ExceptionInfo)
 }
 
 /*----------------------------------------------*/
-void PLH__MemoryProtect__MemoryProtect(ALL_SHIT_POLYHOOK_S * all_shit,void* Address, size_t Size, DWORD ProtectionFlags)
+void PLH__MemoryProtect__MemoryProtect_init(MEMORY_PROTECT_ALL_SHIT_POLYHOOK_S * all_shit,void* Address, size_t Size, DWORD ProtectionFlags)
 {
 	all_shit->m_Address = Address;
 	all_shit->m_Size = Size;
@@ -1435,8 +1432,8 @@ BOOL PLH__MemoryProtect__Protect(void* Address, size_t Size, DWORD ProtectionFla
 	return VirtualProtect(Address, Size, ProtectionFlags, &m_OldProtection);
 }
 
-PLH::MemoryProtect::~MemoryProtect()
+PLH__MemoryProtect__MemoryProtect_deinit(MEMORY_PROTECT_ALL_SHIT_POLYHOOK_S * all_shit)
 {
-	Protect(m_Address,m_Size, m_OldProtection);
+	PPLH__MemoryProtect__Protect(all_shit->m_Address,all_shit->m_Size,all_shit->m_OldProtection);
 }
 #endif//end include guard
