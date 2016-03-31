@@ -127,6 +127,7 @@ typedef struct _MEMORY_BASIC_INFORMATION {
 #include <stdlib.h>
 #include <unistd.h>*/
 #include <sys/mman.h>
+#include <asm/cachectl.h>
 #if defined(ENOMEM) && !defined(EFAULT)
 #define EFAULT ENOMEM
 #elif defined(EFAULT) && !defined(ENOMEM)
@@ -266,6 +267,8 @@ BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PD
 SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
 LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect);
 BOOL WINAPI VirtualFree(lpAddress,SIZE_T dwSize,DWORD dwFreeType);
+BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_T  dwSize);
+HANDLE WINAPI GetCurrentProcess();
 #else
 #include <windows.h>
 #endif

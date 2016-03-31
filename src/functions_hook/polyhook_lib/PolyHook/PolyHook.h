@@ -17,7 +17,7 @@
 #define PLH__ASMHelper__DISP_D_INT8 1
 #define PLH__ASMHelper__DISP_D_INVALID -1
 
-uint8_t PLH__ASMHelper_GetDisplacementType(const uint8_t DispVal)
+uint8_t PLH__ASMHelper__GetDisplacementType(const uint8_t DispVal)
 {
 		switch (DispVal)
 		{
