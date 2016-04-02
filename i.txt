@@ -10,44 +10,6 @@ Project MESSAGE: Building with UPNP support
 Project MESSAGE: Building without IPv6 support
 In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
-src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:146:0: warning: "_M_IX86" redefined
-  #define _M_IX86
- ^
-In file included from C:/mingw32/i686-w64-mingw32/include/_mingw.h:12:0,
-                 from C:/mingw32/i686-w64-mingw32/include/crtdefs.h:10,
-                 from C:/mingw32/i686-w64-mingw32/include/stdlib.h:9,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.c:7:
-C:/mingw32/i686-w64-mingw32/include/_mingw_mac.h:92:0: note: this is the location of the previous definition
- #    define _M_IX86 600
- ^
-In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
-src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
-  #define __i386__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
-src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:148:0: warning: "_WIN32" redefined
-  #define _WIN32
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
-src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:149:0: warning: "WIN32" redefined
-  #define WIN32
- ^
-<command-line>:0:0: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
                  from src/functions_hook/polyhook_lib/Capstone/MCInst.h:24,
                  from src/functions_hook/polyhook_lib/Capstone/MCInst.c:12:
 src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:146:0: warning: "_M_IX86" redefined
@@ -84,24 +46,41 @@ src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:14
   #define WIN32
  ^
 <command-line>:0:0: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
+In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
+src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:146:0: warning: "_M_IX86" redefined
+  #define _M_IX86
+ ^
+In file included from C:/mingw32/i686-w64-mingw32/include/_mingw.h:12:0,
+                 from C:/mingw32/i686-w64-mingw32/include/crtdefs.h:10,
+                 from C:/mingw32/i686-w64-mingw32/include/stdlib.h:9,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.c:7:
+C:/mingw32/i686-w64-mingw32/include/_mingw_mac.h:92:0: note: this is the location of the previous definition
+ #    define _M_IX86 600
+ ^
+In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
+src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
   #define __i386__
  ^
 <built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:148:0: warning: "_WIN32" redefined
+In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
+src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:148:0: warning: "_WIN32" redefined
   #define _WIN32
  ^
 <built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:149:0: warning: "WIN32" redefined
+In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
+src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:149:0: warning: "WIN32" redefined
   #define WIN32
  ^
 <command-line>:0:0: note: this is the location of the previous definition
@@ -145,6 +124,48 @@ src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:14
  ^
 <command-line>:0:0: note: this is the location of the previous definition
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
+  #define __i386__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:148:0: warning: "_WIN32" redefined
+  #define _WIN32
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:149:0: warning: "WIN32" redefined
+  #define WIN32
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
+  #define __i386__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:148:0: warning: "_WIN32" redefined
+  #define _WIN32
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:149:0: warning: "WIN32" redefined
+  #define WIN32
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.h:1,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c:1:
 src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
@@ -187,27 +208,6 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
  ^
 <command-line>:0:0: note: this is the location of the previous definition
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
-  #define __i386__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:148:0: warning: "_WIN32" redefined
-  #define _WIN32
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:149:0: warning: "WIN32" redefined
-  #define WIN32
- ^
-<command-line>:0:0: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonInstPrinter.h:1,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonInstPrinter.c:1:
 src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
@@ -228,12 +228,6 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
   #define WIN32
  ^
 <command-line>:0:0: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/X86/X86ATTInstPrinter.c:766:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonATTInstPrinter.c:15:
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86GenAsmWriter.inc: In function 'printInstruction':
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86GenAsmWriter.inc:14:70: warning: unused parameter 'MRI' [-Wunused-parameter]
- static void printInstruction(MCInst *MI, SStream *O, MCRegisterInfo *MRI)
-                                                                      ^
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:15:0:
 src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Disassembler.c: In function 'X86_getInstruction':
 src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Disassembler.c:786:58: warning: unused parameter '_info' [-Wunused-parameter]
@@ -260,6 +254,12 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
   #define WIN32
  ^
 <command-line>:0:0: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/X86/X86ATTInstPrinter.c:766:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonATTInstPrinter.c:15:
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86GenAsmWriter.inc: In function 'printInstruction':
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86GenAsmWriter.inc:14:70: warning: unused parameter 'MRI' [-Wunused-parameter]
+ static void printInstruction(MCInst *MI, SStream *O, MCRegisterInfo *MRI)
+                                                                      ^
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/X86/X86IntelInstPrinter.c:858:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonIntelInstPrinter.c:15:
 src/functions_hook/polyhook_lib/Capstone/arch/X86/X86GenAsmWriter1.inc: In function 'printInstruction':
@@ -287,27 +287,6 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
   #define WIN32
  ^
 <command-line>:0:0: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
-  #define __i386__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:148:0: warning: "_WIN32" redefined
-  #define _WIN32
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:149:0: warning: "WIN32" redefined
-  #define WIN32
- ^
-<command-line>:0:0: note: this is the location of the previous definition
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/CommonMapping.c:15:0:
 src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Mapping.c: In function 'X86_insn_name':
 src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Mapping.c:2115:31: warning: unused parameter 'handle' [-Wunused-parameter]
@@ -318,6 +297,27 @@ src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Mapping.c:2182:32: warning:
  const char *X86_group_name(csh handle, unsigned int id)
                                 ^
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
+  #define __i386__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:148:0: warning: "_WIN32" redefined
+  #define _WIN32
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:149:0: warning: "WIN32" redefined
+  #define WIN32
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.h:1,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c:1:
 src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
@@ -338,11 +338,6 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
   #define WIN32
  ^
 <command-line>:0:0: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c:15:0:
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Module.c: In function 'destroy':
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Module.c:90:32: warning: unused parameter 'handle' [-Wunused-parameter]
- static void destroy(cs_struct *handle)
-                                ^
 In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/cs.h:3,
                  from src/functions_hook/polyhook_lib/Capstone/cs.c:1:
@@ -367,6 +362,11 @@ src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:14
 src/functions_hook/polyhook_lib/Capstone/cs.c:5:0: warning: ignoring #pragma warning  [-Wunknown-pragmas]
  #pragma warning(disable:4996)
  ^
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c:15:0:
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Module.c: In function 'destroy':
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Module.c:90:32: warning: unused parameter 'handle' [-Wunused-parameter]
+ static void destroy(cs_struct *handle)
+                                ^
 In file included from src/functions_hook/mhook.h:4:0,
                  from src/functions_hook/mhook.c:1:
 src/functions_hook/subhook/my_predef.h:147:0: warning: "__i386__" redefined
@@ -413,6 +413,25 @@ src/minizip/ioapi.c: In function 'ferror_file_func':
 src/minizip/ioapi.c:158:11: warning: unused parameter 'opaque' [-Wunused-parameter]
     voidpf opaque;
            ^
+In file included from src/minizip/unzip.c:156:0:
+src/minizip/crypt.h: In function 'decrypt_byte':
+src/minizip/crypt.h:35:68: warning: unused parameter 'pcrc_32_tab' [-Wunused-parameter]
+ static int decrypt_byte(unsigned long* pkeys, const unsigned long* pcrc_32_tab)
+                                                                    ^
+src/minizip/unzip.c: In function 'unzlocal_GetCurrentFileInfoInternal':
+src/minizip/unzip.c:577:8: warning: suggest explicit braces to avoid ambiguous 'else' [-Wparentheses]
+     if (err==UNZ_OK)
+        ^
+src/minizip/unzip.c:657:12: warning: suggest explicit braces to avoid ambiguous 'else' [-Wparentheses]
+         if (lSeek!=0)
+            ^
+src/minizip/unzip.c:682:12: warning: suggest explicit braces to avoid ambiguous 'else' [-Wparentheses]
+         if (lSeek!=0)
+            ^
+src/minizip/unzip.c: In function 'unzlocal_CheckCurrentFileCoherencyHeader':
+src/minizip/unzip.c:925:8: warning: suggest explicit braces to avoid ambiguous 'else' [-Wparentheses]
+     if (err==UNZ_OK)
+        ^
 In file included from src/functions_hook/mhook.h:31:0,
                  from src/functions_hook/mhook.c:1:
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:139:1: warning: data definition has no type or storage class
@@ -475,21 +494,12 @@ src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:291:12: warning: u
    cs_insn* CurIns = (cs_insn*)&InstructionInfo[i];
             ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__Relocate':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:308:3: warning: implicit declaration of function 'PLH__ASMHelper__GetDisplacement_int8_t' [-Wimplicit-function-declaration]
-   int8_t Disp = PLH__ASMHelper__GetDisplacement_int8_t(CurIns->bytes, DispOffset);
-   ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:310:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
    *(int8_t*)(CurIns->address + DispOffset) = Disp;
     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:312:3: warning: implicit declaration of function 'PLH__ASMHelper__GetDisplacement_int16_t' [-Wimplicit-function-declaration]
-   int16_t Disp = PLH__ASMHelper__GetDisplacement_int16_t(a,CurIns->bytes, DispOffset);
-   ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:314:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
    *(int16_t*)(CurIns->address + DispOffset) = Disp;
     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:316:3: warning: implicit declaration of function 'PLH__ASMHelper__GetDisplacement_int32_t' [-Wimplicit-function-declaration]
-   int32_t Disp = PLH__ASMHelper__GetDisplacement_int32_t(a,CurIns->bytes, DispOffset);
-   ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:318:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
    *(int32_t*)(CurIns->address + DispOffset) = Disp;
     ^
@@ -545,6 +555,10 @@ src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:513:4: warning: ca
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:520:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
    *(int32_t*)(CurIns->address + DispOffset) = Disp;
     ^
+src/minizip/unzip.c: In function 'unzGetGlobalComment':
+src/minizip/unzip.c:1459:9: warning: unused variable 'err' [-Wunused-variable]
+     int err=UNZ_OK;
+         ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:564:1: warning: return type defaults to 'int' [-Wreturn-type]
  PLH__AbstractDetour__init(PLH_ALL_S_t a)
@@ -565,18 +579,6 @@ src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:624:62: warning: u
  PLH__ASMHelper__HookType PLH__X86Detour__GetType(PLH_ALL_S_t a)
                                                               ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X86Detour__Hook':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:650:2: warning: implicit declaration of function 'PLH__X86Detour__RelocateASM' [-Wimplicit-function-declaration]
-  PLH__X86Detour__RelocateASM(a,PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD)PLH__MyDetour__GetHkSrc(a), (DWORD)PLH__MyDetour__GetTrampoline(a));
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:659:2: warning: implicit declaration of function 'PLH__AbstractDetour__GetOriginalLength' [-Wimplicit-function-declaration]
-  int length = PLH__AbstractDetour__GetOriginalLength(a);
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:664:2: error: too few arguments to function 'PLH__AbstractDetour__FlushSrcInsCache'
-  PLH__AbstractDetour__FlushSrcInsCache();
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:531:6: note: declared here
- void PLH__AbstractDetour__FlushSrcInsCache(PLH_ALL_S_t a)
-      ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:633:8: warning: unused variable 'OldProtection' [-Wunused-variable]
   DWORD OldProtection;
         ^
@@ -584,81 +586,57 @@ src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH_
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:687:46: warning: unused parameter 'a' [-Wunused-parameter]
  x86_reg PLH__X86Detour__GetIpReg(PLH_ALL_S_t a)
                                               ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:702:6: error: redefinition of 'PLH__X86Detour__WriteJMP'
- void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To)
-      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:604:6: note: previous definition of 'PLH__X86Detour__WriteJMP' was here
- void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To)
-      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:707:5: error: redefinition of 'PLH__X86Detour__GetJMPSize'
- int PLH__X86Detour__GetJMPSize(PLH_ALL_S_t a)
-     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:609:5: note: previous definition of 'PLH__X86Detour__GetJMPSize' was here
- int PLH__X86Detour__GetJMPSize(PLH_ALL_S_t a)
-     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X86Detour__GetJMPSize':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:707:44: warning: unused parameter 'a' [-Wunused-parameter]
- int PLH__X86Detour__GetJMPSize(PLH_ALL_S_t a)
-                                            ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X64Detour__init':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:712:39: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:702:39: warning: unused parameter 'a' [-Wunused-parameter]
  void PLH__X64Detour__init(PLH_ALL_S_t a)
                                        ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X64Detour__Hook':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:766:2: warning: implicit declaration of function 'PLH__X64Detour__RelocateASM' [-Wimplicit-function-declaration]
-  PLH__X64Detour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:766:77: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-  PLH__X64Detour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
-                                                                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:766:114: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-  PLH__X64Detour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
-                                                                                                                  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:769:37: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:756:82: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  PLH__AbstractDetour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
+                                                                                  ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:756:119: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  PLH__AbstractDetour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
+                                                                                                                       ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:759:37: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
   PLH__X64Detour__WriteAbsoluteJMP(a,(DWORD64)&((PLH__MyDetour__GetTrampoline(a))[PLH__MyDetour__GetHkLength(a)]), ((DWORD64)((PLH__MyDetour__GetHkSrc(a)) + (PLH__MyDetour__GetHkLength(a))))); 
                                      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:769:116: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:759:116: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
   PLH__X64Detour__WriteAbsoluteJMP(a,(DWORD64)&((PLH__MyDetour__GetTrampoline(a))[PLH__MyDetour__GetHkLength(a)]), ((DWORD64)((PLH__MyDetour__GetHkSrc(a)) + (PLH__MyDetour__GetHkLength(a))))); 
                                                                                                                     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:780:12: error: 'm_hkSrc' undeclared (first use in this function)
-   *(long*)(m_hkSrc + 2) = CalculateRelativeDisplacement_long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
-            ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:780:12: note: each undeclared identifier is reported only once for each function it appears in
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:780:3: warning: implicit declaration of function 'CalculateRelativeDisplacement_long' [-Wimplicit-function-declaration]
-   *(long*)(m_hkSrc + 2) = CalculateRelativeDisplacement_long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:770:3: warning: implicit declaration of function 'CalculateRelativeDisplacement__long' [-Wimplicit-function-declaration]
+   *(long*)((PLH__MyDetour__GetHkSrc(a)) + 2) = CalculateRelativeDisplacement__long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
    ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:780:65: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-   *(long*)(m_hkSrc + 2) = CalculateRelativeDisplacement_long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
-                                                                 ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:780:102: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-   *(long*)(m_hkSrc + 2) = CalculateRelativeDisplacement_long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
-                                                                                                      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:781:93: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:770:87: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   *(long*)((PLH__MyDetour__GetHkSrc(a)) + 2) = CalculateRelativeDisplacement__long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
+                                                                                       ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:770:124: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+   *(long*)((PLH__MyDetour__GetHkSrc(a)) + 2) = CalculateRelativeDisplacement__long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
+                                                                                                                            ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:771:93: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
    *(DWORD64*)&((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)]) = (DWORD64)PLH__MyDetour__GetHkDst(a); //Write the address into memory at [RIP+Displacement]
                                                                                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:784:38: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:774:38: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
    PLH__X64Detour__WriteAbsoluteJMP(a,(DWORD64)((PLH__MyDetour__GetHkSrc(a))), (DWORD64)((PLH__MyDetour__GetHkDst(a))));
                                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:784:79: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:774:79: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
    PLH__X64Detour__WriteAbsoluteJMP(a,(DWORD64)((PLH__MyDetour__GetHkSrc(a))), (DWORD64)((PLH__MyDetour__GetHkDst(a))));
                                                                                ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X64Detour__GetIpReg':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:799:46: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:789:46: warning: unused parameter 'a' [-Wunused-parameter]
  x86_reg PLH__X64Detour__GetIpReg(PLH_ALL_S_t a)
                                               ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X64Detour__WriteAbsoluteJMP':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:821:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:811:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
   memcpy((BYTE*)Destination, detour, sizeof(detour));
          ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:822:15: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:812:15: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
   *(DWORD64*)&((BYTE*)Destination)[3] = JMPDestination;
                ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:814:51: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:804:51: warning: unused parameter 'a' [-Wunused-parameter]
  void PLH__X64Detour__WriteAbsoluteJMP(PLH_ALL_S_t a,DWORD64 Destination, DWORD64 JMPDestination)
                                                    ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X64Detour__GetJMPSize':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:830:44: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:820:44: warning: unused parameter 'a' [-Wunused-parameter]
  int PLH__X64Detour__GetJMPSize(PLH_ALL_S_t a)
                                             ^
 src/functions_hook/mhook.c: In function 'Mhook_UnhookEx':
@@ -687,6 +665,118 @@ src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH_
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:576:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
  ^
-mingw32-make[1]: *** [build_win32_objects/mhook.o] Error 1
-mingw32-make[1]: *** Waiting for unfinished jobs....
+src/minizip/iowin32.c: In function 'win32_open_file_func':
+src/minizip/iowin32.c:70:17: warning: unused variable 'mode_fopen' [-Wunused-variable]
+     const char* mode_fopen = NULL;
+                 ^
+src/minizip/iowin32.c:66:11: warning: unused parameter 'opaque' [-Wunused-parameter]
+    voidpf opaque;
+           ^
+src/minizip/iowin32.c: In function 'win32_read_file_func':
+src/minizip/iowin32.c:118:11: warning: unused parameter 'opaque' [-Wunused-parameter]
+    voidpf opaque;
+           ^
+src/minizip/iowin32.c: In function 'win32_write_file_func':
+src/minizip/iowin32.c:141:11: warning: unused parameter 'opaque' [-Wunused-parameter]
+    voidpf opaque;
+           ^
+src/minizip/iowin32.c: In function 'win32_tell_file_func':
+src/minizip/iowin32.c:164:11: warning: unused parameter 'opaque' [-Wunused-parameter]
+    voidpf opaque;
+           ^
+src/minizip/iowin32.c: In function 'win32_seek_file_func':
+src/minizip/iowin32.c:187:11: warning: unused parameter 'opaque' [-Wunused-parameter]
+    voidpf opaque;
+           ^
+src/minizip/iowin32.c: In function 'win32_close_file_func':
+src/minizip/iowin32.c:228:11: warning: unused parameter 'opaque' [-Wunused-parameter]
+    voidpf opaque;
+           ^
+src/minizip/iowin32.c: In function 'win32_error_file_func':
+src/minizip/iowin32.c:248:11: warning: unused parameter 'opaque' [-Wunused-parameter]
+    voidpf opaque;
+           ^
+In file included from src/minizip/zip.c:158:0:
+src/minizip/crypt.h: In function 'decrypt_byte':
+src/minizip/crypt.h:35:68: warning: unused parameter 'pcrc_32_tab' [-Wunused-parameter]
+ static int decrypt_byte(unsigned long* pkeys, const unsigned long* pcrc_32_tab)
+                                                                    ^
+src/minizip/zip.c: In function 'ziplocal_TmzDateToDosDate':
+src/minizip/zip.c:320:11: warning: unused parameter 'dosDate' [-Wunused-parameter]
+     uLong dosDate;
+           ^
+src/minizip/zip.c: At top level:
+src/minizip/zip.c:192:12: warning: 'free_linkedlist' defined but not used [-Wunused-function]
+ local void free_linkedlist(ll)
+            ^
+src/minizip/minizip.c: In function 'filetime__minizip':
+src/minizip/minizip.c:3:42: warning: unused parameter 'tmzip' [-Wunused-parameter]
+ uLong filetime__minizip(char *f, tm_zip *tmzip, uLong *dt)
+                                          ^
+src/minizip/minizip.c: In function 'getFileCrc__minizip':
+src/minizip/minizip.c:137:5: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat=]
+     printf("file %s crc %x\n",filenameinzip,calculate_crc);
+     ^
+src/minizip/minizip.c: In function 'main__minizip':
+src/minizip/minizip.c:293:17: warning: passing argument 1 of 'filetime__minizip' discards 'const' qualifier from pointer target type
+                 filetime__minizip(filenameinzip,&zi.tmz_date,&zi.dosDate);
+                 ^
+src/minizip/minizip.c:3:7: note: expected 'char *' but argument is of type 'const char *'
+ uLong filetime__minizip(char *f, tm_zip *tmzip, uLong *dt)
+       ^
+src/minizip/minizip.c:348:20: warning: 'fin' may be used uninitialized in this function [-Wmaybe-uninitialized]
+                 if (fin)
+                    ^
+src/minizip/miniunz.c: In function 'change_file_date__miniunz':
+src/minizip/miniunz.c:2:74: warning: unused parameter 'tmu_date' [-Wunused-parameter]
+ void change_file_date__miniunz(const char *filename,uLong dosdate,tm_unz tmu_date)
+                                                                          ^
+src/minizip/miniunz.c: In function 'do_extract_currentfile__miniunz':
+src/minizip/miniunz.c:199:11: warning: unused variable 'ratio' [-Wunused-variable]
+     uLong ratio=0;
+           ^
+src/minizip/miniunz.c: In function 'do_extract__miniunz':
+src/minizip/miniunz.c:353:11: warning: unused variable 'fout' [-Wunused-variable]
+     FILE* fout=NULL;
+           ^
+src/minizip/miniunz.c: In function 'do_extract_onefile__miniunz':
+src/minizip/miniunz.c:382:9: warning: unused variable 'err' [-Wunused-variable]
+     int err = UNZ_OK;
+         ^
+In file included from src/netbase.h:11:0,
+                 from src/net.h:19,
+                 from src/rpcnet.cpp:5:
+src/compat.h:14:0: warning: "FD_SETSIZE" redefined
+ #define FD_SETSIZE 1024 // max number of fds in fd_set
+ ^
+In file included from C:/mingw32/i686-w64-mingw32/include/winsock.h:36:0,
+                 from C:/mingw32/i686-w64-mingw32/include/windows.h:92,
+                 from c:/deps/openssl-1.0.1g/include/openssl/rand.h:67,
+                 from src/net.h:11,
+                 from src/rpcnet.cpp:5:
+C:/mingw32/i686-w64-mingw32/include/psdk_inc/_fd_types.h:13:0: note: this is the location of the previous definition
+ #define FD_SETSIZE 64
+ ^
+In file included from src/compat.h:15:0,
+                 from src/netbase.h:11,
+                 from src/net.h:19,
+                 from src/rpcnet.cpp:5:
+C:/mingw32/i686-w64-mingw32/include/winsock2.h:15:2: warning: #warning Please include winsock2.h before windows.h [-Wcpp]
+ #warning Please include winsock2.h before windows.h
+  ^
+src/groestl.c: In function 'groestl_small_close':
+src/groestl.c:2816:17: warning: variable 'buf' set but not used [-Wunused-but-set-variable]
+  unsigned char *buf;
+                 ^
+src/groestl.c: In function 'groestl_big_close':
+src/groestl.c:2952:17: warning: variable 'buf' set but not used [-Wunused-but-set-variable]
+  unsigned char *buf;
+                 ^
+./build_win32_objects/mhook.o:mhook.c:(.text+0x143e): undefined reference to `CalculateRelativeDisplacement__long'
+./build_win32_objects/mhook.o:mhook.c:(.text+0x164d): undefined reference to `PLH__AbstractDetour__GetTrampoline'
+./build_win32_objects/mhook.o:mhook.c:(.text+0x16ff): undefined reference to `PLH__AbstractDetour__GetHkSrc'
+C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/bin/ld.exe: ./build_win32_objects/mhook.o: bad reloc address 0x20 in section `.eh_frame'
+C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/4.9.1/../../../../i686-w64-mingw32/bin/ld.exe: final link failed: Invalid operation
+collect2.exe: error: ld returned 1 exit status
+mingw32-make[1]: *** [release/bitcrystal-qt.exe] Error 1
 mingw32-make: *** [release] Error 2

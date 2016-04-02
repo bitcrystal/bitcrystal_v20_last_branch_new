@@ -305,15 +305,15 @@ void PLH__AbstractDetour__Relocate(PLH_ALL_S_t a,cs_insn* CurIns, DWORD64 From, 
 	int8_t DispType = PLH__ASMHelper__GetDisplacementType(a,DispSize);
 	if (DispType == PLH__ASMHelper__D_INT8)
 	{
-		int8_t Disp = PLH__ASMHelper__GetDisplacement_int8_t(CurIns->bytes, DispOffset);
+		int8_t Disp = PLH__ASMHelper__GetDisplacement__int8_t(a,CurIns->bytes, DispOffset);
 		Disp -= (To - From);
 		*(int8_t*)(CurIns->address + DispOffset) = Disp;
 	}else if (DispType == PLH__ASMHelper__D_INT16) {
-		int16_t Disp = PLH__ASMHelper__GetDisplacement_int16_t(a,CurIns->bytes, DispOffset);
+		int16_t Disp = PLH__ASMHelper__GetDisplacement__int16_t(a,CurIns->bytes, DispOffset);
 		Disp -= (To - From);
 		*(int16_t*)(CurIns->address + DispOffset) = Disp;
 	}else if (DispType == PLH__ASMHelper__D_INT32) {
-		int32_t Disp = PLH__ASMHelper__GetDisplacement_int32_t(a,CurIns->bytes, DispOffset);
+		int32_t Disp = PLH__ASMHelper__GetDisplacement__int32_t(a,CurIns->bytes, DispOffset);
 		Disp -= (To - From);
 		*(int32_t*)(CurIns->address + DispOffset) = Disp;
 	}
@@ -647,7 +647,7 @@ BOOL PLH__X86Detour__Hook(PLH_ALL_S_t a)
 	memcpy(PLH__MyDetour__GetOriginalCode(a), PLH__MyDetour__GetHkSrc(a), PLH__MyDetour__GetHkLength(a));
 	memcpy(PLH__MyDetour__GetTrampoline(a), PLH__MyDetour__GetHkSrc(a), PLH__MyDetour__GetHkLength(a)); //Copy original into allocated space
 	DWORD CodeSize = PLH__MyDetour__GetHkLength(a);
-	PLH__X86Detour__RelocateASM(a,PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD)PLH__MyDetour__GetHkSrc(a), (DWORD)PLH__MyDetour__GetTrampoline(a));
+	PLH__AbstractDetour__RelocateASM(a,PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD)PLH__MyDetour__GetHkSrc(a), (DWORD)PLH__MyDetour__GetTrampoline(a));
 	PLH__X86Detour__WriteRelativeJMP(a,(DWORD)&((PLH__MyDetour__GetTrampoline(a))[(PLH__MyDetour__GetHkLength(a))]), (DWORD)((PLH__MyDetour__GetHkSrc(a)) + (PLH__MyDetour__GetHkLength(a)))); //JMP back to original code
 
 	//Change protection to allow write on original function
@@ -656,12 +656,12 @@ BOOL PLH__X86Detour__Hook(PLH_ALL_S_t a)
 	PLH__X86Detour__WriteRelativeJMP(a,(DWORD)PLH__MyDetour__GetHkSrc(a), (DWORD)PLH__MyDetour__GetHkDst(a));
 
 	//Write nops over bytes of overwritten instructions
-	int length = PLH__AbstractDetour__GetOriginalLength(a);
+	int length = PLH__MyDetour__GetOriginalLength(a);
 	BYTE * ps = (BYTE*)PLH__MyDetour__GetHkSrc(a);
 	int i;
 	for (i = 5; i < length; i++)
 		ps[i] = 0x90;
-	PLH__AbstractDetour__FlushSrcInsCache();
+	PLH__AbstractDetour__FlushSrcInsCache(a);
 	PLH__MemoryProtect__deinit(a);
 	//PostError(RuntimeError(RuntimeError::Severity::Warning, "PolyHook x86Detour: Some opcodes may not be relocated properly"));
 	return TRUE;
@@ -697,16 +697,6 @@ void PLH__X86Detour__FreeTrampoline(PLH_ALL_S_t a)
 	    PLH__MyDetour__SetNeedFree(a,0);
 		PLH__MyDetour__SetTrampoline(a,0);
 	}
-}
-
-void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To)
-{
-	PLH__X86Detour__WriteRelativeJMP(a,From, To);
-}
-
-int PLH__X86Detour__GetJMPSize(PLH_ALL_S_t a)
-{
-	return 5;
 }
 
 void PLH__X64Detour__init(PLH_ALL_S_t a)
@@ -763,7 +753,7 @@ BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 	memcpy(PLH__MyDetour__GetOriginalCode(a), PLH__MyDetour__GetHkSrc(a), PLH__MyDetour__GetHkLength(a));
 	memcpy(PLH__MyDetour__GetTrampoline(a), PLH__MyDetour__GetHkSrc(a), PLH__MyDetour__GetHkLength(a));
 	DWORD CodeSize = PLH__MyDetour__GetHkLength(a);
-	PLH__X64Detour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
+	PLH__AbstractDetour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
 	PLH__MyDetour__SetHkLength(a,CodeSize);
 	//Write the jmp from our trampoline back to the original
 	PLH__X64Detour__WriteAbsoluteJMP(a,(DWORD64)&((PLH__MyDetour__GetTrampoline(a))[PLH__MyDetour__GetHkLength(a)]), ((DWORD64)((PLH__MyDetour__GetHkSrc(a)) + (PLH__MyDetour__GetHkLength(a))))); 
@@ -777,7 +767,7 @@ BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 		((PLH__MyDetour__GetHkSrc(a))[0]) = 0xFF;
 		((PLH__MyDetour__GetHkSrc(a))[1]) = 0x25;
 		//Write 32Bit Displacement from rip
-		*(long*)(m_hkSrc + 2) = CalculateRelativeDisplacement_long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
+		*(long*)((PLH__MyDetour__GetHkSrc(a)) + 2) = CalculateRelativeDisplacement__long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
 		*(DWORD64*)&((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)]) = (DWORD64)PLH__MyDetour__GetHkDst(a); //Write the address into memory at [RIP+Displacement]
 	}else {
 		HookSize = 16;
