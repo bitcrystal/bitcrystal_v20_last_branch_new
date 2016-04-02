@@ -17,11 +17,12 @@ typedef enum _PLH__ASMHelper__HookType
 
 typedef struct _PLH_ABSTRACT_DETOUR_S
 {
-	HANDLE m_CapstoneHandle;
+	csh m_CapstoneHandle;
 	BYTE * m_hkSrc;
 	BYTE * m_hkDst;
 	BYTE * m_Trampoline;
 	BYTE * m_OriginalCode;
+	SIZE_T m_OriginalLength;
 	SIZE_T m_hkLength;
 	BOOL m_NeedFree;
 	PLH__ASMHelper__HookType plhAsmHelperHookType;
@@ -55,7 +56,7 @@ typedef struct _PLH_ALL_S
 	int last_error;
 } PLH_ALL_S, *PLH_ALL_S_t;
 
-PLH_ALL_S_t PLH__ALL_S_t_new();
+PLH_ALL_S_t PLH_ALL_S_t_new();
 
 BOOL PLH_ALL_S_t_delete(PLH_ALL_S_t p);
 
@@ -100,6 +101,10 @@ void PLH__MyDetour__SetHkLength(PLH_ALL_S_t a,SIZE_T hkLength);
 SIZE_T PLH__MyDetour__GetOriginalLength(PLH_ALL_S_t a);
 
 void PLH__MyDetour__SetOriginalLength(PLH_ALL_S_t a,SIZE_T originalLength);
+
+csh PLH__MyDetour__GetCapstoneHandleValue(PLH_ALL_S_t a);
+
+void PLH__MyDetour__SetCapstoneHandleValue(PLH_ALL_S_t a,csh capstoneHandle);
 
 HANDLE PLH__MyDetour__GetCapstoneHandle(PLH_ALL_S_t a);
 

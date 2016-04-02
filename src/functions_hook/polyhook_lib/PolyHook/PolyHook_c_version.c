@@ -1,7 +1,7 @@
 #include "PolyHook_c_version.h"
 #include "../../subhook/windows_defs.c"
 
-PLH_ALL_S_t PLH__ALL_S_t_new()
+PLH_ALL_S_t PLH_ALL_S_t_new()
 {
 	void * t = ((void*)(malloc(sizeof(PLH_ALL_S))));
 	if(t==NULL)
@@ -9,7 +9,7 @@ PLH_ALL_S_t PLH__ALL_S_t_new()
 		return NULL;
 	}
 	memset(t,0,sizeof(PLH_ALL_S));
-	return (PLL_ALL_S_t)t;
+	return (PLH_ALL_S_t)t;
 }
 
 BOOL PLH_ALL_S_t_delete(PLH_ALL_S_t p)
@@ -81,65 +81,46 @@ int32_t PLH__ASMHelper__GetDisplacement__int32_t(PLH_ALL_S_t a, BYTE* Instructio
 	return Disp;
 }
 
-typedef enum _PLH__ASMHelper__HookType
-{
-	X86Detour,
-	X64Detour,
-	UNKNOWN
-} PLH__ASMHelper__HookType;
-
-typedef struct _PLH_ABSTRACT_DETOUR_S
-{
-	HANDLE m_CapstoneHandle;
-	BYTE * m_hkSrc;
-	BYTE * m_hkDst;
-	BYTE * m_Trampoline;
-	BYTE * m_OriginalCode;
-	SIZE_T m_hkLength;
-	BOOL m_NeedFree;
-	PLH__ASMHelper__HookType plhAsmHelperHookType;
-} PLH_ABSTRACT_DETOUR_S;
-
 BOOL PLH__MyDetour__GetNeedFree(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhAbstractDetourS->m_NeedFree;
+	return a->plhAbstractDetourS.m_NeedFree;
 }
 
 void PLH__MyDetour__SetNeedFree(PLH_ALL_S_t a,BOOL needFree)
 {
 	if(a==0)
 		return;
-	a->plhAbstractDetourS->m_NeedFree=needFree;
+	a->plhAbstractDetourS.m_NeedFree=needFree;
 }
 
 void PLH__MyDetour__SetHookType(PLH_ALL_S_t a,PLH__ASMHelper__HookType hookType)
 {
 	if(a==0)
 		return;
-	a->plhAbstractDetourS->plhAsmHelperHookType=hookType;
+	a->plhAbstractDetourS.plhAsmHelperHookType=hookType;
 }
 
 PLH__ASMHelper__HookType PLH__MyDetour__GetHookType(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhAbstractDetourS->plhAsmHelperHookType;
+	return a->plhAbstractDetourS.plhAsmHelperHookType;
 }
 
 BYTE * PLH__MyDetour__GetTrampoline(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhAbstractDetourS->m_Trampoline;
+	return a->plhAbstractDetourS.m_Trampoline;
 }
 
 void PLH__MyDetour__SetTrampoline(PLH_ALL_S_t a,BYTE*trampoline)
 {
 	if(a==0)
 		return;
-	a->plhAbstractDetourS->m_Trampoline=trampoline;
+	a->plhAbstractDetourS.m_Trampoline=trampoline;
 }
 
 
@@ -147,111 +128,98 @@ BYTE * PLH__MyDetour__GetOriginalCode(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhAbstractDetourS->m_OriginalCode;
+	return a->plhAbstractDetourS.m_OriginalCode;
 }
 
 void PLH__MyDetour__SetOriginalCode(PLH_ALL_S_t a,BYTE*originalcode)
 {
 	if(a==0)
 		return;
-	a->plhAbstractDetourS->m_OriginalCode=originalcode;
+	a->plhAbstractDetourS.m_OriginalCode=originalcode;
 }
 
 BYTE * PLH__MyDetour__GetHkSrc(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhAbstractDetourS->m_hkSrc;
+	return a->plhAbstractDetourS.m_hkSrc;
 }
 
 void PLH__MyDetour__SetHkSrc(PLH_ALL_S_t a,BYTE*hkSrc)
 {
 	if(a==0)
 		return;
-	a->plhAbstractDetourS->m_hkSrc=hkSrc;
+	a->plhAbstractDetourS.m_hkSrc=hkSrc;
 }
 
 BYTE * PLH__MyDetour__GetHkDst(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhAbstractDetourS->m_hkDst;
+	return a->plhAbstractDetourS.m_hkDst;
 }
 
 void PLH__MyDetour__SetHkDst(PLH_ALL_S_t a,BYTE*hkDst)
 {
 	if(a==0)
 		return;
-	a->plhAbstractDetourS->m_hkDst=hkDst;
+	a->plhAbstractDetourS.m_hkDst=hkDst;
 }
 
 SIZE_T PLH__MyDetour__GetHkLength(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhAbstractDetourS->m_hkLength;
+	return a->plhAbstractDetourS.m_hkLength;
 }
 
 void PLH__MyDetour__SetHkLength(PLH_ALL_S_t a,SIZE_T hkLength)
 {
 	if(a==0)
 		return;
-	a->plhAbstractDetourS->m_hkLength=hkLength;
+	a->plhAbstractDetourS.m_hkLength=hkLength;
 }
 
 SIZE_T PLH__MyDetour__GetOriginalLength(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhAbstractDetourS->m_OriginalLength;
+	return a->plhAbstractDetourS.m_OriginalLength;
 }
 
 void PLH__MyDetour__SetOriginalLength(PLH_ALL_S_t a,SIZE_T originalLength)
 {
 	if(a==0)
 		return;
-	a->plhAbstractDetourS->m_OriginalLength=originalLength;
+	a->plhAbstractDetourS.m_OriginalLength=originalLength;
 }
 
-typedef struct _PLH_X86_DETOUR_S
+csh PLH__MyDetour__GetCapstoneHandleValue(PLH_ALL_S_t a)
 {
-	
-} PLH_X86_DETOUR_S;
+	if(a==0)
+		return 0;
+	return a->plhAbstractDetourS.m_CapstoneHandle;
+}
 
-typedef struct _PLH_X64_DETOUR_S
+void PLH__MyDetour__SetCapstoneHandleValue(PLH_ALL_S_t a,csh capstoneHandle)
 {
-	
-} PLH_X64_DETOUR_S;
-
-typedef struct _PLH_MEMORY_PROTECT_S
-{
-	void* m_Address;
-	size_t m_Size;
-	DWORD m_Flags;	
-	DWORD m_OldProtection;
-} PLH_MEMORY_PROTECT_S;
-
-typedef struct _PLH_ALL_S 
-{
-	PLH_ABSTRACT_DETOUR_S plhAbstractDetourS;
-	PLH_MEMORY_PROTECT_S plhMemoryProtectS;
-	PLH_X86_DETOUR_S plhX86DetourS;
-	PLH_X64_DETOUR_S plhX64DetourS;
-	int last_error;
-} PLH_ALL_S;
+	if(a==0)
+		return;
+	a->plhAbstractDetourS.m_CapstoneHandle=capstoneHandle;
+}
 
 HANDLE PLH__MyDetour__GetCapstoneHandle(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhAbstractDetourS->m_CapstoneHandle;
+	return (HANDLE)&(a->plhAbstractDetourS.m_CapstoneHandle);
 }
 
 void PLH__MyDetour__SetCapstoneHandle(PLH_ALL_S_t a,HANDLE capstoneHandle)
 {
 	if(a==0)
 		return;
-	a->plhAbstractDetourS->m_CapstoneHandle=capstoneHandle;
+	a->plhAbstractDetourS.m_CapstoneHandle=(*((csh*)capstoneHandle));
 }
 
 x86_reg PLH__AbstractDetour__GetIpReg(PLH_ALL_S_t a)
@@ -266,7 +234,7 @@ x86_reg PLH__AbstractDetour__GetIpReg(PLH_ALL_S_t a)
 void PLH__AbstractDetour__RelocateASM(PLH_ALL_S_t a,BYTE* Code, DWORD * CodeSize, DWORD64 From, DWORD64 To)
 {
 	cs_insn* InstructionInfo;
-	size_t InstructionCount = cs_disasm(PLH__MyDetour__GetCapstoneHandle(a), Code, CodeSize, (uint64_t)Code, 0, &InstructionInfo);
+	size_t InstructionCount = cs_disasm(PLH__MyDetour__GetCapstoneHandleValue(a), Code, CodeSize, (uint64_t)Code, 0, &InstructionInfo);
 
 	//XTrace("\nTrampoline:\n");
 	int i;
@@ -290,7 +258,7 @@ void PLH__AbstractDetour__RelocateASM(PLH_ALL_S_t a,BYTE* Code, DWORD * CodeSize
 					continue;
 
 				//Are we relative to instruction pointer?
-				if (op->mem.base != PLH__AbstractDetour__GetIpReg())
+				if (op->mem.base != PLH__AbstractDetour__GetIpReg(a))
 					continue;
 
 				PLH__AbstractDetour__Relocate(a, CurIns, From, To, x86->offsets.displacement_size, x86->offsets.displacement_offset);
@@ -317,7 +285,7 @@ void PLH__AbstractDetour__RelocateASM(PLH_ALL_S_t a,BYTE* Code, DWORD * CodeSize
 	}
 
 	//XTrace("\nFixed Trampoline\n");
-	InstructionCount = cs_disasm(PLH__MyDetour__GetCapstoneHandle(a), Code, *CodeSize, (uint64_t)Code, 0, &InstructionInfo);
+	InstructionCount = cs_disasm(PLH__MyDetour__GetCapstoneHandleValue(a), Code, *CodeSize, (uint64_t)Code, 0, &InstructionInfo);
 	for (i = 0; i < InstructionCount; i++)
 	{
 		cs_insn* CurIns = (cs_insn*)&InstructionInfo[i];
@@ -355,78 +323,78 @@ void PLH__MemoryProtect__SetAddress(PLH_ALL_S_t a,void * Address)
 {
 	if(a==0)
 		return;
-	a->plhMemoryProtectS->m_Address = Address;
+	a->plhMemoryProtectS.m_Address = Address;
 }
 
 void * PLH__MemoryProtect__GetAddress(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhMemoryProtectS->m_Address;
+	return a->plhMemoryProtectS.m_Address;
 }
 
 void PLH__MemoryProtect__SetSize(PLH_ALL_S_t a,size_t size)
 {
 	if(a==0)
 		return;
-	a->plhMemoryProtectS->m_Size = size;
+	a->plhMemoryProtectS.m_Size = size;
 }
 
 size_t PLH__MemoryProtect__GetSize(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhMemoryProtectS->m_Size;
+	return a->plhMemoryProtectS.m_Size;
 }
 
 void PLH__MemoryProtect__SetFlags(PLH_ALL_S_t a,DWORD flags)
 {
 	if(a==0)
 		return;
-	a->plhMemoryProtectS->m_Flags = flags;
+	a->plhMemoryProtectS.m_Flags = flags;
 }
 
 DWORD PLH__MemoryProtect__GetFlags(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhMemoryProtectS->m_Flags;
+	return a->plhMemoryProtectS.m_Flags;
 }
 
 void PLH__MemoryProtect__SetOldProtection(PLH_ALL_S_t a,DWORD oldProtection)
 {
 	if(a==0)
 		return;
-	a->plhMemoryProtectS->m_OldProtection = oldProtection;
+	a->plhMemoryProtectS.m_OldProtection = oldProtection;
 }
 
 DWORD PLH__MemoryProtect__GetOldProtection(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return a->plhMemoryProtectS->m_OldProtection;
+	return a->plhMemoryProtectS.m_OldProtection;
 }
 
 void PLH__MemoryProtect__init(PLH_ALL_S_t a,void* Address, size_t Size, DWORD ProtectionFlags)
 {
 	if(a==0)
 		return;
-	a->plhMemoryProtectS->m_Address = Address;
-	a->plhMemoryProtectS->m_Size = Size;
-	a->plhMemoryProtectS->m_Flags = ProtectionFlags;
-	PLH__MemoryProtect__Protect(a->plhMemoryProtectS->m_Address, a->plhMemoryProtectS->m_Size, a->plhMemoryProtectS->m_Flags);
+	a->plhMemoryProtectS.m_Address = Address;
+	a->plhMemoryProtectS.m_Size = Size;
+	a->plhMemoryProtectS.m_Flags = ProtectionFlags;
+	PLH__MemoryProtect__Protect(a,a->plhMemoryProtectS.m_Address, a->plhMemoryProtectS.m_Size, a->plhMemoryProtectS.m_Flags);
 }
 
 BOOL PLH__MemoryProtect__Protect(PLH_ALL_S_t a,void* Address, size_t Size, DWORD ProtectionFlags)
 {
-	return VirtualProtect(Address, Size, ProtectionFlags, &(a->plhMemoryProtectS->m_OldProtection));
+	return VirtualProtect(Address, Size, ProtectionFlags, &(a->plhMemoryProtectS.m_OldProtection));
 }
 
 PLH__MemoryProtect__deinit(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return;
-	PLH__MemoryProtect__Protect(a,a->plhMemoryProtectS->m_Address,a->plhMemoryProtectS->m_Size, a->plhMemoryProtectS->m_OldProtection);
+	PLH__MemoryProtect__Protect(a,a->plhMemoryProtectS.m_Address,a->plhMemoryProtectS.m_Size, a->plhMemoryProtectS.m_OldProtection);
 }
 
 void PLH__AbstractDetour__Initialize(PLH_ALL_S_t a,cs_mode Mode)
@@ -434,7 +402,7 @@ void PLH__AbstractDetour__Initialize(PLH_ALL_S_t a,cs_mode Mode)
 	if(a==0)
 		return;
 	a->last_error=0;
-	if ((a->last_error = cs_open(CS_ARCH_X86, Mode, &(PLH__MyDetour__GetCapstoneHandle(a)))) != CS_ERR_OK)
+	if ((a->last_error = cs_open(CS_ARCH_X86, Mode, ((csh*)(PLH__MyDetour__GetCapstoneHandle(a))))) != CS_ERR_OK)
 	{	
 		
 		return;
@@ -448,13 +416,14 @@ DWORD PLH__AbstractDetour__CalculateLength(PLH_ALL_S_t a,BYTE* Src, DWORD Needed
 {
 	//Grab First 100 bytes of function, disasm until invalid instruction
 	cs_insn* InstructionInfo;
-	size_t InstructionCount = cs_disasm(PLH__MyDetour__GetCapstoneHandle(a), Src, 0x100, (uint64_t)Src, 0, &InstructionInfo);
+	size_t InstructionCount = cs_disasm(PLH__MyDetour__GetCapstoneHandleValue(a), Src, 0x100, (uint64_t)Src, 0, &InstructionInfo);
 
 	//Loop over instructions until we have at least NeededLength's Size
 	//XTrace("\nORIGINAL:\n");
 	DWORD InstructionSize = 0;
 	bool BigEnough = false;
-	for (int i = 0; i < InstructionCount && !BigEnough; i++)
+	int i;
+	for (i = 0; i < InstructionCount && !BigEnough; i++)
 	{
 		cs_insn* CurIns = (cs_insn*)&InstructionInfo[i];
 		InstructionSize += CurIns->size;
@@ -603,7 +572,7 @@ PLH__AbstractDetour__init(PLH_ALL_S_t a)
 
 PLH__AbstractDetour__deinit(PLH_ALL_S_t a)
 {
-	cs_close(&(PLH__MyDetour__GetCapstoneHandle(a)));
+	cs_close(((csh*)(PLH__MyDetour__GetCapstoneHandle(a))));
 }
 
 void PLH__MyDetour__init(PLH_ALL_S_t a)
@@ -637,7 +606,7 @@ void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To)
 	PLH__X86Detour__WriteRelativeJMP(a, From, To);
 }
 
-int PLH__X86Detour__GetJMPSize()
+int PLH__X86Detour__GetJMPSize(PLH_ALL_S_t a)
 {
 	return 5;
 }
@@ -654,7 +623,7 @@ void PLH__X86Detour__deinit(PLH_ALL_S_t a)
 
 PLH__ASMHelper__HookType PLH__X86Detour__GetType(PLH_ALL_S_t a)
 {
-	return PLH__ASMHelper__HookType::X86Detour;
+	return X86Detour;
 }
 
 BOOL PLH__X86Detour__Hook(PLH_ALL_S_t a)
@@ -663,7 +632,7 @@ BOOL PLH__X86Detour__Hook(PLH_ALL_S_t a)
 		return FALSE;
 	DWORD OldProtection;
 
-	PLH__MyDetour__SetHkLength(a, PLH__AbstractDetour__CalculateLength(PLH__MyDetour__GetHkSrc(a), 5));
+	PLH__MyDetour__SetHkLength(a, PLH__AbstractDetour__CalculateLength(a,PLH__MyDetour__GetHkSrc(a), 5));
 	PLH__MyDetour__SetOriginalLength(a,PLH__MyDetour__GetHkLength(a));
 	if (PLH__MyDetour__GetHkLength(a) == 0)
 	{
@@ -673,11 +642,12 @@ BOOL PLH__X86Detour__Hook(PLH_ALL_S_t a)
     
 	PLH__MyDetour__SetTrampoline(a,(BYTE*)malloc(((PLH__MyDetour__GetHkLength(a)) + 30)));   //Allocate Space for original plus extra to jump back and for jmp table
 	PLH__MyDetour__SetNeedFree(a,TRUE);
-	VirtualProtect(PLH__MyDetour__GetTrampoline(a), ((PLH__MyDetour__GetHkLength(a)) + 5), PAGE_EXECUTE_READWRITE, &(a->plhMemoryProtectS->m_OldProtection)); //Allow Execution
+	VirtualProtect(PLH__MyDetour__GetTrampoline(a), ((PLH__MyDetour__GetHkLength(a)) + 5), PAGE_EXECUTE_READWRITE, &(a->plhMemoryProtectS.m_OldProtection)); //Allow Execution
 	
 	memcpy(PLH__MyDetour__GetOriginalCode(a), PLH__MyDetour__GetHkSrc(a), PLH__MyDetour__GetHkLength(a));
 	memcpy(PLH__MyDetour__GetTrampoline(a), PLH__MyDetour__GetHkSrc(a), PLH__MyDetour__GetHkLength(a)); //Copy original into allocated space
-	PLH__X86Detour__RelocateASM(a,PLH__MyDetour__GetTrampoline(a), &(PLH__MyDetour__GetHkLength(a)), (DWORD)PLH__MyDetour__GetHkSrc(a), (DWORD)PLH__MyDetour__GetTrampoline(a));
+	DWORD CodeSize = PLH__MyDetour__GetHkLength(a);
+	PLH__X86Detour__RelocateASM(a,PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD)PLH__MyDetour__GetHkSrc(a), (DWORD)PLH__MyDetour__GetTrampoline(a));
 	PLH__X86Detour__WriteRelativeJMP(a,(DWORD)&((PLH__MyDetour__GetTrampoline(a))[(PLH__MyDetour__GetHkLength(a))]), (DWORD)((PLH__MyDetour__GetHkSrc(a)) + (PLH__MyDetour__GetHkLength(a)))); //JMP back to original code
 
 	//Change protection to allow write on original function
@@ -729,12 +699,6 @@ void PLH__X86Detour__FreeTrampoline(PLH_ALL_S_t a)
 	}
 }
 
-void PLH__X86Detour__WriteRelativeJMP(PLH_ALL_S_t a,DWORD Destination, DWORD JMPDestination)
-{
-	*(BYTE*)Destination = 0xE9;       //Write jump opcode to jump back to non overwritten code
-	*(long*)(Destination + 1) = PLH__X86Detour__CalculateRelativeDisplacement_long(a,Destination, JMPDestination, 5);
-}
-
 void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To)
 {
 	PLH__X86Detour__WriteRelativeJMP(a,From, To);
@@ -757,7 +721,7 @@ void PLH__X64Detour__deinit(PLH_ALL_S_t a)
 
 PLH__ASMHelper__HookType PLH__X64Detour__GetType()
 {
-	return PLH__ASMHelper__HookType::X64Detour;
+	return X64Detour;
 }
 
 BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)

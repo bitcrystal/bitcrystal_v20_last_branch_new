@@ -14,15 +14,12 @@ Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bit
 Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\CommonMapping.o
 Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\CommonMCTargetDesc.o
 Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\CommonModule.o
-Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\convert_functions.o
 Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\cs.o
 Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\ioapi.o
 Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\iowin32.o
 Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\MCInst.o
 Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\MCInstrDesc.o
 Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\MCRegisterInfo.o
-Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\miniunz.o
-Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\minizip.o
 Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\mztools.o
 Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\SStream.o
 Datei wurde gel”scht - C:\my\ddd\BitCrystal\BitCrystal\bitcrystal_new_master\bitcrystal_v20\build_win32_objects\unzip.o

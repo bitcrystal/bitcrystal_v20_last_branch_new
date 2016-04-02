@@ -84,6 +84,27 @@ src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:14
   #define WIN32
  ^
 <command-line>:0:0: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
+  #define __i386__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:148:0: warning: "_WIN32" redefined
+  #define _WIN32
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:149:0: warning: "WIN32" redefined
+  #define WIN32
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
 In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
                  from src/functions_hook/polyhook_lib/Capstone/cs_priv.h:7,
@@ -124,48 +145,6 @@ src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:14
  ^
 <command-line>:0:0: note: this is the location of the previous definition
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
-  #define __i386__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:148:0: warning: "_WIN32" redefined
-  #define _WIN32
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:149:0: warning: "WIN32" redefined
-  #define WIN32
- ^
-<command-line>:0:0: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
-  #define __i386__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:148:0: warning: "_WIN32" redefined
-  #define _WIN32
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:149:0: warning: "WIN32" redefined
-  #define WIN32
- ^
-<command-line>:0:0: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.h:1,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c:1:
 src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
@@ -208,6 +187,27 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
  ^
 <command-line>:0:0: note: this is the location of the previous definition
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
+  #define __i386__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:148:0: warning: "_WIN32" redefined
+  #define _WIN32
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:149:0: warning: "WIN32" redefined
+  #define WIN32
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonInstPrinter.h:1,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonInstPrinter.c:1:
 src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:147:0: warning: "__i386__" redefined
@@ -228,17 +228,17 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
   #define WIN32
  ^
 <command-line>:0:0: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:15:0:
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Disassembler.c: In function 'X86_getInstruction':
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Disassembler.c:784:58: warning: unused parameter '_info' [-Wunused-parameter]
-   MCInst *instr, uint16_t *size, uint64_t address, void *_info)
-                                                          ^
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/X86/X86ATTInstPrinter.c:766:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonATTInstPrinter.c:15:
 src/functions_hook/polyhook_lib/Capstone/arch/X86/X86GenAsmWriter.inc: In function 'printInstruction':
 src/functions_hook/polyhook_lib/Capstone/arch/X86/X86GenAsmWriter.inc:14:70: warning: unused parameter 'MRI' [-Wunused-parameter]
  static void printInstruction(MCInst *MI, SStream *O, MCRegisterInfo *MRI)
                                                                       ^
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:15:0:
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Disassembler.c: In function 'X86_getInstruction':
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Disassembler.c:786:58: warning: unused parameter '_info' [-Wunused-parameter]
+   MCInst *instr, uint16_t *size, uint64_t address, void *_info)
+                                                          ^
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonIntelInstPrinter.h:1,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonIntelInstPrinter.c:1:
@@ -287,15 +287,6 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
   #define WIN32
  ^
 <command-line>:0:0: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/CommonMapping.c:15:0:
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Mapping.c: In function 'X86_insn_name':
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Mapping.c:2115:31: warning: unused parameter 'handle' [-Wunused-parameter]
- const char *X86_insn_name(csh handle, unsigned int id)
-                               ^
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Mapping.c: In function 'X86_group_name':
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Mapping.c:2182:32: warning: unused parameter 'handle' [-Wunused-parameter]
- const char *X86_group_name(csh handle, unsigned int id)
-                                ^
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.h:1,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c:1:
@@ -317,6 +308,15 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
   #define WIN32
  ^
 <command-line>:0:0: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/CommonMapping.c:15:0:
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Mapping.c: In function 'X86_insn_name':
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Mapping.c:2115:31: warning: unused parameter 'handle' [-Wunused-parameter]
+ const char *X86_insn_name(csh handle, unsigned int id)
+                               ^
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Mapping.c: In function 'X86_group_name':
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Mapping.c:2182:32: warning: unused parameter 'handle' [-Wunused-parameter]
+ const char *X86_group_name(csh handle, unsigned int id)
+                                ^
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.h:1,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c:1:
@@ -385,329 +385,6 @@ src/functions_hook/subhook/my_predef.h:149:0: warning: "WIN32" redefined
   #define WIN32
  ^
 <command-line>:0:0: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:8:0,
-                 from src/functions_hook/mhook.h:31,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:266:1: error: unknown type name 'BOOL'
- BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect);
- ^
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:266:13: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'VirtualProtect'
- BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect);
-             ^
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:267:1: error: unknown type name 'SIZE_T'
- SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
- ^
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:267:15: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'VirtualQuery'
- SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
-               ^
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:268:1: error: unknown type name 'LPVOID'
- LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect);
- ^
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:268:15: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'VirtualAlloc'
- LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect);
-               ^
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:269:1: error: unknown type name 'BOOL'
- BOOL WINAPI VirtualFree(lpAddress,SIZE_T dwSize,DWORD dwFreeType);
- ^
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:269:13: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'VirtualFree'
- BOOL WINAPI VirtualFree(lpAddress,SIZE_T dwSize,DWORD dwFreeType);
-             ^
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:270:1: error: unknown type name 'BOOL'
- BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_T  dwSize);
- ^
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:270:13: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'FlushInstructionCache'
- BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_T  dwSize);
-             ^
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:271:1: error: unknown type name 'HANDLE'
- HANDLE WINAPI GetCurrentProcess();
- ^
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:271:15: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'GetCurrentProcess'
- HANDLE WINAPI GetCurrentProcess();
-               ^
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:295:2: error: #endif without #if
- #endif
-  ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:20:2: error: unknown type name 'HANDLE'
-  HANDLE m_CapstoneHandle;
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:21:2: error: unknown type name 'BYTE'
-  BYTE * m_hkSrc;
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:22:2: error: unknown type name 'BYTE'
-  BYTE * m_hkDst;
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:23:2: error: unknown type name 'BYTE'
-  BYTE * m_Trampoline;
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:24:2: error: unknown type name 'BYTE'
-  BYTE * m_OriginalCode;
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:25:2: error: unknown type name 'SIZE_T'
-  SIZE_T m_hkLength;
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:26:2: error: unknown type name 'BOOL'
-  BOOL m_NeedFree;
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:45:2: error: unknown type name 'DWORD'
-  DWORD m_Flags; 
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:46:2: error: unknown type name 'DWORD'
-  DWORD m_OldProtection;
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:60:1: error: unknown type name 'BOOL'
- BOOL PLH_ALL_S_t_delete(PLH_ALL_S_t p);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:64:1: error: unknown type name 'BOOL'
- BOOL PLH__ASMHelper__IsConditionalJump(PLH_ALL_S_t a, const BYTE* bytes,const uint16_t Size);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:64:61: error: unknown type name 'BYTE'
- BOOL PLH__ASMHelper__IsConditionalJump(PLH_ALL_S_t a, const BYTE* bytes,const uint16_t Size);
-                                                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:66:63: error: unknown type name 'BYTE'
- int8_t PLH__ASMHelper__GetDisplacement__int8_t(PLH_ALL_S_t a, BYTE* Instruction, const uint32_t Offset);
-                                                               ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:68:65: error: unknown type name 'BYTE'
- int16_t PLH__ASMHelper__GetDisplacement__int16_t(PLH_ALL_S_t a, BYTE* Instruction, const uint32_t Offset);
-                                                                 ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:70:65: error: unknown type name 'BYTE'
- int32_t PLH__ASMHelper__GetDisplacement__int32_t(PLH_ALL_S_t a, BYTE* Instruction, const uint32_t Offset);
-                                                                 ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:72:1: error: unknown type name 'BOOL'
- BOOL PLH__MyDetour__GetNeedFree(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:74:47: error: unknown type name 'BOOL'
- void PLH__MyDetour__SetNeedFree(PLH_ALL_S_t a,BOOL needFree);
-                                               ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:80:1: error: unknown type name 'BYTE'
- BYTE * PLH__MyDetour__GetTrampoline(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:82:49: error: unknown type name 'BYTE'
- void PLH__MyDetour__SetTrampoline(PLH_ALL_S_t a,BYTE*trampoline);
-                                                 ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:84:1: error: unknown type name 'BYTE'
- BYTE * PLH__MyDetour__GetOriginalCode(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:86:51: error: unknown type name 'BYTE'
- void PLH__MyDetour__SetOriginalCode(PLH_ALL_S_t a,BYTE*originalcode);
-                                                   ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:88:1: error: unknown type name 'BYTE'
- BYTE * PLH__MyDetour__GetHkSrc(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:90:44: error: unknown type name 'BYTE'
- void PLH__MyDetour__SetHkSrc(PLH_ALL_S_t a,BYTE*hkSrc);
-                                            ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:92:1: error: unknown type name 'BYTE'
- BYTE * PLH__MyDetour__GetHkDst(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:94:44: error: unknown type name 'BYTE'
- void PLH__MyDetour__SetHkDst(PLH_ALL_S_t a,BYTE*hkDst);
-                                            ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:96:1: error: unknown type name 'SIZE_T'
- SIZE_T PLH__MyDetour__GetHkLength(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:98:47: error: unknown type name 'SIZE_T'
- void PLH__MyDetour__SetHkLength(PLH_ALL_S_t a,SIZE_T hkLength);
-                                               ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:100:1: error: unknown type name 'SIZE_T'
- SIZE_T PLH__MyDetour__GetOriginalLength(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:102:53: error: unknown type name 'SIZE_T'
- void PLH__MyDetour__SetOriginalLength(PLH_ALL_S_t a,SIZE_T originalLength);
-                                                     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:104:1: error: unknown type name 'HANDLE'
- HANDLE PLH__MyDetour__GetCapstoneHandle(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:106:53: error: unknown type name 'HANDLE'
- void PLH__MyDetour__SetCapstoneHandle(PLH_ALL_S_t a,HANDLE capstoneHandle);
-                                                     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:110:53: error: unknown type name 'BYTE'
- void PLH__AbstractDetour__RelocateASM(PLH_ALL_S_t a,BYTE* Code, DWORD& CodeSize, DWORD64 From, DWORD64 To);
-                                                     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:110:65: error: unknown type name 'DWORD'
- void PLH__AbstractDetour__RelocateASM(PLH_ALL_S_t a,BYTE* Code, DWORD& CodeSize, DWORD64 From, DWORD64 To);
-                                                                 ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:110:82: error: unknown type name 'DWORD64'
- void PLH__AbstractDetour__RelocateASM(PLH_ALL_S_t a,BYTE* Code, DWORD& CodeSize, DWORD64 From, DWORD64 To);
-                                                                                  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:110:96: error: unknown type name 'DWORD64'
- void PLH__AbstractDetour__RelocateASM(PLH_ALL_S_t a,BYTE* Code, DWORD& CodeSize, DWORD64 From, DWORD64 To);
-                                                                                                ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:112:67: error: unknown type name 'DWORD64'
- void PLH__AbstractDetour__Relocate(PLH_ALL_S_t a,cs_insn* CurIns, DWORD64 From, DWORD64 To, const uint8_t DispSize, const uint8_t DispOffset);
-                                                                   ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:112:81: error: unknown type name 'DWORD64'
- void PLH__AbstractDetour__Relocate(PLH_ALL_S_t a,cs_insn* CurIns, DWORD64 From, DWORD64 To, const uint8_t DispSize, const uint8_t DispOffset);
-                                                                                 ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:122:49: error: unknown type name 'DWORD'
- void PLH__MemoryProtect__SetFlags(PLH_ALL_S_t a,DWORD flags);
-                                                 ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:124:1: error: unknown type name 'DWORD'
- DWORD PLH__MemoryProtect__GetFlags(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:126:57: error: unknown type name 'DWORD'
- void PLH__MemoryProtect__SetOldProtection(PLH_ALL_S_t a,DWORD oldProtection);
-                                                         ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:128:1: error: unknown type name 'DWORD'
- DWORD PLH__MemoryProtect__GetOldProtection(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:130:73: error: unknown type name 'DWORD'
- void PLH__MemoryProtect__init(PLH_ALL_S_t a,void* Address, size_t Size, DWORD ProtectionFlags);
-                                                                         ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:132:1: error: unknown type name 'BOOL'
- BOOL PLH__MemoryProtect__Protect(PLH_ALL_S_t a,void* Address, size_t Size, DWORD ProtectionFlags);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:132:76: error: unknown type name 'DWORD'
- BOOL PLH__MemoryProtect__Protect(PLH_ALL_S_t a,void* Address, size_t Size, DWORD ProtectionFlags);
-                                                                            ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:134:1: warning: data definition has no type or storage class
- PLH__MemoryProtect__deinit(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:134:1: warning: type defaults to 'int' in declaration of 'PLH__MemoryProtect__deinit' [-Wimplicit-int]
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:138:1: error: unknown type name 'DWORD'
- DWORD PLH__AbstractDetour__CalculateLength(PLH_ALL_S_t a,BYTE* Src, DWORD NeededLength);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:138:58: error: unknown type name 'BYTE'
- DWORD PLH__AbstractDetour__CalculateLength(PLH_ALL_S_t a,BYTE* Src, DWORD NeededLength);
-                                                          ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:138:69: error: unknown type name 'DWORD'
- DWORD PLH__AbstractDetour__CalculateLength(PLH_ALL_S_t a,BYTE* Src, DWORD NeededLength);
-                                                                     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:140:77: error: unknown type name 'DWORD64'
- long PLH__AbstractDetour__CalculateRelativeDisplacement__long(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
-                                                                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:140:91: error: unknown type name 'DWORD64'
- long PLH__AbstractDetour__CalculateRelativeDisplacement__long(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
-                                                                                           ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:140:103: error: unknown type name 'DWORD'
- long PLH__AbstractDetour__CalculateRelativeDisplacement__long(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
-                                                                                                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:142:81: error: unknown type name 'DWORD64'
- int8_t PLH__AbstractDetour__CalculateRelativeDisplacement__int8_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
-                                                                                 ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:142:95: error: unknown type name 'DWORD64'
- int8_t PLH__AbstractDetour__CalculateRelativeDisplacement__int8_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
-                                                                                               ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:142:107: error: unknown type name 'DWORD'
- int8_t PLH__AbstractDetour__CalculateRelativeDisplacement__int8_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
-                                                                                                           ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:144:83: error: unknown type name 'DWORD64'
- int16_t PLH__AbstractDetour__CalculateRelativeDisplacement__int16_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
-                                                                                   ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:144:97: error: unknown type name 'DWORD64'
- int16_t PLH__AbstractDetour__CalculateRelativeDisplacement__int16_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
-                                                                                                 ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:144:109: error: unknown type name 'DWORD'
- int16_t PLH__AbstractDetour__CalculateRelativeDisplacement__int16_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
-                                                                                                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:146:83: error: unknown type name 'DWORD64'
- int32_t PLH__AbstractDetour__CalculateRelativeDisplacement__int32_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
-                                                                                   ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:146:97: error: unknown type name 'DWORD64'
- int32_t PLH__AbstractDetour__CalculateRelativeDisplacement__int32_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
-                                                                                                 ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:146:109: error: unknown type name 'DWORD'
- int32_t PLH__AbstractDetour__CalculateRelativeDisplacement__int32_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
-                                                                                                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:148:50: error: unknown type name 'DWORD_PTR'
- void PLH__AbstractDetour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To);
-                                                  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:148:66: error: unknown type name 'DWORD_PTR'
- void PLH__AbstractDetour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To);
-                                                                  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:152:81: error: unknown type name 'DWORD'
- void PLH__AbstractDetour__RelocateConditionalJMP(PLH_ALL_S_t a,cs_insn* CurIns, DWORD& CodeSize, DWORD64 From, DWORD64 To, const uint8_t DispSize, const uint8_t DispOffset);
-                                                                                 ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:152:98: error: unknown type name 'DWORD64'
- void PLH__AbstractDetour__RelocateConditionalJMP(PLH_ALL_S_t a,cs_insn* CurIns, DWORD& CodeSize, DWORD64 From, DWORD64 To, const uint8_t DispSize, const uint8_t DispOffset);
-                                                                                                  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:152:112: error: unknown type name 'DWORD64'
- void PLH__AbstractDetour__RelocateConditionalJMP(PLH_ALL_S_t a,cs_insn* CurIns, DWORD& CodeSize, DWORD64 From, DWORD64 To, const uint8_t DispSize, const uint8_t DispOffset);
-                                                                                                                ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:154:51: error: unknown type name 'BYTE'
- void PLH__AbstractDetour__SetupHook(PLH_ALL_S_t a,BYTE* Src, BYTE* Dest);
-                                                   ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:154:62: error: unknown type name 'BYTE'
- void PLH__AbstractDetour__SetupHook(PLH_ALL_S_t a,BYTE* Src, BYTE* Dest);
-                                                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:160:1: error: unknown type name 'BOOL'
- BOOL PLH__AbstractDetour__Hook(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:164:1: warning: data definition has no type or storage class
- PLH__AbstractDetour__init(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:164:1: warning: type defaults to 'int' in declaration of 'PLH__AbstractDetour__init' [-Wimplicit-int]
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:166:1: warning: data definition has no type or storage class
- PLH__AbstractDetour__deinit(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:166:1: warning: type defaults to 'int' in declaration of 'PLH__AbstractDetour__deinit' [-Wimplicit-int]
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:172:53: error: unknown type name 'DWORD'
- void PLH__X86Detour__WriteRelativeJMP(PLH_ALL_S_t a,DWORD Destination, DWORD JMPDestination);
-                                                     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:172:72: error: unknown type name 'DWORD'
- void PLH__X86Detour__WriteRelativeJMP(PLH_ALL_S_t a,DWORD Destination, DWORD JMPDestination);
-                                                                        ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:174:45: error: unknown type name 'DWORD_PTR'
- void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To);
-                                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:174:61: error: unknown type name 'DWORD_PTR'
- void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To);
-                                                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:184:1: error: unknown type name 'BOOL'
- BOOL PLH__X86Detour__Hook(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:190:53: error: unknown type name 'DWORD'
- void PLH__X86Detour__WriteRelativeJMP(PLH_ALL_S_t a,DWORD Destination, DWORD JMPDestination);
-                                                     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:190:72: error: unknown type name 'DWORD'
- void PLH__X86Detour__WriteRelativeJMP(PLH_ALL_S_t a,DWORD Destination, DWORD JMPDestination);
-                                                                        ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:192:45: error: unknown type name 'DWORD_PTR'
- void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To);
-                                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:192:61: error: unknown type name 'DWORD_PTR'
- void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To);
-                                                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:202:1: error: unknown type name 'BOOL'
- BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a);
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:208:53: error: unknown type name 'DWORD64'
- void PLH__X64Detour__WriteAbsoluteJMP(PLH_ALL_S_t a,DWORD64 Destination, DWORD64 JMPDestination);
-                                                     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:208:74: error: unknown type name 'DWORD64'
- void PLH__X64Detour__WriteAbsoluteJMP(PLH_ALL_S_t a,DWORD64 Destination, DWORD64 JMPDestination);
-                                                                          ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:210:45: error: unknown type name 'DWORD_PTR'
- void PLH__X64Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To);
-                                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:210:61: error: unknown type name 'DWORD_PTR'
- void PLH__X64Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To);
-                                                             ^
-In file included from src/functions_hook/mhook.c:1:0:
-src/functions_hook/mhook.h:35:3: error: unknown type name 'BOOL'
-   BOOL mhooks_bool_init = FALSE;
-   ^
-src/functions_hook/mhook.h:35:27: error: 'FALSE' undeclared here (not in a function)
-   BOOL mhooks_bool_init = FALSE;
-                           ^
-src/functions_hook/mhook.h:39:2: error: unknown type name 'BOOL'
-  BOOL Mhook_SetHookEx(PVOID ppSystemFunction, PVOID pHookFunction);
-  ^
-src/functions_hook/mhook.h:39:23: error: unknown type name 'PVOID'
-  BOOL Mhook_SetHookEx(PVOID ppSystemFunction, PVOID pHookFunction);
-                       ^
-src/functions_hook/mhook.h:39:47: error: unknown type name 'PVOID'
-  BOOL Mhook_SetHookEx(PVOID ppSystemFunction, PVOID pHookFunction);
-                                               ^
-src/functions_hook/mhook.h:40:2: error: unknown type name 'BOOL'
-  BOOL Mhook_UnhookEx(PVOID ppHookedFunction);
-  ^
-src/functions_hook/mhook.h:40:22: error: unknown type name 'PVOID'
-  BOOL Mhook_UnhookEx(PVOID ppHookedFunction);
-                      ^
 src/minizip/ioapi.c: In function 'fopen_file_func':
 src/minizip/ioapi.c:69:11: warning: unused parameter 'opaque' [-Wunused-parameter]
     voidpf opaque;
@@ -736,59 +413,25 @@ src/minizip/ioapi.c: In function 'ferror_file_func':
 src/minizip/ioapi.c:158:11: warning: unused parameter 'opaque' [-Wunused-parameter]
     voidpf opaque;
            ^
-In file included from src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.c:3:0,
-                 from src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:2,
-                 from src/functions_hook/mhook.c:128:
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:277:16: error: redefinition of 'struct _vma_it_func'
- typedef struct _vma_it_func
-                ^
-In file included from src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:8:0,
-                 from src/functions_hook/mhook.h:31,
+In file included from src/functions_hook/mhook.h:31:0,
                  from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:277:16: note: originally defined here
- typedef struct _vma_it_func
-                ^
-In file included from src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.c:3:0,
-                 from src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:2,
-                 from src/functions_hook/mhook.c:128:
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:292:3: error: conflicting types for 'vma_it_func'
- } vma_it_func;
-   ^
-In file included from src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:8:0,
-                 from src/functions_hook/mhook.h:31,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:292:3: note: previous declaration of 'vma_it_func' was here
- } vma_it_func;
-   ^
-In file included from src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.c:3:0,
-                 from src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:2,
-                 from src/functions_hook/mhook.c:128:
-src/functions_hook/polyhook_lib/PolyHook/../../subhook/windows_defs.h:295:2: error: #endif without #if
- #endif
-  ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:139:1: warning: data definition has no type or storage class
+ PLH__MemoryProtect__deinit(PLH_ALL_S_t a);
+ ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:139:1: warning: type defaults to 'int' in declaration of 'PLH__MemoryProtect__deinit' [-Wimplicit-int]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:169:1: warning: data definition has no type or storage class
+ PLH__AbstractDetour__init(PLH_ALL_S_t a);
+ ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:169:1: warning: type defaults to 'int' in declaration of 'PLH__AbstractDetour__init' [-Wimplicit-int]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:171:1: warning: data definition has no type or storage class
+ PLH__AbstractDetour__deinit(PLH_ALL_S_t a);
+ ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:171:1: warning: type defaults to 'int' in declaration of 'PLH__AbstractDetour__deinit' [-Wimplicit-int]
 In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__ALL_S_t_new':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:12:10: error: 'PLL_ALL_S_t' undeclared (first use in this function)
-  return (PLL_ALL_S_t)t;
-          ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:12:10: note: each undeclared identifier is reported only once for each function it appears in
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:12:22: error: expected ';' before 't'
-  return (PLL_ALL_S_t)t;
-                      ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__ASMHelper__GetDisplacementType':
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:22:56: warning: unused parameter 'a' [-Wunused-parameter]
  int8_t PLH__ASMHelper__GetDisplacementType(PLH_ALL_S_t a, const uint8_t DispVal)
                                                         ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:39:6: error: conflicting types for 'PLH__ASMHelper__IsConditionalJump'
- BOOL PLH__ASMHelper__IsConditionalJump(PLH_ALL_S_t a, const BYTE* bytes,const uint16_t Size)
-      ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:64:6: note: previous declaration of 'PLH__ASMHelper__IsConditionalJump' was here
- BOOL PLH__ASMHelper__IsConditionalJump(PLH_ALL_S_t a, const BYTE* bytes,const uint16_t Size);
-      ^
-In file included from src/functions_hook/mhook.c:128:0:
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__ASMHelper__IsConditionalJump':
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:39:52: warning: unused parameter 'a' [-Wunused-parameter]
  BOOL PLH__ASMHelper__IsConditionalJump(PLH_ALL_S_t a, const BYTE* bytes,const uint16_t Size)
@@ -805,400 +448,61 @@ src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH_
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:76:62: warning: unused parameter 'a' [-Wunused-parameter]
  int32_t PLH__ASMHelper__GetDisplacement__int32_t(PLH_ALL_S_t a, BYTE* Instruction, const uint32_t Offset)
                                                               ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:84:14: error: nested redefinition of 'enum _PLH__ASMHelper__HookType'
- typedef enum _PLH__ASMHelper__HookType
-              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:84:14: error: redeclaration of 'enum _PLH__ASMHelper__HookType'
-In file included from src/functions_hook/mhook.h:31:0,
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__RelocateASM':
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:237:96: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  size_t InstructionCount = cs_disasm(PLH__MyDetour__GetCapstoneHandleValue(a), Code, CodeSize, (uint64_t)Code, 0, &InstructionInfo);
+                                                                                                ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:237:28: warning: passing argument 3 of 'cs_disasm' makes integer from pointer without a cast
+  size_t InstructionCount = cs_disasm(PLH__MyDetour__GetCapstoneHandleValue(a), Code, CodeSize, (uint64_t)Code, 0, &InstructionInfo);
+                            ^
+In file included from src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:9:0,
+                 from src/functions_hook/mhook.h:31,
                  from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:11:14: note: originally defined here
- typedef enum _PLH__ASMHelper__HookType
-              ^
+src/functions_hook/polyhook_lib/PolyHook/../Capstone/include/Capstone.h:445:8: note: expected 'size_t' but argument is of type 'DWORD *'
+ size_t cs_disasm(csh handle,
+        ^
 In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:86:2: error: redeclaration of enumerator 'X86Detour'
-  X86Detour,
-  ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:13:2: note: previous definition of 'X86Detour' was here
-  X86Detour,
-  ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:87:2: error: redeclaration of enumerator 'X64Detour'
-  X64Detour,
-  ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:14:2: note: previous definition of 'X64Detour' was here
-  X64Detour,
-  ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:88:2: error: redeclaration of enumerator 'UNKNOWN'
-  UNKNOWN
-  ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:15:2: note: previous definition of 'UNKNOWN' was here
-  UNKNOWN
-  ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:91:16: error: redefinition of 'struct _PLH_ABSTRACT_DETOUR_S'
- typedef struct _PLH_ABSTRACT_DETOUR_S
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:242:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i = 0; i < InstructionCount; i++)
                 ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:18:16: note: originally defined here
- typedef struct _PLH_ABSTRACT_DETOUR_S
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:288:90: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  InstructionCount = cs_disasm(PLH__MyDetour__GetCapstoneHandleValue(a), Code, *CodeSize, (uint64_t)Code, 0, &InstructionInfo);
+                                                                                          ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:289:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i = 0; i < InstructionCount; i++)
                 ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:101:3: error: conflicting types for 'PLH_ABSTRACT_DETOUR_S'
- } PLH_ABSTRACT_DETOUR_S;
-   ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:28:3: note: previous declaration of 'PLH_ABSTRACT_DETOUR_S' was here
- } PLH_ABSTRACT_DETOUR_S;
-   ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetNeedFree':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:107:30: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  return a->plhAbstractDetourS->m_NeedFree;
-                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__SetNeedFree':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:114:23: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  a->plhAbstractDetourS->m_NeedFree=needFree;
-                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__SetHookType':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:121:23: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  a->plhAbstractDetourS->plhAsmHelperHookType=hookType;
-                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetHookType':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:128:30: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  return a->plhAbstractDetourS->plhAsmHelperHookType;
-                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:131:8: error: conflicting types for 'PLH__MyDetour__GetTrampoline'
- BYTE * PLH__MyDetour__GetTrampoline(PLH_ALL_S_t a)
-        ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:80:8: note: previous declaration of 'PLH__MyDetour__GetTrampoline' was here
- BYTE * PLH__MyDetour__GetTrampoline(PLH_ALL_S_t a);
-        ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetTrampoline':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:135:30: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  return a->plhAbstractDetourS->m_Trampoline;
-                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__SetTrampoline':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:142:23: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  a->plhAbstractDetourS->m_Trampoline=trampoline;
-                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:146:8: error: conflicting types for 'PLH__MyDetour__GetOriginalCode'
- BYTE * PLH__MyDetour__GetOriginalCode(PLH_ALL_S_t a)
-        ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:84:8: note: previous declaration of 'PLH__MyDetour__GetOriginalCode' was here
- BYTE * PLH__MyDetour__GetOriginalCode(PLH_ALL_S_t a);
-        ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetOriginalCode':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:150:30: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  return a->plhAbstractDetourS->m_OriginalCode;
-                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__SetOriginalCode':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:157:23: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  a->plhAbstractDetourS->m_OriginalCode=originalcode;
-                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:160:8: error: conflicting types for 'PLH__MyDetour__GetHkSrc'
- BYTE * PLH__MyDetour__GetHkSrc(PLH_ALL_S_t a)
-        ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:88:8: note: previous declaration of 'PLH__MyDetour__GetHkSrc' was here
- BYTE * PLH__MyDetour__GetHkSrc(PLH_ALL_S_t a);
-        ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetHkSrc':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:164:30: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  return a->plhAbstractDetourS->m_hkSrc;
-                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__SetHkSrc':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:171:23: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  a->plhAbstractDetourS->m_hkSrc=hkSrc;
-                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:174:8: error: conflicting types for 'PLH__MyDetour__GetHkDst'
- BYTE * PLH__MyDetour__GetHkDst(PLH_ALL_S_t a)
-        ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:92:8: note: previous declaration of 'PLH__MyDetour__GetHkDst' was here
- BYTE * PLH__MyDetour__GetHkDst(PLH_ALL_S_t a);
-        ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetHkDst':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:178:30: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  return a->plhAbstractDetourS->m_hkDst;
-                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__SetHkDst':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:185:23: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  a->plhAbstractDetourS->m_hkDst=hkDst;
-                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:188:8: error: conflicting types for 'PLH__MyDetour__GetHkLength'
- SIZE_T PLH__MyDetour__GetHkLength(PLH_ALL_S_t a)
-        ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:96:8: note: previous declaration of 'PLH__MyDetour__GetHkLength' was here
- SIZE_T PLH__MyDetour__GetHkLength(PLH_ALL_S_t a);
-        ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetHkLength':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:192:30: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  return a->plhAbstractDetourS->m_hkLength;
-                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__SetHkLength':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:199:23: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  a->plhAbstractDetourS->m_hkLength=hkLength;
-                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:202:8: error: conflicting types for 'PLH__MyDetour__GetOriginalLength'
- SIZE_T PLH__MyDetour__GetOriginalLength(PLH_ALL_S_t a)
-        ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:100:8: note: previous declaration of 'PLH__MyDetour__GetOriginalLength' was here
- SIZE_T PLH__MyDetour__GetOriginalLength(PLH_ALL_S_t a);
-        ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetOriginalLength':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:206:30: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  return a->plhAbstractDetourS->m_OriginalLength;
-                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__SetOriginalLength':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:213:23: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  a->plhAbstractDetourS->m_OriginalLength=originalLength;
-                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:216:16: error: redefinition of 'struct _PLH_X86_DETOUR_S'
- typedef struct _PLH_X86_DETOUR_S
-                ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:31:16: note: originally defined here
- typedef struct _PLH_X86_DETOUR_S
-                ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:219:3: error: conflicting types for 'PLH_X86_DETOUR_S'
- } PLH_X86_DETOUR_S;
-   ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:34:3: note: previous declaration of 'PLH_X86_DETOUR_S' was here
- } PLH_X86_DETOUR_S;
-   ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:221:16: error: redefinition of 'struct _PLH_X64_DETOUR_S'
- typedef struct _PLH_X64_DETOUR_S
-                ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:36:16: note: originally defined here
- typedef struct _PLH_X64_DETOUR_S
-                ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:224:3: error: conflicting types for 'PLH_X64_DETOUR_S'
- } PLH_X64_DETOUR_S;
-   ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:39:3: note: previous declaration of 'PLH_X64_DETOUR_S' was here
- } PLH_X64_DETOUR_S;
-   ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:226:16: error: redefinition of 'struct _PLH_MEMORY_PROTECT_S'
- typedef struct _PLH_MEMORY_PROTECT_S
-                ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:41:16: note: originally defined here
- typedef struct _PLH_MEMORY_PROTECT_S
-                ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:232:3: error: conflicting types for 'PLH_MEMORY_PROTECT_S'
- } PLH_MEMORY_PROTECT_S;
-   ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:47:3: note: previous declaration of 'PLH_MEMORY_PROTECT_S' was here
- } PLH_MEMORY_PROTECT_S;
-   ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:234:16: error: redefinition of 'struct _PLH_ALL_S'
- typedef struct _PLH_ALL_S 
-                ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:49:16: note: originally defined here
- typedef struct _PLH_ALL_S 
-                ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:241:3: error: conflicting types for 'PLH_ALL_S'
- } PLH_ALL_S;
-   ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:56:3: note: previous declaration of 'PLH_ALL_S' was here
- } PLH_ALL_S, *PLH_ALL_S_t;
-   ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:243:8: error: conflicting types for 'PLH__MyDetour__GetCapstoneHandle'
- HANDLE PLH__MyDetour__GetCapstoneHandle(PLH_ALL_S_t a)
-        ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:104:8: note: previous declaration of 'PLH__MyDetour__GetCapstoneHandle' was here
- HANDLE PLH__MyDetour__GetCapstoneHandle(PLH_ALL_S_t a);
-        ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetCapstoneHandle':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:247:30: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  return a->plhAbstractDetourS->m_CapstoneHandle;
-                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__SetCapstoneHandle':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:254:23: error: invalid type argument of '->' (have 'PLH_ABSTRACT_DETOUR_S')
-  a->plhAbstractDetourS->m_CapstoneHandle=capstoneHandle;
-                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:266:70: error: expected ';', ',' or ')' before '&' token
- void PLH__AbstractDetour__RelocateASM(PLH_ALL_S_t a,BYTE* Code, DWORD& CodeSize, DWORD64 From, DWORD64 To)
-                                                                      ^
-In file included from src/functions_hook/mhook.c:128:0:
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:291:12: warning: unused variable 'CurIns' [-Wunused-variable]
+   cs_insn* CurIns = (cs_insn*)&InstructionInfo[i];
+            ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__Relocate':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:340:3: warning: implicit declaration of function 'PLH__ASMHelper__GetDisplacement_int8_t' [-Wimplicit-function-declaration]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:308:3: warning: implicit declaration of function 'PLH__ASMHelper__GetDisplacement_int8_t' [-Wimplicit-function-declaration]
    int8_t Disp = PLH__ASMHelper__GetDisplacement_int8_t(CurIns->bytes, DispOffset);
    ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:342:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:310:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
    *(int8_t*)(CurIns->address + DispOffset) = Disp;
     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:344:3: warning: implicit declaration of function 'PLH__ASMHelper__GetDisplacement_int16_t' [-Wimplicit-function-declaration]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:312:3: warning: implicit declaration of function 'PLH__ASMHelper__GetDisplacement_int16_t' [-Wimplicit-function-declaration]
    int16_t Disp = PLH__ASMHelper__GetDisplacement_int16_t(a,CurIns->bytes, DispOffset);
    ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:346:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:314:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
    *(int16_t*)(CurIns->address + DispOffset) = Disp;
     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:348:3: warning: implicit declaration of function 'PLH__ASMHelper__GetDisplacement_int32_t' [-Wimplicit-function-declaration]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:316:3: warning: implicit declaration of function 'PLH__ASMHelper__GetDisplacement_int32_t' [-Wimplicit-function-declaration]
    int32_t Disp = PLH__ASMHelper__GetDisplacement_int32_t(a,CurIns->bytes, DispOffset);
    ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:350:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:318:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
    *(int32_t*)(CurIns->address + DispOffset) = Disp;
     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__SetAddress':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:358:22: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  a->plhMemoryProtectS->m_Address = Address;
-                      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__GetAddress':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:365:29: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  return a->plhMemoryProtectS->m_Address;
-                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__SetSize':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:372:22: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  a->plhMemoryProtectS->m_Size = size;
-                      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__GetSize':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:379:29: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  return a->plhMemoryProtectS->m_Size;
-                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__SetFlags':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:386:22: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  a->plhMemoryProtectS->m_Flags = flags;
-                      ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:389:7: error: conflicting types for 'PLH__MemoryProtect__GetFlags'
- DWORD PLH__MemoryProtect__GetFlags(PLH_ALL_S_t a)
-       ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:124:7: note: previous declaration of 'PLH__MemoryProtect__GetFlags' was here
- DWORD PLH__MemoryProtect__GetFlags(PLH_ALL_S_t a);
-       ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__GetFlags':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:393:29: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  return a->plhMemoryProtectS->m_Flags;
-                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__SetOldProtection':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:400:22: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  a->plhMemoryProtectS->m_OldProtection = oldProtection;
-                      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:403:7: error: conflicting types for 'PLH__MemoryProtect__GetOldProtection'
- DWORD PLH__MemoryProtect__GetOldProtection(PLH_ALL_S_t a)
-       ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:128:7: note: previous declaration of 'PLH__MemoryProtect__GetOldProtection' was here
- DWORD PLH__MemoryProtect__GetOldProtection(PLH_ALL_S_t a);
-       ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__GetOldProtection':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:407:29: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  return a->plhMemoryProtectS->m_OldProtection;
-                             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__init':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:414:22: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  a->plhMemoryProtectS->m_Address = Address;
-                      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:415:22: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  a->plhMemoryProtectS->m_Size = Size;
-                      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:416:22: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  a->plhMemoryProtectS->m_Flags = ProtectionFlags;
-                      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:417:2: warning: implicit declaration of function 'PLH__MemoryProtect__Protect' [-Wimplicit-function-declaration]
-  PLH__MemoryProtect__Protect(a->plhMemoryProtectS->m_Address, a->plhMemoryProtectS->m_Size, a->plhMemoryProtectS->m_Flags);
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:417:50: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  PLH__MemoryProtect__Protect(a->plhMemoryProtectS->m_Address, a->plhMemoryProtectS->m_Size, a->plhMemoryProtectS->m_Flags);
-                                                  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:417:83: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  PLH__MemoryProtect__Protect(a->plhMemoryProtectS->m_Address, a->plhMemoryProtectS->m_Size, a->plhMemoryProtectS->m_Flags);
-                                                                                   ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:417:113: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  PLH__MemoryProtect__Protect(a->plhMemoryProtectS->m_Address, a->plhMemoryProtectS->m_Size, a->plhMemoryProtectS->m_Flags);
-                                                                                                                 ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__Protect':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:422:78: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  return VirtualProtect(Address, Size, ProtectionFlags, &(a->plhMemoryProtectS->m_OldProtection));
-                                                                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:425:1: warning: return type defaults to 'int' [-Wreturn-type]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:393:1: warning: return type defaults to 'int' [-Wreturn-type]
  PLH__MemoryProtect__deinit(PLH_ALL_S_t a)
  ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__deinit':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:428:3: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:396:3: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
    return;
    ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:429:52: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  PLH__MemoryProtect__Protect(a,a->plhMemoryProtectS->m_Address,a->plhMemoryProtectS->m_Size, a->plhMemoryProtectS->m_OldProtection);
-                                                    ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:429:84: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  PLH__MemoryProtect__Protect(a,a->plhMemoryProtectS->m_Address,a->plhMemoryProtectS->m_Size, a->plhMemoryProtectS->m_OldProtection);
-                                                                                    ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:429:114: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  PLH__MemoryProtect__Protect(a,a->plhMemoryProtectS->m_Address,a->plhMemoryProtectS->m_Size, a->plhMemoryProtectS->m_OldProtection);
-                                                                                                                  ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__Initialize':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:437:50: error: lvalue required as unary '&' operand
-  if ((a->last_error = cs_open(CS_ARCH_X86, Mode, &(PLH__MyDetour__GetCapstoneHandle(a)))) != CS_ERR_OK)
-                                                  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:444:2: warning: passing argument 1 of 'cs_option' makes integer from pointer without a cast
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:412:2: warning: passing argument 1 of 'cs_option' makes integer from pointer without a cast
   cs_option(PLH__MyDetour__GetCapstoneHandle(a), CS_OPT_DETAIL, CS_OPT_ON);
   ^
 In file included from src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:9:0,
@@ -1209,228 +513,152 @@ src/functions_hook/polyhook_lib/PolyHook/../Capstone/include/Capstone.h:386:8: n
         ^
 In file included from src/functions_hook/mhook.c:128:0:
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__CalculateLength':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:451:87: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-  size_t InstructionCount = cs_disasm(PLH__MyDetour__GetCapstoneHandle(a), Src, 0x100, (uint64_t)Src, 0, &InstructionInfo);
-                                                                                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:451:28: warning: passing argument 1 of 'cs_disasm' makes integer from pointer without a cast
-  size_t InstructionCount = cs_disasm(PLH__MyDetour__GetCapstoneHandle(a), Src, 0x100, (uint64_t)Src, 0, &InstructionInfo);
-                            ^
-In file included from src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:9:0,
-                 from src/functions_hook/mhook.h:31,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/../Capstone/include/Capstone.h:445:8: note: expected 'csh' but argument is of type 'HANDLE'
- size_t cs_disasm(csh handle,
-        ^
-In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:457:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
-  for (int i = 0; i < InstructionCount && !BigEnough; i++)
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:457:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:457:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
-  for (int i = 0; i < InstructionCount && !BigEnough; i++)
-                    ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:419:92: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  size_t InstructionCount = cs_disasm(PLH__MyDetour__GetCapstoneHandleValue(a), Src, 0x100, (uint64_t)Src, 0, &InstructionInfo);
+                                                                                            ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:426:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i = 0; i < InstructionCount && !BigEnough; i++)
+                ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__CalculateRelativeDisplacement__long':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:477:75: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:446:75: warning: unused parameter 'a' [-Wunused-parameter]
  long PLH__AbstractDetour__CalculateRelativeDisplacement__long(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize)
                                                                            ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__CalculateRelativeDisplacement__int8_t':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:484:79: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:453:79: warning: unused parameter 'a' [-Wunused-parameter]
  int8_t PLH__AbstractDetour__CalculateRelativeDisplacement__int8_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize)
                                                                                ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__CalculateRelativeDisplacement__int16_t':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:491:81: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:460:81: warning: unused parameter 'a' [-Wunused-parameter]
  int16_t PLH__AbstractDetour__CalculateRelativeDisplacement__int16_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize)
                                                                                  ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__CalculateRelativeDisplacement__int32_t':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:498:81: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:467:81: warning: unused parameter 'a' [-Wunused-parameter]
  int32_t PLH__AbstractDetour__CalculateRelativeDisplacement__int32_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize)
                                                                                  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__WriteJMP':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:510:3: warning: implicit declaration of function 'PLH__X86Detour__WriteJMP' [-Wimplicit-function-declaration]
-   PLH__X86Detour__WriteJMP(a,From,To);
-   ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__RelocateConditionalJMP':
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:506:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   *(int8_t*)(CurIns->address + DispOffset) = Disp;
+    ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:513:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   *(int16_t*)(CurIns->address + DispOffset) = Disp;
+    ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:520:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   *(int32_t*)(CurIns->address + DispOffset) = Disp;
+    ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:523:86: error: expected ';', ',' or ')' before '&' token
- void PLH__AbstractDetour__RelocateConditionalJMP(PLH_ALL_S_t a,cs_insn* CurIns, DWORD& CodeSize, DWORD64 From, DWORD64 To, const uint8_t DispSize, const uint8_t DispOffset)
-                                                                                      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:595:1: warning: return type defaults to 'int' [-Wreturn-type]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:564:1: warning: return type defaults to 'int' [-Wreturn-type]
  PLH__AbstractDetour__init(PLH_ALL_S_t a)
  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:604:1: warning: return type defaults to 'int' [-Wreturn-type]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:573:1: warning: return type defaults to 'int' [-Wreturn-type]
  PLH__AbstractDetour__deinit(PLH_ALL_S_t a)
  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__deinit':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:606:11: error: lvalue required as unary '&' operand
-  cs_close(&(PLH__MyDetour__GetCapstoneHandle(a)));
-           ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:635:6: warning: conflicting types for 'PLH__X86Detour__WriteJMP'
- void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To)
-      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:510:3: note: previous implicit declaration of 'PLH__X86Detour__WriteJMP' was here
-   PLH__X86Detour__WriteJMP(a,From,To);
-   ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X86Detour__GetJMPSize':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:641:1: error: number of arguments doesn't match prototype
- {
- ^
-In file included from src/functions_hook/mhook.h:31:0,
-                 from src/functions_hook/mhook.c:1:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.h:194:5: error: prototype declaration
- int PLH__X86Detour__GetJMPSize(PLH_ALL_S_t a);
-     ^
-In file included from src/functions_hook/mhook.c:128:0:
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:609:44: warning: unused parameter 'a' [-Wunused-parameter]
+ int PLH__X86Detour__GetJMPSize(PLH_ALL_S_t a)
+                                            ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X86Detour__init':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:645:39: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:614:39: warning: unused parameter 'a' [-Wunused-parameter]
  void PLH__X86Detour__init(PLH_ALL_S_t a)
                                        ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X86Detour__GetType':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:657:9: error: expected expression before 'PLH__ASMHelper__HookType'
-  return PLH__ASMHelper__HookType::X86Detour;
-         ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:655:62: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:624:62: warning: unused parameter 'a' [-Wunused-parameter]
  PLH__ASMHelper__HookType PLH__X86Detour__GetType(PLH_ALL_S_t a)
                                                               ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X86Detour__Hook':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:666:32: warning: passing argument 1 of 'PLH__AbstractDetour__CalculateLength' from incompatible pointer type
-  PLH__MyDetour__SetHkLength(a, PLH__AbstractDetour__CalculateLength(PLH__MyDetour__GetHkSrc(a), 5));
-                                ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:447:7: note: expected 'PLH_ALL_S_t' but argument is of type 'BYTE *'
- DWORD PLH__AbstractDetour__CalculateLength(PLH_ALL_S_t a,BYTE* Src, DWORD NeededLength)
-       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:666:32: warning: passing argument 2 of 'PLH__AbstractDetour__CalculateLength' makes pointer from integer without a cast
-  PLH__MyDetour__SetHkLength(a, PLH__AbstractDetour__CalculateLength(PLH__MyDetour__GetHkSrc(a), 5));
-                                ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:447:7: note: expected 'BYTE *' but argument is of type 'int'
- DWORD PLH__AbstractDetour__CalculateLength(PLH_ALL_S_t a,BYTE* Src, DWORD NeededLength)
-       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:666:32: error: too few arguments to function 'PLH__AbstractDetour__CalculateLength'
-  PLH__MyDetour__SetHkLength(a, PLH__AbstractDetour__CalculateLength(PLH__MyDetour__GetHkSrc(a), 5));
-                                ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:447:7: note: declared here
- DWORD PLH__AbstractDetour__CalculateLength(PLH_ALL_S_t a,BYTE* Src, DWORD NeededLength)
-       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:676:135: error: invalid type argument of '->' (have 'PLH_MEMORY_PROTECT_S')
-  VirtualProtect(PLH__MyDetour__GetTrampoline(a), ((PLH__MyDetour__GetHkLength(a)) + 5), PAGE_EXECUTE_READWRITE, &(a->plhMemoryProtectS->m_OldProtection)); //Allow Execution
-                                                                                                                                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:680:2: warning: implicit declaration of function 'PLH__X86Detour__RelocateASM' [-Wimplicit-function-declaration]
-  PLH__X86Detour__RelocateASM(a,PLH__MyDetour__GetTrampoline(a), PLH__MyDetour__GetHkLength(a), (DWORD)PLH__MyDetour__GetHkSrc(a), (DWORD)PLH__MyDetour__GetTrampoline(a));
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:650:2: warning: implicit declaration of function 'PLH__X86Detour__RelocateASM' [-Wimplicit-function-declaration]
+  PLH__X86Detour__RelocateASM(a,PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD)PLH__MyDetour__GetHkSrc(a), (DWORD)PLH__MyDetour__GetTrampoline(a));
   ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:689:2: warning: implicit declaration of function 'PLH__AbstractDetour__GetOriginalLength' [-Wimplicit-function-declaration]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:659:2: warning: implicit declaration of function 'PLH__AbstractDetour__GetOriginalLength' [-Wimplicit-function-declaration]
   int length = PLH__AbstractDetour__GetOriginalLength(a);
   ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:694:2: error: too few arguments to function 'PLH__AbstractDetour__FlushSrcInsCache'
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:664:2: error: too few arguments to function 'PLH__AbstractDetour__FlushSrcInsCache'
   PLH__AbstractDetour__FlushSrcInsCache();
   ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:562:6: note: declared here
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:531:6: note: declared here
  void PLH__AbstractDetour__FlushSrcInsCache(PLH_ALL_S_t a)
       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:664:8: warning: unused variable 'OldProtection' [-Wunused-variable]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:633:8: warning: unused variable 'OldProtection' [-Wunused-variable]
   DWORD OldProtection;
         ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X86Detour__GetIpReg':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:717:46: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:687:46: warning: unused parameter 'a' [-Wunused-parameter]
  x86_reg PLH__X86Detour__GetIpReg(PLH_ALL_S_t a)
                                               ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:732:6: error: redefinition of 'PLH__X86Detour__WriteRelativeJMP'
- void PLH__X86Detour__WriteRelativeJMP(PLH_ALL_S_t a,DWORD Destination, DWORD JMPDestination)
-      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:629:6: note: previous definition of 'PLH__X86Detour__WriteRelativeJMP' was here
- void PLH__X86Detour__WriteRelativeJMP(PLH_ALL_S_t a,DWORD Destination, DWORD JMPDestination)
-      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X86Detour__WriteRelativeJMP':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:735:2: warning: implicit declaration of function 'PLH__X86Detour__CalculateRelativeDisplacement_long' [-Wimplicit-function-declaration]
-  *(long*)(Destination + 1) = PLH__X86Detour__CalculateRelativeDisplacement_long(a,Destination, JMPDestination, 5);
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:738:6: error: redefinition of 'PLH__X86Detour__WriteJMP'
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:702:6: error: redefinition of 'PLH__X86Detour__WriteJMP'
  void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To)
       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:635:6: note: previous definition of 'PLH__X86Detour__WriteJMP' was here
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:604:6: note: previous definition of 'PLH__X86Detour__WriteJMP' was here
  void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To)
       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:743:5: error: redefinition of 'PLH__X86Detour__GetJMPSize'
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:707:5: error: redefinition of 'PLH__X86Detour__GetJMPSize'
  int PLH__X86Detour__GetJMPSize(PLH_ALL_S_t a)
      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:640:5: note: previous definition of 'PLH__X86Detour__GetJMPSize' was here
- int PLH__X86Detour__GetJMPSize()
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:609:5: note: previous definition of 'PLH__X86Detour__GetJMPSize' was here
+ int PLH__X86Detour__GetJMPSize(PLH_ALL_S_t a)
      ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X86Detour__GetJMPSize':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:743:44: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:707:44: warning: unused parameter 'a' [-Wunused-parameter]
  int PLH__X86Detour__GetJMPSize(PLH_ALL_S_t a)
                                             ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X64Detour__init':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:748:39: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:712:39: warning: unused parameter 'a' [-Wunused-parameter]
  void PLH__X64Detour__init(PLH_ALL_S_t a)
                                        ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X64Detour__GetType':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:760:9: error: expected expression before 'PLH__ASMHelper__HookType'
-  return PLH__ASMHelper__HookType::X64Detour;
-         ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X64Detour__Hook':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:801:2: warning: implicit declaration of function 'PLH__X64Detour__RelocateASM' [-Wimplicit-function-declaration]
-  PLH__X64Detour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a),PLH__MyDetour__GetHkLength(a), (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:766:2: warning: implicit declaration of function 'PLH__X64Detour__RelocateASM' [-Wimplicit-function-declaration]
+  PLH__X64Detour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
   ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:801:96: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-  PLH__X64Detour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a),PLH__MyDetour__GetHkLength(a), (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
-                                                                                                ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:801:133: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
-  PLH__X64Detour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a),PLH__MyDetour__GetHkLength(a), (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
-                                                                                                                                     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:803:2: warning: implicit declaration of function 'PLH__X64Detour__WriteAbsoluteJMP' [-Wimplicit-function-declaration]
-  PLH__X64Detour__WriteAbsoluteJMP(a,(DWORD64)&((PLH__MyDetour__GetTrampoline(a))[PLH__MyDetour__GetHkLength(a)]), ((DWORD64)((PLH__MyDetour__GetHkSrc(a)) + (PLH__MyDetour__GetHkLength(a))))); 
-  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:803:37: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:766:77: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  PLH__X64Detour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
+                                                                             ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:766:114: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  PLH__X64Detour__RelocateASM(a, PLH__MyDetour__GetTrampoline(a), &CodeSize, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)PLH__MyDetour__GetTrampoline(a));
+                                                                                                                  ^
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:769:37: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
   PLH__X64Detour__WriteAbsoluteJMP(a,(DWORD64)&((PLH__MyDetour__GetTrampoline(a))[PLH__MyDetour__GetHkLength(a)]), ((DWORD64)((PLH__MyDetour__GetHkSrc(a)) + (PLH__MyDetour__GetHkLength(a))))); 
                                      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:803:116: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:769:116: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
   PLH__X64Detour__WriteAbsoluteJMP(a,(DWORD64)&((PLH__MyDetour__GetTrampoline(a))[PLH__MyDetour__GetHkLength(a)]), ((DWORD64)((PLH__MyDetour__GetHkSrc(a)) + (PLH__MyDetour__GetHkLength(a))))); 
                                                                                                                     ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:814:12: error: 'm_hkSrc' undeclared (first use in this function)
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:780:12: error: 'm_hkSrc' undeclared (first use in this function)
    *(long*)(m_hkSrc + 2) = CalculateRelativeDisplacement_long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
             ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:814:3: warning: implicit declaration of function 'CalculateRelativeDisplacement_long' [-Wimplicit-function-declaration]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:780:12: note: each undeclared identifier is reported only once for each function it appears in
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:780:3: warning: implicit declaration of function 'CalculateRelativeDisplacement_long' [-Wimplicit-function-declaration]
    *(long*)(m_hkSrc + 2) = CalculateRelativeDisplacement_long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
    ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:814:65: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:780:65: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
    *(long*)(m_hkSrc + 2) = CalculateRelativeDisplacement_long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
                                                                  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:814:102: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:780:102: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
    *(long*)(m_hkSrc + 2) = CalculateRelativeDisplacement_long(a, (DWORD64)PLH__MyDetour__GetHkSrc(a), (DWORD64)&(((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)])), 6);
                                                                                                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:815:93: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:781:93: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
    *(DWORD64*)&((PLH__MyDetour__GetTrampoline(a))[((PLH__MyDetour__GetHkLength(a)) + 16)]) = (DWORD64)PLH__MyDetour__GetHkDst(a); //Write the address into memory at [RIP+Displacement]
                                                                                              ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:818:38: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:784:38: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
    PLH__X64Detour__WriteAbsoluteJMP(a,(DWORD64)((PLH__MyDetour__GetHkSrc(a))), (DWORD64)((PLH__MyDetour__GetHkDst(a))));
                                       ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:818:79: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:784:79: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
    PLH__X64Detour__WriteAbsoluteJMP(a,(DWORD64)((PLH__MyDetour__GetHkSrc(a))), (DWORD64)((PLH__MyDetour__GetHkDst(a))));
                                                                                ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X64Detour__GetIpReg':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:833:46: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:799:46: warning: unused parameter 'a' [-Wunused-parameter]
  x86_reg PLH__X64Detour__GetIpReg(PLH_ALL_S_t a)
                                               ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: At top level:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:848:6: warning: conflicting types for 'PLH__X64Detour__WriteAbsoluteJMP'
- void PLH__X64Detour__WriteAbsoluteJMP(PLH_ALL_S_t a,DWORD64 Destination, DWORD64 JMPDestination)
-      ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:803:2: note: previous implicit declaration of 'PLH__X64Detour__WriteAbsoluteJMP' was here
-  PLH__X64Detour__WriteAbsoluteJMP(a,(DWORD64)&((PLH__MyDetour__GetTrampoline(a))[PLH__MyDetour__GetHkLength(a)]), ((DWORD64)((PLH__MyDetour__GetHkSrc(a)) + (PLH__MyDetour__GetHkLength(a))))); 
-  ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X64Detour__WriteAbsoluteJMP':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:855:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:821:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
   memcpy((BYTE*)Destination, detour, sizeof(detour));
          ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:856:15: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:822:15: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
   *(DWORD64*)&((BYTE*)Destination)[3] = JMPDestination;
                ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:848:51: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:814:51: warning: unused parameter 'a' [-Wunused-parameter]
  void PLH__X64Detour__WriteAbsoluteJMP(PLH_ALL_S_t a,DWORD64 Destination, DWORD64 JMPDestination)
                                                    ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X64Detour__GetJMPSize':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:864:44: warning: unused parameter 'a' [-Wunused-parameter]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:830:44: warning: unused parameter 'a' [-Wunused-parameter]
  int PLH__X64Detour__GetJMPSize(PLH_ALL_S_t a)
                                             ^
 src/functions_hook/mhook.c: In function 'Mhook_UnhookEx':
@@ -1438,12 +666,6 @@ src/functions_hook/mhook.c:146:4: warning: implicit declaration of function 'Mho
     return Mhook_Unhook((PVOID*)(&ppHookedFunction));
     ^
 src/functions_hook/mhook.c: In function 'Mhook_SetHook':
-src/functions_hook/mhook.c:165:4: warning: implicit declaration of function 'PLH_ALL_S_t_new' [-Wimplicit-function-declaration]
-    mhooks_subhooks[mhooks_subhooks_count]=PLH_ALL_S_t_new();
-    ^
-src/functions_hook/mhook.c:165:42: warning: assignment makes pointer from integer without a cast
-    mhooks_subhooks[mhooks_subhooks_count]=PLH_ALL_S_t_new();
-                                          ^
 src/functions_hook/mhook.c:181:5: warning: implicit declaration of function 'PLH__AbstractDetour__GetTrampoline' [-Wimplicit-function-declaration]
      void * rr= (void*)PLH__AbstractDetour__GetTrampoline(mhooks_subhooks[mhooks_subhooks_count]);
      ^
@@ -1452,85 +674,17 @@ src/functions_hook/mhook.c:212:6: warning: implicit declaration of function 'PLH
       src=(void*)PLH__AbstractDetour__GetHkSrc(mhooks_subhooks[i]);
       ^
 In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__ALL_S_t_new':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:13:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH_ALL_S_t_delete':
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:20:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
  ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetNeedFree':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetHookType':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:129:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetTrampoline':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:136:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetOriginalCode':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:151:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetHkSrc':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:165:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetHkDst':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:179:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetHkLength':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:193:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetOriginalLength':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:207:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MyDetour__GetCapstoneHandle':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:248:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
 In file included from src/functions_hook/mhook.c:128:0:
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__GetAddress':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:366:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__GetSize':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:380:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__GetFlags':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:394:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__GetOldProtection':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:408:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__MemoryProtect__Protect':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:423:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__init':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:602:1: warning: control reaches end of non-void function [-Wreturn-type]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:571:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
  ^
 src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__AbstractDetour__deinit':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:607:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X86Detour__GetType':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:658:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c: In function 'PLH__X64Detour__GetType':
-src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:761:1: warning: control reaches end of non-void function [-Wreturn-type]
+src/functions_hook/polyhook_lib/PolyHook/PolyHook_c_version.c:576:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
  ^
 mingw32-make[1]: *** [build_win32_objects/mhook.o] Error 1
