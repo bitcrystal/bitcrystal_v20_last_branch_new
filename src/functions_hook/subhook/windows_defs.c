@@ -1,3 +1,5 @@
+#ifndef WINDOWS_DEFS_C
+#define WINDOWS_DEFS_C
 #include "windows_defs.h"
 #ifndef OS_WIN
 #define IS_NOT_WINDOWS
@@ -535,4 +537,5 @@ HANDLE WINAPI GetCurrentProcess()
 	#endif
 	return NULL;
 }
+#endif
 #endif

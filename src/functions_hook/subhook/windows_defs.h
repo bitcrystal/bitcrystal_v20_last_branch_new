@@ -3,7 +3,7 @@
 #include "my_predef.h"
 #ifndef OS_WIN
 typedef void * PVOID;
-typedef int                 BOOL;
+typedef int BOOL;
 #ifndef FALSE
 #define FALSE               0
 #endif
@@ -72,6 +72,7 @@ typedef HANDLE *LPHANDLE;
 #define UNICODE _UNICODE
 #endif
 #endif
+
 #ifdef UNICODE
  typedef WCHAR TBYTE;
 #else
@@ -175,8 +176,6 @@ typedef struct _MEMORY_BASIC_INFORMATION {
 #else
 #define MY__PROT_WRITE 2
 #endif
-#endif
-
 #endif
 
 #ifndef MY__PROT_EXEC

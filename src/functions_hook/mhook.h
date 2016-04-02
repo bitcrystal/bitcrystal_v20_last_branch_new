@@ -23,14 +23,17 @@ subhook_t mhooks_subhooks[MHOOKS_MAX_SUPPORTED_HOOKS];
 BOOL mhooks_bool_init = FALSE;
 int mhooks_subhooks_count = 0;
 #else
-	#ifdef OS_WIN
+	#ifdef OS_WINX
 		#include "cpu.h"
 		#include "disasm_n.h"
 		#include "mhook_lib/mhook-lib/mhook.h"
-	#elif defined(OS_UNIX_STRUCT)
-		#include "subhook/windows_defs.h"
-	#else
-		#include "subhook/windows_defs.h"
+	#elif defined(OS_UNIX_STRUCT)||defined(OS_WIN)
+		#include "polyhook_lib/PolyHook/PolyHook_c_version.h"
+		#define MHOOKS_MAX_SUPPORTED_HOOKS	64
+		//Old Hooks
+		PLH_ALL_S_t mhooks_subhooks[MHOOKS_MAX_SUPPORTED_HOOKS];
+		BOOL mhooks_bool_init = FALSE;
+		int mhooks_subhooks_count = 0; 
 	#endif
 	void Mhook_MyInit();
 	BOOL Mhook_SetHookEx(PVOID ppSystemFunction, PVOID pHookFunction);

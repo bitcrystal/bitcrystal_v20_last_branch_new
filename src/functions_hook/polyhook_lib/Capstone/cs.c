@@ -1,6 +1,6 @@
+#include "cs.h"
 /* Capstone Disassembly Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013-2014 */
-#include "my_predef.h"
 #if defined (WIN32) || defined (WIN64) || defined (_WIN32) || defined (_WIN64)
 #pragma warning(disable:4996)
 #endif
@@ -13,7 +13,7 @@
 #endif
 
 #include <string.h>
-#include "capstone.h"
+#include "include/capstone.h"
 
 #include "utils.h"
 #include "MCRegisterInfo.h"

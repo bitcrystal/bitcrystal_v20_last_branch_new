@@ -1,14 +1,92 @@
 //Copyright by bitcrystal
 #ifndef MY_PREDEF_H
 #define MY_PREDEF_H
-#if defined(_WIN32) || defined(WIN32) || defined(__CYGWIN__) || defined(__MINGW32__) || defined(__BORLANDC__) || defined(__MINGW64__)
+#if defined(__arm__) || defined(__thumb__) || defined(__TARGET_ARCH_ARM) || defined(__TARGET_ARCH_THUMB) || defined(_ARM) || defined(_M_ARM) || defined(_M_ARMT)
+#define MY_CPU_ARM
+#define MY_CPU_VERSION 0
+#elif defined(__aarch64__)
+#define MY_CPU_ARM64
+#define MY_CPU_VERSION 1
+#elif defined(__bfin) || defined(__BFIN__)
+#define MY_CPU_BARFIN
+#define MY_CPU_VERSION 2
+#elif defined(__convex__)
+#define MY_CPU_CONVEX
+#define MY_CPU_VERSION 3
+#elif defined(__epiphany__)
+#define MY_CPU_EPIPHANY
+#define MY_CPU_VERSION 4
+#elif defined(__hppa__) || defined(__HPPA__) || defined(__hppa)
+#define MY_CPU_HPPA
+#define MY_CPU_VERSION 5
+#elif defined(__amd64__) || defined(__amd64) || defined(__x86_64__) || defined(__x86_64) || defined(_M_X64) || defined(_M_AMD64) || defined(_LP64) || defined(__LP64__) || defined(_ILP64) || defined(LP64) || defined(ILP64) || defined(__MINGW64__) || defined(_WIN64) || defined(__ILP64__) || defined(WIN64)
+#define MY_CPU_X86_64
+#define MY_CPU_VERSION 6_1
+#elif defined(__i386) || defined(__i386__) || defined(__i486__) || defined(__i586__) || defined(__i686__) || defined(__IA32__) || defined(_M_I86) || defined(_M_IX86) || defined(__X86__) || defined(_X86_) || defined(__THW_INTEL__) || defined(__I86__) || defined(__INTEL__) || defined(__386) || defined(_ILP32) || defined(__ILP32__)
+#define MY_CPU_X86
+#define MY_CPU_VERSION 6
+#elif defined(__ia64__) || defined(_IA64) || defined(__IA64__) || defined(__ia64) || defined(_M_IA64) || defined(__itanium__)
+#define MY_CPU_IA64
+#define MY_CPU_VERSION 7
+#elif defined(__m68k__) || defined(M68000) || defined(__MC68K__)
+#define MY_CPU_M68K
+#define MY_CPU_VERSION 8
+#elif defined(__mips__) || defined(mips) || defined(__mips) || defined(__MIPS__)
+#define MY_CPU_MIPS
+#define MY_CPU_VERSION 9
+#elif defined(__powerpc64__) || defined(__powerpc64__) || defined(__ppc64__) || defined(__PPC64__) || defined(_ARCH_PPC64)
+#define MY_CPU_POWERPC_64
+#define MY_CPU_VERSION 10_1
+#elif defined(__powerpc) || defined(__powerpc__) || defined(__POWERPC__) || defined(__ppc__) || defined(__PPC__) || defined(_ARCH_PPC) || defined(_M_PPC) || defined(__ppc)
+#define MY_CPU_POWERPC
+#define MY_CPU_VERSION 10
+#elif defined(pyr)
+#define MY_CPU_PYRAMID_9810
+#define MY_CPU_VERSION 11
+#elif defined(__THW_RS6000) || defined(_IBMR2) || defined(_POWER) || defined(_ARCH_PWR) || defined(_ARCH_PWR2) || defined(_ARCH_PWR3) || defined(_ARCH_PWR4)
+#define MY_CPU_RS6000
+#define MY_CPU_VERSION 12
+#elif defined(__sparc__) || defined(__sparc)
+#define MY_CPU_SPARC
+#define MY_CPU_VERSION 13
+#elif defined(__sh__)
+#define MY_CPU_SUPERH
+#define MY_CPU_VERSION 14
+#elif defined(__370__) || defined(__THW_370__) || defined(__s390__) || defined(__s390x__) || defined(__zarch__) || defined(__SYSC_ZARCH__)
+#define MY_CPU_SYSTEMZ
+#define MY_CPU_VERSION 15
+#elif defined(_TMS320C2XX) || defined(__TMS320C2000__) || defined(_TMS320C5X) || defined(__TMS320C55X__) || defined(_TMS320C6X) || defined(__TMS320C6X__)
+#define MY_CPU_TMS320
+#define MY_CPU_VERSION 16
+#elif defined(__TMS470__)
+#define MY_CPU_TMS470
+#define MY_CPU_VERSION 17
+#elif defined(__alpha__) || defined(__alpha) || defined(_M_ALPHA)
+#define MY_CPU_ALPHA
+#define MY_CPU_VERSION 18
+#else
+#define MY_CPU_UNKNOWN
+#define MY_CPU_VERSION 19
+#endif
+
+#if defined(_WIN32) || defined(_WIN64) || defined(WIN32) || defined(__CYGWIN__) || defined(__MINGW32__) || defined(__BORLANDC__) || defined(__MINGW64__)
 #define OS_WIN
 #elif defined(__linux__)
 #define OS_LINUX
 #elif defined(__APPLE__)
+#include "TargetConditionals.h"
+#if TARGET_OS_IPHONE && TARGET_IPHONE_SIMULATOR
+#define OS_IPHONE_SIMULATOR  
+#elif TARGET_OS_IPHONE
+#define OS_IPHONE
+#else
+#define OS_OSX
+#endif
 #define OS_APPLE
 #elif defined(__unix__)
 #define OS_UNIX
+#elif defined(__posix)
+#define OS_POSIX
 #elif defined(__MACH__)
 #define OS_MACH
 #elif defined(__FreeBSD__)
@@ -37,17 +115,15 @@
 #if defined(OS_MAC)||defined(OS_BSD_STRUCT)||defined(OS_LINUX)
 #define OS_UNIX_STRUCT
 #endif
-#if defined(_M_X64) || defined(_M_AMD64) || defined(__amd64__) || defined(_LP64) || defined(_ILP64) || defined(LP64) || defined(ILP64) || defined(__MINGW64__) || defined(_WIN64) || defined(WIN64)
+#if defined(MY_CPU_X86_64)
 #define IS_X64
-#elif defined(_M_IX86) || defined(__i386__) || defined(__MINGW32__) || defined(_WIN32) || defined(WIN32)
+#elif defined(MY_CPU_X86)
 #define IS_X86
 #else
 #define IS_X86
 #endif
 #endif
 #if defined(OS_WIN)
-	#define _WIN32
-	#define WIN32
 	#define WIN
 	#define _WIN
 	#define BITCRYSTAL_OS_VERSION 1
@@ -69,6 +145,11 @@
 #if defined(IS_X86)
 	#define _M_IX86
 	#define __i386__
+	#define _WIN32
+	#define WIN32
+	#define _ILP32
+	#define __ILP32__
+	#define _LP32
 //	#defined __MINGW32__
 //	#defined _WIN32
 //	#define WIN32

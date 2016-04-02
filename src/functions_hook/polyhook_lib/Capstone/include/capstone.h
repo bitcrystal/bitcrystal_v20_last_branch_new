@@ -1,13 +1,12 @@
 #ifndef CAPSTONE_ENGINE_H
 #define CAPSTONE_ENGINE_H
-
+#include "capstone_predef.h"
 /* Capstone Disassembly Engine */
 /* By Nguyen Anh Quynh <aquynh@gmail.com>, 2013-2014 */
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 #include <stdint.h>
 #include <stdarg.h>
 #if defined(CAPSTONE_HAS_OSXKERNEL)
