@@ -178,7 +178,7 @@ BOOL Mhook_Unhook(PVOID * ppHookedFunctionP) {
 			BOOL is_installed = PLH__AbstractDetour__Hook(mhooks_subhooks[mhooks_subhooks_count]);
 			if(is_installed)
 			{
-				void * rr= (void*)PLH__AbstractDetour__GetTrampoline(mhooks_subhooks[mhooks_subhooks_count]);
+				void * rr= (void*)PLH__MyDetour__GetTrampoline(mhooks_subhooks[mhooks_subhooks_count]);
 				if(rr==NULL)
 				{
 					PLH__AbstractDetour__UnHook(mhooks_subhooks[mhooks_subhooks_count]);
@@ -209,7 +209,7 @@ BOOL Mhook_Unhook(PVOID * ppHookedFunctionP) {
 					{
 						continue;
 					}
-					src=(void*)PLH__AbstractDetour__GetHkSrc(mhooks_subhooks[i]);
+					src=(void*)PLH__MyDetour__GetHkSrc(mhooks_subhooks[i]);
 					if(src==ppHookedFunction)
 					{
 						*ppHookedFunctionP=(void*)src;
@@ -232,7 +232,7 @@ BOOL Mhook_Unhook(PVOID * ppHookedFunctionP) {
 				}
 				if(mhooks_subhooks[i]==NULL)
 					return FALSE;
-				src=(void*)PLH__AbstractDetour__GetHkSrc(mhooks_subhooks[i]);
+				src=(void*)PLH__MyDetour__GetHkSrc(mhooks_subhooks[i]);
 				*ppHookedFunctionP=(void*)src;
 				PLH__AbstractDetour__UnHook(mhooks_subhooks[i]);
 				PLH_ALL_S_t_delete(mhooks_subhooks[i]);

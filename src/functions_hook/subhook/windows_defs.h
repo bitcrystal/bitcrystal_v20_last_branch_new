@@ -40,6 +40,8 @@ typedef LONG_PTR LPARAM;
  typedef unsigned long ULONG_PTR;
 #endif
 typedef ULONG_PTR SIZE_T;
+typedef ULONG_PTR DWORD_PTR;
+typedef unsigned __int64 DWORD64, *PDWORD64;
 #if !defined(_M_IX86)
  typedef unsigned __int64 ULONGLONG;
 #else

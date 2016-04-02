@@ -42,7 +42,7 @@ typedef struct _PLH_X64_DETOUR_S
 typedef struct _PLH_MEMORY_PROTECT_S
 {
 	void* m_Address;
-	size_t m_Size;
+	SIZE_T m_Size;
 	DWORD m_Flags;	
 	DWORD m_OldProtection;
 } PLH_MEMORY_PROTECT_S;
@@ -96,9 +96,13 @@ void PLH__MyDetour__SetHkDst(PLH_ALL_S_t a,BYTE*hkDst);
 
 SIZE_T PLH__MyDetour__GetHkLength(PLH_ALL_S_t a);
 
+SIZE_T * PLH__MyDetour__GetHkLengthP(PLH_ALL_S_t a);
+
 void PLH__MyDetour__SetHkLength(PLH_ALL_S_t a,SIZE_T hkLength);
 
 SIZE_T PLH__MyDetour__GetOriginalLength(PLH_ALL_S_t a);
+
+SIZE_T * PLH__MyDetour__GetOriginalLengthP(PLH_ALL_S_t a);
 
 void PLH__MyDetour__SetOriginalLength(PLH_ALL_S_t a,SIZE_T originalLength);
 
@@ -112,7 +116,7 @@ void PLH__MyDetour__SetCapstoneHandle(PLH_ALL_S_t a,HANDLE capstoneHandle);
 
 x86_reg PLH__AbstractDetour__GetIpReg(PLH_ALL_S_t a);
 
-void PLH__AbstractDetour__RelocateASM(PLH_ALL_S_t a,BYTE* Code, DWORD * CodeSize, DWORD64 From, DWORD64 To);
+void PLH__AbstractDetour__RelocateASM(PLH_ALL_S_t a,BYTE* Code, SIZE_T * CodeSize, DWORD64 From, DWORD64 To);
 
 void PLH__AbstractDetour__Relocate(PLH_ALL_S_t a,cs_insn* CurIns, DWORD64 From, DWORD64 To, const uint8_t DispSize, const uint8_t DispOffset);
 
@@ -120,9 +124,9 @@ void PLH__MemoryProtect__SetAddress(PLH_ALL_S_t a,void * Address);
 
 void * PLH__MemoryProtect__GetAddress(PLH_ALL_S_t a);
 
-void PLH__MemoryProtect__SetSize(PLH_ALL_S_t a,size_t size);
+void PLH__MemoryProtect__SetSize(PLH_ALL_S_t a,SIZE_T size);
 
-size_t PLH__MemoryProtect__GetSize(PLH_ALL_S_t a);
+SIZE_T PLH__MemoryProtect__GetSize(PLH_ALL_S_t a);
 
 void PLH__MemoryProtect__SetFlags(PLH_ALL_S_t a,DWORD flags);
 
@@ -132,23 +136,23 @@ void PLH__MemoryProtect__SetOldProtection(PLH_ALL_S_t a,DWORD oldProtection);
 
 DWORD PLH__MemoryProtect__GetOldProtection(PLH_ALL_S_t a);
 
-void PLH__MemoryProtect__init(PLH_ALL_S_t a,void* Address, size_t Size, DWORD ProtectionFlags);
+void PLH__MemoryProtect__init(PLH_ALL_S_t a,void* Address, SIZE_T Size, DWORD ProtectionFlags);
 
-BOOL PLH__MemoryProtect__Protect(PLH_ALL_S_t a,void* Address, size_t Size, DWORD ProtectionFlags);
+BOOL PLH__MemoryProtect__Protect(PLH_ALL_S_t a,void* Address, SIZE_T Size, DWORD ProtectionFlags);
 
 PLH__MemoryProtect__deinit(PLH_ALL_S_t a);
 
 void PLH__AbstractDetour__Initialize(PLH_ALL_S_t a,cs_mode Mode);
 
-DWORD PLH__AbstractDetour__CalculateLength(PLH_ALL_S_t a,BYTE* Src, DWORD NeededLength);
+DWORD PLH__AbstractDetour__CalculateLength(PLH_ALL_S_t a,BYTE* Src, SIZE_T NeededLength);
 
-long PLH__AbstractDetour__CalculateRelativeDisplacement__long(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
+long PLH__AbstractDetour__CalculateRelativeDisplacement__long(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, SIZE_T InsSize);
 
-int8_t PLH__AbstractDetour__CalculateRelativeDisplacement__int8_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
+int8_t PLH__AbstractDetour__CalculateRelativeDisplacement__int8_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, SIZE_T InsSize);
 
-int16_t PLH__AbstractDetour__CalculateRelativeDisplacement__int16_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
+int16_t PLH__AbstractDetour__CalculateRelativeDisplacement__int16_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, SIZE_T InsSize);
 
-int32_t PLH__AbstractDetour__CalculateRelativeDisplacement__int32_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, DWORD InsSize);
+int32_t PLH__AbstractDetour__CalculateRelativeDisplacement__int32_t(PLH_ALL_S_t a,DWORD64 From, DWORD64 To, SIZE_T InsSize);
 
 void PLH__AbstractDetour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To);
 
