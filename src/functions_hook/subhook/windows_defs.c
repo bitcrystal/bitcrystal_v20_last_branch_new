@@ -1,6 +1,9 @@
 #ifndef WINDOWS_DEFS_C
 #define WINDOWS_DEFS_C
 #include "windows_defs.h"
+#ifdef CO_MODE
+#include "linux_defs.c"
+#endif
 #ifndef OS_WIN
 #define IS_NOT_WINDOWS
 #ifdef IS_NOT_WINDOWS
@@ -355,13 +358,20 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 			nsize_++;
 		}
 		nsize_ = nsize_ * pagesize;
-		x = msync(address, (size_t)(nsize_), 0);
-		errno_=errno;
-		if(x==-1&&errno_==ENOMEM)
+		void * testx_address = NULL;
+		testx_address=(void*)sbrk(0);
+		if(testx_address!=NULL&&(((unsigned long long)(address))>((unsigned long long)(testx_address)))
 		{
 			zz.complete_free_region=1;
 		} else {
-			zz.complete_free_region=0;
+			x = msync(address, (size_t)(nsize_), 0);
+			errno_=errno;
+			if(x==-1&&errno_==ENOMEM)
+			{
+				zz.complete_free_region=1;
+			} else {
+				zz.complete_free_region=0;
+			}
 		}
 		if(zz.complete_free_region==0)
 		{
@@ -517,7 +527,7 @@ BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_
 		char * pointer=(char*)lpBaseAddress;
 		for(;x>0;x--)
 		{
-			z = (cacheflush(pointer, (int)(0x7FFFFFFF),  DCACHE) == 0);
+			z = (cacheflush(pointer, (int)(0x7FFFFFFF),  ICACHE) == 0);
 			if((x-1)!=0)
 			{
 				pointer = (char*)(((unsigned long long)pointer)+((unsigned long long)0x7FFFFFFF));
@@ -525,7 +535,7 @@ BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_
 		}
 		if(y>0)
 		{
-			z = (cacheflush(pointer, y,  DCACHE) == 0);
+			z = (cacheflush(pointer, y,  ICACHE) == 0);
 		}
 		return z;
 	#endif

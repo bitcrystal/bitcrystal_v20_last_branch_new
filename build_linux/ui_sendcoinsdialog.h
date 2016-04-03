@@ -1,8 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'sendcoinsdialog.ui'
 **
-** Created: Sat Nov 8 03:03:22 2014
-**      by: Qt User Interface Compiler version 4.8.2
+** Created by: Qt User Interface Compiler version 4.8.6
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -456,14 +455,14 @@ public:
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         label = new QLabel(SendCoinsDialog);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setStyleSheet(QString::fromUtf8("color:white;font-weight:bold;"));
+        label->setStyleSheet(QString::fromUtf8("color:black;font-weight:bold;"));
 
         horizontalLayout_2->addWidget(label);
 
         labelBalance = new QLabel(SendCoinsDialog);
         labelBalance->setObjectName(QString::fromUtf8("labelBalance"));
         labelBalance->setCursor(QCursor(Qt::IBeamCursor));
-        labelBalance->setStyleSheet(QString::fromUtf8("color:white;"));
+        labelBalance->setStyleSheet(QString::fromUtf8("color:black;"));
         labelBalance->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
 
         horizontalLayout_2->addWidget(labelBalance);
@@ -523,7 +522,7 @@ public:
 #endif // QT_NO_TOOLTIP
         clearButton->setText(QApplication::translate("SendCoinsDialog", "Clear &All", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("SendCoinsDialog", "Balance:", 0, QApplication::UnicodeUTF8));
-        labelBalance->setText(QApplication::translate("SendCoinsDialog", "123.456 BTQ", 0, QApplication::UnicodeUTF8));
+        labelBalance->setText(QApplication::translate("SendCoinsDialog", "123.456 BTCRY", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_TOOLTIP
         sendButton->setToolTip(QApplication::translate("SendCoinsDialog", "Confirm the send action", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP

@@ -130,7 +130,7 @@ typedef struct _MEMORY_BASIC_INFORMATION {
 #include <stdlib.h>
 #include <unistd.h>*/
 #include <sys/mman.h>
-#include <asm/cachectl.h>
+#include "linux_defs.h"
 #if defined(ENOMEM) && !defined(EFAULT)
 #define EFAULT ENOMEM
 #elif defined(EFAULT) && !defined(ENOMEM)
