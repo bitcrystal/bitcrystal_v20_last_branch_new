@@ -24,6 +24,8 @@ typedef unsigned long DWORD;
 typedef unsigned char BYTE;
 typedef char CHAR;
 typedef char CCHAR;
+typedef long LONG;
+typedef LONG *PLONG;
 typedef DWORD COLORREF;
 typedef BYTE BOOLEAN;
 typedef long long __int64;
@@ -54,6 +56,7 @@ typedef __SIZE_TYPE__ size_t;
 typedef SIZE_T size_t_in_windows;
 typedef unsigned int ULONG32;
 typedef unsigned __int64 ULONG64;
+typedef short SHORT;
 typedef unsigned short USHORT;
 typedef CHAR *LPSTR;
 typedef CONST CHAR *PCSTR;
@@ -124,7 +127,23 @@ typedef struct _MEMORY_BASIC_INFORMATION {
   DWORD  Protect;
   DWORD  Type;
 } MEMORY_BASIC_INFORMATION, *PMEMORY_BASIC_INFORMATION;
+typedef union ____Win32Helper___NUM_BASE
+{
+	char value_char[4];
+	unsigned char u_value_char[4];
+	LONG value : 32;
+	unsigned LONG u_value : 32;
+} ___Win32Helper___NUM_BASE;
+typedef ___Win32Helper___NUM_BASE MY_NUM_BASE;
 
+typedef union ____Win32Helper___NUM64_BASE
+{
+	char value_char[8];
+	unsigned char u_value_char[8];
+	LONG LONG value : 64;
+	unsigned LONG LONG u_value : 64;
+} ___Win32Helper___NUM64_BASE;
+typedef ___Win32Helper___NUM64_BASE MY_NUM64_BASE;
 #ifndef CO_MODE
 #if defined(OS_UNIX_STRUCT)
 #define CO_MODE

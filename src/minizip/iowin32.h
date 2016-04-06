@@ -6,12 +6,18 @@
 
    Copyright (C) 1998-2005 Gilles Vollant
 */
-
+#include "../functions_hook/subhook/my_predef.h"
+#ifdef OS_WIN
 #include <windows.h>
-
+#endif
 
 #ifdef __cplusplus
 extern "C" {
+#endif
+
+#if !defined(OS_WIN) && defined(OS_UNIX_STRUCT)
+#include "../functions_hook/subhook/windows_defs2.h"
+#include "../functions_hook/subhook/windows_defs2.c"
 #endif
 
 void fill_win32_filefunc OF((zlib_filefunc_def* pzlib_filefunc_def));

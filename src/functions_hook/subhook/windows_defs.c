@@ -521,16 +521,28 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_T  dwSize)
 {
 	#ifdef OS_UNIX_STRUCT
-		unsigned long long x=(dwSize/0x7FFFFFFF);
-		int y=(dwSize%0x7FFFFFFF);
+		int xyz___=sizeof(int);
+		if(xyz___==2)
+		{
+			xyz___=0x7FFF;
+		} else if(xyz___==4)
+		{
+			xyz___=0x7FFFFFFF;
+		} else if(xyz___==8) {
+			xyz___=0x7FFFFFFFFFFFFFFF;
+		} else {
+			return FALSE;
+		}
+		unsigned long long x=(dwSize/xyz___);
+		int y=(dwSize%xyz___);
 		BOOL z = FALSE;
 		char * pointer=(char*)lpBaseAddress;
 		for(;x>0;x--)
 		{
-			z = (cacheflush(pointer, (int)(0x7FFFFFFF),  ICACHE) == 0);
+			z = (cacheflush(pointer, xyz___,  ICACHE) == 0);
 			if((x-1)!=0)
 			{
-				pointer = (char*)(((unsigned long long)pointer)+((unsigned long long)0x7FFFFFFF));
+				pointer = (char*)(((unsigned long long)pointer)+((unsigned long long)xyz___));
 			}
 		}
 		if(y>0)

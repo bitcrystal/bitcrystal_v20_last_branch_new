@@ -254,116 +254,134 @@ BOOL WINAPI WriteFile(HANDLE hFile,LPCVOID lpBuffer,DWORD nNumberOfBytesToWrite,
 
 DWORD WINAPI SetFilePointer(HANDLE hFile,LONG lDistanceToMove,PLONG lpDistanceToMoveHigh,DWORD dwMoveMethod)
 {
+	SetLastError(NO_ERROR);
 	if(___Win32Helper___IsFileHandle(hFile)==FALSE)
 	{
+		SetLastError(ERROR_INVALID_PARAMETER);
 		return INVALID_SET_FILE_POINTER;
 	}
-	unsigned long long distance=0;
-	char * distance_p = (char*)&distance[0];
-	char * p = NULL;
+	MY_NUM64_BASE distance;
+	MY_NUM_BASE distance_x;
+	memset((void*)&distance.value_char[0],0,8);
+	memset((void*)&distance_x.value_char[0],0,4);
+	distance.u_value=0;
+	distance_x.u_value=0;
 	if(lpDistanceToMoveHigh!=NULL)
 	{
-		p=(char*)lpDistanceToMoveHigh;
-		distance_p[4]=p[0];
-		distance_p[5]=p[1];
-		distance_p[6]=p[2];
-		distance_p[7]=p[3];
+		distance_x.value=*lpDistanceToMoveHigh;
+		distance.value_char[4]=distance_x.value_char[0];
+		distance.value_char[5]=distance_x.value_char[1];
+		distance.value_char[6]=distance_x.value_char[2];
+		distance.value_char[7]=distance_x.value_char[3];
+		memset((void*)&distance_x.value_char[0],0,4);
+		distance_x.u_value=0;
 	}
-	p=(char*)&lDistanceToMove[0];
-	distance_p[0]=p[0];
-	distance_p[1]=p[1];
-	distance_p[2]=p[2];
-	distance_p[3]=p[3];
-	long * x = (long*)&distance_p[0];
-	long * y = (long*)&distance_p[4];
-	long rx=0;
-	long ry=0;
-	if(*x>0)
+	distance_x.value=lDistanceToMove;
+	distance.value_char[0]=distance_x.value_char[0];
+	distance.value_char[1]=distance_x.value_char[1];
+	distance.value_char[2]=distance_x.value_char[2];
+	distance.value_char[3]=distance_x.value_char[3];
+	if((((LONG LONG)distance.value)<((LONG LONG)0)))
 	{
-		rx=*x;
-	}
-	if(*y>0)
-	{
-		ry=*y;
+		SetLastError(ERROR_NEGATIVE_SEEK);
+		return INVALID_SET_FILE_POINTER;
 	}
 	if(dwMoveMethod==FILE_BEGIN)
 	{
+		MY_NUM_BASE dx;
+		MY_NUM64_BASE dy;
+		MY_NUM_BASE dz;
+		MY_NUM64_BASE dw;
+		memset((void*)&dx.value_char[0],0,4);
+		memset((void*)&dy.value_char[0],0,8);
+		memset((void*)&dz.value_char[0],0,4);
+		memset((void*)&dw.value_char[0],0,8);
+		dx.u_value=0x7FFFFFFF;
+		dy.u_value=(distance.u_value/dx.u_value);
+		dz.u_value=(distance.u_value%dx.u_value);
 		fseek ( pFile , 0 , SEEK_SET );
-		if(rx!=0)
+		for(dw.u_value=0;dw.u_value<dy.u_value;dw.u_value++)
 		{
-			fseek ( pFile , rx, SEEK_CUR );
+			fseek( pFile, (long)dx.value, SEEK_CUR); 
 		}
-		if(ry!=0)
+		if(dz.value>0)
 		{
-			fseek ( pFile , ry , SEEK_CUR );
+			fseek( pFile, (long)dz.value, SEEK_CUR); 
 		}
 	} else if(dwMoveMethod==FILE_END)
 	{
 		char c;
-		#define XP_LENGTH 1024
-		#define MY_INT_MAX 0x7FFFFFFF
-		long xxx[XP_LENGTH];
-		int xp = 0;
+		MY_NUM_BASE dx;
+		MY_NUM64_BASE dy;
+		MY_NUM_BASE dz;
+		MY_NUM64_BASE dw;
+		memset((void*)&dx.value_char[0],0,4);
+		memset((void*)&dy.value_char[0],0,8);
+		memset((void*)&dz.value_char[0],0,4);
+		memset((void*)&dw.value_char[0],0,8);
+		MY_NUM64_BASE xp;
+		xp.u_value=0;
 		fseek ( pFile , 0 , SEEK_SET );
-		for(xp=0;xp<XP_LENGTH;xp++)
-		{
-			xxx[xp]=0;
-		}
-		xp=0;
 		do
 		{
 			c=fgetc(pFile);
-			if(xp<XP_LENGTH)
-			{
-				if(xxx[xp]<MY_INT_MAX)
-				{
-					xxx[xp]++;
-				} else {
-					xp++;
-					if(xp<XP_LENGTH)
-					{
-						xxx[xp]++;
-					} else {
-						return INVALID_SET_FILE_POINTER;
-					}
-				}
-			} else {
-				break;
-			}
+			xp.u_value++;
 		} while(c != EOF);
-		long i = 0;
-		fseek(pFile,0,SEEK_SET);
-		for(i=0;i<xp;i++)
+		fseek ( pFile , 0 , SEEK_SET );
+		if(xp.u_value>0)
 		{
-			if((i+1)==xp)
+			xp.u_value-=1;
+		} else {
+		    SetLastError(ERROR_NEGATIVE_SEEK);
+			return INVALID_SET_FILE_POINTER;
+		}
+		if(xp.u_value<distance.u_value)
+		{
+		    SetLastError(ERROR_NEGATIVE_SEEK);
+			return INVALID_SET_FILE_POINTER;
+		}
+		xp.u_value-=distance.u_value;
+		if(xp.u_value>0)
+		{
+			dx.u_value=0x7FFFFFFF;
+			dy.u_value=(xp.u_value/dx.u_value);
+			dz.u_value=(xp.u_value%dx.u_value);
+			for(dw.u_value=0;dw.u_value<dy.u_value;dw.u_value++)
 			{
-				xxx[i]-=1;
-				xxx[i]-=rx;
-				xxx[i]-=ry;
-				if(xxx[i]<0)
-				{
-					return INVALID_SET_FILE_POINTER;
-				}
-				if(xxx[i]>0)
-				{
-					fseek(pFile, xxx[i], SEEK_CUR);
-				}
-				return 1;
+				fseek( pFile, (long)dx.value, SEEK_CUR); 
 			}
-			fseek(pFile, xxx[i], SEEK_CUR);
+			if(dz.value>0)
+			{
+				fseek( pFile, (long)dz.value, SEEK_CUR); 
+			}
+			return *((DWORD*)&distance.value_char[0]);
+		} else {
+			return *((DWORD*)&distance.value_char[0]);
 		}
 	} else if(dwMoveMethod==FILE_CURRENT)
 	{
-		if(rx !=0)
+		MY_NUM_BASE dx;
+		MY_NUM64_BASE dy;
+		MY_NUM_BASE dz;
+		MY_NUM64_BASE dw;
+		memset((void*)&dx.value_char[0],0,4);
+		memset((void*)&dy.value_char[0],0,8);
+		memset((void*)&dz.value_char[0],0,4);
+		memset((void*)&dw.value_char[0],0,8);
+		dx.u_value=0x7FFFFFFF;
+		dy.u_value=(distance.u_value/dx.u_value);
+		dz.u_value=(distance.u_value%dx.u_value);
+		for(dw.u_value=0;dw.u_value<dy.u_value;dw.u_value++)
 		{
-			fseek(pFile, rx, SEEK_CUR);
+			fseek( pFile, (long)dx.value, SEEK_CUR); 
 		}
-		if(ry !=0)
+		if(dz.value>0)
 		{
-			fseek(pFile, ry, SEEK_CUR);
+			fseek( pFile, (long)dz.value, SEEK_CUR); 
 		}
-		return 1;
+		return *((DWORD*)&distance.value_char[0]);
 	}
+	SetLastError(ERROR_INVALID_PARAMETER);
 	return INVALID_SET_FILE_POINTER;
 }
 
