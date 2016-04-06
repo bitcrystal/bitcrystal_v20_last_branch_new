@@ -95,6 +95,16 @@ typedef struct _UNICODE_STRING {
   USHORT  MaximumLength;
   PWSTR  Buffer;
 } UNICODE_STRING;
+typedef CONST CHAR *LPCSTR;
+typedef CONST WCHAR *LPCWSTR;
+#ifdef UNICODE
+ typedef LPCWSTR LPCTSTR; 
+#else
+ typedef LPCSTR LPCTSTR;
+#endif
+#define MAX_PATH             260
+#define INVALID_HANDLE_VALUE ((HANDLE) -1)
+#define INVALID_FILE_SIZE    ((DWORD)0xFFFFFFFF)
 typedef UNICODE_STRING *PUNICODE_STRING;
 typedef const UNICODE_STRING *PCUNICODE_STRING;
 #ifdef _UNICODE
@@ -114,7 +124,6 @@ typedef struct _MEMORY_BASIC_INFORMATION {
   DWORD  Protect;
   DWORD  Type;
 } MEMORY_BASIC_INFORMATION, *PMEMORY_BASIC_INFORMATION;
-
 
 #ifndef CO_MODE
 #if defined(OS_UNIX_STRUCT)
