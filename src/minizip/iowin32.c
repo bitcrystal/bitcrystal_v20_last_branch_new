@@ -20,7 +20,6 @@
 #ifndef INVALID_SET_FILE_POINTER
 #define INVALID_SET_FILE_POINTER ((DWORD)-1)
 #endif
-}
 #ifndef OS_UNIX_STRUCT
 
 voidpf ZCALLBACK win32_open_file_func OF((

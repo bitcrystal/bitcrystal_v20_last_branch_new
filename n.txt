@@ -5,77 +5,27 @@ Paketlisten werden gelesen...
 Abhängigkeitsbaum wird aufgebaut....
 Statusinformationen werden eingelesen....
 libdb++-dev ist schon die neueste Version.
-Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-  gstreamer1.0-plugins-bad-faad gstreamer1.0-plugins-bad-videoparsers
-  gstreamer1.0-plugins-ugly-amr libchromaprint0 libfluidsynth1
-  libgstreamer-plugins-bad1.0-0 libgtkglext1 libilmbase6 libmjpegutils-2.1-0
-  libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0 libopencv-calib3d2.4
-  libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4
-  libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4
-  libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4
-  libopencv-video2.4 libopenexr6 libsrtp0 libswscale3 libtbb2
-Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-0 aktualisiert, 0 neu installiert, 0 zu entfernen und 291 nicht aktualisiert.
+0 aktualisiert, 0 neu installiert, 0 zu entfernen und 0 nicht aktualisiert.
 Paketlisten werden gelesen...
 Abhängigkeitsbaum wird aufgebaut....
 Statusinformationen werden eingelesen....
 libminiupnpc10 ist schon die neueste Version.
-Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-  gstreamer1.0-plugins-bad-faad gstreamer1.0-plugins-bad-videoparsers
-  gstreamer1.0-plugins-ugly-amr libchromaprint0 libfluidsynth1
-  libgstreamer-plugins-bad1.0-0 libgtkglext1 libilmbase6 libmjpegutils-2.1-0
-  libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0 libopencv-calib3d2.4
-  libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4
-  libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4
-  libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4
-  libopencv-video2.4 libopenexr6 libsrtp0 libswscale3 libtbb2
-Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-0 aktualisiert, 0 neu installiert, 0 zu entfernen und 291 nicht aktualisiert.
+0 aktualisiert, 0 neu installiert, 0 zu entfernen und 0 nicht aktualisiert.
 Paketlisten werden gelesen...
 Abhängigkeitsbaum wird aufgebaut....
 Statusinformationen werden eingelesen....
 libminiupnpc-dev ist schon die neueste Version.
-Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-  gstreamer1.0-plugins-bad-faad gstreamer1.0-plugins-bad-videoparsers
-  gstreamer1.0-plugins-ugly-amr libchromaprint0 libfluidsynth1
-  libgstreamer-plugins-bad1.0-0 libgtkglext1 libilmbase6 libmjpegutils-2.1-0
-  libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0 libopencv-calib3d2.4
-  libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4
-  libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4
-  libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4
-  libopencv-video2.4 libopenexr6 libsrtp0 libswscale3 libtbb2
-Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-0 aktualisiert, 0 neu installiert, 0 zu entfernen und 291 nicht aktualisiert.
+0 aktualisiert, 0 neu installiert, 0 zu entfernen und 0 nicht aktualisiert.
 Paketlisten werden gelesen...
 Abhängigkeitsbaum wird aufgebaut....
 Statusinformationen werden eingelesen....
 libdb5.3++ ist schon die neueste Version.
-Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-  gstreamer1.0-plugins-bad-faad gstreamer1.0-plugins-bad-videoparsers
-  gstreamer1.0-plugins-ugly-amr libchromaprint0 libfluidsynth1
-  libgstreamer-plugins-bad1.0-0 libgtkglext1 libilmbase6 libmjpegutils-2.1-0
-  libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0 libopencv-calib3d2.4
-  libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4
-  libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4
-  libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4
-  libopencv-video2.4 libopenexr6 libsrtp0 libswscale3 libtbb2
-Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-0 aktualisiert, 0 neu installiert, 0 zu entfernen und 291 nicht aktualisiert.
+0 aktualisiert, 0 neu installiert, 0 zu entfernen und 0 nicht aktualisiert.
 Paketlisten werden gelesen...
 Abhängigkeitsbaum wird aufgebaut....
 Statusinformationen werden eingelesen....
 libdb5.3++-dev ist schon die neueste Version.
-Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-  gstreamer1.0-plugins-bad-faad gstreamer1.0-plugins-bad-videoparsers
-  gstreamer1.0-plugins-ugly-amr libchromaprint0 libfluidsynth1
-  libgstreamer-plugins-bad1.0-0 libgtkglext1 libilmbase6 libmjpegutils-2.1-0
-  libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0 libopencv-calib3d2.4
-  libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4
-  libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4
-  libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4
-  libopencv-video2.4 libopenexr6 libsrtp0 libswscale3 libtbb2
-Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-0 aktualisiert, 0 neu installiert, 0 zu entfernen und 291 nicht aktualisiert.
+0 aktualisiert, 0 neu installiert, 0 zu entfernen und 0 nicht aktualisiert.
 Paketlisten werden gelesen...
 Abhängigkeitsbaum wird aufgebaut....
 Statusinformationen werden eingelesen....
@@ -91,17 +41,7 @@ build-essential ist schon die neueste Version.
 libxtst-dev ist schon die neueste Version.
 libqt4-dev ist schon die neueste Version.
 qt4-qmake ist schon die neueste Version.
-Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-  gstreamer1.0-plugins-bad-faad gstreamer1.0-plugins-bad-videoparsers
-  gstreamer1.0-plugins-ugly-amr libchromaprint0 libfluidsynth1
-  libgstreamer-plugins-bad1.0-0 libgtkglext1 libilmbase6 libmjpegutils-2.1-0
-  libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0 libopencv-calib3d2.4
-  libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4
-  libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4
-  libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4
-  libopencv-video2.4 libopenexr6 libsrtp0 libswscale3 libtbb2
-Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-0 aktualisiert, 0 neu installiert, 0 zu entfernen und 291 nicht aktualisiert.
+0 aktualisiert, 0 neu installiert, 0 zu entfernen und 0 nicht aktualisiert.
 Paketlisten werden gelesen...
 Abhängigkeitsbaum wird aufgebaut....
 Statusinformationen werden eingelesen....
@@ -111,17 +51,7 @@ libqrencode3 ist schon die neueste Version.
 libtext-qrcode-perl ist schon die neueste Version.
 python-qrencode ist schon die neueste Version.
 qrencode ist schon die neueste Version.
-Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-  gstreamer1.0-plugins-bad-faad gstreamer1.0-plugins-bad-videoparsers
-  gstreamer1.0-plugins-ugly-amr libchromaprint0 libfluidsynth1
-  libgstreamer-plugins-bad1.0-0 libgtkglext1 libilmbase6 libmjpegutils-2.1-0
-  libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0 libopencv-calib3d2.4
-  libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4
-  libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4
-  libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4
-  libopencv-video2.4 libopenexr6 libsrtp0 libswscale3 libtbb2
-Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-0 aktualisiert, 0 neu installiert, 0 zu entfernen und 291 nicht aktualisiert.
+0 aktualisiert, 0 neu installiert, 0 zu entfernen und 0 nicht aktualisiert.
 ./bitcrystal.all.linux.make.sh: Zeile 29: [: 7.0: Ganzzahliger Ausdruck erwartet.
 Paketlisten werden gelesen...
 Abhängigkeitsbaum wird aufgebaut....
@@ -134,47 +64,17 @@ libminiupnpc-dev ist schon die neueste Version.
 libqt4-dev ist schon die neueste Version.
 libssl-dev ist schon die neueste Version.
 qt4-qmake ist schon die neueste Version.
-Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-  gstreamer1.0-plugins-bad-faad gstreamer1.0-plugins-bad-videoparsers
-  gstreamer1.0-plugins-ugly-amr libchromaprint0 libfluidsynth1
-  libgstreamer-plugins-bad1.0-0 libgtkglext1 libilmbase6 libmjpegutils-2.1-0
-  libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0 libopencv-calib3d2.4
-  libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4
-  libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4
-  libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4
-  libopencv-video2.4 libopenexr6 libsrtp0 libswscale3 libtbb2
-Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-0 aktualisiert, 0 neu installiert, 0 zu entfernen und 291 nicht aktualisiert.
+0 aktualisiert, 0 neu installiert, 0 zu entfernen und 0 nicht aktualisiert.
 Paketlisten werden gelesen...
 Abhängigkeitsbaum wird aufgebaut....
 Statusinformationen werden eingelesen....
 build-essential ist schon die neueste Version.
-Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-  gstreamer1.0-plugins-bad-faad gstreamer1.0-plugins-bad-videoparsers
-  gstreamer1.0-plugins-ugly-amr libchromaprint0 libfluidsynth1
-  libgstreamer-plugins-bad1.0-0 libgtkglext1 libilmbase6 libmjpegutils-2.1-0
-  libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0 libopencv-calib3d2.4
-  libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4
-  libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4
-  libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4
-  libopencv-video2.4 libopenexr6 libsrtp0 libswscale3 libtbb2
-Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-0 aktualisiert, 0 neu installiert, 0 zu entfernen und 291 nicht aktualisiert.
+0 aktualisiert, 0 neu installiert, 0 zu entfernen und 0 nicht aktualisiert.
 Paketlisten werden gelesen...
 Abhängigkeitsbaum wird aufgebaut....
 Statusinformationen werden eingelesen....
 libssl-dev ist schon die neueste Version.
-Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-  gstreamer1.0-plugins-bad-faad gstreamer1.0-plugins-bad-videoparsers
-  gstreamer1.0-plugins-ugly-amr libchromaprint0 libfluidsynth1
-  libgstreamer-plugins-bad1.0-0 libgtkglext1 libilmbase6 libmjpegutils-2.1-0
-  libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0 libopencv-calib3d2.4
-  libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4
-  libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4
-  libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4
-  libopencv-video2.4 libopenexr6 libsrtp0 libswscale3 libtbb2
-Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-0 aktualisiert, 0 neu installiert, 0 zu entfernen und 291 nicht aktualisiert.
+0 aktualisiert, 0 neu installiert, 0 zu entfernen und 0 nicht aktualisiert.
 Paketlisten werden gelesen...
 Abhängigkeitsbaum wird aufgebaut....
 Statusinformationen werden eingelesen....
@@ -195,17 +95,7 @@ Paketlisten werden gelesen...
 Abhängigkeitsbaum wird aufgebaut....
 Statusinformationen werden eingelesen....
 libminiupnpc-dev ist schon die neueste Version.
-Die folgenden Pakete wurden automatisch installiert und werden nicht mehr benötigt:
-  gstreamer1.0-plugins-bad-faad gstreamer1.0-plugins-bad-videoparsers
-  gstreamer1.0-plugins-ugly-amr libchromaprint0 libfluidsynth1
-  libgstreamer-plugins-bad1.0-0 libgtkglext1 libilmbase6 libmjpegutils-2.1-0
-  libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0 libopencv-calib3d2.4
-  libopencv-contrib2.4 libopencv-core2.4 libopencv-features2d2.4
-  libopencv-flann2.4 libopencv-highgui2.4 libopencv-imgproc2.4
-  libopencv-legacy2.4 libopencv-ml2.4 libopencv-objdetect2.4
-  libopencv-video2.4 libopenexr6 libsrtp0 libswscale3 libtbb2
-Verwenden Sie »apt-get autoremove«, um sie zu entfernen.
-0 aktualisiert, 0 neu installiert, 0 zu entfernen und 291 nicht aktualisiert.
+0 aktualisiert, 0 neu installiert, 0 zu entfernen und 0 nicht aktualisiert.
 Building LevelDB ...
 make[1]: Entering directory '/mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/src/leveldb'
 rm -f libleveldb.a
@@ -258,10 +148,10 @@ In file included from minizip/../functions_hook/subhook/windows_defs2.c:4:0,
                  from minizip/iowin32.h:20,
                  from minizip/iowin32.c:14:
 minizip/../functions_hook/subhook/windows_defs.c: In function ‘my___grep’:
-minizip/../functions_hook/subhook/windows_defs.c:89:3: warning: incompatible implicit declaration of built-in function ‘memset’
+minizip/../functions_hook/subhook/windows_defs.c:90:3: warning: incompatible implicit declaration of built-in function ‘memset’
    memset(line,0,500);
    ^
-minizip/../functions_hook/subhook/windows_defs.c:94:19: warning: passing argument 1 of ‘getline’ from incompatible pointer type
+minizip/../functions_hook/subhook/windows_defs.c:95:19: warning: passing argument 1 of ‘getline’ from incompatible pointer type
    int x = getline(&line, &s, stream);
                    ^
 In file included from minizip/../functions_hook/subhook/linux_defs.h:21:0,
@@ -275,7 +165,7 @@ In file included from minizip/../functions_hook/subhook/linux_defs.h:21:0,
 In file included from minizip/../functions_hook/subhook/windows_defs2.c:4:0,
                  from minizip/iowin32.h:20,
                  from minizip/iowin32.c:14:
-minizip/../functions_hook/subhook/windows_defs.c:109:16: warning: passing argument 1 of ‘getline’ from incompatible pointer type
+minizip/../functions_hook/subhook/windows_defs.c:110:16: warning: passing argument 1 of ‘getline’ from incompatible pointer type
     x = getline(&line, &s, stream);
                 ^
 In file included from minizip/../functions_hook/subhook/linux_defs.h:21:0,
@@ -290,17 +180,31 @@ In file included from minizip/../functions_hook/subhook/windows_defs2.c:4:0,
                  from minizip/iowin32.h:20,
                  from minizip/iowin32.c:14:
 minizip/../functions_hook/subhook/windows_defs.c: In function ‘VirtualProtect’:
-minizip/../functions_hook/subhook/windows_defs.c:287:6: warning: return makes integer from pointer without a cast
+minizip/../functions_hook/subhook/windows_defs.c:288:6: warning: return makes integer from pointer without a cast
       return NULL;
       ^
 minizip/../functions_hook/subhook/windows_defs.c: In function ‘VirtualQuery’:
-minizip/../functions_hook/subhook/windows_defs.c:342:3: warning: incompatible implicit declaration of built-in function ‘memset’
+minizip/../functions_hook/subhook/windows_defs.c:343:3: warning: incompatible implicit declaration of built-in function ‘memset’
    memset((void*)lpBuffer,0,sizeof((*lpBuffer)));
    ^
 minizip/../functions_hook/subhook/windows_defs.c: In function ‘FlushInstructionCache’:
 minizip/../functions_hook/subhook/windows_defs.c:533:11: warning: overflow in implicit constant conversion [-Woverflow]
     xyz___=0x7FFFFFFFFFFFFFFF;
            ^
+In file included from minizip/iowin32.h:20:0,
+                 from minizip/iowin32.c:14:
+minizip/../functions_hook/subhook/windows_defs2.c: In function ‘ReadFile’:
+minizip/../functions_hook/subhook/windows_defs2.c:148:2: warning: incompatible implicit declaration of built-in function ‘memset’
+  memset((void*)mystring,255,4096);
+  ^
+minizip/../functions_hook/subhook/windows_defs2.c: In function ‘WriteFile’:
+minizip/../functions_hook/subhook/windows_defs2.c:202:2: warning: incompatible implicit declaration of built-in function ‘memset’
+  memset((void*)mystring,0,4096);
+  ^
+minizip/../functions_hook/subhook/windows_defs2.c: In function ‘SetFilePointer’:
+minizip/../functions_hook/subhook/windows_defs2.c:265:2: warning: incompatible implicit declaration of built-in function ‘memset’
+  memset((void*)&distance.value_char[0],0,8);
+  ^
 gcc -c -o obj/unzip.o minizip/unzip.c
 gcc -c -o obj/zip.o minizip/zip.c
 gcc -c -o obj/miniunz.o minizip/miniunz.c
@@ -1454,29 +1358,6 @@ skein.c:953:1: note: initializing argument 1 of ‘void skein_big_close(sph_skei
  skein_big_close(sph_skein_big_context *sc, unsigned ub, unsigned n,
  ^
 g++ -O2 -pthread -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -g -DBOOST_SPIRIT_THREADSAFE -D_FILE_OFFSET_BITS=64 -I/mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/src -I/mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/src/obj -DUSE_UPNP=1 -DUSE_IPV6=1 -I/mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/src/leveldb/include -I/mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/src/leveldb/helpers -DHAVE_BUILD_INFO -fno-stack-protector -fstack-protector-all -Wstack-protector -D_FORTIFY_SOURCE=2  -o bitcrystald leveldb/libleveldb.a obj/trees.o obj/zutil.o obj/inffast.o obj/infback.o obj/inftrees.o obj/adler32.o obj/inflate.o obj/deflate.o obj/crc32.o obj/ioapi.o obj/mztools.o obj/iowin32.o obj/unzip.o obj/zip.o obj/miniunz.o obj/minizip.o obj/utils.o obj/MCInst.o obj/MCInstrDesc.o obj/MCRegisterInfo.o obj/SStream.o obj/CommonBaseInfo.o obj/CommonDisassembler.o obj/CommonDisassemblerDecoder.o obj/CommonATTInstPrinter.o obj/CommonInstPrinter.o obj/CommonIntelInstPrinter.o obj/CommonMapping.o obj/CommonMCTargetDesc.o obj/CommonModule.o obj/cs.o obj/mhook.o obj/convert_functions.o obj/base64.o obj/random.o obj/base_security.o obj/alert.o obj/version.o obj/checkpoints.o obj/netbase.o obj/addrman.o obj/crypter.o obj/key.o obj/db.o obj/init.o obj/keystore.o obj/main.o obj/net.o obj/protocol.o obj/bitcoinrpc.o obj/rpcdump.o obj/rpcnet.o obj/rpcmining.o obj/rpcwallet.o obj/rpcblockchain.o obj/rpcrawtransaction.o obj/script.o obj/sync.o obj/util.o obj/wallet.o obj/walletdb.o obj/hash.o obj/bloom.o obj/noui.o obj/leveldb.o obj/txdb.o obj/blake.o obj/bmw.o obj/groestl.o obj/jh.o obj/keccak.o obj/skein.o -Wl,-z,relro -Wl,-z,now   -Wl,-Bdynamic -l boost_system -l boost_filesystem -l boost_program_options -l boost_thread -l db_cxx -l ssl -l crypto -l miniupnpc -Wl,-Bdynamic -l z -l dl -l pthread /mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/src/leveldb/libleveldb.a /mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/src/leveldb/libmemenv.a
-obj/iowin32.o: In Funktion `VirtualQuery':
-iowin32.c:(.text+0xe25): Nicht definierter Verweis auf `vma_iterate'
-iowin32.c:(.text+0xe42): Nicht definierter Verweis auf `vma_iterate'
-obj/iowin32.o: In Funktion `win32_open_file_func':
-iowin32.c:(.text+0x1252): Nicht definierter Verweis auf `CreateFile'
-iowin32.c:(.text+0x12a0): Nicht definierter Verweis auf `CloseHandle'
-obj/iowin32.o: In Funktion `win32_read_file_func':
-iowin32.c:(.text+0x1329): Nicht definierter Verweis auf `ReadFile'
-iowin32.c:(.text+0x1337): Nicht definierter Verweis auf `GetLastError'
-obj/iowin32.o: In Funktion `win32_write_file_func':
-iowin32.c:(.text+0x13df): Nicht definierter Verweis auf `WriteFile'
-iowin32.c:(.text+0x13ed): Nicht definierter Verweis auf `GetLastError'
-obj/iowin32.o: In Funktion `win32_tell_file_func':
-iowin32.c:(.text+0x147b): Nicht definierter Verweis auf `SetFilePointer'
-iowin32.c:(.text+0x1490): Nicht definierter Verweis auf `GetLastError'
-obj/iowin32.o: In Funktion `win32_seek_file_func':
-iowin32.c:(.text+0x1558): Nicht definierter Verweis auf `SetFilePointer'
-iowin32.c:(.text+0x156d): Nicht definierter Verweis auf `GetLastError'
-obj/iowin32.o: In Funktion `win32_close_file_func':
-iowin32.c:(.text+0x15d2): Nicht definierter Verweis auf `CloseHandle'
-collect2: error: ld returned 1 exit status
-my.makefile.linux:333: recipe for target 'bitcrystald' failed
-make: *** [bitcrystald] Error 1
 Project MESSAGE: Building with QRCode support
 Project MESSAGE: Building with UPNP support
 Project MESSAGE: Building without IPv6 support
@@ -1488,69 +1369,65 @@ Removed plural forms as the target language has less forms.
 If this sounds wrong, possibly the target language is not set or recognized.
 Removed plural forms as the target language has less forms.
 If this sounds wrong, possibly the target language is not set or recognized.
-make: Warning: File 'Makefile' has modification time 0,0019 s in the future
 cd /mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/src/leveldb && CC=gcc CXX=g++ make OPT="-m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2" libleveldb.a libmemenv.a
 cd /mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new; /bin/sh share/genbuild.sh /mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/build/build.h
 make[1]: Entering directory '/mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/src/leveldb'
 gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/utils.o src/functions_hook/polyhook_lib/Capstone/utils.c
 gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/MCInst.o src/functions_hook/polyhook_lib/Capstone/MCInst.c
-make[1]: Warning: File 'build_config.mk' has modification time 0,0061 s in the future
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/MCInstrDesc.o src/functions_hook/polyhook_lib/Capstone/MCInstrDesc.c
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/MCRegisterInfo.o src/functions_hook/polyhook_lib/Capstone/MCRegisterInfo.c
 make[1]: 'libleveldb.a' is up to date.
 make[1]: 'libmemenv.a' is up to date.
-make[1]: Warnung: Mit der Uhr stimmt etwas nicht. 
-Die Bearbeitung könnte unvollständig sein.
 make[1]: Leaving directory '/mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/src/leveldb'
-gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/MCInstrDesc.o src/functions_hook/polyhook_lib/Capstone/MCInstrDesc.c
-In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
-src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:131:0: warning: "__linux__" redefined
-  #define __linux__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
-src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:160:0: warning: "__amd64__" redefined
-  #define __amd64__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
-                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
-src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:161:0: warning: "_LP64" redefined
-  #define _LP64
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
-                 from src/functions_hook/polyhook_lib/Capstone/MCInst.h:24,
-                 from src/functions_hook/polyhook_lib/Capstone/MCInst.c:12:
-src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:131:0: warning: "__linux__" redefined
-  #define __linux__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
-                 from src/functions_hook/polyhook_lib/Capstone/MCInst.h:24,
-                 from src/functions_hook/polyhook_lib/Capstone/MCInst.c:12:
-src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:160:0: warning: "__amd64__" redefined
-  #define __amd64__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
-                 from src/functions_hook/polyhook_lib/Capstone/MCInst.h:24,
-                 from src/functions_hook/polyhook_lib/Capstone/MCInst.c:12:
-src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:161:0: warning: "_LP64" redefined
-  #define _LP64
- ^
-<built-in>: note: this is the location of the previous definition
-gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/MCRegisterInfo.o src/functions_hook/polyhook_lib/Capstone/MCRegisterInfo.c
 gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/SStream.o src/functions_hook/polyhook_lib/Capstone/SStream.c
+In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
+src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:131:0: warning: "__linux__" redefined
+  #define __linux__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
+src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:160:0: warning: "__amd64__" redefined
+  #define __amd64__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.h:8,
+                 from src/functions_hook/polyhook_lib/Capstone/utils.c:11:
+src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:161:0: warning: "_LP64" redefined
+  #define _LP64
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
+                 from src/functions_hook/polyhook_lib/Capstone/MCInst.h:24,
+                 from src/functions_hook/polyhook_lib/Capstone/MCInst.c:12:
+src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:131:0: warning: "__linux__" redefined
+  #define __linux__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
+                 from src/functions_hook/polyhook_lib/Capstone/MCInst.h:24,
+                 from src/functions_hook/polyhook_lib/Capstone/MCInst.c:12:
+src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:160:0: warning: "__amd64__" redefined
+  #define __amd64__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
+                 from src/functions_hook/polyhook_lib/Capstone/MCInst.h:24,
+                 from src/functions_hook/polyhook_lib/Capstone/MCInst.c:12:
+src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:161:0: warning: "_LP64" redefined
+  #define _LP64
+ ^
+<built-in>: note: this is the location of the previous definition
 gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/CommonBaseInfo.o src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h:1,
@@ -1573,8 +1450,6 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
   #define _LP64
  ^
 <built-in>: note: this is the location of the previous definition
-gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/CommonDisassembler.o src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c
-gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/CommonDisassemblerDecoder.o src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c
 In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/include/capstone.h:3,
                  from src/functions_hook/polyhook_lib/Capstone/cs_priv.h:7,
@@ -1599,50 +1474,52 @@ src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:16
   #define _LP64
  ^
 <built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:131:0: warning: "__linux__" redefined
-  #define __linux__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:160:0: warning: "__amd64__" redefined
-  #define __amd64__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:161:0: warning: "_LP64" redefined
-  #define _LP64
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:131:0: warning: "__linux__" redefined
-  #define __linux__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:160:0: warning: "__amd64__" redefined
-  #define __amd64__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:161:0: warning: "_LP64" redefined
-  #define _LP64
- ^
-<built-in>: note: this is the location of the previous definition
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/CommonDisassembler.o src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/CommonDisassemblerDecoder.o src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c
 gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/CommonATTInstPrinter.o src/functions_hook/polyhook_lib/Capstone/arch/CommonATTInstPrinter.c
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:131:0: warning: "__linux__" redefined
+  #define __linux__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:160:0: warning: "__amd64__" redefined
+  #define __amd64__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:161:0: warning: "_LP64" redefined
+  #define _LP64
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:131:0: warning: "__linux__" redefined
+  #define __linux__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:160:0: warning: "__amd64__" redefined
+  #define __amd64__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:161:0: warning: "_LP64" redefined
+  #define _LP64
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonATTInstPrinter.h:1,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonATTInstPrinter.c:1:
 src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:131:0: warning: "__linux__" redefined
@@ -1663,17 +1540,6 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
   #define _LP64
  ^
 <built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:15:0:
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Disassembler.c: In function ‘X86_getInstruction’:
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Disassembler.c:786:58: warning: unused parameter ‘_info’ [-Wunused-parameter]
-   MCInst *instr, uint16_t *size, uint64_t address, void *_info)
-                                                          ^
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/X86/X86ATTInstPrinter.c:766:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonATTInstPrinter.c:15:
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86GenAsmWriter.inc: In function ‘printInstruction’:
-src/functions_hook/polyhook_lib/Capstone/arch/X86/X86GenAsmWriter.inc:14:70: warning: unused parameter ‘MRI’ [-Wunused-parameter]
- static void printInstruction(MCInst *MI, SStream *O, MCRegisterInfo *MRI)
-                                                                      ^
 gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/CommonInstPrinter.o src/functions_hook/polyhook_lib/Capstone/arch/CommonInstPrinter.c
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonInstPrinter.h:1,
@@ -1718,6 +1584,17 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
   #define _LP64
  ^
 <built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c:15:0:
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Disassembler.c: In function ‘X86_getInstruction’:
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Disassembler.c:786:58: warning: unused parameter ‘_info’ [-Wunused-parameter]
+   MCInst *instr, uint16_t *size, uint64_t address, void *_info)
+                                                          ^
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/X86/X86ATTInstPrinter.c:766:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonATTInstPrinter.c:15:
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86GenAsmWriter.inc: In function ‘printInstruction’:
+src/functions_hook/polyhook_lib/Capstone/arch/X86/X86GenAsmWriter.inc:14:70: warning: unused parameter ‘MRI’ [-Wunused-parameter]
+ static void printInstruction(MCInst *MI, SStream *O, MCRegisterInfo *MRI)
+                                                                      ^
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/X86/X86IntelInstPrinter.c:858:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonIntelInstPrinter.c:15:
 src/functions_hook/polyhook_lib/Capstone/arch/X86/X86GenAsmWriter1.inc: In function ‘printInstruction’:
@@ -1756,7 +1633,6 @@ src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Mapping.c:2182:32: warning:
  const char *X86_group_name(csh handle, unsigned int id)
                                 ^
 gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/CommonMCTargetDesc.o src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c
-gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/CommonModule.o src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.h:1,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c:1:
@@ -1774,32 +1650,33 @@ src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_pre
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.h:1,
                  from src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:161:0: warning: "_LP64" redefined
+  #define _LP64
+ ^
+<built-in>: note: this is the location of the previous definition
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/CommonModule.o src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:131:0: warning: "__linux__" redefined
+  #define __linux__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c:1:
+src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:160:0: warning: "__amd64__" redefined
+  #define __amd64__
+ ^
+<built-in>: note: this is the location of the previous definition
+In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.h:1,
+                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c:1:
 src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:161:0: warning: "_LP64" redefined
   #define _LP64
  ^
 <built-in>: note: this is the location of the previous definition
 gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/cs.o src/functions_hook/polyhook_lib/Capstone/cs.c
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:131:0: warning: "__linux__" redefined
-  #define __linux__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:160:0: warning: "__amd64__" redefined
-  #define __amd64__
- ^
-<built-in>: note: this is the location of the previous definition
-In file included from src/functions_hook/polyhook_lib/Capstone/arch/../include/capstone_predef.h:3:0,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.h:1,
-                 from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c:1:
-src/functions_hook/polyhook_lib/Capstone/arch/../include/../../../subhook/my_predef.h:161:0: warning: "_LP64" redefined
-  #define _LP64
- ^
-<built-in>: note: this is the location of the previous definition
 In file included from src/functions_hook/polyhook_lib/Capstone/include/capstone_predef.h:3:0,
                  from src/functions_hook/polyhook_lib/Capstone/cs.h:3,
                  from src/functions_hook/polyhook_lib/Capstone/cs.c:1:
@@ -1824,12 +1701,12 @@ src/functions_hook/polyhook_lib/Capstone/include/../../../subhook/my_predef.h:16
 src/functions_hook/polyhook_lib/Capstone/cs.c:5:0: warning: ignoring #pragma warning  [-Wunknown-pragmas]
  #pragma warning(disable:4996)
  ^
-gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/mhook.o src/functions_hook/mhook.c
 In file included from src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c:15:0:
 src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Module.c: In function ‘destroy’:
 src/functions_hook/polyhook_lib/Capstone/arch/X86/X86Module.c:90:32: warning: unused parameter ‘handle’ [-Wunused-parameter]
  static void destroy(cs_struct *handle)
                                 ^
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/mhook.o src/functions_hook/mhook.c
 In file included from src/functions_hook/mhook.h:4:0,
                  from src/functions_hook/mhook.c:1:
 src/functions_hook/subhook/my_predef.h:131:0: warning: "__linux__" redefined
@@ -1849,7 +1726,9 @@ src/functions_hook/subhook/my_predef.h:161:0: warning: "_LP64" redefined
  ^
 <built-in>: note: this is the location of the previous definition
 src/functions_hook/polyhook_lib/Capstone/cs.c: In function ‘cs_open’:
-gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/ioapi.o src/minizip/ioapi.c
+src/functions_hook/polyhook_lib/Capstone/cs.c:227:20: warning: overflow in implicit constant conversion [-Woverflow]
+   ud->big_endian = mode & CS_MODE_BIG_ENDIAN;
+                    ^
 In file included from src/functions_hook/subhook/subhook.c:52:0,
                  from src/functions_hook/subhook/hookerpref.c:2,
                  from src/functions_hook/mhook.c:3:
@@ -1867,7 +1746,11 @@ src/functions_hook/subhook/subhook_x86.c: In function ‘subhook_make_trampoline
 src/functions_hook/subhook/subhook_x86.c:215:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
   while (orig_size < JMP_INSN_LEN) {
                    ^
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/ioapi.o src/minizip/ioapi.c
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/mztools.o src/minizip/mztools.c
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/iowin32.o src/minizip/iowin32.c
 src/minizip/ioapi.c: In function ‘fopen_file_func’:
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/unzip.o src/minizip/unzip.c
 src/minizip/ioapi.c:69:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
     voidpf opaque;
            ^
@@ -1895,8 +1778,7 @@ src/minizip/ioapi.c: In function ‘ferror_file_func’:
 src/minizip/ioapi.c:158:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
     voidpf opaque;
            ^
-gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/mztools.o src/minizip/mztools.c
-gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/iowin32.o src/minizip/iowin32.c
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/zip.o src/minizip/zip.c
 In file included from src/minizip/iowin32.h:9:0,
                  from src/minizip/iowin32.c:14:
 src/minizip/../functions_hook/subhook/my_predef.h:131:0: warning: "__linux__" redefined
@@ -1926,8 +1808,6 @@ In file included from /usr/include/stdlib.h:32:0,
 /usr/lib/gcc/x86_64-linux-gnu/4.9/include/stddef.h:402:0: note: this is the location of the previous definition
  #define NULL ((void *)0)
  ^
-gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/unzip.o src/minizip/unzip.c
-gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/zip.o src/minizip/zip.c
 In file included from src/minizip/../functions_hook/subhook/windows_defs.c:5:0,
                  from src/minizip/../functions_hook/subhook/windows_defs2.c:4,
                  from src/minizip/iowin32.h:20,
@@ -1939,19 +1819,148 @@ src/minizip/../functions_hook/subhook/linux_defs.c:5:22: warning: unused paramet
 src/minizip/../functions_hook/subhook/linux_defs.c:5:32: warning: unused parameter ‘nbytes’ [-Wunused-parameter]
  int cacheflush(char *addr, int nbytes, int cache)
                                 ^
+In file included from src/minizip/unzip.c:156:0:
+src/minizip/crypt.h: In function ‘decrypt_byte’:
+src/minizip/crypt.h:35:68: warning: unused parameter ‘pcrc_32_tab’ [-Wunused-parameter]
+ static int decrypt_byte(unsigned long* pkeys, const unsigned long* pcrc_32_tab)
+                                                                    ^
+src/minizip/unzip.c: In function ‘unzlocal_GetCurrentFileInfoInternal’:
+In file included from src/minizip/../functions_hook/subhook/windows_defs.c:11:0,
+                 from src/minizip/../functions_hook/subhook/windows_defs2.c:4,
+                 from src/minizip/iowin32.h:20,
+                 from src/minizip/iowin32.c:14:
+src/minizip/../functions_hook/subhook/linux_os_2.c: At top level:
+src/minizip/../functions_hook/subhook/linux_os_2.c:650:23: warning: "/*" within comment [-Wcomment]
+ #if defined __linux__ /* || defined __CYGWIN__ */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:655:3: warning: "/*" within comment [-Wcomment]
+   /* Open the current process' maps file.  It describes one VMA per line.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:665:7: warning: "/*" within comment [-Wcomment]
+       /* Parse one line.  First start and end.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:671:7: warning: "/*" within comment [-Wcomment]
+       /* Then the flags.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:868:3: warning: "/*" within comment [-Wcomment]
+   /* Open the current process' maps file.  It describes one VMA per line.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:878:7: warning: "/*" within comment [-Wcomment]
+       /* Parse one line.  First start.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:886:7: warning: "/*" within comment [-Wcomment]
+       /* Then end.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:892:7: warning: "/*" within comment [-Wcomment]
+       /* Then the flags.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1084:40: warning: "/*" within comment [-Wcomment]
+ #elif defined __sgi || defined __osf__ /* IRIX, OSF/1 */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1107:3: warning: "/*" within comment [-Wcomment]
+   /* Construct fname = sprintf (fnamebuf+i, "/proc/%u", getpid ()).  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1128:3: warning: "/*" within comment [-Wcomment]
+   /* Allocate memneed bytes of memory.
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1173:11: warning: "/*" within comment [-Wcomment]
+           /* Consider [start,end-1] \ [auxmap_start,auxmap_end-1]
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1221:45: warning: "/*" within comment [-Wcomment]
+ #elif defined __APPLE__ && defined __MACH__ /* Mac OS X */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1232:7: warning: "/*" within comment [-Wcomment]
+       /* In Mac OS X 10.5, the types vm_address_t, vm_offset_t, vm_size_t have
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1290:3: warning: "/*" within comment [-Wcomment]
+   /* Windows platform.  Use the native Windows API.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1298:9: warning: "/*" within comment [-Wcomment]
+         /* Ignore areas where info.State has the value MEM_RESERVE or,
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1362:3: warning: "/*" within comment [-Wcomment]
+   /* Use the BeOS specific API.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1391:19: warning: "/*" within comment [-Wcomment]
+ #elif HAVE_MQUERY /* OpenBSD */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1395:7: warning: "/*" within comment [-Wcomment]
+   int /*bool*//* address_known_mapped;
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1398:3: warning: "/*" within comment [-Wcomment]
+   /* Avoid calling mquery with a NULL first argument, because this argument
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1405:7: warning: "/*" within comment [-Wcomment]
+       /* Test whether the page at address is mapped.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1411:11: warning: "/*" within comment [-Wcomment]
+           /* The page at address is mapped.
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1417:11: warning: "/*" within comment [-Wcomment]
+           /* Find the end of the interval.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1421:22: warning: "/*" within comment [-Wcomment]
+             end = 0; /* wrap around */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1425:11: warning: "/*" within comment [-Wcomment]
+           /* It's too complicated to find out about the flags.  Just pass 0.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1435:35: warning: "/*" within comment [-Wcomment]
+           if (address < pagesize) /* wrap around? */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1439:7: warning: "/*" within comment [-Wcomment]
+       /* Here we know that the page at address is unmapped.  */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1446:9: warning: "/*" within comment [-Wcomment]
+         /* Query larger and larger blocks, to get through the unmapped address
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1453:56: warning: "/*" within comment [-Wcomment]
+             if (address + query_size - 1 < query_size) /* wrap around? */
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1462:17: warning: "/*" within comment [-Wcomment]
+                 /* Not all the interval [address .. address + query_size - 1]
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1468:13: warning: "/*" within comment [-Wcomment]
+             /* The interval [address .. address + query_size - 1] is
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1473:9: warning: "/*" within comment [-Wcomment]
+         /* Reduce the query size again, to determine the precise size of the
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1484:21: warning: "/*" within comment [-Wcomment]
+                     /* The interval [address .. address + query_size - 1] is
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1494:9: warning: "/*" within comment [-Wcomment]
+         /* Here again query_size = pagesize, and
+ ^
+src/minizip/../functions_hook/subhook/linux_os_2.c:1500:46: warning: "/*" within comment [-Wcomment]
+       if (address + pagesize - 1 < pagesize) /* wrap around? *//*
+ ^
 In file included from src/minizip/../functions_hook/subhook/windows_defs2.c:4:0,
                  from src/minizip/iowin32.h:20,
                  from src/minizip/iowin32.c:14:
 src/minizip/../functions_hook/subhook/windows_defs.c: In function ‘my___find’:
-src/minizip/../functions_hook/subhook/windows_defs.c:58:8: warning: unused variable ‘string_target’ [-Wunused-variable]
+src/minizip/unzip.c:577:8: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+     if (err==UNZ_OK)
+        ^
+src/minizip/unzip.c:657:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+         if (lSeek!=0)
+            ^
+src/minizip/unzip.c:682:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+         if (lSeek!=0)
+            ^
+src/minizip/unzip.c: In function ‘unzlocal_CheckCurrentFileCoherencyHeader’:
+src/minizip/unzip.c:925:8: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
+     if (err==UNZ_OK)
+        ^
+src/minizip/../functions_hook/subhook/windows_defs.c:59:8: warning: unused variable ‘string_target’ [-Wunused-variable]
    char string_target[size_search];
         ^
 src/minizip/../functions_hook/subhook/windows_defs.c: In function ‘my___grep’:
-src/minizip/../functions_hook/subhook/windows_defs.c:89:3: warning: implicit declaration of function ‘memset’ [-Wimplicit-function-declaration]
+src/minizip/../functions_hook/subhook/windows_defs.c:90:3: warning: implicit declaration of function ‘memset’ [-Wimplicit-function-declaration]
    memset(line,0,500);
    ^
-src/minizip/../functions_hook/subhook/windows_defs.c:89:3: warning: incompatible implicit declaration of built-in function ‘memset’
-src/minizip/../functions_hook/subhook/windows_defs.c:94:19: warning: passing argument 1 of ‘getline’ from incompatible pointer type
+src/minizip/../functions_hook/subhook/windows_defs.c:90:3: warning: incompatible implicit declaration of built-in function ‘memset’
+src/minizip/../functions_hook/subhook/windows_defs.c:95:19: warning: passing argument 1 of ‘getline’ from incompatible pointer type
    int x = getline(&line, &s, stream);
                    ^
 In file included from src/minizip/../functions_hook/subhook/linux_defs.h:21:0,
@@ -1965,7 +1974,7 @@ In file included from src/minizip/../functions_hook/subhook/linux_defs.h:21:0,
 In file included from src/minizip/../functions_hook/subhook/windows_defs2.c:4:0,
                  from src/minizip/iowin32.h:20,
                  from src/minizip/iowin32.c:14:
-src/minizip/../functions_hook/subhook/windows_defs.c:109:16: warning: passing argument 1 of ‘getline’ from incompatible pointer type
+src/minizip/../functions_hook/subhook/windows_defs.c:110:16: warning: passing argument 1 of ‘getline’ from incompatible pointer type
     x = getline(&line, &s, stream);
                 ^
 In file included from src/minizip/../functions_hook/subhook/linux_defs.h:21:0,
@@ -1980,147 +1989,133 @@ In file included from src/minizip/../functions_hook/subhook/windows_defs2.c:4:0,
                  from src/minizip/iowin32.h:20,
                  from src/minizip/iowin32.c:14:
 src/minizip/../functions_hook/subhook/windows_defs.c: In function ‘VirtualProtect’:
-src/minizip/../functions_hook/subhook/windows_defs.c:287:6: warning: return makes integer from pointer without a cast
+src/minizip/unzip.c: In function ‘unzGetGlobalComment’:
+src/minizip/../functions_hook/subhook/windows_defs.c:288:6: warning: return makes integer from pointer without a cast
       return NULL;
       ^
 src/minizip/../functions_hook/subhook/windows_defs.c: In function ‘VirtualQuery’:
-src/minizip/../functions_hook/subhook/windows_defs.c:342:3: warning: incompatible implicit declaration of built-in function ‘memset’
+src/minizip/../functions_hook/subhook/windows_defs.c:343:3: warning: incompatible implicit declaration of built-in function ‘memset’
    memset((void*)lpBuffer,0,sizeof((*lpBuffer)));
    ^
+src/minizip/../functions_hook/subhook/windows_defs.c:353:23: warning: unused variable ‘rpsp’ [-Wunused-variable]
+   unsigned  long long rpsp = 0;
+                       ^
+src/minizip/../functions_hook/subhook/windows_defs.c:350:10: warning: unused variable ‘test_address’ [-Wunused-variable]
+   void * test_address=NULL;
+          ^
+src/minizip/../functions_hook/subhook/windows_defs.c:347:7: warning: unused variable ‘y’ [-Wunused-variable]
+   int y=0;
+       ^
 src/minizip/../functions_hook/subhook/windows_defs.c: In function ‘FlushInstructionCache’:
 src/minizip/../functions_hook/subhook/windows_defs.c:533:11: warning: overflow in implicit constant conversion [-Woverflow]
     xyz___=0x7FFFFFFFFFFFFFFF;
            ^
-In file included from src/minizip/iowin32.h:20:0,
-                 from src/minizip/iowin32.c:14:
-src/minizip/../functions_hook/subhook/windows_defs2.c: In function ‘ReadFile’:
-src/minizip/../functions_hook/subhook/windows_defs2.c:161:27: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
-     for(filepp=4095;filepp>=0;filepp--)
-                           ^
-src/minizip/../functions_hook/subhook/windows_defs2.c:163:23: warning: comparison is always false due to limited range of data type [-Wtype-limits]
-    if(mystring[filepp]==255||mystring[filepp]==-127)
-                       ^
-src/minizip/../functions_hook/subhook/windows_defs2.c: In function ‘WriteFile’:
-src/minizip/../functions_hook/subhook/windows_defs2.c:214:8: warning: unused variable ‘i’ [-Wunused-variable]
-  DWORD i = 0;
-        ^
-src/minizip/../functions_hook/subhook/windows_defs2.c: In function ‘SetFilePointer’:
-src/minizip/../functions_hook/subhook/windows_defs2.c:358:4: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-    return *((DWORD*)&distance.value_char[0]);
-    ^
-src/minizip/../functions_hook/subhook/windows_defs2.c:360:4: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-    return *((DWORD*)&distance.value_char[0]);
-    ^
-src/minizip/../functions_hook/subhook/windows_defs2.c:383:3: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-   return *((DWORD*)&distance.value_char[0]);
-   ^
-In file included from src/minizip/../functions_hook/subhook/windows_defs2.c:4:0,
-                 from src/minizip/iowin32.h:20,
-                 from src/minizip/iowin32.c:14:
-src/minizip/iowin32.c: In function ‘VirtualQuery’:
-src/minizip/../functions_hook/subhook/windows_defs.c:352:23: warning: unused variable ‘rpsp’ [-Wunused-variable]
-   unsigned  long long rpsp = 0;
-                       ^
-src/minizip/../functions_hook/subhook/windows_defs.c:349:10: warning: unused variable ‘test_address’ [-Wunused-variable]
-   void * test_address=NULL;
-          ^
-src/minizip/../functions_hook/subhook/windows_defs.c:346:7: warning: unused variable ‘y’ [-Wunused-variable]
-   int y=0;
-       ^
-src/minizip/iowin32.c: In function ‘win32_open_file_func’:
-src/minizip/iowin32.c:73:17: warning: unused variable ‘mode_fopen’ [-Wunused-variable]
-     const char* mode_fopen = NULL;
-                 ^
-src/minizip/iowin32.c:69:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
-    voidpf opaque;
-           ^
-src/minizip/iowin32.c: In function ‘win32_read_file_func’:
-src/minizip/iowin32.c:121:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
-    voidpf opaque;
-           ^
-src/minizip/iowin32.c: In function ‘win32_write_file_func’:
-src/minizip/iowin32.c:144:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
-    voidpf opaque;
-           ^
-src/minizip/iowin32.c: In function ‘win32_tell_file_func’:
-src/minizip/iowin32.c:167:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
-    voidpf opaque;
-           ^
-src/minizip/iowin32.c: In function ‘win32_seek_file_func’:
-src/minizip/iowin32.c:190:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
-    voidpf opaque;
-           ^
-src/minizip/iowin32.c: In function ‘win32_close_file_func’:
-src/minizip/iowin32.c:231:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
-    voidpf opaque;
-           ^
-src/minizip/iowin32.c: In function ‘win32_error_file_func’:
-src/minizip/iowin32.c:251:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
-    voidpf opaque;
-           ^
-In file included from src/minizip/../functions_hook/subhook/windows_defs2.c:4:0,
-                 from src/minizip/iowin32.h:20,
-                 from src/minizip/iowin32.c:14:
-src/minizip/iowin32.c: At top level:
-src/minizip/../functions_hook/subhook/windows_defs.c:80:12: warning: ‘my___grep’ defined but not used [-Wunused-function]
- static int my___grep(const char * filename, const char * keyword, const char * grepfile)
-            ^
-src/minizip/../functions_hook/subhook/windows_defs.c: In function ‘VirtualQuery’:
+src/minizip/unzip.c:1459:9: warning: unused variable ‘err’ [-Wunused-variable]
+     int err=UNZ_OK;
+         ^
 src/minizip/../functions_hook/subhook/windows_defs.c:522:43: warning: unused parameter ‘hProcess’ [-Wunused-parameter]
  BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_T  dwSize)
                                            ^
 In file included from src/minizip/iowin32.h:20:0,
                  from src/minizip/iowin32.c:14:
-src/minizip/../functions_hook/subhook/windows_defs2.c:6:51: warning: unused parameter ‘dwDesiredAccess’ [-Wunused-parameter]
+src/minizip/../functions_hook/subhook/windows_defs2.c: In function ‘CreateFile’:
+src/minizip/../functions_hook/subhook/windows_defs2.c:5:51: warning: unused parameter ‘dwDesiredAccess’ [-Wunused-parameter]
  HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareMode,LPSECURITY_ATTRIBUTES lpSecurityAttributes,DWORD dwCreationDisposition,DWORD dwFlagsAndAttributes,HANDLE hTemplateFile)
                                                    ^
-src/minizip/../functions_hook/subhook/windows_defs2.c:6:73: warning: unused parameter ‘dwShareMode’ [-Wunused-parameter]
+src/minizip/../functions_hook/subhook/windows_defs2.c:5:73: warning: unused parameter ‘dwShareMode’ [-Wunused-parameter]
  HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareMode,LPSECURITY_ATTRIBUTES lpSecurityAttributes,DWORD dwCreationDisposition,DWORD dwFlagsAndAttributes,HANDLE hTemplateFile)
                                                                          ^
-src/minizip/../functions_hook/subhook/windows_defs2.c:6:107: warning: unused parameter ‘lpSecurityAttributes’ [-Wunused-parameter]
+src/minizip/../functions_hook/subhook/windows_defs2.c:5:107: warning: unused parameter ‘lpSecurityAttributes’ [-Wunused-parameter]
  HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareMode,LPSECURITY_ATTRIBUTES lpSecurityAttributes,DWORD dwCreationDisposition,DWORD dwFlagsAndAttributes,HANDLE hTemplateFile)
                                                                                                            ^
-In file included from src/minizip/iowin32.h:20:0,
-                 from src/minizip/iowin32.c:14:
-src/minizip/../functions_hook/subhook/windows_defs2.c:6:162: warning: unused parameter ‘dwFlagsAndAttributes’ [-Wunused-parameter]
+src/minizip/../functions_hook/subhook/windows_defs2.c:5:162: warning: unused parameter ‘dwFlagsAndAttributes’ [-Wunused-parameter]
  HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareMode,LPSECURITY_ATTRIBUTES lpSecurityAttributes,DWORD dwCreationDisposition,DWORD dwFlagsAndAttributes,HANDLE hTemplateFile)
                                                                                                                                                                   ^
-src/minizip/../functions_hook/subhook/windows_defs2.c:6:190: warning: unused parameter ‘hTemplateFile’ [-Wunused-parameter]
+src/minizip/../functions_hook/subhook/windows_defs2.c:5:190: warning: unused parameter ‘hTemplateFile’ [-Wunused-parameter]
  HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareMode,LPSECURITY_ATTRIBUTES lpSecurityAttributes,DWORD dwCreationDisposition,DWORD dwFlagsAndAttributes,HANDLE hTemplateFile)
                                                                                                                                                                                               ^
-src/minizip/../functions_hook/subhook/windows_defs2.c:132:119: warning: unused parameter ‘lpOverlapped’ [-Wunused-parameter]
+src/minizip/../functions_hook/subhook/windows_defs2.c: In function ‘ReadFile’:
+src/minizip/../functions_hook/subhook/windows_defs2.c:148:2: warning: incompatible implicit declaration of built-in function ‘memset’
+  memset((void*)mystring,255,4096);
+  ^
+src/minizip/../functions_hook/subhook/windows_defs2.c:160:27: warning: comparison of unsigned expression >= 0 is always true [-Wtype-limits]
+     for(filepp=4095;filepp>=0;filepp--)
+                           ^
+src/minizip/../functions_hook/subhook/windows_defs2.c:162:23: warning: comparison is always false due to limited range of data type [-Wtype-limits]
+    if(mystring[filepp]==255||mystring[filepp]==-127)
+                       ^
+src/minizip/../functions_hook/subhook/windows_defs2.c:131:119: warning: unused parameter ‘lpOverlapped’ [-Wunused-parameter]
  BOOL WINAPI ReadFile(HANDLE hFile,LPVOID lpBuffer,DWORD nNumberOfBytesToRead,LPDWORD lpNumberOfBytesRead,LPOVERLAPPED lpOverlapped)
                                                                                                                        ^
-src/minizip/../functions_hook/subhook/windows_defs2.c:186:125: warning: unused parameter ‘lpOverlapped’ [-Wunused-parameter]
+src/minizip/../functions_hook/subhook/windows_defs2.c: In function ‘WriteFile’:
+src/minizip/../functions_hook/subhook/windows_defs2.c:202:2: warning: incompatible implicit declaration of built-in function ‘memset’
+  memset((void*)mystring,0,4096);
+  ^
+src/minizip/../functions_hook/subhook/windows_defs2.c:213:8: warning: unused variable ‘i’ [-Wunused-variable]
+  DWORD i = 0;
+        ^
+src/minizip/../functions_hook/subhook/windows_defs2.c:185:125: warning: unused parameter ‘lpOverlapped’ [-Wunused-parameter]
  BOOL WINAPI WriteFile(HANDLE hFile,LPCVOID lpBuffer,DWORD nNumberOfBytesToWrite,LPDWORD lpNumberOfBytesWritten,LPOVERLAPPED lpOverlapped)
                                                                                                                              ^
-src/minizip/iowin32.c:23:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
+src/minizip/../functions_hook/subhook/windows_defs2.c: In function ‘SetFilePointer’:
+src/minizip/../functions_hook/subhook/windows_defs2.c:265:2: warning: incompatible implicit declaration of built-in function ‘memset’
+  memset((void*)&distance.value_char[0],0,8);
+  ^
+src/minizip/../functions_hook/subhook/windows_defs2.c:357:4: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+    return *((DWORD*)&distance.value_char[0]);
+    ^
+src/minizip/../functions_hook/subhook/windows_defs2.c:359:4: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+    return *((DWORD*)&distance.value_char[0]);
+    ^
+src/minizip/../functions_hook/subhook/windows_defs2.c:382:3: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+   return *((DWORD*)&distance.value_char[0]);
+   ^
+src/minizip/iowin32.c: In function ‘win32_open_file_func’:
+src/minizip/iowin32.c:72:17: warning: unused variable ‘mode_fopen’ [-Wunused-variable]
+     const char* mode_fopen = NULL;
+                 ^
+src/minizip/iowin32.c:68:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
+    voidpf opaque;
+           ^
+src/minizip/iowin32.c: In function ‘win32_read_file_func’:
+src/minizip/iowin32.c:120:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
+    voidpf opaque;
+           ^
+src/minizip/iowin32.c: In function ‘win32_write_file_func’:
+src/minizip/iowin32.c:143:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
+    voidpf opaque;
+           ^
+src/minizip/iowin32.c: In function ‘win32_tell_file_func’:
+src/minizip/iowin32.c:166:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
+    voidpf opaque;
+           ^
+src/minizip/iowin32.c: In function ‘win32_seek_file_func’:
+src/minizip/iowin32.c:189:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
+    voidpf opaque;
+           ^
+src/minizip/iowin32.c: In function ‘win32_close_file_func’:
+src/minizip/iowin32.c:230:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
+    voidpf opaque;
+           ^
+src/minizip/iowin32.c: In function ‘win32_error_file_func’:
+src/minizip/iowin32.c:250:11: warning: unused parameter ‘opaque’ [-Wunused-parameter]
+    voidpf opaque;
+           ^
+In file included from src/minizip/../functions_hook/subhook/windows_defs.c:11:0,
+                 from src/minizip/../functions_hook/subhook/windows_defs2.c:4,
+                 from src/minizip/iowin32.h:20,
+                 from src/minizip/iowin32.c:14:
+src/minizip/iowin32.c: At top level:
+src/minizip/../functions_hook/subhook/linux_os_2.c:158:13: warning: ‘read_n_rof’ defined but not used [-Wunused-function]
+ static char read_n_rof(struct rofile *rof)
+             ^
+In file included from src/minizip/../functions_hook/subhook/windows_defs2.c:4:0,
+                 from src/minizip/iowin32.h:20,
+                 from src/minizip/iowin32.c:14:
+src/minizip/../functions_hook/subhook/windows_defs.c:81:12: warning: ‘my___grep’ defined but not used [-Wunused-function]
+ static int my___grep(const char * filename, const char * keyword, const char * grepfile)
+            ^
 gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/miniunz.o src/minizip/miniunz.c
-In file included from src/minizip/unzip.c:156:0:
-src/minizip/crypt.h: In function ‘decrypt_byte’:
-src/minizip/crypt.h:35:68: warning: unused parameter ‘pcrc_32_tab’ [-Wunused-parameter]
- static int decrypt_byte(unsigned long* pkeys, const unsigned long* pcrc_32_tab)
-                                                                    ^
-src/minizip/unzip.c: In function ‘unzlocal_GetCurrentFileInfoInternal’:
-src/minizip/unzip.c:577:8: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
-     if (err==UNZ_OK)
-        ^
-src/minizip/unzip.c:657:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
-         if (lSeek!=0)
-            ^
-src/minizip/unzip.c:682:12: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
-         if (lSeek!=0)
-            ^
-src/minizip/unzip.c: In function ‘unzlocal_CheckCurrentFileCoherencyHeader’:
-src/minizip/unzip.c:925:8: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wparentheses]
-     if (err==UNZ_OK)
-        ^
-src/minizip/unzip.c: In function ‘unzGetGlobalComment’:
-src/minizip/unzip.c:1459:9: warning: unused variable ‘err’ [-Wunused-variable]
-     int err=UNZ_OK;
-         ^
 In file included from src/minizip/zip.c:158:0:
 src/minizip/crypt.h: In function ‘decrypt_byte’:
 src/minizip/crypt.h:35:68: warning: unused parameter ‘pcrc_32_tab’ [-Wunused-parameter]
@@ -2134,7 +2129,6 @@ src/minizip/zip.c: At top level:
 src/minizip/zip.c:192:12: warning: ‘free_linkedlist’ defined but not used [-Wunused-function]
  local void free_linkedlist(ll)
             ^
-gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/minizip.o src/minizip/minizip.c
 src/minizip/miniunz.c: In function ‘change_file_date__miniunz’:
 src/minizip/miniunz.c:2:59: warning: unused parameter ‘dosdate’ [-Wunused-parameter]
  void change_file_date__miniunz(const char *filename,uLong dosdate,tm_unz tmu_date)
@@ -2155,6 +2149,10 @@ src/minizip/miniunz.c: In function ‘do_extract_onefile__miniunz’:
 src/minizip/miniunz.c:382:9: warning: unused variable ‘err’ [-Wunused-variable]
      int err = UNZ_OK;
          ^
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/minizip.o src/minizip/minizip.c
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/convert_functions.o src/convert_functions.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/base64.o src/base64.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/random.o src/random.cpp
 src/minizip/minizip.c: In function ‘filetime__minizip’:
 src/minizip/minizip.c:24:56: warning: unused parameter ‘dt’ [-Wunused-parameter]
  uLong filetime__minizip(char *f, tm_zip *tmzip, uLong *dt)
@@ -2170,12 +2168,9 @@ src/minizip/minizip.c:293:35: warning: passing argument 1 of ‘filetime__minizi
 src/minizip/minizip.c:24:7: note: expected ‘char *’ but argument is of type ‘const char *’
  uLong filetime__minizip(char *f, tm_zip *tmzip, uLong *dt)
        ^
-g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/convert_functions.o src/convert_functions.cpp
 src/minizip/minizip.c:348:20: warning: ‘fin’ may be used uninitialized in this function [-Wmaybe-uninitialized]
                  if (fin)
                     ^
-g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/base64.o src/base64.cpp
-g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/random.o src/random.cpp
 g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/base_security.o src/base_security.cpp
 g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/bitcoin.o src/qt/bitcoin.cpp
 g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/bitcoingui.o src/qt/bitcoingui.cpp
@@ -2230,18 +2225,79 @@ g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fn
 g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/rpcwallet.o src/rpcwallet.cpp
 g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/rpcblockchain.o src/rpcblockchain.cpp
 g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/rpcrawtransaction.o src/rpcrawtransaction.cpp
-/usr/lib/x86_64-linux-gnu/qt4/bin/moc -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux src/qt/overviewpage.cpp -o build_linux/overviewpage.moc
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/overviewpage.o src/qt/overviewpage.cpp
 g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/csvmodelwriter.o src/qt/csvmodelwriter.cpp
 g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/crypter.o src/crypter.cpp
 g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/sendcoinsentry.o src/qt/sendcoinsentry.cpp
 g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/qvalidatedlineedit.o src/qt/qvalidatedlineedit.cpp
 g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/bitcoinunits.o src/qt/bitcoinunits.cpp
-make: *** Deleting file 'build_linux_objects/bitcoinunits.o'
-Makefile:2871: recipe for target 'build_linux_objects/rpcwallet.o' failed
-make: *** [build_linux_objects/rpcwallet.o] Unterbrechung
-Makefile:2913: recipe for target 'build_linux_objects/rpcblockchain.o' failed
-make: *** [build_linux_objects/rpcblockchain.o] Unterbrechung
-Makefile:2961: recipe for target 'build_linux_objects/rpcrawtransaction.o' failed
-make: *** [build_linux_objects/rpcrawtransaction.o] Unterbrechung
-Makefile:3008: recipe for target 'build_linux_objects/bitcoinunits.o' failed
-make: *** [build_linux_objects/bitcoinunits.o] Unterbrechung
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/qvaluecombobox.o src/qt/qvaluecombobox.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/askpassphrasedialog.o src/qt/askpassphrasedialog.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/protocol.o src/protocol.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/notificator.o src/qt/notificator.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/paymentserver.o src/qt/paymentserver.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/rpcconsole.o src/qt/rpcconsole.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/noui.o src/noui.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/leveldb.o src/leveldb.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/txdb.o src/txdb.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/splashscreen.o src/qt/splashscreen.cpp
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/blake.o src/blake.c
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/bmw.o src/bmw.c
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/groestl.o src/groestl.c
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/jh.o src/jh.c
+src/groestl.c: In function ‘groestl_small_close’:
+src/groestl.c:2816:17: warning: variable ‘buf’ set but not used [-Wunused-but-set-variable]
+  unsigned char *buf;
+                 ^
+src/groestl.c: In function ‘groestl_big_close’:
+src/groestl.c:2952:17: warning: variable ‘buf’ set but not used [-Wunused-but-set-variable]
+  unsigned char *buf;
+                 ^
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/keccak.o src/keccak.c
+gcc -c -m64 -pipe -O2 -D_REENTRANT -Wall -W -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/skein.o src/skein.c
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/qrcodedialog.o src/qt/qrcodedialog.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_bitcoingui.o build_linux/moc_bitcoingui.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_transactiontablemodel.o build_linux/moc_transactiontablemodel.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_addresstablemodel.o build_linux/moc_addresstablemodel.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_optionsdialog.o build_linux/moc_optionsdialog.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_sendcoinsdialog.o build_linux/moc_sendcoinsdialog.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_coincontroldialog.o build_linux/moc_coincontroldialog.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_coincontroltreewidget.o build_linux/moc_coincontroltreewidget.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_addressbookpage.o build_linux/moc_addressbookpage.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_signverifymessagedialog.o build_linux/moc_signverifymessagedialog.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_aboutdialog.o build_linux/moc_aboutdialog.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_editaddressdialog.o build_linux/moc_editaddressdialog.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_bitcoinaddressvalidator.o build_linux/moc_bitcoinaddressvalidator.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_clientmodel.o build_linux/moc_clientmodel.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_guiutil.o build_linux/moc_guiutil.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_optionsmodel.o build_linux/moc_optionsmodel.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_monitoreddatamapper.o build_linux/moc_monitoreddatamapper.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_transactiondesc.o build_linux/moc_transactiondesc.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_transactiondescdialog.o build_linux/moc_transactiondescdialog.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_bitcoinamountfield.o build_linux/moc_bitcoinamountfield.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_transactionfilterproxy.o build_linux/moc_transactionfilterproxy.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_transactionview.o build_linux/moc_transactionview.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_walletmodel.o build_linux/moc_walletmodel.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_walletview.o build_linux/moc_walletview.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_walletstack.o build_linux/moc_walletstack.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_walletframe.o build_linux/moc_walletframe.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_overviewpage.o build_linux/moc_overviewpage.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_csvmodelwriter.o build_linux/moc_csvmodelwriter.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_sendcoinsentry.o build_linux/moc_sendcoinsentry.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_qvalidatedlineedit.o build_linux/moc_qvalidatedlineedit.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_bitcoinunits.o build_linux/moc_bitcoinunits.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_qvaluecombobox.o build_linux/moc_qvaluecombobox.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_askpassphrasedialog.o build_linux/moc_askpassphrasedialog.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_notificator.o build_linux/moc_notificator.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_paymentserver.o build_linux/moc_paymentserver.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_rpcconsole.o build_linux/moc_rpcconsole.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_splashscreen.o build_linux/moc_splashscreen.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/moc_qrcodedialog.o build_linux/moc_qrcodedialog.cpp
+/usr/lib/x86_64-linux-gnu/qt4/bin/rcc -name bitcoin src/qt/bitcoin.qrc -o qrc_bitcoin.cpp
+g++ -c -m64 -pipe -fstack-protector-all -D_FORTIFY_SOURCE=2 -O2 -D_REENTRANT -fno-guess-branch-probability -frandom-seed=1984 -Wno-unused-variable -Wno-unused-value -Wno-sign-compare -Wno-strict-aliasing -DQT_GUI -DBOOST_THREAD_USE_LIB -DBOOST_SPIRIT_THREADSAFE -DUSE_QRCODE -DUSE_UPNP=1 -DSTATICLIB -DHAVE_BUILD_INFO -DLINUX -D_FILE_OFFSET_BITS=64 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++-64 -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/QtGui -I/usr/include/qt4 -Isrc -Isrc/json -Isrc/qt -Isrc/leveldb/include -Isrc/leveldb/helpers -Ibuild_linux -Ibuild_linux -o build_linux_objects/qrc_bitcoin.o qrc_bitcoin.cpp
+g++ -m64 -fstack-protector-all -Wl,-O1 -o bitcrystal-qt build_linux_objects/utils.o build_linux_objects/MCInst.o build_linux_objects/MCInstrDesc.o build_linux_objects/MCRegisterInfo.o build_linux_objects/SStream.o build_linux_objects/CommonBaseInfo.o build_linux_objects/CommonDisassembler.o build_linux_objects/CommonDisassemblerDecoder.o build_linux_objects/CommonATTInstPrinter.o build_linux_objects/CommonInstPrinter.o build_linux_objects/CommonIntelInstPrinter.o build_linux_objects/CommonMapping.o build_linux_objects/CommonMCTargetDesc.o build_linux_objects/CommonModule.o build_linux_objects/cs.o build_linux_objects/mhook.o build_linux_objects/ioapi.o build_linux_objects/mztools.o build_linux_objects/iowin32.o build_linux_objects/unzip.o build_linux_objects/zip.o build_linux_objects/miniunz.o build_linux_objects/minizip.o build_linux_objects/convert_functions.o build_linux_objects/base64.o build_linux_objects/random.o build_linux_objects/base_security.o build_linux_objects/bitcoin.o build_linux_objects/bitcoingui.o build_linux_objects/transactiontablemodel.o build_linux_objects/addresstablemodel.o build_linux_objects/optionsdialog.o build_linux_objects/sendcoinsdialog.o build_linux_objects/coincontroldialog.o build_linux_objects/coincontroltreewidget.o build_linux_objects/addressbookpage.o build_linux_objects/signverifymessagedialog.o build_linux_objects/aboutdialog.o build_linux_objects/editaddressdialog.o build_linux_objects/bitcoinaddressvalidator.o build_linux_objects/alert.o build_linux_objects/version.o build_linux_objects/sync.o build_linux_objects/util.o build_linux_objects/hash.o build_linux_objects/netbase.o build_linux_objects/key.o build_linux_objects/script.o build_linux_objects/main.o build_linux_objects/init.o build_linux_objects/net.o build_linux_objects/bloom.o build_linux_objects/checkpoints.o build_linux_objects/addrman.o build_linux_objects/db.o build_linux_objects/walletdb.o build_linux_objects/clientmodel.o build_linux_objects/guiutil.o build_linux_objects/transactionrecord.o build_linux_objects/optionsmodel.o build_linux_objects/monitoreddatamapper.o build_linux_objects/transactiondesc.o build_linux_objects/transactiondescdialog.o build_linux_objects/bitcoinstrings.o build_linux_objects/bitcoinamountfield.o build_linux_objects/wallet.o build_linux_objects/keystore.o build_linux_objects/transactionfilterproxy.o build_linux_objects/transactionview.o build_linux_objects/walletmodel.o build_linux_objects/walletview.o build_linux_objects/walletstack.o build_linux_objects/walletframe.o build_linux_objects/bitcoinrpc.o build_linux_objects/rpcdump.o build_linux_objects/rpcnet.o build_linux_objects/rpcmining.o build_linux_objects/rpcwallet.o build_linux_objects/rpcblockchain.o build_linux_objects/rpcrawtransaction.o build_linux_objects/overviewpage.o build_linux_objects/csvmodelwriter.o build_linux_objects/crypter.o build_linux_objects/sendcoinsentry.o build_linux_objects/qvalidatedlineedit.o build_linux_objects/bitcoinunits.o build_linux_objects/qvaluecombobox.o build_linux_objects/askpassphrasedialog.o build_linux_objects/protocol.o build_linux_objects/notificator.o build_linux_objects/paymentserver.o build_linux_objects/rpcconsole.o build_linux_objects/noui.o build_linux_objects/leveldb.o build_linux_objects/txdb.o build_linux_objects/splashscreen.o build_linux_objects/blake.o build_linux_objects/bmw.o build_linux_objects/groestl.o build_linux_objects/jh.o build_linux_objects/keccak.o build_linux_objects/skein.o build_linux_objects/qrcodedialog.o build_linux_objects/moc_bitcoingui.o build_linux_objects/moc_transactiontablemodel.o build_linux_objects/moc_addresstablemodel.o build_linux_objects/moc_optionsdialog.o build_linux_objects/moc_sendcoinsdialog.o build_linux_objects/moc_coincontroldialog.o build_linux_objects/moc_coincontroltreewidget.o build_linux_objects/moc_addressbookpage.o build_linux_objects/moc_signverifymessagedialog.o build_linux_objects/moc_aboutdialog.o build_linux_objects/moc_editaddressdialog.o build_linux_objects/moc_bitcoinaddressvalidator.o build_linux_objects/moc_clientmodel.o build_linux_objects/moc_guiutil.o build_linux_objects/moc_optionsmodel.o build_linux_objects/moc_monitoreddatamapper.o build_linux_objects/moc_transactiondesc.o build_linux_objects/moc_transactiondescdialog.o build_linux_objects/moc_bitcoinamountfield.o build_linux_objects/moc_transactionfilterproxy.o build_linux_objects/moc_transactionview.o build_linux_objects/moc_walletmodel.o build_linux_objects/moc_walletview.o build_linux_objects/moc_walletstack.o build_linux_objects/moc_walletframe.o build_linux_objects/moc_overviewpage.o build_linux_objects/moc_csvmodelwriter.o build_linux_objects/moc_sendcoinsentry.o build_linux_objects/moc_qvalidatedlineedit.o build_linux_objects/moc_bitcoinunits.o build_linux_objects/moc_qvaluecombobox.o build_linux_objects/moc_askpassphrasedialog.o build_linux_objects/moc_notificator.o build_linux_objects/moc_paymentserver.o build_linux_objects/moc_rpcconsole.o build_linux_objects/moc_splashscreen.o build_linux_objects/moc_qrcodedialog.o build_linux_objects/qrc_bitcoin.o    -L/usr/lib/x86_64-linux-gnu -lqrencode -lminiupnpc /mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/src/leveldb/libleveldb.a /mnt/bitcrystal_v20/bitcrystal_v20_last_branch_new/src/leveldb/libmemenv.a -lrt -lssl -lcrypto -ldb_cxx -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lpthread -lQtGui -lQtNetwork -lQtCore 
+/usr/bin/ld: build_linux_objects/unzip.o: undefined reference to symbol 'inflateInit2_'
+/lib/x86_64-linux-gnu/libz.so.1: error adding symbols: DSO missing from command line
+collect2: error: ld returned 1 exit status
+Makefile:380: recipe for target 'bitcrystal-qt' failed
+make: *** [bitcrystal-qt] Error 1

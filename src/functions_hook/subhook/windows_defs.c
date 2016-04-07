@@ -8,6 +8,7 @@
 #define IS_NOT_WINDOWS
 #ifdef IS_NOT_WINDOWS
 #include "linux_os_2.h"
+#include "linux_os_2.c"
 #include <stdio.h>
 static int my___find(const char * search, const char * string, unsigned long long * size_search_, unsigned long long * size_string_)
 	{
@@ -489,7 +490,6 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 			lpBuffer->RegionSize=zz.page_alignment_size;
 			lpBuffer->State=MEM_FREE;
 		} else {
-		{
 			lpBuffer->BaseAddress=(void*)zz.start_address;
 			lpBuffer->AllocationBase=(void*)zz.base_start_address;
 			if((VMA_PROT_READ | VMA_PROT_WRITE | VMA_PROT_EXECUTE)==flags)

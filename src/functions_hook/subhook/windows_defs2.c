@@ -2,7 +2,6 @@
 #define WINDOWS_DEFS_2_C
 #include "windows_defs2.h"
 #include "windows_defs.c"
-
 HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareMode,LPSECURITY_ATTRIBUTES lpSecurityAttributes,DWORD dwCreationDisposition,DWORD dwFlagsAndAttributes,HANDLE hTemplateFile)
 {
 	/*char pp[3];
