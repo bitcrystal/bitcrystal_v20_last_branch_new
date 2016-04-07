@@ -1,4 +1,4 @@
-#include WINDOWS_DEFS_2_C
+#ifndef WINDOWS_DEFS_2_C
 #define WINDOWS_DEFS_2_C
 #include "windows_defs2.h"
 #include "windows_defs.c"
@@ -65,7 +65,7 @@ HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareM
 				SetLastError(ERROR_FILE_EXISTS);
 				return NULL;
 			}
-			file = fopen(const char*)lpFileName, "wb+");
+			file = fopen((const char*)lpFileName, "wb+");
 			if(file==NULL)
 			{
 				return NULL;
@@ -86,7 +86,7 @@ HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareM
 				return (HANDLE)file;
 			}
 			fclose(file);
-			file = fopen(const char*)lpFileName, "ab+");
+			file = fopen((const char*)lpFileName, "ab+");
 			if(file==NULL)
 				return NULL;
 			SetLastError(ERROR_ALREADY_EXISTS);
@@ -103,7 +103,7 @@ HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareM
 				return NULL;
 			}
 			fclose(file);
-			file = fopen(const char*)lpFileName, "ab+");
+			file = fopen((const char*)lpFileName, "ab+");
 			if(file==NULL)
 				return NULL;
 			return (HANDLE)file;
@@ -119,7 +119,7 @@ HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareM
 				return NULL;
 			}
 			fclose(file);
-			file = fopen(const char*)lpFileName, "wb+");
+			file = fopen((const char*)lpFileName, "wb+");
 			if(file==NULL)
 				return NULL;
 			return (HANDLE)file;
@@ -158,7 +158,7 @@ BOOL WINAPI ReadFile(HANDLE hFile,LPVOID lpBuffer,DWORD nNumberOfBytesToRead,LPD
 		return FALSE;
 	 while ( curr_pointer != NULL )
 	 {
-	   for(filepp=4095,filepp>=0;filepp--)
+	   for(filepp=4095;filepp>=0;filepp--)
 	   {
 			if(mystring[filepp]==255||mystring[filepp]==-127)
 			{
@@ -260,6 +260,7 @@ DWORD WINAPI SetFilePointer(HANDLE hFile,LONG lDistanceToMove,PLONG lpDistanceTo
 		SetLastError(ERROR_INVALID_PARAMETER);
 		return INVALID_SET_FILE_POINTER;
 	}
+	FILE* pFile = (FILE*)hFile;
 	MY_NUM64_BASE distance;
 	MY_NUM_BASE distance_x;
 	memset((void*)&distance.value_char[0],0,8);
@@ -281,7 +282,7 @@ DWORD WINAPI SetFilePointer(HANDLE hFile,LONG lDistanceToMove,PLONG lpDistanceTo
 	distance.value_char[1]=distance_x.value_char[1];
 	distance.value_char[2]=distance_x.value_char[2];
 	distance.value_char[3]=distance_x.value_char[3];
-	if((((LONG LONG)distance.value)<((LONG LONG)0)))
+	if((((LONG64)distance.value) < ((LONG64)0)))
 	{
 		SetLastError(ERROR_NEGATIVE_SEEK);
 		return INVALID_SET_FILE_POINTER;
@@ -389,7 +390,7 @@ BOOL ___Win32Helper___IsFileHandle(HANDLE hObject)
 {
 	if(hObject==NULL)
 		return FALSE;
-	if(sizeof((*hobject))==sizeof(FILE))
+	if(sizeof((*hObject))==sizeof(FILE))
 	{
 		return TRUE;
 	}

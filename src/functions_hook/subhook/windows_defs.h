@@ -17,6 +17,7 @@ typedef int BOOL;
 #endif
 //#define NULL ( (void *) 0)
 #define NULL 0
+#define __int64 long long
 #define CONST const
 typedef CONST void *LPCVOID;
 typedef void *LPVOID;
@@ -28,7 +29,6 @@ typedef long LONG;
 typedef LONG *PLONG;
 typedef DWORD COLORREF;
 typedef BYTE BOOLEAN;
-typedef long long __int64;
 typedef unsigned __int64 DWORDLONG;
 #if defined(_WIN64)
  typedef __int64 LONG_PTR; 
@@ -55,7 +55,11 @@ typedef unsigned __int64 DWORD64, *PDWORD64;
 typedef __SIZE_TYPE__ size_t;
 typedef SIZE_T size_t_in_windows;
 typedef unsigned int ULONG32;
+typedef unsigned long _ULONG32;
 typedef unsigned __int64 ULONG64;
+typedef long _LONG32;
+typedef signed int LONG32;
+typedef __int64 LONG64;
 typedef short SHORT;
 typedef unsigned short USHORT;
 typedef CHAR *LPSTR;
@@ -86,7 +90,8 @@ typedef HANDLE *LPHANDLE;
 
 #ifdef UNICODE
  typedef LPWSTR PTSTR;
-#else typedef LPSTR PTSTR;
+#else
+typedef LPSTR PTSTR;
 #endif
 #ifdef UNICODE
  typedef LPWSTR LPTSTR;
@@ -131,8 +136,8 @@ typedef union ____Win32Helper___NUM_BASE
 {
 	char value_char[4];
 	unsigned char u_value_char[4];
-	LONG value : 32;
-	unsigned LONG u_value : 32;
+	_LONG32 value : 32;
+	_ULONG32 u_value : 32;
 } ___Win32Helper___NUM_BASE;
 typedef ___Win32Helper___NUM_BASE MY_NUM_BASE;
 
@@ -140,8 +145,8 @@ typedef union ____Win32Helper___NUM64_BASE
 {
 	char value_char[8];
 	unsigned char u_value_char[8];
-	LONG LONG value : 64;
-	unsigned LONG LONG u_value : 64;
+	LONG64 value : 64;
+	ULONG64 u_value : 64;
 } ___Win32Helper___NUM64_BASE;
 typedef ___Win32Helper___NUM64_BASE MY_NUM64_BASE;
 #ifndef CO_MODE
@@ -157,6 +162,8 @@ typedef ___Win32Helper___NUM64_BASE MY_NUM64_BASE;
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>*/
+#include <errno.h>
+#include <unistd.h>
 #include <sys/mman.h>
 #include "linux_defs.h"
 #if defined(ENOMEM) && !defined(EFAULT)
@@ -295,7 +302,7 @@ typedef ___Win32Helper___NUM64_BASE MY_NUM64_BASE;
 BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect);
 SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
 LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect);
-BOOL WINAPI VirtualFree(lpAddress,SIZE_T dwSize,DWORD dwFreeType);
+BOOL WINAPI VirtualFree(LPVOID lpAddress,SIZE_T dwSize,DWORD dwFreeType);
 BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_T  dwSize);
 HANDLE WINAPI GetCurrentProcess();
 #else
@@ -318,6 +325,7 @@ typedef struct _vma_it_func
 	unsigned long long base_end_address;
 	unsigned int base_flags;
 	unsigned char ret;
+	unsigned char complete_free_region;
 } vma_it_func;
 int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
 int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);

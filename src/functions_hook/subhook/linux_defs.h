@@ -8,9 +8,15 @@
 #include <asm/cachectl.h>
 #else
 #define LINUX_CACHEFLUSH_DEF
-#define ICACHE
-#define DCACHE
-#define BCACHE (ICACHE|DCACHE)
+#ifndef   ICACHE
+#define   ICACHE   (1<<0)      /* flush instruction cache        */
+#endif
+#ifndef   DCACHE
+#define   DCACHE   (1<<1)      /* writeback and flush data cache */
+#endif
+#ifndef   BCACHE
+#define   BCACHE   (ICACHE|DCACHE)   /* flush both caches              */
+#endif
 #ifndef OS_MAC
 #include <stdio.h>
 #else

@@ -1,4 +1,4 @@
-#include WINDOWS_DEFS_2_H
+#ifndef WINDOWS_DEFS_2_H
 #define WINDOWS_DEFS_2_H
 #include "windows_defs.h"
 #include <stdio.h>
@@ -70,6 +70,7 @@ typedef struct _OVERLAPPED {
 #define ERROR_WRONG_DISK                34
 #define ERROR_FCB_UNAVAILABLE           35
 #define ERROR_SHARING_BUFFER_EXCEEDED   36
+#define ERROR_HANDLE_EOF 38
 /* */
 /* New OEM network-related errors are 50-79 */
 /* */

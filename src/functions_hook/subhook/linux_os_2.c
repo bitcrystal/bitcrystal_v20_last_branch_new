@@ -622,7 +622,7 @@ void vma_iterate (vma_iterate_callback_fn callback, void *data)
 
 #endif
 }
-
+/*
 int get_reserved_blocks(void * start_address,void * end_address, vector_c * reserved_blocks , VECTOR_C_CAP_TYPE BYTES_RESERVED_SIZE)
 {
 	int z = VECTOR_IS_GOOD_POINTER_C_EX(reserved_blocks);
@@ -648,11 +648,12 @@ VECTOR_INIT_C_EX(reserved_blocks);
 VECTOR_RESERVE_CFS_EX(reserved_blocks,(BYTES_RESERVED_SIZE));
 my_memory_block bloc;
 #if defined __linux__ /* || defined __CYGWIN__ */
-
+/*
   struct rofile rof;
   int c;
 
   /* Open the current process' maps file.  It describes one VMA per line.  */
+  /*
   if (rof_open (&rof, "/proc/self/maps") < 0)
     return;
 
@@ -662,11 +663,13 @@ my_memory_block bloc;
       unsigned int flags;
 
       /* Parse one line.  First start and end.  */
+     /*
       if (!(rof_scanf_lx (&rof, &start) >= 0
             && rof_getchar (&rof) == '-'
             && rof_scanf_lx (&rof, &end) >= 0))
         break;
       /* Then the flags.  */
+      /*
       do
         c = rof_getchar (&rof);
       while (c == ' ');
@@ -863,6 +866,7 @@ my_memory_block bloc;
   int c;
 
   /* Open the current process' maps file.  It describes one VMA per line.  */
+  /*
   if (rof_open (&rof, "/proc/curproc/map") < 0)
     return;
 
@@ -872,6 +876,7 @@ my_memory_block bloc;
       unsigned int flags;
 
       /* Parse one line.  First start.  */
+      /*
       if (!(rof_getchar (&rof) == '0'
             && rof_getchar (&rof) == 'x'
             && rof_scanf_lx (&rof, &start) >= 0))
@@ -879,11 +884,13 @@ my_memory_block bloc;
       while (c = rof_peekchar (&rof), c == ' ' || c == '\t')
         rof_getchar (&rof);
       /* Then end.  */
+      /*
       if (!(rof_getchar (&rof) == '0'
             && rof_getchar (&rof) == 'x'
             && rof_scanf_lx (&rof, &end) >= 0))
         break;
       /* Then the flags.  */
+      /*
       do
         c = rof_getchar (&rof);
       while (c == ' ');
@@ -1075,7 +1082,7 @@ my_memory_block bloc;
   rof_close (&rof);
 
 #elif defined __sgi || defined __osf__ /* IRIX, OSF/1 */
-
+/*
   size_t pagesize;
   char fnamebuf[6+10+1];
   char *fname;
@@ -1098,6 +1105,7 @@ my_memory_block bloc;
   pagesize = getpagesize ();
 
   /* Construct fname = sprintf (fnamebuf+i, "/proc/%u", getpid ()).  */
+/*
   fname = fnamebuf + sizeof (fnamebuf) - 1;
   *fname = '\0';
   {
@@ -1122,6 +1130,7 @@ my_memory_block bloc;
      We also cannot use malloc here, because a malloc() call may call mmap()
      and thus pre-allocate available memory.
      So use mmap(), and ignore the resulting VMA.  */
+/*
   memneed = ((memneed - 1) / pagesize + 1) * pagesize;
 # if !HAVE_MAP_ANONYMOUS
   zero_fd = open ("/dev/zero", O_RDONLY, 0644);
@@ -1163,6 +1172,7 @@ my_memory_block bloc;
         {
           /* Consider [start,end-1] \ [auxmap_start,auxmap_end-1]
              = [start,auxmap_start-1] u [auxmap_end,end-1].  */
+/*
           if (start < auxmap_start)
           {
 			bloc.start = (void*)start; 
@@ -1209,7 +1219,7 @@ my_memory_block bloc;
   return;
 
 #elif defined __APPLE__ && defined __MACH__ /* Mac OS X */
-
+/*
   task_t task = mach_task_self ();
   vm_address_t address;
   vm_size_t size;
@@ -1239,6 +1249,7 @@ my_memory_block bloc;
          In 64-bit processes, we could use vm_region_64 or mach_vm_region.
          I choose vm_region_64 because it uses the same types as vm_region,
          resulting in less conditional code.  */
+/*
 # if defined __ppc64__ || defined __x86_64__
       struct vm_region_basic_info_64 info;
       mach_msg_type_number_t info_count = VM_REGION_BASIC_INFO_COUNT_64;
@@ -1277,7 +1288,7 @@ my_memory_block bloc;
 
 #elif (defined _WIN32 || defined __WIN32__) || defined __CYGWIN__
   /* Windows platform.  Use the native Windows API.  */
-
+/*
   MEMORY_BASIC_INFORMATION info;
   unsigned long long address = 0;
 
@@ -1288,6 +1299,7 @@ my_memory_block bloc;
            equivalently, info.Protect has the undocumented value 0.
            This is needed, so that on Cygwin, areas used by malloc() are
            distinguished from areas reserved for future malloc().  */
+/*
 		if (info.State == MEM_RESERVE)
           {
 			unsigned long long start, end;
@@ -1348,7 +1360,7 @@ my_memory_block bloc;
 
 #elif defined __BEOS__ || defined __HAIKU__
   /* Use the BeOS specific API.  */
-
+/*
   area_info info;
   int32 cookie;
 
@@ -1377,36 +1389,42 @@ my_memory_block bloc;
     }
 
 #elif HAVE_MQUERY /* OpenBSD */
-
+/*
   uintptr_t pagesize;
   uintptr_t address;
-  int /*bool*/ address_known_mapped;
+  int /*bool*//* address_known_mapped;
 
   pagesize = getpagesize ();
   /* Avoid calling mquery with a NULL first argument, because this argument
      value has a specific meaning.  We know the NULL page is unmapped.  */
+/*
   address = pagesize;
   address_known_mapped = 0;
   for (;;)
     {
       /* Test whether the page at address is mapped.  */
-      if (address_known_mapped
+/* 
+     if (address_known_mapped
           || mquery ((void *) address, pagesize, 0, MAP_FIXED, -1, 0)
              == (void *) -1)
         {
           /* The page at address is mapped.
              This is the start of an interval.  */
+/*
           uintptr_t start = address;
           uintptr_t end;
 
           /* Find the end of the interval.  */
-          end = (uintptr_t) mquery ((void *) address, pagesize, 0, 0, -1, 0);
+/* 
+         end = (uintptr_t) mquery ((void *) address, pagesize, 0, 0, -1, 0);
           if (end == (uintptr_t) (void *) -1)
             end = 0; /* wrap around */
-          address = end;
+/*  
+        address = end;
 
           /* It's too complicated to find out about the flags.  Just pass 0.  */
-            bloc.start = (void*)start; 
+/* 
+           bloc.start = (void*)start; 
 			bloc.end = (void*)end;
 			bloc.flags = 0;
 			bloc.reserved = 1;
@@ -1415,9 +1433,11 @@ my_memory_block bloc;
 				VECTOR_ADD_C_STRUCT((*reserved_blocks),bloc,temp);
 			}
           if (address < pagesize) /* wrap around? */
+/*
             break;
         }
       /* Here we know that the page at address is unmapped.  */
+/*
       {
         uintptr_t query_size = pagesize;
 
@@ -1425,12 +1445,14 @@ my_memory_block bloc;
 
         /* Query larger and larger blocks, to get through the unmapped address
            range with few mquery() calls.  */
-        for (;;)
+/* 
+       for (;;)
           {
             if (2 * query_size > query_size)
               query_size = 2 * query_size;
             if (address + query_size - 1 < query_size) /* wrap around? */
-              {
+/* 
+             {
                 address_known_mapped = 0;
                 break;
               }
@@ -1439,16 +1461,19 @@ my_memory_block bloc;
               {
                 /* Not all the interval [address .. address + query_size - 1]
                    is unmapped.  */
+/*
                 address_known_mapped = (query_size == pagesize);
                 break;
               }
             /* The interval [address .. address + query_size - 1] is
                unmapped.  */
-            address += query_size;
+/* 
+           address += query_size;
           }
         /* Reduce the query size again, to determine the precise size of the
            unmapped interval that starts at address.  */
-        while (query_size > pagesize)
+/* 
+       while (query_size > pagesize)
           {
             query_size = query_size / 2;
             if (address + query_size - 1 >= query_size)
@@ -1458,6 +1483,7 @@ my_memory_block bloc;
                   {
                     /* The interval [address .. address + query_size - 1] is
                        unmapped.  */
+/*
                     address += query_size;
                     address_known_mapped = 0;
                   }
@@ -1469,13 +1495,15 @@ my_memory_block bloc;
            either address + pagesize - 1 < pagesize, or
            mquery ((void *) address, pagesize, 0, MAP_FIXED, -1, 0) fails.
            So, the unmapped area ends at address.  */
-      }
-      if (address + pagesize - 1 < pagesize) /* wrap around? */
+/* 
+     }
+      if (address + pagesize - 1 < pagesize) /* wrap around? *//*
         break;
     }
 	return 1;
 #endif
-}
+}*/
+/*
 
 int get_free_blocks(void * start_address,void * end_address, vector_c * free_blocks, VECTOR_C_CAP_TYPE BYTES_RESERVED_SIZE)
 {
@@ -1640,3 +1668,4 @@ int to_one_block(vector_c * blocks, my_memory_block * blockx, VECTOR_C_CAP_TYPE 
 		return 1;
 }
 #endif 
+*/

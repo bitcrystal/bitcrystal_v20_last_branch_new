@@ -32,6 +32,8 @@ extern "C" {
 #define VMA_PROT_EXECUTE (1<<2)
 #define VMA_PROT_PRIVATE (1<<3)
 #define VMA_PROT_SHARED (1<<4)
+#define VMA_PROT_EXEC VMA_PROT_EXECUTE
+#define VMA_PRIVATE VMA_PROT_PRIVATE
 
 typedef int (*vma_iterate_callback_fn) (void *data,
                                         unsigned long long start, unsigned long long end,
@@ -49,7 +51,7 @@ typedef int (*vma_iterate_callback_fn) (void *data,
    the iteration terminates prematurely.
    This function may open file descriptors, but does not call malloc().  */
 extern void vma_iterate (vma_iterate_callback_fn callback, void *data);
-typedef struct
+/*typedef struct
 {
     void * start; 
 	void * end;
@@ -69,7 +71,7 @@ extern int to_one_block(vector_c * blocks, my_memory_block * blockx, VECTOR_C_CA
 #define GET_RESERVED_BLOCKS_EX(st,en,re) get_reserved_blocks((void*)(st),(void*)(en),(vector_c *)(re),((VECTOR_C_CAP_TYPE)(1024*1024*50)))
 #define GET_FREE_BLOCKS_EX(st,en,fr) get_free_blocks((void*)(st),(void*)(en),(vector_c *)(fr),((VECTOR_C_CAP_TYPE)(1024*1024*50)))
 #define TO_ONE_BLOCK_EX(bl,blo) to_one_block((vector_c*)(bl),(my_memory_block*)(blo),((VECTOR_C_CAP_TYPE)(1024*1024*50)))
-
+*/
 /* The macro VMA_ITERATE_SUPPORTED indicates that vma_iterate is supported on
    this platform.
    Note that even when this macro is defined, vma_iterate() may still fail to

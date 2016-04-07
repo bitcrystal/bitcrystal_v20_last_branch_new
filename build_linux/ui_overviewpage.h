@@ -1,8 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'overviewpage.ui'
 **
-** Created: Sat Nov 8 03:03:22 2014
-**      by: Qt User Interface Compiler version 4.8.2
+** Created by: Qt User Interface Compiler version 4.8.6
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -97,13 +96,13 @@ public:
         font.setBold(true);
         font.setWeight(75);
         label_5->setFont(font);
-        label_5->setStyleSheet(QString::fromUtf8(""));
+        label_5->setStyleSheet(QString::fromUtf8("QLabel { color: rgb(255, 255, 255); }"));
 
         horizontalLayout_4->addWidget(label_5);
 
         labelWalletStatus = new QLabel(frame);
         labelWalletStatus->setObjectName(QString::fromUtf8("labelWalletStatus"));
-        labelWalletStatus->setStyleSheet(QString::fromUtf8("QLabel { color: red; }"));
+        labelWalletStatus->setStyleSheet(QString::fromUtf8("QLabel { color: rgb(255, 255, 255); }"));
         labelWalletStatus->setText(QString::fromUtf8("(out of sync)"));
         labelWalletStatus->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
@@ -123,7 +122,7 @@ public:
         formLayout_2->setVerticalSpacing(12);
         label = new QLabel(frame);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setStyleSheet(QString::fromUtf8(""));
+        label->setStyleSheet(QString::fromUtf8("QLabel { color: rgb(255, 255, 255); }"));
 
         formLayout_2->setWidget(0, QFormLayout::LabelRole, label);
 
@@ -131,7 +130,7 @@ public:
         labelBalance->setObjectName(QString::fromUtf8("labelBalance"));
         labelBalance->setFont(font);
         labelBalance->setCursor(QCursor(Qt::IBeamCursor));
-        labelBalance->setStyleSheet(QString::fromUtf8(""));
+        labelBalance->setStyleSheet(QString::fromUtf8("QLabel { color: rgb(255, 255, 255); }"));
         labelBalance->setText(QString::fromUtf8("0 BTQ"));
         labelBalance->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
 
@@ -139,7 +138,7 @@ public:
 
         label_3 = new QLabel(frame);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setStyleSheet(QString::fromUtf8(""));
+        label_3->setStyleSheet(QString::fromUtf8("QLabel { color: rgb(255, 255, 255); }"));
 
         formLayout_2->setWidget(1, QFormLayout::LabelRole, label_3);
 
@@ -147,7 +146,7 @@ public:
         labelUnconfirmed->setObjectName(QString::fromUtf8("labelUnconfirmed"));
         labelUnconfirmed->setFont(font);
         labelUnconfirmed->setCursor(QCursor(Qt::IBeamCursor));
-        labelUnconfirmed->setStyleSheet(QString::fromUtf8("QLabel { color: green; }"));
+        labelUnconfirmed->setStyleSheet(QString::fromUtf8("QLabel { color: rgb(255, 255, 255); }"));
         labelUnconfirmed->setText(QString::fromUtf8("0 BTQ"));
         labelUnconfirmed->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
 
@@ -155,14 +154,14 @@ public:
 
         labelImmatureText = new QLabel(frame);
         labelImmatureText->setObjectName(QString::fromUtf8("labelImmatureText"));
-        labelImmatureText->setStyleSheet(QString::fromUtf8(""));
+        labelImmatureText->setStyleSheet(QString::fromUtf8("QLabel { color: rgb(255, 255, 255); }"));
 
         formLayout_2->setWidget(2, QFormLayout::LabelRole, labelImmatureText);
 
         labelImmature = new QLabel(frame);
         labelImmature->setObjectName(QString::fromUtf8("labelImmature"));
         labelImmature->setFont(font);
-        labelImmature->setStyleSheet(QString::fromUtf8("QLabel { color: red; }"));
+        labelImmature->setStyleSheet(QString::fromUtf8("QLabel { color: rgb(255, 255, 255); }"));
         labelImmature->setText(QString::fromUtf8("0 BTQ"));
         labelImmature->setTextInteractionFlags(Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse);
 
@@ -170,11 +169,13 @@ public:
 
         label_2 = new QLabel(frame);
         label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setStyleSheet(QString::fromUtf8("QLabel { color: rgb(255, 255, 255); }"));
 
         formLayout_2->setWidget(3, QFormLayout::LabelRole, label_2);
 
         labelNumTransactions = new QLabel(frame);
         labelNumTransactions->setObjectName(QString::fromUtf8("labelNumTransactions"));
+        labelNumTransactions->setStyleSheet(QString::fromUtf8("QLabel { color: rgb(255, 255, 255); }"));
 
         formLayout_2->setWidget(3, QFormLayout::FieldRole, labelNumTransactions);
 
@@ -213,7 +214,7 @@ public:
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         label_4 = new QLabel(frame_2);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setStyleSheet(QString::fromUtf8(""));
+        label_4->setStyleSheet(QString::fromUtf8("QLabel { color: rgb(255, 255, 255); }"));
 
         horizontalLayout_2->addWidget(label_4);
 

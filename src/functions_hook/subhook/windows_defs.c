@@ -175,7 +175,7 @@ LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType
               }
 		if(address!=NULL)
 		{
-			if((sysconf(_SC_PAGESIZE)==-1)
+			if((sysconf(_SC_PAGESIZE)==-1))
 					return NULL;
 			unsigned long pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
 			address = (void *)(((unsigned long long)address) & ~(pagesize - 1));
@@ -217,7 +217,7 @@ BOOL WINAPI VirtualFree(LPVOID lpAddress,SIZE_T dwSize,DWORD  dwFreeType)
 		size_t size=(size_t)dwSize;
 		if(address!=NULL)
 		{
-			if((sysconf(_SC_PAGESIZE)==-1)
+			if((sysconf(_SC_PAGESIZE)==-1))
 					return FALSE;
 			unsigned long pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
 			address = (void *)(((unsigned long long)address) & ~(pagesize - 1));
@@ -283,7 +283,7 @@ BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PD
               }
 		if(address!=NULL)
 		{
-			if((sysconf(_SC_PAGESIZE)==-1)
+			if((sysconf(_SC_PAGESIZE)==-1))
 					return NULL;
 			unsigned long pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
 			address = (void *)(((unsigned long long)address) & ~(pagesize - 1));
@@ -360,7 +360,7 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 		nsize_ = nsize_ * pagesize;
 		void * testx_address = NULL;
 		testx_address=(void*)sbrk(0);
-		if(testx_address!=NULL&&(((unsigned long long)(address))>((unsigned long long)(testx_address)))
+		if(testx_address!=NULL&&(((unsigned long long)(address)) > ((unsigned long long)(testx_address))))
 		{
 			zz.complete_free_region=1;
 		} else {
@@ -396,12 +396,12 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 				zz.start_address=(unsigned long long)address;
 				zz.end_address=(unsigned long long)(address+nsize_);
 				zz.size=(unsigned long long)dwLength;
-				zz.page_size=page_size;
+				zz.page_size=pagesize;
 				zz.page_alignment_size=nsize_;
 				zz.free_pages=0;
 				zz.free_pages_size=0;
 				zz.reserved_pages_size=nsize_;
-				zz.reserved_pages=(reserved_pages_size/page_size);
+				zz.reserved_pages=(zz.reserved_pages_size/zz.page_size);
 			} else {
 				/*
 			    test_address=(void*)zz.base_start_address;
@@ -445,20 +445,20 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 				zz.start_address=(unsigned long long)zz.base_start_address;
 				zz.end_address=(unsigned long long)(zz.base_end_address);
 				zz.size=(unsigned long long)dwLength;
-				zz.page_size=page_size;
+				zz.page_size=pagesize;
 				zz.page_alignment_size=psp;
 				zz.free_pages=0;
 				zz.free_pages_size=0;
 				zz.reserved_pages_size=psp;
-				zz.reserved_pages=(reserved_pages_size/page_size);
+				zz.reserved_pages=(zz.reserved_pages_size/zz.page_size);
 			}
 		} else {
 			zz.start_address=(unsigned long long)address;
 			zz.end_address=(unsigned long long)(address+nsize_);
 			zz.size=(unsigned long long)dwLength;
-			zz.page_size=page_size;
+			zz.page_size=pagesize;
 			zz.page_alignment_size=nsize_;
-			zz.free_pages=(nsize_/page_size);
+			zz.free_pages=(nsize_/zz.page_size);
 			zz.free_pages_size=nsize_;
 			zz.reserved_pages_size=0;
 			zz.reserved_pages=0;
@@ -482,6 +482,7 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 		{
 			
 		}*/
+		int flags=zz.base_flags;
 		if(zz.complete_free_region==1)
 		{
 			lpBuffer->BaseAddress=(void*)zz.start_address;

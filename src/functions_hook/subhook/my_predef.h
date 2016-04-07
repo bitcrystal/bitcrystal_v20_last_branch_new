@@ -146,7 +146,7 @@
 	#define _M_IX86
 	#define __i386__
 	#define _WIN32
-	#define WIN32
+//	#define WIN32
 	#define _ILP32
 	#define __ILP32__
 	#define _LP32
@@ -164,6 +164,6 @@
 	#define ILP64
 //	#define __MINGW64__
 	#define _WIN64
-	#define WIN64
+//	#define WIN64
 	#define BITCRYSTAL_OS_ARCH 2
 #endif

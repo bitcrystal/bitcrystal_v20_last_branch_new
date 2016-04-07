@@ -174,6 +174,10 @@
 #    endif
 #  endif
 #endif
+//#include "../functions_hook/subhook/my_predef.h"
+//#ifdef OS_UNIX_STRUCT
+//	#define __GNUC__
+//#endif
 #if !defined(STDC) && (defined(__STDC__) || defined(__cplusplus))
 #  define STDC
 #endif
@@ -234,7 +238,6 @@
 */
 
                         /* Type declarations */
-
 #ifndef OF /* function prototypes */
 #  ifdef STDC
 #    define OF(args)  args

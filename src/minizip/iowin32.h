@@ -20,7 +20,9 @@ extern "C" {
 #include "../functions_hook/subhook/windows_defs2.c"
 #endif
 
-void fill_win32_filefunc OF((zlib_filefunc_def* pzlib_filefunc_def));
+#ifndef OS_UNIX_STRUCT
+	void fill_win32_filefunc OF((zlib_filefunc_def* pzlib_filefunc_def));
+#endif
 
 #ifdef __cplusplus
 }
