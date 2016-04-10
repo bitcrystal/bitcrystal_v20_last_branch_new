@@ -50,6 +50,7 @@ HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareM
 			{
 				return NULL;
 			}
+			___Win32Helper___FileHandleManage((HANDLE)file,0);
 			return (HANDLE)file;
 		}
 		break;
@@ -69,6 +70,7 @@ HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareM
 			{
 				return NULL;
 			}
+			___Win32Helper___FileHandleManage((HANDLE)file,0);
 			return (HANDLE)file;
 		}
 		break;
@@ -82,6 +84,7 @@ HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareM
 				file = fopen((const char*)lpFileName, "wb+");
 				if(file==NULL)
 					return NULL;
+				___Win32Helper___FileHandleManage((HANDLE)file,0);
 				return (HANDLE)file;
 			}
 			fclose(file);
@@ -89,6 +92,7 @@ HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareM
 			if(file==NULL)
 				return NULL;
 			SetLastError(ERROR_ALREADY_EXISTS);
+			___Win32Helper___FileHandleManage((HANDLE)file,0);
 			return (HANDLE)file;
 		}
 		
@@ -105,6 +109,7 @@ HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareM
 			file = fopen((const char*)lpFileName, "ab+");
 			if(file==NULL)
 				return NULL;
+			___Win32Helper___FileHandleManage((HANDLE)file,0);
 			return (HANDLE)file;
 		}
 		
@@ -121,6 +126,7 @@ HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareM
 			file = fopen((const char*)lpFileName, "wb+");
 			if(file==NULL)
 				return NULL;
+			___Win32Helper___FileHandleManage((HANDLE)file,0);
 			return (HANDLE)file;
 		}
 		break;
@@ -385,11 +391,66 @@ DWORD WINAPI SetFilePointer(HANDLE hFile,LONG lDistanceToMove,PLONG lpDistanceTo
 	return INVALID_SET_FILE_POINTER;
 }
 
+BOOL ___Win32Helper___FileHandleManage(HANDLE fh,int action)
+{
+	if(fh==NULL)
+		return FALSE;
+	static HANDLE fhandles[64];
+	static unsigned char init=0;
+	if(init!=99)
+	{
+		int i=0;
+		for(i=0; i < 64; i++)
+		{
+			fhandles[i]=NULL;
+		}
+		init=99;
+	}
+	if(action==0)
+	{
+		int i=0;
+		for(i=0; i < 64; i++)
+		{
+			if(fhandles[i]==NULL)
+			{
+				fhandles[i]=fh;
+				return TRUE;
+			}
+		}
+		return FALSE;
+	} else if (action == 1)
+	{
+		int i = 0;
+		for(i=0; i < 64; i++)
+		{
+			if(fhandles[i]==fh)
+			{
+				fhandles[i]=NULL;
+				return TRUE;
+			}
+		}
+		return FALSE;
+	} else if ( action == 2)
+	{
+		int i = 0;
+		for(i=0; i < 64; i++)
+		{
+			if(fhandles[i]==fh)
+			{
+				return TRUE;
+			}
+		}
+		return FALSE;
+	} else {
+		return FALSE;
+	}
+	return FALSE;
+}
+
 BOOL ___Win32Helper___IsFileHandle(HANDLE hObject)
 {
-	if(hObject==NULL)
-		return FALSE;
-	if(sizeof((*hObject))==sizeof(FILE))
+	BOOL isFh = ___Win32Helper___FileHandleManage(hObject,2);
+	if(isFh==TRUE)
 	{
 		return TRUE;
 	}
@@ -401,6 +462,7 @@ BOOL CloseHandle(HANDLE hObject)
 	if(___Win32Helper___IsFileHandle(hObject)==TRUE)
 	{
 		fclose((FILE*)hObject);
+		___Win32Helper___FileHandleManage(hObject,1);
 		return TRUE;
 	}
 	return FALSE;

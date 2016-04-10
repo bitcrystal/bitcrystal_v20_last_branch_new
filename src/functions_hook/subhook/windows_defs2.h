@@ -445,14 +445,15 @@ typedef ACCESS_MASK* PACCESS_MASK;
 #define ______MY_LAST_ERROR______ __win32__last__error__
 static DWORD __win32__last__error__;
 #endif
-BOOL ___Win32Helper___IsFileHandle(HANDLE hObject);
-HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareMode,LPSECURITY_ATTRIBUTES lpSecurityAttributes,DWORD dwCreationDisposition,DWORD dwFlagsAndAttributes,HANDLE hTemplateFile);
-BOOL WINAPI ReadFile(HANDLE hFile,LPVOID lpBuffer,DWORD nNumberOfBytesToRead,LPDWORD lpNumberOfBytesRead,LPOVERLAPPED lpOverlapped);
-BOOL WINAPI WriteFile(HANDLE hFile,LPCVOID lpBuffer,DWORD nNumberOfBytesToWrite,LPDWORD lpNumberOfBytesWritten,LPOVERLAPPED lpOverlapped);
-DWORD WINAPI SetFilePointer(HANDLE hFile,LONG lDistanceToMove,PLONG lpDistanceToMoveHigh,DWORD dwMoveMethod);
-BOOL CloseHandle(HANDLE hObject); 
-DWORD WINAPI GetLastError();
-void WINAPI SetLastError(DWORD dwErrCode);
+extern BOOL ___Win32Helper___IsFileHandle(HANDLE hObject);
+extern BOOL ___Win32Helper___FileHandleManage(HANDLE fh,int action);
+extern HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareMode,LPSECURITY_ATTRIBUTES lpSecurityAttributes,DWORD dwCreationDisposition,DWORD dwFlagsAndAttributes,HANDLE hTemplateFile);
+extern BOOL WINAPI ReadFile(HANDLE hFile,LPVOID lpBuffer,DWORD nNumberOfBytesToRead,LPDWORD lpNumberOfBytesRead,LPOVERLAPPED lpOverlapped);
+extern BOOL WINAPI WriteFile(HANDLE hFile,LPCVOID lpBuffer,DWORD nNumberOfBytesToWrite,LPDWORD lpNumberOfBytesWritten,LPOVERLAPPED lpOverlapped);
+extern DWORD WINAPI SetFilePointer(HANDLE hFile,LONG lDistanceToMove,PLONG lpDistanceToMoveHigh,DWORD dwMoveMethod);
+extern BOOL CloseHandle(HANDLE hObject); 
+extern DWORD WINAPI GetLastError();
+extern void WINAPI SetLastError(DWORD dwErrCode);
 
 #ifdef __cplusplus
 #ifndef MY_EXTERN_C_DEF_BRACE

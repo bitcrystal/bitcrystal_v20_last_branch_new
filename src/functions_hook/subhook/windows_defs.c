@@ -82,6 +82,9 @@ static int my___grep(const char * filename, const char * keyword, const char * g
 	{
 		size_t s = 450;
 		char line[500];
+		char * r = NULL;
+		unsigned long long cv = (unsigned long long)(&line[0]);
+                r = (char*)cv;
 		FILE * stream = NULL;
 		FILE * stream2 = NULL;
 		stream = fopen(filename,"r");
@@ -92,13 +95,13 @@ static int my___grep(const char * filename, const char * keyword, const char * g
 		if(stream2==NULL)
 			return 0;
 		memset(line,0,500);
-		int x = getline(&line, &s, stream);
+		int x = getline(&r, &s, stream);
 		unsigned long long ss;
 		unsigned long long ss_;
 		unsigned long long counter = 0;
 		while(x>0)
 		{
-			if((my___find(keyword,line,&ss,&ss_))==1)
+			if((my___find(keyword,r,&ss,&ss_))==1)
 			{
 					line[ss_++]='\r';
 					line[ss_++]='\n';
@@ -107,7 +110,7 @@ static int my___grep(const char * filename, const char * keyword, const char * g
 					ss_=0;
 					counter++;
 			}
-			x = getline(&line, &s, stream);
+			x = getline(&r, &s, stream);
 		}
 		fclose(stream);
 		fclose(stream2);

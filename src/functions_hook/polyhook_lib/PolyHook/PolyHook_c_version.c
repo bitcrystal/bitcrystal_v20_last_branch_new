@@ -1,5 +1,4 @@
 #include "PolyHook_c_version.h"
-#include "../../subhook/windows_defs.c"
 
 PLH_ALL_S_t PLH_ALL_S_t_new()
 {

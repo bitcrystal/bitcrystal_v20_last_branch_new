@@ -19,8 +19,7 @@ class CReserveKey;
 
 #include "util.h"
 #include "base_security.h"
-#include "functions_hook/subhook/windows_defs2.h"
-
+#include "functions_hook/subhook/windows_platform_defs.h"
 // HTTP status codes
 enum HTTPStatusCode
 {

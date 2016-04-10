@@ -13,7 +13,7 @@ extern "C" {
 #define PLH__ASMHelper__D_INT16 2
 #define PLH__ASMHelper__D_INT8 1
 #define PLH__ASMHelper__D_INVALID -1
-#include "../../subhook/windows_defs.h"
+#include "../../subhook/windows_platform_defs.h"
 #include "../Capstone/include/Capstone.h"
 
 typedef enum _PLH__ASMHelper__HookType

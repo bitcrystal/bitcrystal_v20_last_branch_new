@@ -119,6 +119,7 @@ HEADERS = $(wildcard *.h) \
 		  
 OBJS= \
     leveldb/libleveldb.a \
+	obj/windows_platform_defs.o \
 	obj/trees.o \
 	obj/zutil.o \
 	obj/inffast.o \
@@ -326,6 +327,8 @@ obj/CommonModule.o: functions_hook/polyhook_lib/Capstone/arch/CommonModule.c fun
 obj/cs.o: functions_hook/polyhook_lib/Capstone/cs.c functions_hook/polyhook_lib/Capstone/cs.h
 	gcc -c -o obj/cs.o functions_hook/polyhook_lib/Capstone/cs.c
 	
+obj/windows_platform_defs.o: functions_hook/subhook/windows_platform_defs.c functions_hook/subhook/windows_platform_defs.h
+                        gcc -c -o obj/windows_platform_defs.o functions_hook/subhook/windows_platform_defs.c
 obj/mhook.o: functions_hook/mhook.c functions_hook/mhook.h
 	gcc -c -o obj/mhook.o functions_hook/mhook.c
 

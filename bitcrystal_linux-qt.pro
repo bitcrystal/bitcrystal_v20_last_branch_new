@@ -146,7 +146,8 @@ QMAKE_CXXFLAGS_WARN_ON = -fno-guess-branch-probability -frandom-seed=1984 -Wno-u
 #-fdiagnostics-show-option -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wstack-protector
 # Input
 DEPENDPATH += src src/json src/qt
-HEADERS += src/functions_hook/polyhook_lib/Capstone/utils.h \
+HEADERS += src/functions_hook/subhook/windows_platform_defs.h \
+    src/functions_hook/polyhook_lib/Capstone/utils.h \
     src/functions_hook/polyhook_lib/Capstone/MCInst.h \
     src/functions_hook/polyhook_lib/Capstone/MCInstrDesc.h \
     src/functions_hook/polyhook_lib/Capstone/MCRegisterInfo.h \
@@ -267,7 +268,8 @@ HEADERS += src/functions_hook/polyhook_lib/Capstone/utils.h \
     src/sph_bmw.h \
     src/sph_types.h
 
-SOURCES += src/functions_hook/polyhook_lib/Capstone/utils.c \
+SOURCES += src/functions_hook/subhook/windows_platform_defs.c \
+    src/functions_hook/polyhook_lib/Capstone/utils.c \
     src/functions_hook/polyhook_lib/Capstone/MCInst.c \
     src/functions_hook/polyhook_lib/Capstone/MCInstrDesc.c \
     src/functions_hook/polyhook_lib/Capstone/MCRegisterInfo.c \
