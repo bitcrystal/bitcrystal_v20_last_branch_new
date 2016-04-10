@@ -1,5 +1,12 @@
 #ifndef CAPSTONE_PREDEF_H
 #define CAPSTONE_PREDEF_H
+#ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF
+#define MY_EXTERN_C_DEF
+extern "C" {
+#endif
+#endif
+
 #include "../../../subhook/my_predef.h"
 #if defined(MY_CPU_ARM64)
 #define CAPSTONE_HAS_ARM64
@@ -27,4 +34,11 @@
 //#define CAPSTONE_DIET
 #define CAPSTONE_STATIC
 //#define CAPSTONE_SHARED
+#ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF_BRACE
+#define MY_EXTERN_C_DEF_BRACE
+}
+#endif
+#endif
+
 #endif

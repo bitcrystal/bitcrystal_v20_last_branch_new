@@ -3045,6 +3045,34 @@ Value decodetradewith(const Array& params, bool fHelp)
 	return trade;
 }
 
+Value testertest(const Array& params, bool fHelp)
+{
+ 	if (fHelp||params.size()!=1)
+               throw runtime_error("testertest\n");
+	std::string x=params[0].get_str();
+	if(x.compare("virtualalloc")!=0)
+	{
+		int allok=0;
+		std::string retout;
+		LPVOID address = VirtualAlloc(NULL,5,MEM_RESERVE|MEM_COMMIT,PAGE_READWRITE);
+		if(address!=NULL)
+		{
+			if(VirtualFree(address,5,MEM_DECOMMIT|MEM_RELEASE)!=0)
+			{
+				retout+="1.test in short term all ok read further for details VirtualAlloc can creates a new pointer and virtualfree can with no problems free the memory.\n";
+			} else {
+				retout+="1.test in short term failed read further for details VirtualAlloc can create a new pointer but VirtualFree can not free the memory!\n";
+			}
+		} else {
+			retout+="1.test in short term failed full read further for details both functions virtualalloc and virtualfree can not do his job!\n";
+		}
+		return retout;
+	} else if(x.compare("virtualprotect")!=0)
+	{
+	}
+	return "nothingtest";
+}
+
 /*Array mygetnewaddress()
 {
 	Array array;

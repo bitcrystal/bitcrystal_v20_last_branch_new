@@ -1,5 +1,11 @@
 #ifndef WINDOWS_DEFS_H
 #define WINDOWS_DEFS_H
+#ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF
+#define MY_EXTERN_C_DEF
+extern "C" {
+#endif
+#endif
 #include "my_predef.h"
 #ifndef OS_WIN
 typedef void * PVOID;
@@ -16,9 +22,15 @@ typedef int BOOL;
 #define _M_IX86_X64
 #endif
 //#define NULL ( (void *) 0)
+#ifndef NULL
 #define NULL 0
+#endif
+#ifndef __int64
 #define __int64 long long
+#endif
+#ifndef CONST
 #define CONST const
+#endif
 typedef CONST void *LPCVOID;
 typedef void *LPVOID;
 typedef unsigned long DWORD;
@@ -110,9 +122,15 @@ typedef CONST WCHAR *LPCWSTR;
 #else
  typedef LPCSTR LPCTSTR;
 #endif
+#ifndef MAX_PATH
 #define MAX_PATH             260
+#endif
+#ifndef INVALID_HANDLE_VALUE
 #define INVALID_HANDLE_VALUE ((HANDLE) -1)
+#endif
+#ifndef INVALID_FILE_SIZE
 #define INVALID_FILE_SIZE    ((DWORD)0xFFFFFFFF)
+#endif
 typedef UNICODE_STRING *PUNICODE_STRING;
 typedef const UNICODE_STRING *PCUNICODE_STRING;
 #ifdef _UNICODE
@@ -120,9 +138,15 @@ typedef const UNICODE_STRING *PCUNICODE_STRING;
 #else
 #define L(str) str
 #endif
+#ifndef __stdcall
 #define __stdcall
+#endif
+#ifndef CALLBACK
 #define CALLBACK __stdcall
+#endif
+#ifndef WINAPI
 #define WINAPI __stdcall
+#endif
 typedef struct _MEMORY_BASIC_INFORMATION {
   PVOID  BaseAddress;
   PVOID  AllocationBase;
@@ -272,32 +296,78 @@ typedef ___Win32Helper___NUM64_BASE MY_NUM64_BASE;
 // Page protection
 //
 
+#ifndef PAGESIZE
 #define PAGESIZE  4096
-
+#endif
+#ifndef PAGE_NOACCESS
 #define PAGE_NOACCESS 0x01
+#endif
+#ifndef PAGE_READONLY
 #define PAGE_READONLY 0x02
+#endif
+#ifndef PAGE_READWRITE
 #define PAGE_READWRITE 0x04
+#endif
+#ifndef PAGE_WRITECOPY
 #define PAGE_WRITECOPY 0x08
+#endif
+#ifndef PAGE_EXECUTE
 #define PAGE_EXECUTE 0x10
+#endif
+#ifndef PAGE_EXECUTE_READ
 #define PAGE_EXECUTE_READ 0x20
+#endif
+#ifndef PAGE_EXECUTE_READWRITE
 #define PAGE_EXECUTE_READWRITE 0x40
+#endif
+#ifndef PAGE_EXECUTE_WRITECOPY
 #define PAGE_EXECUTE_WRITECOPY 0x80
+#endif
+#ifndef PAGE_GUARD
 #define PAGE_GUARD 0x100
+#endif
+#ifndef PAGE_NOCACHE
 #define PAGE_NOCACHE 0x200
+#endif
+#ifndef PAGE_WRITECOMBINE
 #define PAGE_WRITECOMBINE 0x400
-
+#endif
+#ifndef MEM_COMMIT
 #define MEM_COMMIT 0x1000
+#endif
+#ifndef MEM_RESERVE
 #define MEM_RESERVE 0x2000
+#endif
+#ifndef MEM_DECOMMIT
 #define MEM_DECOMMIT 0x4000
+#endif
+#ifndef MEM_RELEASE
 #define MEM_RELEASE 0x8000
+#endif
+#ifndef MEM_FREE
 #define MEM_FREE 0x10000
+#endif
+#ifndef MEM_PRIVATE
 #define MEM_PRIVATE 0x20000
+#endif
+#ifndef MEM_MAPPED
 #define MEM_MAPPED 0x40000
+#endif
+#ifndef MEM_RESET
 #define MEM_RESET 0x80000
+#endif
+#ifndef MEM_TOP_DOWN
 #define MEM_TOP_DOWN 0x100000
+#endif
+#ifndef MEM_LARGE_PAGES
 #define MEM_LARGE_PAGES 0x20000000
+#endif
+#ifndef MEM_ALIGN64K
 #define MEM_ALIGN64K            0x10000000
+#endif
+#ifndef MEM_4MB_PAGES
 #define MEM_4MB_PAGES 0x80000000
+#endif
 
 BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect);
 SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
@@ -329,4 +399,11 @@ typedef struct _vma_it_func
 } vma_it_func;
 int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
 int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
+#ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF_BRACE
+#define MY_EXTERN_C_DEF_BRACE
+}
+#endif
+#endif
+
 #endif

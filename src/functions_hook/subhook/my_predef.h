@@ -1,6 +1,12 @@
 //Copyright by bitcrystal
 #ifndef MY_PREDEF_H
 #define MY_PREDEF_H
+#ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF
+#define MY_EXTERN_C_DEF
+extern "C" {
+#endif
+#endif
 #if defined(__arm__) || defined(__thumb__) || defined(__TARGET_ARCH_ARM) || defined(__TARGET_ARCH_THUMB) || defined(_ARM) || defined(_M_ARM) || defined(_M_ARMT)
 #define MY_CPU_ARM
 #define MY_CPU_VERSION 0
@@ -124,46 +130,98 @@
 #endif
 #endif
 #if defined(OS_WIN)
-	#define WIN
-	#define _WIN
+	#ifndef WIN
+		#define WIN
+	#endif
+	#ifndef _WIN
+		#define _WIN
+	#endif
+	#ifndef _WIN32
+		#define _WIN32
+	#endif
+	#ifndef WIN32
+		#define WIN32
+	#endif
 	#define BITCRYSTAL_OS_VERSION 1
 #elif defined(OS_LINUX)
-	#define __linux__
+	#ifndef __linux__
+		#define __linux__
+	#endif
 	#define BITCRYSTAL_OS_VERSION 2
 #elif defined(OS_MAC)
 	#if defined(OS_UNIX)
-		#define __unix__
+		#ifndef __unix__
+			#define __unix__
+		#endif
 	#elif defined(OS_APPLE)
-		#define __APPLE__
+		#ifndef __APPLE__
+			#define __APPLE__
+		#endif
 	#elif defined(OS_MACH)
-		#define __MACH__
+		#ifndef __MACH__
+			#define __MACH__
+		#endif
 	#else
 		#define OS_UNKNOWN
 	#endif
 	#define BITCRYSTAL_OS_VERSION 3
 #endif
 #if defined(IS_X86)
+#ifndef _M_IX86
 	#define _M_IX86
+#endif
+#ifndef __i386__
 	#define __i386__
-	#define _WIN32
+#endif
+//#ifndef _WIN32
+//	#define _WIN32
+//#endif
 //	#define WIN32
+#ifndef _ILP32
 	#define _ILP32
+#endif
+#ifndef __ILP32__
 	#define __ILP32__
+#endif
+#ifndef _LP32
 	#define _LP32
+#endif
 //	#defined __MINGW32__
-//	#defined _WIN32
 //	#define WIN32
 	#define BITCRYSTAL_OS_ARCH 1
 #elif defined(IS_X64)
+#ifndef _M_X64
 	#define _M_X64
+#endif
+#ifndef _M_AMD64
 	#define _M_AMD64
+#endif
+#ifndef __amd64__
 	#define __amd64__
+#endif
+#ifndef _LP64
 	#define _LP64
+#endif
+#ifndef _ILP64
 	#define _ILP64
+#endif
+#ifndef LP64
 	#define LP64
+#endif
+#ifndef ILP64
 	#define ILP64
+#endif
 //	#define __MINGW64__
-	#define _WIN64
+//#ifndef _WIN64
+//	#define _WIN64
+//#endif
 //	#define WIN64
 	#define BITCRYSTAL_OS_ARCH 2
+#ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF_BRACE
+#define MY_EXTERN_C_DEF_BRACE
+}
+#endif
+#endif
+
 #endif

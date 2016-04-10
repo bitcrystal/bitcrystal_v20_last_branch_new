@@ -22,7 +22,10 @@
 #include <stdint.h>
 
 #ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF
+#define MY_EXTERN_C_DEF
 extern "C" {
+#endif
 #endif
 
 
@@ -82,7 +85,11 @@ extern int to_one_block(vector_c * blocks, my_memory_block * blockx, VECTOR_C_CA
 
 
 #ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF_BRACE
+#define MY_EXTERN_C_DEF_BRACE
 }
 #endif
+#endif
+
 
 #endif /* _VMA_ITER_H */

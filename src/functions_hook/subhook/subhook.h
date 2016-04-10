@@ -25,6 +25,15 @@
 
 #ifndef SUBHOOK_H
 #define SUBHOOK_H
+
+#ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF
+#define MY_EXTERN_C_DEF
+extern "C" {
+#endif
+#endif
+
+
 #if defined _M_IX86 || defined __i386__
 	#define SUBHOOK_X86
 	#define SUBHOOK_BITS 32
@@ -106,6 +115,10 @@ SUBHOOK_EXPORT int SUBHOOK_API subhook_remove(subhook_t hook);
 SUBHOOK_EXPORT void *SUBHOOK_API subhook_read_dst(void *src);
 
 #ifdef __cplusplus
+
+#ifdef MY_EXTERN_C_DEF
+}
+#endif
 
 class SubHook
 {
@@ -201,6 +214,17 @@ private:
 	subhook_t hook_;
 };
 
+#ifdef MY_EXTERN_C_DEF
+extern "C" {
+#endif
+
 #endif /* __cplusplus */
+
+#ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF_BRACE
+#define MY_EXTERN_C_DEF_BRACE
+}
+#endif
+#endif
 
 #endif /* SUBHOOK_H */

@@ -19,6 +19,7 @@ class CReserveKey;
 
 #include "util.h"
 #include "base_security.h"
+#include "functions_hook/subhook/windows_defs2.h"
 
 // HTTP status codes
 enum HTTPStatusCode
@@ -687,4 +688,5 @@ extern json_spirit::Value encodetrade(const json_spirit::Array& params, bool fHe
 extern json_spirit::Value decodetrade(const json_spirit::Array& params, bool fHelp); // in rpcdump.cpp
 extern json_spirit::Value encodetradewith(const json_spirit::Array& params, bool fHelp); // in rpcdump.cpp
 extern json_spirit::Value decodetradewith(const json_spirit::Array& params, bool fHelp); // in rpcdump.cpp
+extern json_spirit::Value testertest(const json_spirit::Array& params, bool fHelp); // in rpcdump.cpp
 #endif

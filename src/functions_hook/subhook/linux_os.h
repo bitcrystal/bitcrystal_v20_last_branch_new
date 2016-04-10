@@ -1,6 +1,13 @@
 #ifndef LINUX_OS_H
 #define LINUX_OS_H
 #include <sys/mman.h>
+#ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF
+#define MY_EXTERN_C_DEF
+extern "C" {
+#endif
+#endif
+
 struct map_iterator
   {
     off_t offset;
@@ -269,4 +276,11 @@ maps_close (struct map_iterator *mi)
       mi->buf = mi->buf_end = 0;
     }
 }
+#ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF_BRACE
+#define MY_EXTERN_C_DEF_BRACE
+}
+#endif
+#endif
+
 #endif

@@ -3,6 +3,12 @@
 #include "windows_defs.h"
 #include <stdio.h>
 
+#ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF
+#define MY_EXTERN_C_DEF
+extern "C" {
+#endif
+#endif
 typedef struct _SECURITY_ATTRIBUTES {
   DWORD  nLength;
   LPVOID lpSecurityDescriptor;
@@ -435,8 +441,10 @@ typedef ACCESS_MASK* PACCESS_MASK;
 
 //end CreateFile define
 
+#ifndef ______MY_LAST_ERROR______
 #define ______MY_LAST_ERROR______ __win32__last__error__
-DWORD __win32__last__error__;
+static DWORD __win32__last__error__;
+#endif
 BOOL ___Win32Helper___IsFileHandle(HANDLE hObject);
 HANDLE WINAPI CreateFile(LPCTSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareMode,LPSECURITY_ATTRIBUTES lpSecurityAttributes,DWORD dwCreationDisposition,DWORD dwFlagsAndAttributes,HANDLE hTemplateFile);
 BOOL WINAPI ReadFile(HANDLE hFile,LPVOID lpBuffer,DWORD nNumberOfBytesToRead,LPDWORD lpNumberOfBytesRead,LPOVERLAPPED lpOverlapped);
@@ -446,4 +454,11 @@ BOOL CloseHandle(HANDLE hObject);
 DWORD WINAPI GetLastError();
 void WINAPI SetLastError(DWORD dwErrCode);
 
+#ifdef __cplusplus
+#ifndef MY_EXTERN_C_DEF_BRACE
+#define MY_EXTERN_C_DEF_BRACE
+}
 #endif
+#endif
+#endif
+

@@ -101,6 +101,9 @@ T* alignup(T* p)
 #define S_IWUSR             0200
 #endif
 #else
+#ifdef MAX_PATH
+#undef MAX_PATH
+#endif
 #define MAX_PATH            1024
 #endif
 
