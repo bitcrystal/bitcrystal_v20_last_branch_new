@@ -1,12 +1,5 @@
 #ifndef POLYHOOK_C_VERSION_H
 #define POLYHOOK_C_VERSION_H
-#ifdef __cplusplus
-#ifndef MY_EXTERN_C_DEF
-#define MY_EXTERN_C_DEF
-extern "C" {
-#endif
-#endif
-
 
 #define PLH__ASMHelper__D_INT64 8
 #define PLH__ASMHelper__D_INT32 4
@@ -228,11 +221,5 @@ void PLH__X64Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To);
 
 int PLH__X64Detour__GetJMPSize(PLH_ALL_S_t a);
 
-#ifdef __cplusplus
-#ifndef MY_EXTERN_C_DEF_BRACE
-#define MY_EXTERN_C_DEF_BRACE
-}
-#endif
 #endif
 
-#endif

@@ -3,12 +3,6 @@
 #include "windows_defs.h"
 #include <stdio.h>
 
-#ifdef __cplusplus
-#ifndef MY_EXTERN_C_DEF
-#define MY_EXTERN_C_DEF
-extern "C" {
-#endif
-#endif
 typedef struct _SECURITY_ATTRIBUTES {
   DWORD  nLength;
   LPVOID lpSecurityDescriptor;
@@ -455,11 +449,5 @@ extern BOOL CloseHandle(HANDLE hObject);
 extern DWORD WINAPI GetLastError();
 extern void WINAPI SetLastError(DWORD dwErrCode);
 
-#ifdef __cplusplus
-#ifndef MY_EXTERN_C_DEF_BRACE
-#define MY_EXTERN_C_DEF_BRACE
-}
-#endif
-#endif
 #endif
 

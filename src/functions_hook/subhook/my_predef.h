@@ -1,12 +1,7 @@
 //Copyright by bitcrystal
 #ifndef MY_PREDEF_H
 #define MY_PREDEF_H
-#ifdef __cplusplus
-#ifndef MY_EXTERN_C_DEF
-#define MY_EXTERN_C_DEF
-extern "C" {
-#endif
-#endif
+
 #if defined(__arm__) || defined(__thumb__) || defined(__TARGET_ARCH_ARM) || defined(__TARGET_ARCH_THUMB) || defined(_ARM) || defined(_M_ARM) || defined(_M_ARMT)
 #define MY_CPU_ARM
 #define MY_CPU_VERSION 0
@@ -217,11 +212,5 @@ extern "C" {
 //#endif
 //	#define WIN64
 	#define BITCRYSTAL_OS_ARCH 2
-#ifdef __cplusplus
-#ifndef MY_EXTERN_C_DEF_BRACE
-#define MY_EXTERN_C_DEF_BRACE
-}
-#endif
-#endif
 
 #endif

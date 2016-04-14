@@ -151,7 +151,7 @@ OBJS= \
 	obj/CommonMCTargetDesc.o \
 	obj/CommonModule.o \
 	obj/cs.o \
-	obj/mhook.o \
+	obj/mhook_platform_defs.o \
 	obj/convert_functions.o \
 	obj/base64.o \
 	obj/random.o \
@@ -326,11 +326,12 @@ obj/CommonModule.o: functions_hook/polyhook_lib/Capstone/arch/CommonModule.c fun
 	
 obj/cs.o: functions_hook/polyhook_lib/Capstone/cs.c functions_hook/polyhook_lib/Capstone/cs.h
 	gcc -c -o obj/cs.o functions_hook/polyhook_lib/Capstone/cs.c
-	
+
 obj/windows_platform_defs.o: functions_hook/subhook/windows_platform_defs.c functions_hook/subhook/windows_platform_defs.h
-                        gcc -c -o obj/windows_platform_defs.o functions_hook/subhook/windows_platform_defs.c
-obj/mhook.o: functions_hook/mhook.c functions_hook/mhook.h
-	gcc -c -o obj/mhook.o functions_hook/mhook.c
+	gcc -c -o obj/windows_platform_defs.o functions_hook/subhook/windows_platform_defs.c
+	
+obj/mhook_platform_defs.o: functions_hook/mhook_platform_defs.c functions_hook/mhook_platform_defs.h
+	gcc -c -o obj/mhook_platform_defs.o functions_hook/mhook_platform_defs.c
 
 bitcrystald: $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)

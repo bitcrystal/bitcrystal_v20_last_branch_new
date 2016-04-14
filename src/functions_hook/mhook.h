@@ -1,11 +1,5 @@
 #ifndef MY_MHOOK_H
 #define MY_MHOOK_H
-#ifdef __cplusplus
-#ifndef MY_EXTERN_C_DEF
-#define MY_EXTERN_C_DEF
-extern "C" {
-#endif
-#endif
 
 //#define USE_SUBHOOK_IN_WINDOWS
 #include "subhook/my_predef.h"
@@ -45,13 +39,6 @@ int mhooks_subhooks_count = 0;
 	void Mhook_MyInit();
 	BOOL Mhook_SetHookEx(PVOID ppSystemFunction, PVOID pHookFunction);
 	BOOL Mhook_UnhookEx(PVOID ppHookedFunction);
-#endif
-
-#ifdef __cplusplus
-#ifndef MY_EXTERN_C_DEF_BRACE
-#define MY_EXTERN_C_DEF_BRACE
-}
-#endif
 #endif
 
 #endif

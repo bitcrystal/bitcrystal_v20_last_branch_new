@@ -16,8 +16,7 @@ extern "C" {
 #endif
 
 #if !defined(OS_WIN) && defined(OS_UNIX_STRUCT)
-#include "../functions_hook/subhook/windows_defs2.h"
-#include "../functions_hook/subhook/windows_defs2.c"
+#include "../functions_hook/subhook/windows_platform_defs.h"
 #endif
 
 #ifndef OS_UNIX_STRUCT

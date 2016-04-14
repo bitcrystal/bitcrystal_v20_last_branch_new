@@ -62,6 +62,6 @@ $PREFIX cp ./build/build.h src
 $PREFIX cp ./build_deps/deps/qrencode-3.4.3/qrencode.h src/qt
 $PREFIX cd src/
 $PREFIX make -f ./my.makefile.linux "USE_UPNP=1"
-$PREFIX cd ..
-$PREFIX qmake-qt4 "USE_QRCODE=1" "USE_UPNP=1" "USE_IPV6=-" bitcrystal_linux-qt.pro -r CONFIG+=release
-$PREFIX make -j4 && $PREFIX rm src/build.h && $PREFIX rm src/qt/qrencode.h
+#$PREFIX cd ..
+#$PREFIX qmake-qt4 "USE_QRCODE=1" "USE_UPNP=1" "USE_IPV6=-" bitcrystal_linux-qt.pro -r CONFIG+=release
+#$PREFIX make -j4 && $PREFIX rm src/build.h && $PREFIX rm src/qt/qrencode.h

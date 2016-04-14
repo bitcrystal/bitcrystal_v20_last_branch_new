@@ -1,11 +1,5 @@
 #ifndef WINDOWS_DEFS_H
 #define WINDOWS_DEFS_H
-#ifdef __cplusplus
-#ifndef MY_EXTERN_C_DEF
-#define MY_EXTERN_C_DEF
-extern "C" {
-#endif
-#endif
 #include "my_predef.h"
 #ifndef OS_WIN
 typedef void * PVOID;
@@ -399,11 +393,5 @@ typedef struct _vma_it_func
 } vma_it_func;
 int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
 int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
-#ifdef __cplusplus
-#ifndef MY_EXTERN_C_DEF_BRACE
-#define MY_EXTERN_C_DEF_BRACE
-}
-#endif
-#endif
 
 #endif

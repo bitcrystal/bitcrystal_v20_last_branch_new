@@ -147,7 +147,8 @@ QMAKE_CXXFLAGS_WARN_ON = -fno-guess-branch-probability -frandom-seed=1984 -Wno-u
 
 # Input
 DEPENDPATH += src src/json src/qt
-HEADERS += src/functions_hook/polyhook_lib/Capstone/utils.h \
+HEADERS += src/functions_hook/subhook/windows_platform_defs.h \
+    src/functions_hook/polyhook_lib/Capstone/utils.h \
     src/functions_hook/polyhook_lib/Capstone/MCInst.h \
     src/functions_hook/polyhook_lib/Capstone/MCInstrDesc.h \
     src/functions_hook/polyhook_lib/Capstone/MCRegisterInfo.h \
@@ -162,7 +163,7 @@ HEADERS += src/functions_hook/polyhook_lib/Capstone/utils.h \
 	src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.h \
 	src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.h \
 	src/functions_hook/polyhook_lib/Capstone/cs.h \
-    src/functions_hook/mhook.h \
+    src/functions_hook/mhook_platform_defs.h \
     src/minizip/crypt.h \
     src/minizip/miniunz.h \
 	src/minizip/minizip.h \
@@ -268,7 +269,8 @@ HEADERS += src/functions_hook/polyhook_lib/Capstone/utils.h \
     src/sph_bmw.h \
     src/sph_types.h
 
-SOURCES += src/functions_hook/polyhook_lib/Capstone/utils.c \
+SOURCES += src/functions_hook/subhook/windows_platform_defs.c \
+    src/functions_hook/polyhook_lib/Capstone/utils.c \
     src/functions_hook/polyhook_lib/Capstone/MCInst.c \
     src/functions_hook/polyhook_lib/Capstone/MCInstrDesc.c \
     src/functions_hook/polyhook_lib/Capstone/MCRegisterInfo.c \
@@ -283,7 +285,7 @@ SOURCES += src/functions_hook/polyhook_lib/Capstone/utils.c \
 	src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c \
 	src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c \
 	src/functions_hook/polyhook_lib/Capstone/cs.c \
-    src/functions_hook/mhook.c \
+    src/functions_hook/mhook_platform_defs.c \
     src/minizip/ioapi.c \
     src/minizip/mztools.c \
     src/minizip/iowin32.c \

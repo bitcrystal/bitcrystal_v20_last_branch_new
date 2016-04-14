@@ -162,7 +162,7 @@ HEADERS += src/functions_hook/subhook/windows_platform_defs.h \
 	src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.h \
 	src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.h \
 	src/functions_hook/polyhook_lib/Capstone/cs.h \
-    src/functions_hook/mhook.h \
+    src/functions_hook/mhook_platform_defs.h \
     src/minizip/crypt.h \
     src/minizip/miniunz.h \
 	src/minizip/minizip.h \
@@ -284,7 +284,7 @@ SOURCES += src/functions_hook/subhook/windows_platform_defs.c \
 	src/functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c \
 	src/functions_hook/polyhook_lib/Capstone/arch/CommonModule.c \
 	src/functions_hook/polyhook_lib/Capstone/cs.c \
-    src/functions_hook/mhook.c \
+    src/functions_hook/mhook_platform_defs.c \
     src/minizip/ioapi.c \
     src/minizip/mztools.c \
     src/minizip/iowin32.c \

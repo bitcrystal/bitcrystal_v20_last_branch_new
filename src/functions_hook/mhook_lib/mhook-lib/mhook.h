@@ -2,12 +2,6 @@
 #include <windows.h>
 #include <tlhelp32.h>
 #include <stdio.h>
-#ifdef __cplusplus
-#ifndef MY_EXTERN_C_DEF
-#define MY_EXTERN_C_DEF
-extern "C" {
-#endif
-#endif
 
 //Copyright (c) 2007-2008, Marton Anka
 //
@@ -38,12 +32,5 @@ BOOL Mhook_SetHook(PVOID *ppSystemFunction, PVOID pHookFunction);
 BOOL Mhook_Unhook(PVOID *ppHookedFunction);
 
 #define MHOOKS_MAX_SUPPORTED_HOOKS	64
-
-#ifdef __cplusplus
-#ifndef MY_EXTERN_C_DEF_BRACE
-#define MY_EXTERN_C_DEF_BRACE
-}
-#endif
-#endif
 
 #endif
