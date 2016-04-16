@@ -3047,30 +3047,51 @@ Value decodetradewith(const Array& params, bool fHelp)
 
 Value testertest(const Array& params, bool fHelp)
 {
- 	if (fHelp||params.size()!=1)
+ 	if (fHelp||params.size()!=2)
                throw runtime_error("testertest\n");
 	std::string x=params[0].get_str();
-	if(x.compare("virtualalloc")!=0)
+	std::string y=params[1].get_str();
+	int allok=0;
+	std::string retout="nothingtest";
+	if(x.compare("virtualalloc")==0&&y.compare("test1")==0)
 	{
-		int allok=0;
-		std::string retout;
 		LPVOID address = VirtualAlloc(NULL,5,MEM_RESERVE|MEM_COMMIT,PAGE_READWRITE);
 		if(address!=NULL)
 		{
 			if(VirtualFree(address,5,MEM_DECOMMIT|MEM_RELEASE)!=0)
 			{
-				retout+="1.test in short term all ok read further for details VirtualAlloc can creates a new pointer and virtualfree can with no problems free the memory.\n";
+				retout="1.test in short term all ok read further for details VirtualAlloc can creates a new pointer and virtualfree can with no problems free the memory.\n";
 			} else {
-				retout+="1.test in short term failed read further for details VirtualAlloc can create a new pointer but VirtualFree can not free the memory!\n";
+				retout="1.test in short term failed read further for details VirtualAlloc can create a new pointer but VirtualFree can not free the memory!\n";
 			}
 		} else {
-			retout+="1.test in short term failed full read further for details both functions virtualalloc and virtualfree can not do his job!\n";
+			retout="1.test in short term failed full read further for details both functions virtualalloc and virtualfree can not do his job!\n";
 		}
-		return retout;
-	} else if(x.compare("virtualprotect")!=0)
+	} else if(x.compare("virtualquery")==0&&y.compare("test1")==0)
 	{
+		MEMORY_BASIC_INFORMATION m;
+		SIZE_T s = VirtualQuery((LPCVOID)&malloc,&m,5);
+		retout="1.test in short term all ok read further for details\n";
+		retout+="malloc address\n";
+		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)&malloc);
+		retout+="\nVirtualQuery Size\n";
+		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)s);
+		retout+="\nBaseAddress\n";
+		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)m.BaseAddress);
+		retout+="\nAllocationBase\n";
+  		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)m.AllocationBase);
+		retout+="\nAllocationProtect\n";
+  		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)m.AllocationProtect);
+		retout+="\nRegionSize\n";
+  		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)m.RegionSize);
+		retout+="\nState\n";
+  		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)m.State);
+		retout+="\nProtect\n";
+  		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)m.Protect);
+		retout+="\nType\n";
+  		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)m.Type);
 	}
-	return "nothingtest";
+	return retout;
 }
 
 /*Array mygetnewaddress()

@@ -337,13 +337,69 @@ BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PD
 	#endif
 	return (SIZE_T)0;
 }*/
+
+SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength)
+{
+	#ifndef OS_UNIX_STRUCT
+		return (SIZE_T)VirtualQuery(lpAddress,lpBuffer,dwLength);
+	#else
+		MEMORY_BASIC_INFORMATION old_basic;
+		if(lpBuffer!=NULL)
+		{
+			memcpy((void*)&old_basic,lpBuffer,sizeof(MEMORY_BASIC_INFORMATION));
+		} else {
+			memset((void*)&old_basic,0,sizeof(MEMORY_BASIC_INFORMATION));
+		}
+		SIZE_T xy=VirtualQuery(lpAddress,lpBuffer,dwLength);
+		if(xy==0)
+		{
+			return (SIZE_T)0;
+		}
+		if(old_basic.RegionSize>0&&old_basic.State==MEM_FREE&&lpBuffer->RegionSize>0&&lpBuffer->State!=MEM_FREE&&lpBuffer->RegionSize>old_basic.RegionSize+128)
+		{
+			if(lpBuffer->AllocationProtect==PAGE_READWRITE||lpBuffer->AllocationProtect==PAGE_EXECUTE_READWRITE)
+			{
+				SIZE_T ix=0;
+				SIZE_T rs=lpBuffer->RegionSize;
+				SIZE_T ixp=0;
+				SIZE_T rsp=old_basic.RegionSize+128;
+				char * lxx = (char*)lpBuffer->BaseAddress;
+				for(ix=0; ix < rs; ix++)
+				{
+					if(ixp>=rsp)
+					{
+						break;
+					}
+					if(lxx[ix]==0)
+					{
+						ixp++;
+					} else {
+						ixp=0;
+					}
+				}
+				old_basic.BaseAddress = (LPVOID)&lxx[ix-ixp+64];
+				old_basic.AllocationBase = old_basic.BaseAddress;
+				old_basic.AllocationProtect=lpBuffer->AllocationProtect;
+				memset((void*)lpBuffer,0,sizeof(MEMORY_BASIC_INFORMATION));
+				memcpy((void*)lpBuffer,(void*)&old_basic,sizeof(MEMORY_BASIC_INFORMATION));
+				return (SIZE_T)xy;
+			} else {
+				return (SIZE_T)VirtualQuery(lpAddress,lpBuffer,dwLength);
+			}
+		} else {
+			return (SIZE_T)VirtualQuery(lpAddress,lpBuffer,dwLength);
+		}
+	#endif
+	return (SIZE_T)VirtualQuery(lpAddress,lpBuffer,dwLength);
+}
+
 SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength) {
 	#ifdef OS_UNIX_STRUCT
 		if(lpAddress==NULL||lpBuffer==NULL||dwLength<=0)
 			return (SIZE_T)0;
 		if((sysconf(_SC_PAGESIZE))==-1)
 			return (SIZE_T)0;
-		memset((void*)lpBuffer,0,sizeof((*lpBuffer)));
+		memset((void*)lpBuffer,0,sizeof(MEMORY_BASIC_INFORMATION));
 		unsigned long long pagesize;
 		vma_it_func zz;
 		int x=0;
@@ -391,7 +447,7 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 				vma_iterate(((vma_iterate_callback_fn)&vma_iterate_full_addressing_func),(void*)&zz);
 				if(zz.ret!=0)
 				{
-					return 0;
+					return (SIZE_T)0;
 				}
 				x=1;
 			}
@@ -519,7 +575,7 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 			lpBuffer->State=(flags&VMA_PRIVATE)?MEM_RESERVE:MEM_COMMIT;
 			lpBuffer->Type=(flags&VMA_PRIVATE)?MEM_PRIVATE:MEM_MAPPED;
 		}
-		return (SIZE_T)sizeof((*lpBuffer));
+		return (SIZE_T)sizeof(MEMORY_BASIC_INFORMATION);
 	#endif
 }
 BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_T  dwSize)
@@ -564,4 +620,45 @@ HANDLE WINAPI GetCurrentProcess()
 	return NULL;
 }
 #endif
+#ifdef _WINDOWS_HELPER_TO_BOOL_IS_DEFINED
 #endif
+#ifdef _WINDOWS_HELPER_TO_HEX_IS_DEFINED
+char * _WINDOWS_HELPER_TO_HEX_STRING(unsigned long long x)
+{
+	static char res[17];
+        res[16] = '\0';
+        res[0] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF0000000000000000)) >> 60));   
+        res[1] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF000000000000000)) >> 56));   
+        res[2] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF0000000000000)) >> 52));   
+        res[3] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF000000000000)) >> 48));   
+        res[4] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF00000000000)) >> 44));   
+        res[5] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF0000000000)) >> 40));   
+        res[6] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF000000000)) >> 36));   
+        res[7] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF00000000)) >> 32));   
+        res[8] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF0000000)) >> 28));   
+        res[9] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF000000)) >> 24));   
+        res[10] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF00000)) >> 20));   
+        res[11] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF0000)) >> 16));   
+    	res[12] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0xF000)) >> 12));   
+    	res[13] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0x0F00)) >> 8));
+    	res[14] = _WINDOWS_HELPER_TO_HEX(((x & ((unsigned long long)0x00F0)) >> 4));
+        res[15] = _WINDOWS_HELPER_TO_HEX((x & ((unsigned long long)0x000F)));
+	char * p = (char*)&res[0];
+	while(*p!=0)
+	{
+		if(*p!='0')
+		{
+			break;
+		}
+		p++;
+	}
+	if(*p==0)
+	{
+		p--;
+	}
+        return p;
+}
+#endif
+
+#endif
+

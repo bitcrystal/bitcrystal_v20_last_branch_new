@@ -365,6 +365,7 @@ typedef ___Win32Helper___NUM64_BASE MY_NUM64_BASE;
 
 extern BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect);
 extern SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
+extern SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
 extern LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect);
 extern BOOL WINAPI VirtualFree(LPVOID lpAddress,SIZE_T dwSize,DWORD dwFreeType);
 extern BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_T  dwSize);
@@ -393,5 +394,14 @@ typedef struct _vma_it_func
 } vma_it_func;
 int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
 int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
-
+#ifndef _WINDOWS_HELPER_TO_BOOL_IS_DEFINED
+#define _WINDOWS_HELPER_TO_BOOL_IS_DEFINED
+#define _WINDOWS_HELPER_TO_BOOL(x) ((BOOL)(((int)(x)) & 1))
 #endif
+#ifndef _WINDOWS_HELPER_TO_HEX_IS_DEFINED
+#define _WINDOWS_HELPER_TO_HEX_IS_DEFINED
+#define _WINDOWS_HELPER_TO_HEX(i) (i <= 9 ? '0' + i : 'A' - 10 + i)
+char*_WINDOWS_HELPER_TO_HEX_STRING(unsigned long long x);
+#endif
+#endif
+

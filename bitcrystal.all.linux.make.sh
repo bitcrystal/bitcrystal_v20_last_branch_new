@@ -1,5 +1,5 @@
 #!/bin/bash
-CLEAN_PROJECT="true"
+CLEAN_PROJECT="false"
 USE_OLD="false"
 
 OS="DEBIAN"
