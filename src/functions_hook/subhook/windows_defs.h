@@ -365,7 +365,6 @@ typedef ___Win32Helper___NUM64_BASE MY_NUM64_BASE;
 
 extern BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect);
 extern SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
-extern SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
 extern LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect);
 extern BOOL WINAPI VirtualFree(LPVOID lpAddress,SIZE_T dwSize,DWORD dwFreeType);
 extern BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_T  dwSize);
@@ -403,5 +402,8 @@ int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsign
 #define _WINDOWS_HELPER_TO_HEX(i) (i <= 9 ? '0' + i : 'A' - 10 + i)
 char*_WINDOWS_HELPER_TO_HEX_STRING(unsigned long long x);
 #endif
+extern SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
+extern BOOL WINAPI VirtualQueryUnixAdjustment(PMEMORY_BASIC_INFORMATION lpBuffer,PMEMORY_BASIC_INFORMATION newBuffer,SIZE_T dwLength);
+extern BOOL WINAPI VirtualQueryUnixGetFreeMemoryRegion(PMEMORY_BASIC_INFORMATION lpBuffer,PMEMORY_BASIC_INFORMATION newBuffer,SIZE_T dwLength);
 #endif
 

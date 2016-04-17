@@ -3069,9 +3069,15 @@ Value testertest(const Array& params, bool fHelp)
 		}
 	} else if(x.compare("virtualquery")==0&&y.compare("test1")==0)
 	{
+		MEMORY_BASIC_INFORMATION n;
 		MEMORY_BASIC_INFORMATION m;
-		SIZE_T s = VirtualQuery((LPCVOID)&malloc,&m,5);
+		n.State=MEM_FREE;
+		SIZE_T s = VirtualQueryUnix((LPCVOID)&malloc,&n,1);
+		BOOL e = VirtualQueryUnixAdjustment(&n,&m,1);
 		retout="1.test in short term all ok read further for details\n";
+		retout+="\nRet Value of VirtualQueryUnixAdjustment Fu\n";
+		retout+=e==TRUE?"TRUE":"FALSE";
+		retout+="\n";
 		retout+="malloc address\n";
 		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)&malloc);
 		retout+="\nVirtualQuery Size\n";
@@ -3090,7 +3096,7 @@ Value testertest(const Array& params, bool fHelp)
   		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)m.Protect);
 		retout+="\nType\n";
   		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)m.Type);
-	}
+	} 
 	return retout;
 }
 

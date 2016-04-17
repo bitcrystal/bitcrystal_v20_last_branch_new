@@ -5,8 +5,6 @@
 #include "linux_defs.c"
 #endif
 #ifndef OS_WIN
-#define IS_NOT_WINDOWS
-#ifdef IS_NOT_WINDOWS
 #include "linux_os_2.h"
 #include "linux_os_2.c"
 #include <stdio.h>
@@ -146,6 +144,7 @@ int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsign
 		return 0;
 	}
 }
+#ifndef OS_WIN
 
 LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect)
 {
@@ -337,7 +336,7 @@ BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PD
 	#endif
 	return (SIZE_T)0;
 }*/
-
+#endif
 SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength)
 {
 	#ifndef OS_UNIX_STRUCT
@@ -355,19 +354,22 @@ SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuf
 		{
 			return (SIZE_T)0;
 		}
-		if(old_basic.RegionSize>0&&old_basic.State==MEM_FREE&&lpBuffer->RegionSize>0&&lpBuffer->State!=MEM_FREE&&lpBuffer->RegionSize>old_basic.RegionSize+128)
+		SIZE_T ia = 40;
+		if(old_basic.State==MEM_FREE&&lpBuffer->RegionSize>0&&lpBuffer->State!=MEM_FREE&&lpBuffer->RegionSize>(dwLength+(ia*2)))
 		{
 			if(lpBuffer->AllocationProtect==PAGE_READWRITE||lpBuffer->AllocationProtect==PAGE_EXECUTE_READWRITE)
 			{
 				SIZE_T ix=0;
 				SIZE_T rs=lpBuffer->RegionSize;
 				SIZE_T ixp=0;
-				SIZE_T rsp=old_basic.RegionSize+128;
+				SIZE_T rsp=dwLength+(ia*2);
 				char * lxx = (char*)lpBuffer->BaseAddress;
+				BOOL allok=FALSE;
 				for(ix=0; ix < rs; ix++)
 				{
 					if(ixp>=rsp)
 					{
+						allok=TRUE;	
 						break;
 					}
 					if(lxx[ix]==0)
@@ -377,11 +379,18 @@ SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuf
 						ixp=0;
 					}
 				}
-				old_basic.BaseAddress = (LPVOID)&lxx[ix-ixp+64];
-				old_basic.AllocationBase = old_basic.BaseAddress;
-				old_basic.AllocationProtect=lpBuffer->AllocationProtect;
-				memset((void*)lpBuffer,0,sizeof(MEMORY_BASIC_INFORMATION));
-				memcpy((void*)lpBuffer,(void*)&old_basic,sizeof(MEMORY_BASIC_INFORMATION));
+				//char * nb=(char*)&lxx[(ix-ixp)];
+				//SIZE_T nrs=old_basic.RegionSize;
+				//memcpy((void*)&nb[64],(void*)lpBuffer,sizeof(MEMORY_BASIC_INFORMATION));
+				//memcpy((void*)&old_basic,(void*)lpBuffer,sizeof(MEMORY_BASIC_INFORMATION));
+				//old_basic.BaseAddress = (void*)&nb[128];
+				//old_basic.RegionSize = nrs;
+				//memset((void*)lpBuffer,0,sizeof(MEMORY_BASIC_INFORMATION));
+				//memcpy((void*)lpBuffer,(void*)&old_basic,sizeof(MEMORY_BASIC_INFORMATION));
+				if(allok==TRUE)
+				{
+					lpBuffer->BaseAddress=(LPVOID)&lxx[((ix-ixp)+ia)];
+				}
 				return (SIZE_T)xy;
 			} else {
 				return (SIZE_T)VirtualQuery(lpAddress,lpBuffer,dwLength);
@@ -392,7 +401,34 @@ SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuf
 	#endif
 	return (SIZE_T)VirtualQuery(lpAddress,lpBuffer,dwLength);
 }
+BOOL WINAPI VirtualQueryUnixAdjustment(PMEMORY_BASIC_INFORMATION lpBuffer,PMEMORY_BASIC_INFORMATION newBuffer,SIZE_T dwLength)
+{
+	if(lpBuffer==NULL||newBuffer==NULL)
+	{
+		return FALSE;
+	}
+	memcpy((void*)newBuffer,(void*)lpBuffer,sizeof(MEMORY_BASIC_INFORMATION));
+#ifdef OS_UNIX_STRUCT
+	if(lpBuffer->BaseAddress!=lpBuffer->AllocationBase&&lpBuffer->AllocationProtect==PAGE_READWRITE||lpBuffer->AllocationProtect==PAGE_EXECUTE_READWRITE)
+	{
+		newBuffer->State=MEM_FREE;
+		newBuffer->AllocationBase=newBuffer->BaseAddress;
+		newBuffer->RegionSize=dwLength;
+		return TRUE;
+	} else {
+		return FALSE;
+	}
+#else
+	return FALSE;
+#endif
+}
 
+BOOL WINAPI VirtualQueryUnixGetFreeMemoryRegion(PMEMORY_BASIC_INFORMATION lpBuffer,PMEMORY_BASIC_INFORMATION newBuffer,SIZE_T dwLength)
+{
+
+	return VirtualQueryUnixAdjustment(lpBuffer,newBuffer,dwLength);
+}
+#ifndef OS_WIN
 SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength) {
 	#ifdef OS_UNIX_STRUCT
 		if(lpAddress==NULL||lpBuffer==NULL||dwLength<=0)
@@ -659,6 +695,4 @@ char * _WINDOWS_HELPER_TO_HEX_STRING(unsigned long long x)
         return p;
 }
 #endif
-
 #endif
-
