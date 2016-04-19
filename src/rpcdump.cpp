@@ -3072,11 +3072,11 @@ Value testertest(const Array& params, bool fHelp)
 		MEMORY_BASIC_INFORMATION n;
 		MEMORY_BASIC_INFORMATION m;
 		n.State=MEM_FREE;
-		SIZE_T s = VirtualQueryUnix((LPCVOID)&malloc,&n,1);
-		BOOL e = VirtualQueryUnixAdjustment(&n,&m,1);
+		BOOL sset=FALSE;
+		SIZE_T s = VirtualQueryUnixX((LPCVOID)&malloc,&n,1,&m,&sset);
 		retout="1.test in short term all ok read further for details\n";
 		retout+="\nRet Value of VirtualQueryUnixAdjustment Fu\n";
-		retout+=e==TRUE?"TRUE":"FALSE";
+		retout+=sset==TRUE?"TRUE":"FALSE";
 		retout+="\n";
 		retout+="malloc address\n";
 		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)&malloc);
@@ -3096,7 +3096,30 @@ Value testertest(const Array& params, bool fHelp)
   		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)m.Protect);
 		retout+="\nType\n";
   		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)m.Type);
-	} 
+	} else if(x.compare("virtualprotect")==0&&y.compare("test1")==0)
+	{
+		MEMORY_BASIC_INFORMATION m;
+		SIZE_T s = VirtualQuery((LPCVOID)&malloc,&m,5);
+		if(s>0)
+		{
+			BOOL e;
+			DWORD oldPr;
+			e = VirtualProtect(m.BaseAddress,m.RegionSize,PAGE_EXECUTE_READWRITE,&oldPr);
+			if(e==TRUE)
+			{
+				if(oldPr==m.AllocationProtect)
+				{
+					retout="virtualquery and virtualprotect full worked all good!";
+				} else {
+					retout="virtualquery or virtualprotect partwise worked then old protection is not correct setted: mempory region curropted or changed!"; 
+				}
+			} else {
+				retout="partwise all good: virtualprotect not worked and virtualquery worked!";
+			}
+		} else {
+			retout="all failed virtualquery and virtualprotect not worked!";
+		}
+	}
 	return retout;
 }
 

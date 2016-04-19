@@ -363,11 +363,11 @@ typedef ___Win32Helper___NUM64_BASE MY_NUM64_BASE;
 #define MEM_4MB_PAGES 0x80000000
 #endif
 
-extern BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect);
+extern BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD flNewProtect,PDWORD lpflOldProtect);
 extern SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
 extern LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect);
 extern BOOL WINAPI VirtualFree(LPVOID lpAddress,SIZE_T dwSize,DWORD dwFreeType);
-extern BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_T  dwSize);
+extern BOOL WINAPI FlushInstructionCache(HANDLE hProcess,LPCVOID lpBaseAddress,SIZE_T dwSize);
 extern HANDLE WINAPI GetCurrentProcess();
 #else
 #include <windows.h>
@@ -393,6 +393,13 @@ typedef struct _vma_it_func
 } vma_it_func;
 int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
 int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
+unsigned long long MY_GET_SYSTEM_PAGE_SIZE();
+unsigned long long MY_ROUND_UP_PAGE_SIZE_MY_ALGORITHM(unsigned long long value);
+unsigned long long MY_ROUND_DOWN_PAGE_SIZE_MY_ALGORITHM(unsigned long long value);
+unsigned long long MY_ROUND_UP_PAGE_SIZE_DEFAULT_ALGORITHM(unsigned long long value);
+unsigned long long MY_ROUND_DOWN_PAGE_SIZE_DEFAULT_ALGORITHM(unsigned long long value);
+unsigned long long MY_ROUND_DOWN_PAGE_SIZE(unsigned long long value);
+unsigned long long MY_ROUND_UP_PAGE_SIZE(unsigned long long value);
 #ifndef _WINDOWS_HELPER_TO_BOOL_IS_DEFINED
 #define _WINDOWS_HELPER_TO_BOOL_IS_DEFINED
 #define _WINDOWS_HELPER_TO_BOOL(x) ((BOOL)(((int)(x)) & 1))
@@ -400,10 +407,22 @@ int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsign
 #ifndef _WINDOWS_HELPER_TO_HEX_IS_DEFINED
 #define _WINDOWS_HELPER_TO_HEX_IS_DEFINED
 #define _WINDOWS_HELPER_TO_HEX(i) (i <= 9 ? '0' + i : 'A' - 10 + i)
-char*_WINDOWS_HELPER_TO_HEX_STRING(unsigned long long x);
+extern char*_WINDOWS_HELPER_TO_HEX_STRING(unsigned long long x);
 #endif
 extern SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
 extern BOOL WINAPI VirtualQueryUnixAdjustment(PMEMORY_BASIC_INFORMATION lpBuffer,PMEMORY_BASIC_INFORMATION newBuffer,SIZE_T dwLength);
 extern BOOL WINAPI VirtualQueryUnixGetFreeMemoryRegion(PMEMORY_BASIC_INFORMATION lpBuffer,PMEMORY_BASIC_INFORMATION newBuffer,SIZE_T dwLength);
+extern SIZE_T WINAPI VirtualQueryUnixX(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpBuffer, SIZE_T dwLength,PMEMORY_BASIC_INFORMATION newBuffer,BOOL * sset);
+extern BOOL WINAPI VirtualProtectUnixX(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect,PMEMORY_BASIC_INFORMATION newBuffer, BOOL * sset);
+extern LPVOID WINAPI VirtualAllocUnixX(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect,PMEMORY_BASIC_INFORMATION newBuffer,BOOL * sset);
+extern BOOL WINAPI VirtualFreeUnixX(LPVOID lpAddress,SIZE_T dwSize,DWORD dwFreeType,PMEMORY_BASIC_INFORMATION newBuffer,BOOL * sset);
+extern BOOL MY_IS_PAGE_SIZE_ALIGNED(unsigned long long value);
+extern BOOL MY_HAS_PAGE_SIZE();
+#ifndef USE_OTHER_ROUND_UP_PAGE_SIZE_ALGORITHM
+#define USE_OTHER_ROUND_UP_PAGE_SIZE_ALGORITHM
+#endif
+#ifndef USE_OTHER_ROUND_DOWN_PAGE_SIZE_ALGORITHM
+#define USE_OTHER_ROUND_DOWN_PAGE_SIZE_ALGORITHM
+#endif
 #endif
 

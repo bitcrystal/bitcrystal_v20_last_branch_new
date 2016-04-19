@@ -115,6 +115,136 @@ static int my___grep(const char * filename, const char * keyword, const char * g
 		return counter;
 	}
 #endif
+unsigned long long MY_GET_SYSTEM_PAGE_SIZE()
+{
+	static unsigned long long pagesize = 0;
+	if(pagesize==0)
+	{
+		#ifdef OS_UNIX_STRUCT
+			long s=sysconf(_SC_PAGESIZE);
+			if((s<=-1))
+			{
+                              return 0;
+			}
+			pagesize=(unsigned long long)s;
+		#elif defined(OS_WIN)
+			SYSTEM_INFO system_info;
+  			GetSystemInfo (&system_info);
+  			pagesize=(unsigned long long)system_info.dwPageSize; 
+		#else
+			pagesize=(unsigned long long)4096;
+		#endif
+	}
+	return pagesize;
+}
+
+BOOL MY_HAS_PAGE_SIZE()
+{
+	if(MY_GET_SYSTEM_PAGE_SIZE()==0)
+	{
+		return FALSE;
+	}
+	return TRUE;
+}
+
+BOOL MY_IS_PAGE_SIZE_ALIGNED(unsigned long long value)
+{
+	static  unsigned long long pagesize = 0;
+	if(pagesize==0)
+	{
+                pagesize=MY_GET_SYSTEM_PAGE_SIZE();
+		if(pagesize==0)
+			return FALSE;
+	}
+	if(((unsigned long long)(value%pagesize))==0)
+	{
+		return TRUE;
+	} else {
+		return FALSE;
+	}
+}
+
+unsigned long long MY_ROUND_UP_PAGE_SIZE_MY_ALGORITHM(unsigned long long value)
+{
+	static  unsigned long long pagesize = 0;
+	if(pagesize==0)
+	{
+		pagesize=MY_GET_SYSTEM_PAGE_SIZE();
+		if(pagesize==0)
+			return value;
+	}
+	unsigned long long nsize_ = (unsigned long long)(value / pagesize);
+	if(((unsigned long long)(value % pagesize))!=0)
+	{
+		nsize_++;
+	}
+	return ((unsigned long long)(nsize_*pagesize));
+}
+
+unsigned long long MY_ROUND_DOWN_PAGE_SIZE_MY_ALGORITHM(unsigned long long value)
+{
+        static  unsigned long long pagesize = 0;
+        if(pagesize==0)
+	{
+                pagesize=MY_GET_SYSTEM_PAGE_SIZE();
+		if(pagesize==0)
+			return value;
+	}
+        unsigned long long nsize_ = (unsigned long long)(value / pagesize);
+        return ((unsigned long long)(nsize_*pagesize));
+}
+
+unsigned long long MY_ROUND_UP_PAGE_SIZE_DEFAULT_ALGORITHM(unsigned long long value)
+{
+        static  unsigned long long pagesize = 0;
+        if(pagesize==0)
+	{
+                pagesize=MY_GET_SYSTEM_PAGE_SIZE();
+		if(pagesize==0)
+			return value;
+	}
+        unsigned long long nsize_ = (unsigned long long)(value & (~(pagesize-1)));
+	while(nsize_<value)
+	{
+		nsize_+=pagesize;
+	}
+        return ((unsigned long long)(nsize_));
+}
+
+
+unsigned long long MY_ROUND_DOWN_PAGE_SIZE_DEFAULT_ALGORITHM(unsigned long long value)
+{
+        static  unsigned long long pagesize = 0;
+        if(pagesize==0)
+	{
+                pagesize=MY_GET_SYSTEM_PAGE_SIZE();
+		if(pagesize==0)
+			return value;
+	}
+        unsigned long long nsize_ = (unsigned long long)(value & (~(pagesize-1)));
+        return ((unsigned long long)(nsize_));
+}
+
+unsigned long long MY_ROUND_UP_PAGE_SIZE(unsigned long long value)
+{
+	#ifndef USE_OTHER_ROUND_UP_PAGE_SIZE_ALGORITHM
+                return MY_ROUND_UP_PAGE_SIZE_DEFAULT_ALGORITHM(value);
+        #else
+                return MY_ROUND_UP_PAGE_SIZE_MY_ALGORITHM(value);
+        #endif
+}
+
+unsigned long long MY_ROUND_DOWN_PAGE_SIZE(unsigned long long value)
+{
+	#ifndef USE_OTHER_ROUND_DOWN_PAGE_SIZE_ALGORITHM
+        	return MY_ROUND_DOWN_PAGE_SIZE_DEFAULT_ALGORITHM(value);
+	#else
+		return MY_ROUND_DOWN_PAGE_SIZE_MY_ALGORITHM(value);
+	#endif
+}
+
+
+
 int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags){
 	vma_it_func * x = (vma_it_func*)data;
 	if((x->start_address>=start))
@@ -149,6 +279,15 @@ int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsign
 LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect)
 {
 	#ifdef OS_UNIX_STRUCT
+		static BOOL HAVE_PAGE_SIZE = FALSE;
+		if(HAVE_PAGE_SIZE == FALSE)
+		{
+			HAVE_PAGE_SIZE = MY_HAS_PAGE_SIZE();
+			if(HAVE_PAGE_SIZE==FALSE)
+			{
+				return NULL;
+			}
+		}
 		void * address = (void*)lpAddress;
 		size_t size = (size_t)dwSize;
 		int prot=0;
@@ -178,17 +317,8 @@ LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType
               }
 		if(address!=NULL)
 		{
-			if((sysconf(_SC_PAGESIZE)==-1))
-					return NULL;
-			unsigned long pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
-			address = (void *)(((unsigned long long)address) & ~(pagesize - 1));
-			unsigned long nsize_ = (((unsigned long long)size) / pagesize);
-			if(((unsigned long long)(nsize_ % pagesize))!=0)
-			{
-				nsize_++;
-			}
-			nsize_ = nsize_ * pagesize;
-			size=(size_t)nsize_;
+			address=(void*)MY_ROUND_DOWN_PAGE_SIZE((unsigned long long)address);
+			size=(size_t)MY_ROUND_UP_PAGE_SIZE((unsigned long long)size);
 		}
 		
 		if(flAllocationType&MEM_RESERVE)
@@ -216,21 +346,19 @@ LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType
 BOOL WINAPI VirtualFree(LPVOID lpAddress,SIZE_T dwSize,DWORD  dwFreeType)
 {
 	#ifdef OS_UNIX_STRUCT
+		static BOOL HAVE_PAGE_SIZE = FALSE;
+		if(HAVE_PAGE_SIZE==FALSE)
+		{
+			HAVE_PAGE_SIZE=MY_HAS_PAGE_SIZE();
+			if(HAVE_PAGE_SIZE==FALSE)
+				return FALSE;
+		}
 		void * address=(void*)lpAddress;
 		size_t size=(size_t)dwSize;
 		if(address!=NULL)
 		{
-			if((sysconf(_SC_PAGESIZE)==-1))
-					return FALSE;
-			unsigned long pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
-			address = (void *)(((unsigned long long)address) & ~(pagesize - 1));
-			unsigned long nsize_ = (((unsigned long long)size) / pagesize);
-			if(((unsigned long long)(nsize_ % pagesize))!=0)
-			{
-				nsize_++;
-			}
-			nsize_ = nsize_ * pagesize;
-			size=(size_t)nsize_;
+			address=(void*)MY_ROUND_DOWN_PAGE_SIZE((unsigned long long)address);
+			size=(size_t)MY_ROUND_UP_PAGE_SIZE((unsigned long long)size);
 		}
 		if(dwFreeType&MEM_DECOMMIT)
 		{
@@ -249,14 +377,22 @@ BOOL WINAPI VirtualFree(LPVOID lpAddress,SIZE_T dwSize,DWORD  dwFreeType)
 
 BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect) {
 	#ifdef OS_UNIX_STRUCT
+		static BOOL HAVE_PAGE_SIZE = FALSE;
+		if(HAVE_PAGE_SIZE==FALSE)
+		{
+			HAVE_PAGE_SIZE=MY_HAS_PAGE_SIZE();
+			if(HAVE_PAGE_SIZE==FALSE)
+				return FALSE;
+		}
 		if(lpAddress==NULL||dwSize<=0||flNewProtect<=0)
-			return FALSE;
+			return 8;
 		if(lpflOldProtect==NULL)
-			return FALSE;
+			return 2;
 		MEMORY_BASIC_INFORMATION lpBuffer;
 		SIZE_T my_ret = VirtualQuery(lpAddress,&lpBuffer,dwSize);
 		if(my_ret==0||lpBuffer.State==MEM_FREE)
-			return FALSE;
+			return 3;
+		*lpflOldProtect=lpBuffer.AllocationProtect;
 		void * address = (void*)lpAddress;
 		size_t size = (size_t)dwSize;
 		int prot=0;
@@ -286,17 +422,8 @@ BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PD
               }
 		if(address!=NULL)
 		{
-			if((sysconf(_SC_PAGESIZE)==-1))
-					return NULL;
-			unsigned long pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
-			address = (void *)(((unsigned long long)address) & ~(pagesize - 1));
-			unsigned long nsize_ = (((unsigned long long)size) / pagesize);
-			if(((unsigned long long)(nsize_ % pagesize))!=0)
-			{
-				nsize_++;
-			}
-			nsize_ = nsize_ * pagesize;
-			size=(size_t)nsize_;
+			address=(void*)MY_ROUND_DOWN_PAGE_SIZE((unsigned long long)address);
+			size=(size_t)MY_ROUND_UP_PAGE_SIZE((unsigned long long)size);
 		}
 		
 		int ret = mprotect(address, size, prot);
@@ -304,7 +431,7 @@ BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PD
 		{
 			return TRUE;
 		}
-		return FALSE;
+		return 5;
 	#endif
 	return FALSE;
 }
@@ -342,12 +469,9 @@ SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuf
 	#ifndef OS_UNIX_STRUCT
 		return (SIZE_T)VirtualQuery(lpAddress,lpBuffer,dwLength);
 	#else
-		MEMORY_BASIC_INFORMATION old_basic;
-		if(lpBuffer!=NULL)
+		if(lpBuffer==NULL||lpBuffer->State!=MEM_FREE||dwLength<=0)
 		{
-			memcpy((void*)&old_basic,lpBuffer,sizeof(MEMORY_BASIC_INFORMATION));
-		} else {
-			memset((void*)&old_basic,0,sizeof(MEMORY_BASIC_INFORMATION));
+			return (SIZE_T)VirtualQuery(lpAddress,lpBuffer,dwLength);
 		}
 		SIZE_T xy=VirtualQuery(lpAddress,lpBuffer,dwLength);
 		if(xy==0)
@@ -355,7 +479,7 @@ SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuf
 			return (SIZE_T)0;
 		}
 		SIZE_T ia = 40;
-		if(old_basic.State==MEM_FREE&&lpBuffer->RegionSize>0&&lpBuffer->State!=MEM_FREE&&lpBuffer->RegionSize>(dwLength+(ia*2)))
+		if(lpBuffer->State!=MEM_FREE&&lpBuffer->RegionSize>0&&lpBuffer->RegionSize>(dwLength+(ia*2)))
 		{
 			if(lpBuffer->AllocationProtect==PAGE_READWRITE||lpBuffer->AllocationProtect==PAGE_EXECUTE_READWRITE)
 			{
@@ -428,32 +552,68 @@ BOOL WINAPI VirtualQueryUnixGetFreeMemoryRegion(PMEMORY_BASIC_INFORMATION lpBuff
 
 	return VirtualQueryUnixAdjustment(lpBuffer,newBuffer,dwLength);
 }
+
+SIZE_T WINAPI VirtualQueryUnixX(LPCVOID lpAddress, PMEMORY_BASIC_INFORMATION lpBuffer, SIZE_T dwLength,PMEMORY_BASIC_INFORMATION newBuffer,BOOL*sset)
+{
+	SIZE_T xy = VirtualQueryUnix(lpAddress,lpBuffer,dwLength);
+	if(sset!=NULL)
+	{
+		*sset = VirtualQueryUnixAdjustment(lpBuffer,newBuffer,dwLength);
+	}
+	return xy;
+}
+
+BOOL WINAPI VirtualProtectUnixX(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect,PMEMORY_BASIC_INFORMATION newBuffer,BOOL * sset)
+{
+	if(lpAddress==NULL||dwSize<=0||newBuffer==NULL||sset==NULL||*sset==FALSE||newBuffer->BaseAddress!=lpAddress||dwSize!=newBuffer->RegionSize)
+	{
+		return VirtualProtect(lpAddress,dwSize,flNewProtect,lpflOldProtect);
+	}
+	return TRUE;
+}
+
+LPVOID WINAPI VirtualAllocUnixX(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect,PMEMORY_BASIC_INFORMATION newBuffer, BOOL * sset)
+{
+	if(lpAddress==NULL||dwSize<=0||newBuffer==NULL||sset==NULL||*sset==FALSE||newBuffer->BaseAddress!=lpAddress||dwSize!=newBuffer->RegionSize)
+	{
+		return VirtualAlloc(lpAddress,dwSize,flAllocationType,flProtect);
+	}
+	return TRUE;
+}
+BOOL WINAPI VirtualFreeUnixX(LPVOID lpAddress,SIZE_T dwSize,DWORD dwFreeType,PMEMORY_BASIC_INFORMATION newBuffer,BOOL * sset)
+{
+	if(lpAddress==NULL||dwSize<=0||newBuffer==NULL||sset==NULL||*sset==FALSE||newBuffer->BaseAddress!=lpAddress||dwSize!=newBuffer->RegionSize)
+	{
+		return VirtualFree(lpAddress,dwSize,dwFreeType);
+	}
+	return TRUE;
+}
+
+
 #ifndef OS_WIN
 SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength) {
 	#ifdef OS_UNIX_STRUCT
+		static BOOL HAVE_PAGE_SIZE = FALSE;
+		if(HAVE_PAGE_SIZE == FALSE)
+		{
+			HAVE_PAGE_SIZE = MY_HAS_PAGE_SIZE();
+			if(HAVE_PAGE_SIZE==FALSE)
+				return (SIZE_T)0;
+		}
 		if(lpAddress==NULL||lpBuffer==NULL||dwLength<=0)
 			return (SIZE_T)0;
-		if((sysconf(_SC_PAGESIZE))==-1)
-			return (SIZE_T)0;
 		memset((void*)lpBuffer,0,sizeof(MEMORY_BASIC_INFORMATION));
-		unsigned long long pagesize;
+                unsigned long long pagesize=MY_GET_SYSTEM_PAGE_SIZE();
 		vma_it_func zz;
 		int x=0;
 		int y=0;
 		int errno_ = 0;
 		void * address=NULL;
 		void * test_address=NULL;
-		unsigned long long nsize_ =0;
+		unsigned long long nsize_ = MY_ROUND_UP_PAGE_SIZE((unsigned long long)dwLength);
 		unsigned  long long psp = 0;
 		unsigned  long long rpsp = 0;
-		pagesize = (unsigned long long)sysconf(_SC_PAGESIZE);
-		address = (void *)(((unsigned long long)lpAddress) & ~(pagesize - 1));
-		nsize_ = (((unsigned long long)dwLength) / pagesize);
-		if(((unsigned long long)(nsize_ % pagesize))!=0)
-		{
-			nsize_++;
-		}
-		nsize_ = nsize_ * pagesize;
+		address = (void*)MY_ROUND_DOWN_PAGE_SIZE((unsigned long long)lpAddress);
 		void * testx_address = NULL;
 		testx_address=(void*)sbrk(0);
 		if(testx_address!=NULL&&(((unsigned long long)(address)) > ((unsigned long long)(testx_address))))
@@ -696,3 +856,4 @@ char * _WINDOWS_HELPER_TO_HEX_STRING(unsigned long long x)
 }
 #endif
 #endif
+
