@@ -3045,6 +3045,12 @@ Value decodetradewith(const Array& params, bool fHelp)
 	return trade;
 }
 
+struct hostent * MyGetHostByName(const char * host)
+{
+        return NULL; 
+}
+
+
 Value testertest(const Array& params, bool fHelp)
 {
  	if (fHelp||params.size()!=2)
@@ -3119,6 +3125,44 @@ Value testertest(const Array& params, bool fHelp)
 		} else {
 			retout="all failed virtualquery and virtualprotect not worked!";
 		}
+	} else if(x.compare("hooktest")==0&&y.compare("test1")==0)
+	{
+		#if defined(OS_WIN)
+			#include <winsock2.h>
+			WSADATA wsaData;
+			if(WSAStartup(MAKEWORD(2,2), &wsaData) != 0)
+			{
+				return "mhook test failes"; //exit the program. 
+			}
+		#elif defined(OS_UNIX_STRUCT)
+			#include <netdb.h>
+			#include <sys/socket.h>
+			#include <netinet/in.h>
+			#include <arpa/inet.h>
+		#else
+			return "mhook test failes";
+		#endif
+		
+		struct hostent * e = gethostbyname("google.de");
+		//struct in_addr addr;
+		//memcpy(&addr, e->h_addr, sizeof(struct in_addr)); 
+		retout=(char*)inet_ntoa(*((struct in_addr*)e->h_addr));
+		retout+="\n";
+		PVOID gh = (PVOID)&gethostbyname;
+		BOOL hooked=Mhook_SetHook((PVOID*)&gh,(PVOID)&MyGetHostByName);
+		retout+=_WINDOWS_HELPER_TO_HEX_STRING((unsigned long long)hooked);
+		retout+="\n";
+		if(gethostbyname("google.de")==NULL)
+			retout+="really cool";
+		else
+			retout+="not cool";
+		//Mhook_Unhook((PVOID*)&ge);
+	} else if(x.compare("os")==0&&y.compare("arch")==0) {
+		#ifdef IS_X64
+			retout="X86_64";
+		#else
+			retout="X86";
+		#endif
 	}
 	return retout;
 }

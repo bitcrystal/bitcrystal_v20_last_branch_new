@@ -115,6 +115,7 @@ static int my___grep(const char * filename, const char * keyword, const char * g
 		return counter;
 	}
 #endif
+
 unsigned long long MY_GET_SYSTEM_PAGE_SIZE()
 {
 	static unsigned long long pagesize = 0;
@@ -856,4 +857,3 @@ char * _WINDOWS_HELPER_TO_HEX_STRING(unsigned long long x)
 }
 #endif
 #endif
-

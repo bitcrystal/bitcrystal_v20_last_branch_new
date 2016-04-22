@@ -22,7 +22,7 @@ typedef struct _PLH_ABSTRACT_DETOUR_S
 	BYTE * m_hkSrc;
 	BYTE * m_hkDst;
 	BYTE * m_Trampoline;
-	BYTE * m_OriginalCode;
+	BYTE m_OriginalCode[64];
 	SIZE_T m_OriginalLength;
 	SIZE_T m_hkLength;
 	BOOL m_NeedFree;
@@ -55,6 +55,7 @@ typedef struct _PLH_ALL_S
 	PLH_X86_DETOUR_S plhX86DetourS;
 	PLH_X64_DETOUR_S plhX64DetourS;
 	int last_error;
+	char extraData[1024];
 } PLH_ALL_S, *PLH_ALL_S_t;
 
 PLH_ALL_S_t PLH_ALL_S_t_new();
@@ -141,7 +142,7 @@ void PLH__MemoryProtect__init(PLH_ALL_S_t a,void* Address, SIZE_T Size, DWORD Pr
 
 BOOL PLH__MemoryProtect__Protect(PLH_ALL_S_t a,void* Address, SIZE_T Size, DWORD ProtectionFlags);
 
-PLH__MemoryProtect__deinit(PLH_ALL_S_t a);
+void PLH__MemoryProtect__deinit(PLH_ALL_S_t a);
 
 void PLH__AbstractDetour__Initialize(PLH_ALL_S_t a,cs_mode Mode);
 
@@ -171,9 +172,9 @@ BOOL PLH__AbstractDetour__Hook(PLH_ALL_S_t a);
 
 void PLH__AbstractDetour__UnHook(PLH_ALL_S_t a);
 
-PLH__AbstractDetour__init(PLH_ALL_S_t a);
+void PLH__AbstractDetour__init(PLH_ALL_S_t a);
 
-PLH__AbstractDetour__deinit(PLH_ALL_S_t a);
+void PLH__AbstractDetour__deinit(PLH_ALL_S_t a);
 
 void PLH__MyDetour__init(PLH_ALL_S_t a);
 
@@ -201,7 +202,7 @@ void PLH__X86Detour__WriteRelativeJMP(PLH_ALL_S_t a,DWORD Destination, DWORD JMP
 
 void PLH__X86Detour__WriteJMP(PLH_ALL_S_t a,DWORD_PTR From, DWORD_PTR To);
 
-int PLH__X86Detour__GetJMPSize(PLH_ALL_S_t a);
+//int PLH__X86Detour__GetJMPSize(PLH_ALL_S_t a);
 
 void PLH__X64Detour__init(PLH_ALL_S_t a);
 
