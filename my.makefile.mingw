@@ -178,103 +178,103 @@ obj/%.o: %.c $(HEADERS)
 	$(CXX) -c $(xCXXFLAGS) -fpermissive -o $@ $<
 
 obj/trees.o: minizip/trees.c minizip/trees.h
-	gcc -c -o obj/trees.o minizip/trees.c
+	gcc -c -Wall -Werror -fpic -o obj/trees.o minizip/trees.c
 	
 obj/adler32.o: minizip/adler32.c
-	gcc -c -o obj/adler32.o minizip/adler32.c	
+	gcc -c -Wall -Werror -fpic -o obj/adler32.o minizip/adler32.c	
 
 obj/zutil.o: minizip/zutil.c minizip/zutil.h
-	gcc -c -o obj/zutil.o minizip/zutil.c
+	gcc -c -Wall -Werror -fpic -o obj/zutil.o minizip/zutil.c
 	
 obj/infback.o: minizip/infback.c
-	gcc -c -o obj/infback.o minizip/infback.c
+	gcc -c -Wall -Werror -fpic -o obj/infback.o minizip/infback.c
 	
 obj/inffast.o: minizip/inffast.c minizip/inffast.h
-	gcc -c -o obj/inffast.o minizip/inffast.c
+	gcc -c -Wall -Werror -fpic -o obj/inffast.o minizip/inffast.c
 	
 obj/inftrees.o: minizip/inftrees.c minizip/inftrees.h
-	gcc -c -o obj/inftrees.o minizip/inftrees.c
+	gcc -c -Wall -Werror -fpic -o obj/inftrees.o minizip/inftrees.c
 	
 obj/deflate.o: minizip/deflate.c minizip/deflate.h
-	gcc -c -o obj/deflate.o minizip/deflate.c
+	gcc -c -Wall -Werror -fpic -o obj/deflate.o minizip/deflate.c
 	
 obj/inflate.o: minizip/inflate.c minizip/inflate.h
-	gcc -c -o obj/inflate.o minizip/inflate.c
+	gcc -c -Wall -Werror -fpic -o obj/inflate.o minizip/inflate.c
 	
 obj/crc32.o: minizip/crc32.c minizip/crc32.h
-	gcc -c -o obj/crc32.o minizip/crc32.c
+	gcc -c -Wall -Werror -fpic -o obj/crc32.o minizip/crc32.c
 	
 obj/ioapi.o: minizip/ioapi.c minizip/ioapi.h
-	gcc -c -o obj/ioapi.o minizip/ioapi.c
+	gcc -c -Wall -Werror -fpic -o obj/ioapi.o minizip/ioapi.c
 
 obj/mztools.o: minizip/mztools.c minizip/mztools.h
-	gcc -c -o obj/mztools.o minizip/mztools.c
+	gcc -c -Wall -Werror -fpic -o obj/mztools.o minizip/mztools.c
 	
 obj/iowin32.o: minizip/iowin32.c minizip/iowin32.h
-	gcc -c -o obj/iowin32.o minizip/iowin32.c
+	gcc -c -Wall -Werror -fpic -o obj/iowin32.o minizip/iowin32.c
 	
 obj/unzip.o: minizip/unzip.c minizip/unzip.h
-	gcc -c -o obj/unzip.o minizip/unzip.c
+	gcc -c -Wall -Werror -fpic -o obj/unzip.o minizip/unzip.c
 	
 obj/zip.o: minizip/zip.c minizip/zip.h
-	gcc -c -o obj/zip.o minizip/zip.c
+	gcc -c -Wall -Werror -fpic -o obj/zip.o minizip/zip.c
 	
 obj/miniunz.o: minizip/miniunz.c minizip/miniunz.h
-	gcc -c -o obj/miniunz.o minizip/miniunz.c
+	gcc -c -Wall -Werror -fpic -o obj/miniunz.o minizip/miniunz.c
 
 obj/minizip.o: minizip/minizip.c minizip/minizip.h
-	gcc -c -o obj/minizip.o minizip/minizip.c
+	gcc -c -Wall -Werror -fpic -o obj/minizip.o minizip/minizip.c
 
 obj/utils.o: functions_hook/polyhook_lib/Capstone/utils.c functions_hook/polyhook_lib/Capstone/utils.h
-	gcc -c -o obj/utils.o functions_hook/polyhook_lib/Capstone/utils.c
+	gcc -c -Wall -Werror -fpic -o obj/utils.o functions_hook/polyhook_lib/Capstone/utils.c
 	
 obj/MCInst.o: functions_hook/polyhook_lib/Capstone/MCInst.c functions_hook/polyhook_lib/Capstone/MCInst.h
-	gcc -c -o obj/MCInst.o functions_hook/polyhook_lib/Capstone/MCInst.c
+	gcc -c -Wall -Werror -fpic -o obj/MCInst.o functions_hook/polyhook_lib/Capstone/MCInst.c
 
 obj/MCInstrDesc.o: functions_hook/polyhook_lib/Capstone/MCInstrDesc.c functions_hook/polyhook_lib/Capstone/MCInstrDesc.h
-	gcc -c -o obj/MCInstrDesc.o functions_hook/polyhook_lib/Capstone/MCInstrDesc.c
+	gcc -c -Wall -Werror -fpic -o obj/MCInstrDesc.o functions_hook/polyhook_lib/Capstone/MCInstrDesc.c
 	
 obj/MCRegisterInfo.o: functions_hook/polyhook_lib/Capstone/MCRegisterInfo.c functions_hook/polyhook_lib/Capstone/MCRegisterInfo.h
-	gcc -c -o obj/MCRegisterInfo.o functions_hook/polyhook_lib/Capstone/MCRegisterInfo.c
+	gcc -c -Wall -Werror -fpic -o obj/MCRegisterInfo.o functions_hook/polyhook_lib/Capstone/MCRegisterInfo.c
 	
 obj/SStream.o: functions_hook/polyhook_lib/Capstone/SStream.c functions_hook/polyhook_lib/Capstone/SStream.h
-	gcc -c -o obj/SStream.o functions_hook/polyhook_lib/Capstone/SStream.c
+	gcc -c -Wall -Werror -fpic -o obj/SStream.o functions_hook/polyhook_lib/Capstone/SStream.c
 	
 obj/CommonBaseInfo.o: functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.h
-	gcc -c -o obj/CommonBaseInfo.o functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c
+	gcc -c -Wall -Werror -fpic -o obj/CommonBaseInfo.o functions_hook/polyhook_lib/Capstone/arch/CommonBaseInfo.c
 	
 obj/CommonDisassembler.o: functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.h
-	gcc -c -o obj/CommonDisassembler.o functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c
+	gcc -c -Wall -Werror -fpic -o obj/CommonDisassembler.o functions_hook/polyhook_lib/Capstone/arch/CommonDisassembler.c
 	
 obj/CommonDisassemblerDecoder.o: functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.h
-	gcc -c -o obj/CommonDisassemblerDecoder.o functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c
+	gcc -c -Wall -Werror -fpic -o obj/CommonDisassemblerDecoder.o functions_hook/polyhook_lib/Capstone/arch/CommonDisassemblerDecoder.c
 	
 obj/CommonATTInstPrinter.o: functions_hook/polyhook_lib/Capstone/arch/CommonATTInstPrinter.c functions_hook/polyhook_lib/Capstone/arch/CommonATTInstPrinter.h
-	gcc -c -o obj/CommonATTInstPrinter.o functions_hook/polyhook_lib/Capstone/arch/CommonATTInstPrinter.c
+	gcc -c -Wall -Werror -fpic -o obj/CommonATTInstPrinter.o functions_hook/polyhook_lib/Capstone/arch/CommonATTInstPrinter.c
 	
 obj/CommonInstPrinter.o: functions_hook/polyhook_lib/Capstone/arch/CommonInstPrinter.c functions_hook/polyhook_lib/Capstone/arch/CommonInstPrinter.h
-	gcc -c -o obj/CommonInstPrinter.o functions_hook/polyhook_lib/Capstone/arch/CommonInstPrinter.c
+	gcc -c -Wall -Werror -fpic -o obj/CommonInstPrinter.o functions_hook/polyhook_lib/Capstone/arch/CommonInstPrinter.c
 	
 obj/CommonIntelInstPrinter.o: functions_hook/polyhook_lib/Capstone/arch/CommonIntelInstPrinter.c functions_hook/polyhook_lib/Capstone/arch/CommonIntelInstPrinter.h
-	gcc -c -o obj/CommonIntelInstPrinter.o functions_hook/polyhook_lib/Capstone/arch/CommonIntelInstPrinter.c
+	gcc -c -Wall -Werror -fpic -o obj/CommonIntelInstPrinter.o functions_hook/polyhook_lib/Capstone/arch/CommonIntelInstPrinter.c
 	
 obj/CommonMapping.o: functions_hook/polyhook_lib/Capstone/arch/CommonMapping.c functions_hook/polyhook_lib/Capstone/arch/CommonMapping.h
-	gcc -c -o obj/CommonMapping.o functions_hook/polyhook_lib/Capstone/arch/CommonMapping.c
+	gcc -c -Wall -Werror -fpic -o obj/CommonMapping.o functions_hook/polyhook_lib/Capstone/arch/CommonMapping.c
 	
 obj/CommonMCTargetDesc.o: functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.h
-	gcc -c -o obj/CommonMCTargetDesc.o functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c
+	gcc -c -Wall -Werror -fpic -o obj/CommonMCTargetDesc.o functions_hook/polyhook_lib/Capstone/arch/CommonMCTargetDesc.c
 	
 obj/CommonModule.o: functions_hook/polyhook_lib/Capstone/arch/CommonModule.c functions_hook/polyhook_lib/Capstone/arch/CommonModule.h
-	gcc -c -o obj/CommonModule.o functions_hook/polyhook_lib/Capstone/arch/CommonModule.c
+	gcc -c -Wall -Werror -fpic -o obj/CommonModule.o functions_hook/polyhook_lib/Capstone/arch/CommonModule.c
 	
 obj/cs.o: functions_hook/polyhook_lib/Capstone/cs.c functions_hook/polyhook_lib/Capstone/cs.h
-	gcc -c -o obj/cs.o functions_hook/polyhook_lib/Capstone/cs.c
+	gcc -c -Wall -Werror -fpic -o obj/cs.o functions_hook/polyhook_lib/Capstone/cs.c
 	
 obj/mhook_platform_defs.o: functions_hook/mhook_platform_defs.c functions_hook/mhook_platform_defs.h
-	gcc -c -o obj/mhook_platform_defs.o functions_hook/mhook_platform_defs.c
+	gcc -c -Wall -Werror -fpic -o obj/mhook_platform_defs.o functions_hook/mhook_platform_defs.c
 	
 obj/windows_platform_defs.o: functions_hook/subhook/windows_platform_defs.c functions_hook/subhook/windows_platform_defs.h
-	gcc -c -o obj/windows_platform_defs.o functions_hook/windows_platform_defs.c
+	gcc -c -Wall -Werror -fpic -o obj/windows_platform_defs.o functions_hook/windows_platform_defs.c
 
 bitcrystald.exe: $(OBJS:obj/%=obj/%)
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)

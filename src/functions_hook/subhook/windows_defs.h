@@ -183,6 +183,8 @@ typedef ___Win32Helper___NUM64_BASE MY_NUM64_BASE;
 #include <errno.h>
 #include <unistd.h>
 #include <sys/mman.h>
+#include <sys/time.h>
+#include <sys/resource.h>
 #include "linux_defs.h"
 #if defined(ENOMEM) && !defined(EFAULT)
 #define EFAULT ENOMEM
@@ -285,7 +287,6 @@ typedef ___Win32Helper___NUM64_BASE MY_NUM64_BASE;
 #define MY_PAGE_EXECUTE_READWRITE (PROT_READ | PROT_WRITE | PROT_EXEC)
 #define MY_PAGE_EXECUTE_WRITECOPY (PROT_READ | PROT_WRITE | PROT_EXEC)
 #define MY_PAGE_NOACCESS PROT_NONE
-
 //
 // Page protection
 //
@@ -362,7 +363,12 @@ typedef ___Win32Helper___NUM64_BASE MY_NUM64_BASE;
 #ifndef MEM_4MB_PAGES
 #define MEM_4MB_PAGES 0x80000000
 #endif
-
+typedef struct fpi_s_
+{
+        unsigned long long address;
+        unsigned long long size;
+        unsigned char is_free;
+} fpi_s;
 extern BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD flNewProtect,PDWORD lpflOldProtect);
 extern SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
 extern LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect);
@@ -393,6 +399,9 @@ typedef struct _vma_it_func
 } vma_it_func;
 int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
 int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
+#if defined(OS_UNIX_STRUCT) && defined(USE_UNIX_IMAGE_EXTENSION_VQ)
+int vma_iterate_image_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
+#endif
 unsigned long long MY_GET_SYSTEM_PAGE_SIZE();
 unsigned long long MY_ROUND_UP_PAGE_SIZE_MY_ALGORITHM(unsigned long long value);
 unsigned long long MY_ROUND_DOWN_PAGE_SIZE_MY_ALGORITHM(unsigned long long value);
@@ -416,6 +425,9 @@ extern SIZE_T WINAPI VirtualQueryUnixX(LPCVOID lpAddress, PMEMORY_BASIC_INFORMAT
 extern BOOL WINAPI VirtualProtectUnixX(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PDWORD lpflOldProtect,PMEMORY_BASIC_INFORMATION newBuffer, BOOL * sset);
 extern LPVOID WINAPI VirtualAllocUnixX(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect,PMEMORY_BASIC_INFORMATION newBuffer,BOOL * sset);
 extern BOOL WINAPI VirtualFreeUnixX(LPVOID lpAddress,SIZE_T dwSize,DWORD dwFreeType,PMEMORY_BASIC_INFORMATION newBuffer,BOOL * sset);
+extern void * GET_VIRTUAL_END_ADDRESS();
+extern void * __SBRK__WRAPPER(int increment);
+extern int __BRK__WRAPPER(void * p);
 extern BOOL MY_IS_PAGE_SIZE_ALIGNED(unsigned long long value);
 extern BOOL MY_HAS_PAGE_SIZE();
 #ifndef USE_OTHER_ROUND_UP_PAGE_SIZE_ALGORITHM
@@ -424,5 +436,8 @@ extern BOOL MY_HAS_PAGE_SIZE();
 #ifndef USE_OTHER_ROUND_DOWN_PAGE_SIZE_ALGORITHM
 #define USE_OTHER_ROUND_DOWN_PAGE_SIZE_ALGORITHM
 #endif
+#ifndef __VOID_POINTER_PROTECTION
+#define __VOID_POINTER_PROTECTION
+#define __VOID__POINTER__PROTECTOR(s) ((((void*)(s))<=((void*)(0)))?(0):((void*)(s)))
 #endif
-
+#endif

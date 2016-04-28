@@ -9,6 +9,21 @@
 #include "../../subhook/windows_platform_defs.h"
 #include "../Capstone/include/Capstone.h"
 
+typedef struct _my_memory_holder_s
+{
+ BOOL sset;
+ MEMORY_BASIC_INFORMATION nbi;
+ MEMORY_BASIC_INFORMATION mbi;
+ DWORD oldPr;
+} my_memory_holder_s;
+
+typedef union _my_memory_holder
+{
+ my_memory_holder_s my;
+ char extraData[1024];
+} my_memory_holder;
+
+
 typedef enum _PLH__ASMHelper__HookType
 {
 	X86Detour,

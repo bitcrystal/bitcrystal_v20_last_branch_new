@@ -195,10 +195,10 @@ BOOL Mhook_Unhook(PVOID * ppHookedFunctionP) {
 			}
 			*ppSystemFunctionP=(void*)rr;
 		} else {
-			return FALSE;
+			return is_installed;
 		}
 		mhooks_subhooks_count++;
-		return TRUE;
+		return is_installed;
 	}
 		
 	BOOL Mhook_Unhook(PVOID * ppHookedFunctionP) {
@@ -223,8 +223,8 @@ BOOL Mhook_Unhook(PVOID * ppHookedFunctionP) {
 				{
 					*ppHookedFunctionP=(void*)src;
 					PLH__AbstractDetour__UnHook(mhooks_subhooks[i]);
-					PLH_ALL_S_t_delete(mhooks_subhooks[mhooks_subhooks_count]);
-					mhooks_subhooks[mhooks_subhooks_count]=NULL;
+					PLH_ALL_S_t_delete(mhooks_subhooks[i]);
+					mhooks_subhooks[i]=NULL;
 					if(i+1==mhooks_subhooks_count)
 					{
 						mhooks_subhooks_count--;

@@ -7,6 +7,8 @@
 #ifndef OS_WIN
 #include "linux_os_2.h"
 #include "linux_os_2.c"
+#include "linux_os_3.h"
+#include "linux_os_3.c"
 #include <stdio.h>
 static int my___find(const char * search, const char * string, unsigned long long * size_search_, unsigned long long * size_string_)
 	{
@@ -244,15 +246,65 @@ unsigned long long MY_ROUND_DOWN_PAGE_SIZE(unsigned long long value)
 	#endif
 }
 
+void * GET_VIRTUAL_END_ADDRESS()
+{
+	static void * last_address = NULL;
+	#if defined(OS_UNIX_STRUCT) && !defined(OS_UNIX_DEPRECATED_MODE)
+		if(last_address==NULL)
+		{
+			struct rlimit rlim;
+			if(getrlimit(RLIMIT_DATA, &rlim)==0)
+			{
+				last_address = (void*)(((unsigned long long)get_etext_ex())+((unsigned long long)rlim.rlim_max));
+			}
+			return last_address;
+		} else {
+			return last_address;
+		}
+	#else
+		return last_address;
+	#endif
+}
+
+void * __SBRK__WRAPPER(int increment)
+{
+	#if defined(OS_UNIX_STRUCT) && !defined(OS_UNIX_DEPRECATED_MODE) 
+		return (void*)sbrk(increment);
+	#else
+		return (void*)-1;
+	#endif
+}
+
+int __BRK__WRAPPER(void * p)
+{
+        #if defined(OS_UNIX_STRUCT) && !defined(OS_UNIX_DEPRECATED_MODE) 
+                return (int)brk(p);
+        #else
+                return (int)-1;
+        #endif
+}
+
 
 
 int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags){
 	vma_it_func * x = (vma_it_func*)data;
+	/*if(x->ret==2)
+	{
+		if(x->base_end_address==start&&end>=start)
+		{
+			x->base_end_address=end;
+		} else {
+			x->ret=1;
+			return 1;
+		}
+	}*/
 	if((x->start_address>=start))
 	{
 		x->base_start_address=start;
 		x->base_end_address=end;
 		x->base_flags=flags;
+		//x->ret=2;
+		//return 0;
 		x->ret=1;
 		return 1;
 	} else {
@@ -261,21 +313,112 @@ int vma_iterate_func(void *data,unsigned long long start, unsigned long long end
 	}
 }
 
-int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags){
+#if defined(OS_UNIX_STRUCT) && defined(USE_UNIX_IMAGE_EXTENSION_VQ)
+int vma_iterate_image_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags){
 	vma_it_func * x = (vma_it_func*)data;
-	if((x->start_address>=start)&&(end<=x->end_address))
+	if(x->ret==2)
+	{
+		if(x->end_address==start&&start<end)
+		{
+			x->end_address=end;
+			x->base_flags |= flags;
+			return 0;
+		} else {
+			x->ret=1;
+			return 1;
+		}
+	}
+
+	if((x->start_address>=start))
 	{
 		x->base_start_address=start;
 		x->base_end_address=end;
 		x->base_flags=flags;
-		x->ret=1;
-		return 1;
+		x->ret=2;
+		return 0;
 	} else {
 		x->ret=0;
 		return 0;
 	}
 }
+#endif
+
+int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags){
+        vma_it_func * x = (vma_it_func*)data;
+        if((x->start_address>=start)&&(end < x->end_address))
+        {
+                x->base_start_address=start;
+                x->base_end_address=end;
+                x->base_flags=flags;
+                x->ret=1;
+                return 1;
+        } else {
+                x->ret=0;
+                return 0;
+        }
+}
 #ifndef OS_WIN
+static int FREE_REGION_MANAGE(unsigned long long address, unsigned long long size, unsigned char action,unsigned char * is_found)
+{
+        if(is_found==0)
+                return 0;
+        static fpi_s free_pointers[64];
+        static unsigned char free_pointers_size=0;
+        unsigned int i = 0;
+        unsigned char found=0;
+        for(i=0;i<free_pointers_size;i++)
+        {
+                if(free_pointers[i].address=address&&free_pointers[i].size==size)
+                {
+                        found=1;
+                }
+        }
+        *is_found=found;
+        if(action==1)
+        {
+                if(i<64)
+                {
+                        free_pointers[i].address=address;
+                        free_pointers[i].size=size;
+                        free_pointers[i].is_free=1;
+                        if(found==0)
+                        {
+                                i++;
+                                free_pointers_size=i;
+                        }
+                        return 1
+		}
+                return 0;
+        } else if ( action == 2)
+        {
+                if(found==1)
+                {
+                        free_pointers[i].is_free=0;
+                        return 1;
+                }
+                return 0;
+        } else if ( action == 3)
+        {
+                if(found==1)
+                {
+                        return free_pointers[i].is_free==0?1:0;
+                }
+                return 0;
+        } else if (action == 4)
+        {
+                if(found==1)
+                {
+                        return free_pointers[i].is_free==1?1:0;
+                }
+                return 0;
+        } else if ( action == 5)
+        {
+                return found==1?1:0;
+        }
+        return 0;
+}
+
+
 
 LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect)
 {
@@ -322,23 +465,35 @@ LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType
 			size=(size_t)MY_ROUND_UP_PAGE_SIZE((unsigned long long)size);
 		}
 		
+		if((flAllocationType&(MEM_RESERVE|MEM_COMMIT))==(MEM_RESERVE|MEM_COMMIT))
+		{
+			flAllocationType=MEM_COMMIT;
+		}
 		if(flAllocationType&MEM_RESERVE)
 		{
-			address=mmap(address, size, PROT_NONE, MAP_PRIVATE|MAP_ANON, -1, 0);
+			address=__VOID__POINTER__PROTECTOR((mmap(address, size, PROT_NONE, ((address!=NULL)?(MAP_FIXED):(0)) | MAP_PRIVATE|MAP_ANON, -1, 0)));
 			if(address==NULL)
 				return NULL;
 			msync(address, size, MS_SYNC|MS_INVALIDATE);
 		}
 		if(flAllocationType&MEM_COMMIT)
 		{
-			address=mmap(address, size, PROT_READ|PROT_WRITE, MAP_FIXED|MAP_SHARED|MAP_ANON, -1, 0);
+			address=__VOID__POINTER__PROTECTOR((mmap(address, size, PROT_READ|PROT_WRITE, ((address!=NULL)?(MAP_FIXED):(0))|MAP_SHARED|MAP_ANON, -1, 0)));
 			if(address==NULL)
 				return NULL;
 			msync(address, size, MS_SYNC|MS_INVALIDATE);
 		}
+
+		if(address==NULL)
+		{
+			return NULL;
+		}
+
 		int r = mprotect(address,size,prot);
 		if(r==-1)
 			return NULL;
+		unsigned char is_found=0;
+		FREE_REGION_MANAGE((unsigned long long)address,(unsigned long long)size,1,&is_found);
 		return address;
 		
 	#endif
@@ -361,6 +516,10 @@ BOOL WINAPI VirtualFree(LPVOID lpAddress,SIZE_T dwSize,DWORD  dwFreeType)
 			address=(void*)MY_ROUND_DOWN_PAGE_SIZE((unsigned long long)address);
 			size=(size_t)MY_ROUND_UP_PAGE_SIZE((unsigned long long)size);
 		}
+		if((dwFreeType&(MEM_DECOMMIT|MEM_RELEASE))==(MEM_DECOMMIT|MEM_RELEASE))
+		{
+			dwFreeType=MEM_RELEASE;
+		}
 		if(dwFreeType&MEM_DECOMMIT)
 		{
 			mmap(address, size, PROT_NONE, MAP_FIXED|MAP_PRIVATE|MAP_ANON, -1, 0);
@@ -371,6 +530,8 @@ BOOL WINAPI VirtualFree(LPVOID lpAddress,SIZE_T dwSize,DWORD  dwFreeType)
 			 msync(address, size, MS_SYNC);
 			munmap(address, size);
 		}
+		unsigned char is_found=0;
+		FREE_REGION_MANAGE((unsigned long long)address,(unsigned long long)size,2,&is_found);
 		return TRUE;
 	#endif
 	return FALSE;
@@ -386,13 +547,13 @@ BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PD
 				return FALSE;
 		}
 		if(lpAddress==NULL||dwSize<=0||flNewProtect<=0)
-			return 8;
+			return FALSE;
 		if(lpflOldProtect==NULL)
-			return 2;
+			return FALSE;
 		MEMORY_BASIC_INFORMATION lpBuffer;
 		SIZE_T my_ret = VirtualQuery(lpAddress,&lpBuffer,dwSize);
 		if(my_ret==0||lpBuffer.State==MEM_FREE)
-			return 3;
+			return FALSE;
 		*lpflOldProtect=lpBuffer.AllocationProtect;
 		void * address = (void*)lpAddress;
 		size_t size = (size_t)dwSize;
@@ -400,25 +561,25 @@ BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PD
 		 switch (flNewProtect & ~(PAGE_GUARD|PAGE_NOCACHE))
               {
               case PAGE_READONLY:
-                prot = PROT_READ;
+                prot = MY_PAGE_READONLY;
                 break;
               case PAGE_READWRITE:
               case PAGE_WRITECOPY:
-                prot = PROT_READ | PROT_WRITE;
+                prot = MY_PAGE_READWRITE;
                 break;
               case PAGE_EXECUTE:
-               prot = PROT_EXEC;
+               prot = MY_PAGE_EXECUTE;
                 break;
               case PAGE_EXECUTE_READ:
-                prot = PROT_READ | PROT_EXEC;
+                prot = MY_PAGE_EXECUTE_READ;
                 break;
               case PAGE_EXECUTE_READWRITE:
               case PAGE_EXECUTE_WRITECOPY:
-				prot = PROT_READ | PROT_WRITE | PROT_EXEC;
+				prot = MY_PAGE_EXECUTE_READWRITE;
                 break;
               case PAGE_NOACCESS:
               default:
-                prot = PROT_NONE;
+                prot = MY_PAGE_NOACCESS;
                 break;
               }
 		if(address!=NULL)
@@ -432,7 +593,7 @@ BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD  flNewProtect,PD
 		{
 			return TRUE;
 		}
-		return 5;
+		return FALSE;
 	#endif
 	return FALSE;
 }
@@ -528,10 +689,12 @@ SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuf
 }
 BOOL WINAPI VirtualQueryUnixAdjustment(PMEMORY_BASIC_INFORMATION lpBuffer,PMEMORY_BASIC_INFORMATION newBuffer,SIZE_T dwLength)
 {
+	return FALSE;
 	if(lpBuffer==NULL||newBuffer==NULL)
 	{
 		return FALSE;
 	}
+	return FALSE;
 	memcpy((void*)newBuffer,(void*)lpBuffer,sizeof(MEMORY_BASIC_INFORMATION));
 #ifdef OS_UNIX_STRUCT
 	if(lpBuffer->BaseAddress!=lpBuffer->AllocationBase&&lpBuffer->AllocationProtect==PAGE_READWRITE||lpBuffer->AllocationProtect==PAGE_EXECUTE_READWRITE)
@@ -587,22 +750,36 @@ BOOL WINAPI VirtualFreeUnixX(LPVOID lpAddress,SIZE_T dwSize,DWORD dwFreeType,PME
 	{
 		return VirtualFree(lpAddress,dwSize,dwFreeType);
 	}
+	memset((void*)newBuffer->BaseAddress,0,dwSize);
 	return TRUE;
 }
 
-
 #ifndef OS_WIN
-SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength) {
+SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength) 
+{
 	#ifdef OS_UNIX_STRUCT
 		static BOOL HAVE_PAGE_SIZE = FALSE;
+#if defined(USE_NEW_SBRK_ADDRESS_ALGO) && defined(OS_UNIX_STRUCT)
+		static void * LAST_END_ADDRESS = NULL;
+		if(LAST_END_ADDRESS == NULL)
+		{
+			LAST_END_ADDRESS = GET_VIRTUAL_END_ADDRESS();
+		}
+#endif
 		if(HAVE_PAGE_SIZE == FALSE)
 		{
 			HAVE_PAGE_SIZE = MY_HAS_PAGE_SIZE();
-			if(HAVE_PAGE_SIZE==FALSE)
+			if(HAVE_PAGE_SIZE==FALSE) {
 				return (SIZE_T)0;
+			}
 		}
 		if(lpAddress==NULL||lpBuffer==NULL||dwLength<=0)
+		{
 			return (SIZE_T)0;
+		}
+#if defined(OS_UNIX_STRUCT) && defined(USE_UNIX_IMAGE_EXTENSION_VQ)
+		BOOL is_imaged = (lpBuffer->Type==MEM_IMAGE)?(TRUE):(FALSE);
+#endif
 		memset((void*)lpBuffer,0,sizeof(MEMORY_BASIC_INFORMATION));
                 unsigned long long pagesize=MY_GET_SYSTEM_PAGE_SIZE();
 		vma_it_func zz;
@@ -615,9 +792,19 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 		unsigned  long long psp = 0;
 		unsigned  long long rpsp = 0;
 		address = (void*)MY_ROUND_DOWN_PAGE_SIZE((unsigned long long)lpAddress);
-		void * testx_address = NULL;
-		testx_address=(void*)sbrk(0);
-		if(testx_address!=NULL&&(((unsigned long long)(address)) > ((unsigned long long)(testx_address))))
+                void * testx_address = NULL;
+		BOOL reassign_address = FALSE;
+#if defined(USE_NEW_SBRK_ADDRESS_ALGO) && defined(OS_UNIX_STRUCT)
+		testx_address=__VOID__POINTER__PROTECTOR((__SBRK__WRAPPER(0)));
+		if(LAST_END_ADDRESS!=NULL&&testx_address!=NULL)
+		{
+			if((((unsigned long long)(testx_address))+((unsigned long long)nsize_)<((unsigned long long)(LAST_END_ADDRESS)))
+			{
+				reassign_address=TRUE;
+			}
+		}
+#endif
+		if(reassign_address==TRUE)
 		{
 			zz.complete_free_region=1;
 		} else {
@@ -637,6 +824,22 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 			zz.end_address=(unsigned long long)lpAddress;
 			zz.base_start_address=0;
 			zz.base_end_address=0;
+			zz.ret=0;
+#if defined(OS_UNIX_STRUCT) && defined(USE_UNIX_IMAGE_EXTENSION_VQ)
+			if(is_imaged==TRUE)
+			{
+				vma_iterate(((vma_iterate_callback_fn)&vma_iterate_image_func),(void*)&zz);
+				if(zz.ret!=2&&zz.ret!=1)
+				{
+					zz.ret=0;
+				} else {
+					zz.ret=1;
+				}
+			}
+		
+			if(zz.ret==0)
+			{
+#endif
 			vma_iterate(((vma_iterate_callback_fn)&vma_iterate_func),(void*)&zz);
 			if(zz.ret!=1)
 			{
@@ -648,10 +851,14 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 				}
 				x=1;
 			}
+#if defined(OS_UNIX_STRUCT) && defined(USE_UNIX_IMAGE_EXTENSION_VQ)
+
+			}
+#endif
 			if(x==1)
 			{
 				zz.start_address=(unsigned long long)address;
-				zz.end_address=(unsigned long long)(address+nsize_);
+				zz.end_address=(unsigned long long)(address+nsize_-1);
 				zz.size=(unsigned long long)dwLength;
 				zz.page_size=pagesize;
 				zz.page_alignment_size=nsize_;
@@ -695,12 +902,14 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 					partwise_free=0;
 				}*/
 				if(zz.base_end_address<=zz.base_start_address)
+				{
 					return (SIZE_T)0;
+				}
 				psp=(zz.base_end_address-zz.base_start_address);
-				psp+=(psp%pagesize);
+				psp=MY_ROUND_DOWN_PAGE_SIZE((unsigned long long)psp);
 				//vma_it_func zz;
-				zz.start_address=(unsigned long long)zz.base_start_address;
-				zz.end_address=(unsigned long long)(zz.base_end_address);
+				zz.start_address=(unsigned long long)(zz.base_start_address);
+				zz.end_address=(unsigned long long)(zz.base_end_address-1);
 				zz.size=(unsigned long long)dwLength;
 				zz.page_size=pagesize;
 				zz.page_alignment_size=psp;
@@ -711,7 +920,7 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 			}
 		} else {
 			zz.start_address=(unsigned long long)address;
-			zz.end_address=(unsigned long long)(address+nsize_);
+			zz.end_address=(unsigned long long)(address+nsize_-1);
 			zz.size=(unsigned long long)dwLength;
 			zz.page_size=pagesize;
 			zz.page_alignment_size=nsize_;
@@ -740,27 +949,38 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 			
 		}*/
 		int flags=zz.base_flags;
+		int cflags=VMA_GET_PERMS(flags);
+		unsigned char is_found=0;
 		if(zz.complete_free_region==1)
 		{
 			lpBuffer->BaseAddress=(void*)zz.start_address;
+			lpBuffer->AllocationBase=(void*)zz.start_address;
 			lpBuffer->RegionSize=zz.page_alignment_size;
 			lpBuffer->State=MEM_FREE;
+			FREE_REGION_MANAGE((unsigned long long)lpBuffer->BaseAddress,(unsigned long long)lpBuffer->RegionSize,1,&is_found);
 		} else {
 			lpBuffer->BaseAddress=(void*)zz.start_address;
 			lpBuffer->AllocationBase=(void*)zz.base_start_address;
-			if((VMA_PROT_READ | VMA_PROT_WRITE | VMA_PROT_EXECUTE)==flags)
+			int is_free=FREE_REGION_MANAGE((unsigned long long)lpBuffer->BaseAddress,(unsigned long long)lpBuffer->RegionSize,4,&is_found);
+			if(is_found==1&&is_free==1)
+			{
+				lpBuffer->AllocationBase=(void*)zz.start_address;
+				lpBuffer->State=MEM_FREE;
+				return sizeof(MEMORY_BASIC_INFORMATION);
+			}
+			if(VMA_PAGE_EXECUTE_READWRITE==cflags)
 			{
 				lpBuffer->AllocationProtect=PAGE_EXECUTE_READWRITE;
-			} else if((VMA_PROT_READ | VMA_PROT_EXECUTE)==flags)
+			} else if(VMA_PAGE_EXECUTE_READ==cflags)
 			{
 				lpBuffer->AllocationProtect=PAGE_EXECUTE_READ;
-			} else if((VMA_PROT_READ | VMA_PROT_WRITE)==flags)
+			} else if(VMA_PAGE_READWRITE==cflags)
 			{
 				lpBuffer->AllocationProtect=PAGE_READWRITE;
-			} else if(VMA_PROT_READ==flags)
+			} else if(VMA_PAGE_READONLY==cflags)
 			{
 				lpBuffer->AllocationProtect=PAGE_READONLY;
-			} else if(flags==VMA_PROT_EXEC)
+			} else if(cflags==VMA_PAGE_EXECUTE)
 			{
 				lpBuffer->AllocationProtect=PAGE_EXECUTE;
 			} else if(flags > 0) {
@@ -771,6 +991,29 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 			lpBuffer->RegionSize=zz.page_alignment_size;
 			lpBuffer->State=(flags&VMA_PRIVATE)?MEM_RESERVE:MEM_COMMIT;
 			lpBuffer->Type=(flags&VMA_PRIVATE)?MEM_PRIVATE:MEM_MAPPED;
+#if defined(OS_UNIX_STRUCT) && defined(USE_UNIX_IMAGE_EXTENSION_VQ)
+			if(is_imaged==TRUE)
+			{
+				int image_flags=0;
+				if(lpBuffer->AllocationProtect==PAGE_EXECUTE_READRITE)
+					image_flags = MY_PAGE_EXECUTE_READWRITE;
+				else if(lpBuffer->AllocationProtect==PAGE_EXECUTE_READ)
+					image_flags = MY_PAGE_EXECUTE_READ;
+				else if(lpBuffer->AllocationProtect==PAGE_READWRITE)
+					image_flags = MY_PAGE_READWRITE;
+				else if(lpBuffer->AllocationProtect==PAGE_EXECUTE)
+					image_flags = MY_PAGE_EXECUTE;
+				else if(lpBuffer->AllocationProtect==PAGE_READONLY)
+					image_flags = MY_PAGE_READONLY;
+				else if(lpBuffer->AllocationProtect==PAGE_NOACCESS)
+					image_flags = MY_PAGE_NOACCESS;
+                        	int image_ret = mprotect((void*)lpBuffer->AllocationBase,(size_t)lpBuffer->RegionSize,image_flags);
+				if(image_ret==-1)
+				{
+					return (SIZE_T)0;
+				}
+			}
+#endif
 		}
 		return (SIZE_T)sizeof(MEMORY_BASIC_INFORMATION);
 	#endif

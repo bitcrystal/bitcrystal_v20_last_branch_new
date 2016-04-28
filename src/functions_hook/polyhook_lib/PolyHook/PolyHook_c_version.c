@@ -15,7 +15,8 @@ BOOL PLH_ALL_S_t_delete(PLH_ALL_S_t p)
 {
 	if(p==NULL)
 		return FALSE;
-	free(((void*)p));
+	memset((void*)p,0,sizeof(PLH_ALL_S));
+	free((void*)p);
 	return TRUE;
 }
 
@@ -138,7 +139,7 @@ void PLH__MyDetour__SetOriginalCode(PLH_ALL_S_t a,BYTE*originalcode)
 	if(originalcode==NULL)
 		return;
 	
-	memcpy((void*)&a->plhAbstractDetourS.m_OriginalCode,(void*)originalcode,64);
+	memcpy((void*)&a->plhAbstractDetourS.m_OriginalCode[0],(void*)originalcode,64);
 }
 
 BYTE * PLH__MyDetour__GetHkSrc(PLH_ALL_S_t a)
@@ -215,14 +216,14 @@ HANDLE PLH__MyDetour__GetCapstoneHandle(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return 0;
-	return (HANDLE)&(a->plhAbstractDetourS.m_CapstoneHandle);
+	return (HANDLE)&a->plhAbstractDetourS.m_CapstoneHandle;
 }
 
 void PLH__MyDetour__SetCapstoneHandle(PLH_ALL_S_t a,HANDLE capstoneHandle)
 {
 	if(a==0)
 		return;
-	a->plhAbstractDetourS.m_CapstoneHandle=(*((csh*)capstoneHandle));
+	a->plhAbstractDetourS.m_CapstoneHandle=*((csh*)capstoneHandle);
 }
 
 x86_reg PLH__AbstractDetour__GetIpReg(PLH_ALL_S_t a)
@@ -385,6 +386,19 @@ void PLH__MemoryProtect__init(PLH_ALL_S_t a,void* Address, SIZE_T Size, DWORD Pr
 	a->plhMemoryProtectS.m_Address = Address;
 	a->plhMemoryProtectS.m_Size = Size;
 	a->plhMemoryProtectS.m_Flags = ProtectionFlags;
+	my_memory_holder * h=(my_memory_holder*)&a->extraData[0];
+	if(h->extraData[sizeof(my_memory_holder)-1]==1&&h->extraData[sizeof(my_memory_holder)-2]==1)
+	{
+		unsigned long long x = (unsigned long long)(((unsigned long long)a->plhMemoryProtectS.m_Address)+((unsigned long long)a->plhMemoryProtectS.m_Size));
+        	unsigned long long y = (unsigned long long)(((unsigned long long)h->my.mbi.AllocationBase)+((unsigned long long)h->my.mbi.RegionSize));
+        	unsigned long long z = (unsigned long long)((unsigned long long)h->my.mbi.AllocationBase);
+        	if((((unsigned long long)x)>((unsigned long long)z))&&(((unsigned long long)x)<((unsigned long long)y)))
+		{
+			a->plhMemoryProtectS.m_Address = NULL;
+			return;
+		}
+	}
+
 	PLH__MemoryProtect__Protect(a,a->plhMemoryProtectS.m_Address, a->plhMemoryProtectS.m_Size, a->plhMemoryProtectS.m_Flags);
 }
 
@@ -402,8 +416,12 @@ void PLH__MemoryProtect__deinit(PLH_ALL_S_t a)
 {
 	if(a==0)
 		return;
-	return;
-	PLH__MemoryProtect__Protect(a,a->plhMemoryProtectS.m_Address,a->plhMemoryProtectS.m_Size, a->plhMemoryProtectS.m_OldProtection);
+	if(a->plhMemoryProtectS.m_Address==NULL)
+		return;
+	void * address = a->plhMemoryProtectS.m_Address;
+	SIZE_T size =  a->plhMemoryProtectS.m_Size;
+	DWORD oldPr = a->plhMemoryProtectS.m_OldProtection;
+	PLH__MemoryProtect__Protect(a,address,size,oldPr);
 }
 
 void PLH__AbstractDetour__Initialize(PLH_ALL_S_t a,cs_mode Mode)
@@ -533,6 +551,7 @@ void PLH__AbstractDetour__RelocateConditionalJMP(PLH_ALL_S_t a,cs_insn* CurIns, 
 
 void PLH__AbstractDetour__SetupHook(PLH_ALL_S_t a,BYTE* Src, BYTE* Dest)
 {
+	printf("%16x\n",(unsigned long long)Src);
 	PLH__MyDetour__SetHkSrc(a,Src);
 	PLH__MyDetour__SetHkDst(a,Dest);
 }
@@ -664,9 +683,12 @@ BOOL PLH__X86Detour__Hook(PLH_ALL_S_t a)
 	}
     
 	PLH__MyDetour__SetTrampoline(a,(BYTE*)malloc(((PLH__MyDetour__GetHkLength(a)) + 30)));   //Allocate Space for original plus extra to jump back and for jmp table
+	if(!PLH__MyDetour__GetTrampoline(a))
+		return FALSE;
 	PLH__MyDetour__SetNeedFree(a,TRUE);
-	VirtualProtect(PLH__MyDetour__GetTrampoline(a), ((PLH__MyDetour__GetHkLength(a)) + 5), PAGE_EXECUTE_READWRITE, &(a->plhMemoryProtectS.m_OldProtection)); //Allow Execution
-	
+	DWORD oldPr;
+	VirtualProtect(PLH__MyDetour__GetTrampoline(a), ((PLH__MyDetour__GetHkLength(a)) + 5), PAGE_EXECUTE_READWRITE, (PDWORD)&oldPr); //Allow Execution
+	a->plhMemoryProtectS.m_OldProtection=oldPr;
 	memcpy(PLH__MyDetour__GetOriginalCode(a), PLH__MyDetour__GetHkSrc(a), PLH__MyDetour__GetHkLength(a));
 	memcpy(PLH__MyDetour__GetTrampoline(a), PLH__MyDetour__GetHkSrc(a), PLH__MyDetour__GetHkLength(a)); //Copy original into allocated space
 	PLH__AbstractDetour__RelocateASM(a,PLH__MyDetour__GetTrampoline(a), PLH__MyDetour__GetHkLengthP(a), (DWORD)PLH__MyDetour__GetHkSrc(a), (DWORD)PLH__MyDetour__GetTrampoline(a));
@@ -738,6 +760,8 @@ PLH__ASMHelper__HookType PLH__X64Detour__GetType()
 
 BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 {
+	if(a==NULL)
+		return FALSE;
 	//Allocate Memory as close as possible to src, to minimize chance 32bit displacements will be out of range (for relative jmp type)
 	MEMORY_BASIC_INFORMATION mbi;
 	#ifdef OS_UNIX_STRUCT
@@ -746,11 +770,11 @@ BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 		DWORD oldPr;
 		unsigned long long myAddr=0;
 		unsigned long long myAddrOriginal=0;
+		BYTE*naddress;
 		#define HOOK_REGION_SIZE 0x1000
 		#define HOOK_ADD_TO_ADDRESS 1
 	#endif
 	size_t Addr;
-	int xyz=5;
 	#if defined(OS_UNIX_STRUCT)
 	for (myAddr = (unsigned long long)PLH__MyDetour__GetHkSrc(a),myAddrOriginal=myAddr; (((unsigned long long)(myAddr-myAddrOriginal))<(unsigned long long)0x80000000); myAddr=(((unsigned long long)mbi.AllocationBase) + ((unsigned long long)mbi.RegionSize) + ((unsigned long long)HOOK_ADD_TO_ADDRESS)))
 	#elif defined(OS_WIN)
@@ -759,22 +783,24 @@ BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 	for(Addr=(size_t)0; Addr != (size_t)0; Addr = (size_t)0)
 	#endif
 	{
-		xyz++;
 		#ifdef OS_UNIX_STRUCT
+			memset((void*)&mbi,0,sizeof(MEMORY_BASIC_INFORMATION));
+			memset((void*)&nbi,0,sizeof(MEMORY_BASIC_INFORMATION));
+			memset((void*)&a->extraData[0],0,1024);
 			mbi.State=MEM_FREE;
 			sset=FALSE;
 			if(!VirtualQueryUnix((LPCVOID)myAddr,&mbi,HOOK_REGION_SIZE))
 			{
 				break;
 			}
-			
 			if(mbi.State!=MEM_FREE)
 			{
 				if(mbi.RegionSize<HOOK_REGION_SIZE)
 				{
 					continue;
 				}
-				sset=VirtualQueryUnixAdjustment(&mbi,&nbi,HOOK_REGION_SIZE);
+				//return (BOOL)mbi.RegionSize;
+				sset=VirtualQueryUnixAdjustment((PMEMORY_BASIC_INFORMATION)&mbi,(PMEMORY_BASIC_INFORMATION)&nbi,HOOK_REGION_SIZE);
 				if(sset==FALSE||nbi.State!=MEM_FREE)
  				{
 					continue;
@@ -784,17 +810,31 @@ BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 				{
 					continue;
 				}
-				memset((void*)&a->extraData[0],0,1024);
-				a->extraData[1023]=1;
-                                memcpy((void*)&a->extraData[0],(void*)&sset,sizeof(BOOL));
-				memcpy((void*)&a->extraData[sizeof(BOOL)],(void*)&nbi,sizeof(MEMORY_BASIC_INFORMATION));
-				memcpy((void*)&a->extraData[sizeof(BOOL)+sizeof(MEMORY_BASIC_INFORMATION)],(void*)&mbi,sizeof(MEMORY_BASIC_INFORMATION));
-				memcpy((void*)&a->extraData[sizeof(BOOL)+sizeof(MEMORY_BASIC_INFORMATION)+sizeof(MEMORY_BASIC_INFORMATION)],(void*)&oldPr,sizeof(DWORD));
+				if(nbi.BaseAddress==NULL)
+				{
+					continue;
+				}
+				my_memory_holder * my = (my_memory_holder*)&a->extraData[0];
+				memset((void*)my,0,sizeof(my_memory_holder));
+				my->extraData[(sizeof(my_memory_holder)-1)]=1;
+				memcpy((void*)&my->my.nbi,(void*)&nbi,sizeof(MEMORY_BASIC_INFORMATION));
+				memcpy((void*)&my->my.mbi,(void*)&mbi,sizeof(MEMORY_BASIC_INFORMATION));
+				memcpy((void*)&my->my.sset,(void*)&sset,sizeof(BOOL));
+				memcpy((void*)&my->my.oldPr,(void*)&oldPr,sizeof(DWORD));
+				if(myAddrOriginal==myAddr)
+				{
+					my->extraData[sizeof(my_memory_holder)-2]=1;
+				}
+				naddress=(BYTE*)nbi.BaseAddress;
 			} else {
 				if(mbi.RegionSize<HOOK_REGION_SIZE)
 					continue;
+				naddress=(BYTE*)VirtualAlloc(mbi.BaseAddress,HOOK_REGION_SIZE, MEM_RESERVE|MEM_COMMIT,PAGE_EXECUTE_READWRITE);
+				if(naddress==NULL)
+					continue;
 			}
-			PLH__MyDetour__SetTrampoline(a,(sset==TRUE&&nbi.State==MEM_FREE)?((BYTE*)nbi.BaseAddress):((BYTE*)VirtualAlloc(mbi.BaseAddress, HOOK_REGION_SIZE, MEM_RESERVE | MEM_COMMIT, PAGE_EXECUTE_READWRITE)));
+			printf("%016x\n", (unsigned long long)naddress); // gives 12ab
+			PLH__MyDetour__SetTrampoline(a,naddress);
 		#elif defined(OS_WIN)
 			if (!VirtualQuery((LPCVOID)Addr, &mbi, sizeof(mbi)))
                                 break;
@@ -810,7 +850,9 @@ BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 			break;
 	}
 	if (!PLH__MyDetour__GetTrampoline(a))
+	{
 		return FALSE;
+	}
 	PLH__MyDetour__SetNeedFree(a,TRUE);
 
 	//Decide which jmp type to use based on function size
@@ -875,22 +917,15 @@ void PLH__X64Detour__FreeTrampoline(PLH_ALL_S_t a)
 		#if defined(OS_WIN)
 			VirtualFree(PLH__MyDetour__GetTrampoline(a), 0, MEM_RELEASE);
 		#elif defined(OS_UNIX_STRUCT)
-			if(a->extraData[1023]==1)
+			my_memory_holder * my=(my_memory_holder*)&a->extraData[0];
+			if(my->extraData[sizeof(my_memory_holder)-1]==1)
 			{
-				BOOL * sset;
-				PMEMORY_BASIC_INFORMATION nbi;
-				PMEMORY_BASIC_INFORMATION mbi;
-				PDWORD oldPr;
-				sset=(BOOL*)&a->extraData[0];
-				nbi=(PMEMORY_BASIC_INFORMATION)&a->extraData[sizeof(BOOL)];
-				mbi=(PMEMORY_BASIC_INFORMATION)&a->extraData[sizeof(BOOL)+sizeof(MEMORY_BASIC_INFORMATION)];
-				oldPr=(PDWORD)&a->extraData[sizeof(BOOL)+sizeof(MEMORY_BASIC_INFORMATION)+sizeof(MEMORY_BASIC_INFORMATION)];
 				DWORD nOldPr;
-				if(*sset==TRUE)
+				if(my->my.sset==TRUE)
 				{
-					VirtualFreeUnixX(PLH__MyDetour__GetTrampoline(a), 0, MEM_RELEASE, nbi, sset);
-					*sset=VirtualProtect(mbi->BaseAddress,mbi->RegionSize,(DWORD)*oldPr,(PDWORD)&nOldPr);
-					*oldPr=nOldPr;
+					VirtualFreeUnixX(PLH__MyDetour__GetTrampoline(a), 0, MEM_RELEASE, (PMEMORY_BASIC_INFORMATION)&my->my.nbi, (BOOL*)&my->my.sset);
+					my->my.sset=VirtualProtect(my->my.mbi.BaseAddress,my->my.mbi.RegionSize,my->my.oldPr,(PDWORD)&nOldPr);
+					my->my.oldPr=nOldPr;
 				}
 			} else {
 				VirtualFree(PLH__MyDetour__GetTrampoline(a), 0, MEM_RELEASE);

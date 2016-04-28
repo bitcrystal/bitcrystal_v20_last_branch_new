@@ -33,10 +33,20 @@ extern "C" {
 #define VMA_PROT_READ    (1<<0)
 #define VMA_PROT_WRITE   (1<<1)
 #define VMA_PROT_EXECUTE (1<<2)
+#define VMA_PROT_NONE    0
 #define VMA_PROT_PRIVATE (1<<3)
 #define VMA_PROT_SHARED (1<<4)
 #define VMA_PROT_EXEC VMA_PROT_EXECUTE
 #define VMA_PRIVATE VMA_PROT_PRIVATE
+#define VMA_SHARED VMA_PROT_SHARED
+#define VMA_PAGE_READONLY VMA_PROT_READ
+#define VMA_PAGE_READWRITE (VMA_PROT_READ | VMA_PROT_WRITE) 
+#define VMA_PAGE_EXECUTE VMA_PROT_EXEC
+#define VMA_PAGE_EXECUTE_READ (VMA_PROT_READ | VMA_PROT_EXEC)
+#define VMA_PAGE_EXECUTE_READWRITE (VMA_PROT_READ | VMA_PROT_WRITE | VMA_PROT_EXEC)
+#define VMA_PAGE_EXECUTE_WRITECOPY (VMA_PROT_READ | VMA_PROT_WRITE | VMA_PROT_EXEC)
+#define VMA_PAGE_NOACCESS VMA_PROT_NONE
+#define VMA_GET_PERMS(x) (((x)&~(VMA_PROT_PRIVATE | VMA_PROT_SHARED)))
 
 typedef int (*vma_iterate_callback_fn) (void *data,
                                         unsigned long long start, unsigned long long end,
@@ -53,6 +63,11 @@ typedef int (*vma_iterate_callback_fn) (void *data,
    If the callback returns 0, the iteration continues.  If it returns 1,
    the iteration terminates prematurely.
    This function may open file descriptors, but does not call malloc().  */
+#if VMA_ITERATE_PID_EXT
+extern char * pid_to_string(unsigned int pid,unsigned int * pid_size);
+extern char * get_pid_maps_string(unsigned int pid);
+extern void vma_iterate_pid(vma_iterate_callback_fn callback, unsigned int my_pid, void*data);
+#endif
 extern void vma_iterate (vma_iterate_callback_fn callback, void *data);
 /*typedef struct
 {

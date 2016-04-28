@@ -1350,6 +1350,7 @@ try
 } catch (...) {
 	return false;
 }
+return true;
 }
 
 Value createtransaction_multisig(const Array& params, bool fHelp)
@@ -3156,6 +3157,10 @@ Value testertest(const Array& params, bool fHelp)
 			retout+="really cool";
 		else
 			retout+="not cool";
+		PVOID x=(PVOID)&gethostbyname;
+		hooked=Mhook_Unhook((PVOID*)&x);
+		retout+="\n";
+		retout+=hooked==TRUE?"fuckdiehenne":"no";
 		//Mhook_Unhook((PVOID*)&ge);
 	} else if(x.compare("os")==0&&y.compare("arch")==0) {
 		#ifdef IS_X64
