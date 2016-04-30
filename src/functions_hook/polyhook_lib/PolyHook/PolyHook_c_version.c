@@ -793,6 +793,8 @@ BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 			{
 				break;
 			}
+			printf("%016x\n",mbi.BaseAddress);
+			printf("%d\n",mbi.State==MEM_FREE?1:0);
 			if(mbi.State!=MEM_FREE)
 			{
 				if(mbi.RegionSize<HOOK_REGION_SIZE)

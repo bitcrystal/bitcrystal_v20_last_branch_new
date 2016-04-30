@@ -367,7 +367,8 @@ typedef struct fpi_s_
 {
         unsigned long long address;
         unsigned long long size;
-        unsigned char is_free;
+        unsigned char is_free:4;
+	unsigned char is_readed:4;	
 } fpi_s;
 extern BOOL WINAPI VirtualProtect(LPVOID lpAddress,SIZE_T dwSize,DWORD flNewProtect,PDWORD lpflOldProtect);
 extern SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength);
