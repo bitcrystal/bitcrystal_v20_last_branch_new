@@ -153,13 +153,13 @@ BOOL MY_HAS_PAGE_SIZE()
 static int SET_X(int t)
 {
 	static int s = 0;
-	printf("%d\n",s);
+	//printf("%d\n",s);
 	if(s==0)
 	{
-		printf("init s\n");
+	//	printf("init s\n");
 		s=t;
 	}
-	printf("%d\n",s);
+	//printf("%d\n",s);
 }
 
 BOOL MY_IS_PAGE_SIZE_ALIGNED(unsigned long long value)
@@ -193,7 +193,10 @@ unsigned long long MY_ROUND_UP_PAGE_SIZE_MY_ALGORITHM(unsigned long long value)
 	{
 		nsize_++;
 	}
-	return ((unsigned long long)(nsize_*pagesize));
+	nsize_=((unsigned long long)(nsize_*pagesize));
+	if(nsize_<pagesize)
+		nsize_=pagesize;
+	return nsize_;
 }
 
 unsigned long long MY_ROUND_DOWN_PAGE_SIZE_MY_ALGORITHM(unsigned long long value)
@@ -223,7 +226,10 @@ unsigned long long MY_ROUND_UP_PAGE_SIZE_DEFAULT_ALGORITHM(unsigned long long va
 	{
 		nsize_+=pagesize;
 	}
-        return ((unsigned long long)(nsize_));
+        nsize_=((unsigned long long)(nsize_));
+	if(nsize_<pagesize)
+		nsize_=pagesize;
+	return nsize_;
 }
 
 
@@ -299,34 +305,23 @@ int __BRK__WRAPPER(void * p)
 
 
 int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags){
+	printf("start - %016x - end %016x\n",start,end);
 	vma_it_func * x = (vma_it_func*)data;
-	/*if(x->ret==2)
-	{
-		if(x->base_end_address==start&&end>=start)
-		{
-			x->base_end_address=end;
-		} else {
-			x->ret=1;
-			return 1;
-		}
-	}*/
-	if((x->start_address>=start))
+        if((x->start_address>=start))
 	{
 		x->base_start_address=start;
 		x->base_end_address=end;
 		x->base_flags=flags;
-		//x->ret=2;
-		//return 0;
 		x->ret=1;
-		return 1;
-	} else {
-		x->ret=0;
 		return 0;
+	} else {
+		return 1;
 	}
 }
 
 #if defined(OS_UNIX_STRUCT) && defined(USE_UNIX_IMAGE_EXTENSION_VQ)
 int vma_iterate_image_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags){
+	static unsigned long long last_start_address=0;
 	vma_it_func * x = (vma_it_func*)data;
 	if(x->ret==2)
 	{
@@ -341,12 +336,13 @@ int vma_iterate_image_func(void *data,unsigned long long start, unsigned long lo
 		}
 	}
 
-	if((x->start_address>=start))
+	if((x->start_address>=start)&&start>last_start_address)
 	{
 		x->base_start_address=start;
 		x->base_end_address=end;
 		x->base_flags=flags;
 		x->ret=2;
+		start=last_start_address;
 		return 0;
 	} else {
 		x->ret=0;
@@ -356,13 +352,16 @@ int vma_iterate_image_func(void *data,unsigned long long start, unsigned long lo
 #endif
 
 int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags){
-        vma_it_func * x = (vma_it_func*)data;
-        if((x->start_address>=start)&&(end < x->end_address))
+        static unsigned long long last_start_address=0;
+	
+	 vma_it_func * x = (vma_it_func*)data;
+        if((x->start_address>=start)&&(end < x->end_address)&&start>last_start_address)
         {
                 x->base_start_address=start;
                 x->base_end_address=end;
                 x->base_flags=flags;
                 x->ret=1;
+		last_start_address=start;
                 return 1;
         } else {
                 x->ret=0;
@@ -589,7 +588,7 @@ static int FREE_REGION_MANAGE(unsigned long long address, unsigned long long siz
                                 i++;
                                 free_pointers_size=i;
                         }
-			printf("cool ffff\n");
+			//printf("cool ffff\n");
                         return 1;
 		}
                 return 0;
@@ -613,8 +612,6 @@ static int FREE_REGION_MANAGE(unsigned long long address, unsigned long long siz
         }
         return 0;
 }
-
-
 
 LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType,DWORD flProtect)
 {
@@ -660,7 +657,18 @@ LPVOID WINAPI VirtualAlloc(LPVOID lpAddress,SIZE_T dwSize,DWORD flAllocationType
 			address=(void*)MY_ROUND_DOWN_PAGE_SIZE((unsigned long long)address);
 			size=(size_t)MY_ROUND_UP_PAGE_SIZE((unsigned long long)size);
 		}
-
+		
+		FREE_REGION_MANAGE_SIZE_TYPE xyz=0;
+		FREE_REGION_MANAGE_SIZE_TYPE xy=0;
+		fpi_s *fps=0;
+		FREE_REGION_MANAGE_EX_GET_POINTERS(&fps,&xy);
+		if(fps!=0)
+		{
+			for(xyz=0;xyz<xy;xyz++)
+			{
+				printf("va my_address: %016x\nmy_size: %u\nmy_is_free: %u\n",fps[xyz].address,fps[xyz].size,fps[xyz].is_free);
+			}
+		}
 	        unsigned char is_found=1;
                 fpi_s * fp;
 		FREE_REGION_MANAGE_EX_RESET();
@@ -768,6 +776,18 @@ BOOL WINAPI VirtualFree(LPVOID lpAddress,SIZE_T dwSize,DWORD  dwFreeType)
                	 	FREE_REGION_MANAGE_EX((unsigned long long)address,(unsigned long long)size,1,(FRM_SEARCH_ADDRESS|FRM_SEARCH_RESERVED|FRM_SEARCH_ITERATE|FRM_SEARCH_REMOVE),&is_found,&fp);
 		}
 		FREE_REGION_MANAGE_EX((unsigned long long)address,(unsigned long long)size,1,(FRM_SEARCH_ADDRESS|FRM_SEARCH_SIZE|FRM_SEARCH_REMOVE),&is_found,&fp);
+		FREE_REGION_MANAGE_SIZE_TYPE xyz=0;
+                FREE_REGION_MANAGE_SIZE_TYPE xy=0;
+                fpi_s *fps=0;
+                FREE_REGION_MANAGE_EX_GET_POINTERS(&fps,&xy);
+                if(fps!=0)
+                {
+                        for(xyz=0;xyz<xy;xyz++)
+                        {
+                                printf("vf my_address: %016x\nmy_size: %u\nmy_is_free: %u\n",fps[xyz].address,fps[xyz].size,fps[xyz].is_free);
+                        }
+                }
+
 		return TRUE;
 	#endif
 	return FALSE;
@@ -925,12 +945,10 @@ SIZE_T WINAPI VirtualQueryUnix(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuf
 }
 BOOL WINAPI VirtualQueryUnixAdjustment(PMEMORY_BASIC_INFORMATION lpBuffer,PMEMORY_BASIC_INFORMATION newBuffer,SIZE_T dwLength)
 {
-	return FALSE;
 	if(lpBuffer==NULL||newBuffer==NULL)
 	{
 		return FALSE;
 	}
-	return FALSE;
 	memcpy((void*)newBuffer,(void*)lpBuffer,sizeof(MEMORY_BASIC_INFORMATION));
 #ifdef OS_UNIX_STRUCT
 	if(lpBuffer->BaseAddress!=lpBuffer->AllocationBase&&lpBuffer->AllocationProtect==PAGE_READWRITE||lpBuffer->AllocationProtect==PAGE_EXECUTE_READWRITE)
@@ -991,12 +1009,29 @@ BOOL WINAPI VirtualFreeUnixX(LPVOID lpAddress,SIZE_T dwSize,DWORD dwFreeType,PME
 }
 
 #ifndef OS_WIN
+
+static void vma_it_func_reset(vma_it_func * zz)
+{
+	if(zz==0)
+		return;
+	memset(zz,0,sizeof(vma_it_func));
+}
+
+static void vma_it_func_partwise_reset(vma_it_func * zz)
+{
+	if(zz==0)
+		return;
+	zz->ret=0;
+	//zz->rest=zz->last_rest=0;
+}
 static int vma_resolve_func(vma_it_func * zz)
 {
 	if(zz==0)
 	{
 		return 0;
 	}
+	//zz->rest=zz->last_rest=0;
+	zz->ret=0;
 	fpi_s * fps=0;
         FREE_REGION_MANAGE_SIZE_TYPE fi=0;
         FREE_REGION_MANAGE_SIZE_TYPE free_pointers_size;
@@ -1009,7 +1044,7 @@ static int vma_resolve_func(vma_it_func * zz)
         {
         	while(fi<free_pointers_size)
                 {
-                    if(fps[fi].is_free==1&&fps[fi].is_readed==0&&fps[fi].address>0&&fps[fi].address>=zz->start_address&&fps[fi].address<=current_address&&fps[fi].size>=zz->size)
+                    if(fps[fi].is_free==1&&fps[fi].address>0&&fps[fi].address>=zz->start_address&&fps[fi].address<=current_address&&fps[fi].size>=zz->size)
                     {
 			current_address=fps[fi].address;
 			current_size=fps[fi].size;
@@ -1037,11 +1072,36 @@ static int vma_resolve_func(vma_it_func * zz)
 	zz->ret=0;
 	return 0;
 }
+
+static int vma_last_resolve(unsigned long long address,unsigned long long size,vma_it_func*zz)
+{
+	if(zz==0)
+		return 0;
+	printf("last\n");
+	zz->start_address=(unsigned long long)address;
+        zz->size=(unsigned long long)size;
+        return vma_resolve_func(zz);
+}
                                                       
 
 SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,SIZE_T dwLength) 
 {
 	#ifdef OS_UNIX_STRUCT
+		printf("%016x\n",lpAddress);
+		printf("%016x\n",dwLength);
+		FREE_REGION_MANAGE_SIZE_TYPE xyz=0;
+                FREE_REGION_MANAGE_SIZE_TYPE xy=0;
+                fpi_s *fps=0;
+                FREE_REGION_MANAGE_EX_GET_POINTERS(&fps,&xy);
+                SIZE_T returnValue=0;
+		if(fps!=0)
+                {
+                        for(xyz=0;xyz<xy;xyz++)
+                        {
+                                printf("vq my_address: %016x\nmy_size: %u\nmy_is_free: %u\n",fps[xyz].address,fps[xyz].size,fps[xyz].is_free);
+                        }
+                }
+
 		SET_X(4);
 		static BOOL HAVE_PAGE_SIZE = FALSE;
 #if defined(USE_NEW_SBRK_ADDRESS_ALGO) && defined(OS_UNIX_STRUCT)
@@ -1055,12 +1115,16 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 		{
 			HAVE_PAGE_SIZE = MY_HAS_PAGE_SIZE();
 			if(HAVE_PAGE_SIZE==FALSE) {
-				return (SIZE_T)0;
+				returnValue=0;
+				goto VMA_PRINT;
+				return returnValue;
 			}
 		}
 		if(lpAddress==NULL||lpBuffer==NULL||dwLength<=0)
 		{
-			return (SIZE_T)0;
+			returnValue=0;
+			goto VMA_PRINT;
+			return returnValue;
 		}
 #if defined(OS_UNIX_STRUCT) && defined(USE_UNIX_IMAGE_EXTENSION_VQ)
 		BOOL is_imaged = (lpBuffer->Type==MEM_IMAGE)?(TRUE):(FALSE);
@@ -1068,10 +1132,6 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 		memset((void*)lpBuffer,0,sizeof(MEMORY_BASIC_INFORMATION));
                 unsigned long long pagesize=MY_GET_SYSTEM_PAGE_SIZE();
 		vma_it_func zz;
-		zz.start_address=(unsigned long long)lpAddress;
-		zz.size=(unsigned long long)dwLength;
-		if(vma_resolve_func(&zz)==1)
-			goto VMA_RESOLVE_FUNC_LABEL;
 		int x=0;
 		int y=0;
 		int errno_ = 0;
@@ -1114,6 +1174,7 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 			zz.base_start_address=0;
 			zz.base_end_address=0;
 			zz.ret=0;
+			//zz.rest=zz.last_rest=0;
 #if defined(OS_UNIX_STRUCT) && defined(USE_UNIX_IMAGE_EXTENSION_VQ)
 			if(is_imaged==TRUE)
 			{
@@ -1128,17 +1189,24 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 		
 			if(zz.ret==0)
 			{
+				//zz.rest=zz.last_rest=0;
 #endif
 			vma_iterate(((vma_iterate_callback_fn)&vma_iterate_func),(void*)&zz);
 			if(zz.ret!=1)
 			{
 				zz.ret=0;
+				//zz.rest=zz.last_rest=0;
 				vma_iterate(((vma_iterate_callback_fn)&vma_iterate_full_addressing_func),(void*)&zz);
 				if(zz.ret!=0)
 				{
-						return (SIZE_T)0;
+						if(vma_last_resolve((unsigned long long)address,nsize_,&zz)==1)
+							goto VMA_RESOLVE_FUNC_LABEL;
+						returnValue=0;
+						goto VMA_PRINT;
+						return returnValue;
 				}
 				x=1;
+				
 			}
 #if defined(OS_UNIX_STRUCT) && defined(USE_UNIX_IMAGE_EXTENSION_VQ)
 
@@ -1192,7 +1260,11 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 				}*/
 				if(zz.base_end_address<=zz.base_start_address)
 				{
-					return (SIZE_T)0;
+					if(vma_last_resolve((unsigned long long)address,nsize_,&zz)==1)
+                                                        goto VMA_RESOLVE_FUNC_LABEL;
+					returnValue=0;
+					goto VMA_PRINT;
+					return returnValue;
 				}
 				psp=(zz.base_end_address-zz.base_start_address);
 				psp=MY_ROUND_DOWN_PAGE_SIZE((unsigned long long)psp);
@@ -1211,9 +1283,9 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 			zz.start_address=(unsigned long long)address;
 			zz.end_address=(unsigned long long)(address+nsize_-1);
 			zz.size=(unsigned long long)dwLength;
-			zz.page_size=pagesize;
 			zz.page_alignment_size=nsize_;
 VMA_RESOLVE_FUNC_LABEL: ;
+			zz.page_size=pagesize;
 			zz.free_pages=(zz.page_alignment_size/zz.page_size);
 			zz.free_pages_size=zz.page_alignment_size;
 			zz.reserved_pages_size=0;
@@ -1248,9 +1320,9 @@ VMA_RESOLVE_FUNC_LABEL: ;
 			lpBuffer->AllocationBase=(void*)zz.start_address;
 			lpBuffer->RegionSize=zz.page_alignment_size;
 			lpBuffer->State=MEM_FREE;
-			FREE_REGION_MANAGE_EX((unsigned long long)lpBuffer->BaseAddress,(unsigned long long)lpBuffer->RegionSize,1,(FRM_SEARCH_ADDRESS|FRM_SEARCH_SIZE|FRM_SEARCH_REMOVE),&is_found,&fp);
-			FREE_REGION_MANAGE_EX((unsigned long long)lpBuffer->BaseAddress,(unsigned long long)lpBuffer->RegionSize,3,(FRM_SEARCH_FREE|FRM_SEARCH_ADDRESS|FRM_SEARCH_REMOVE),&is_found,&fp);
-			printf("fffcccc %d\n",is_found);
+			//FREE_REGION_MANAGE_EX((unsigned long long)lpBuffer->BaseAddress,(unsigned long long)lpBuffer->RegionSize,1,(FRM_SEARCH_ADDRESS|FRM_SEARCH_SIZE|FRM_SEARCH_REMOVE),&is_found,&fp);
+			//FREE_REGION_MANAGE_EX((unsigned long long)lpBuffer->BaseAddress,(unsigned long long)lpBuffer->RegionSize,3,(FRM_SEARCH_FREE|FRM_SEARCH_ADDRESS|FRM_SEARCH_REMOVE),&is_found,&fp);
+			//printf("fffcccc %d\n",is_found);
 		} else {
 			lpBuffer->BaseAddress=(void*)zz.start_address;
 			lpBuffer->AllocationBase=(void*)zz.base_start_address;
@@ -1303,12 +1375,23 @@ VMA_RESOLVE_FUNC_LABEL: ;
                         	int image_ret = mprotect((void*)lpBuffer->AllocationBase,(size_t)lpBuffer->RegionSize,image_flags);
 				if(image_ret==-1)
 				{
-					return (SIZE_T)0;
+					returnValue=0;
+					goto VMA_PRINT;
+					return returnValue;
 				}
 			}
 #endif
 		}
-		return (SIZE_T)sizeof(MEMORY_BASIC_INFORMATION);
+		returnValue=(SIZE_T)sizeof(MEMORY_BASIC_INFORMATION);
+		goto VMA_PRINT;
+		return returnValue;
+	VMA_PRINT:
+		printf("start address:%04x\n",zz.start_address);
+		printf("end address:%04x\n",zz.end_address);
+		printf("size:%04x\n",zz.page_alignment_size);
+		printf("returnValue: %04x\n",returnValue);
+		printf("cfr %04x\n",zz.complete_free_region);
+		return returnValue;
 	#endif
 }
 BOOL WINAPI FlushInstructionCache(HANDLE  hProcess, LPCVOID lpBaseAddress, SIZE_T  dwSize)

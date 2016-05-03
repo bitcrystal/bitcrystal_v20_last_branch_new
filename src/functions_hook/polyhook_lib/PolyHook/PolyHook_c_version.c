@@ -776,7 +776,7 @@ BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 	#endif
 	size_t Addr;
 	#if defined(OS_UNIX_STRUCT)
-	for (myAddr = (unsigned long long)PLH__MyDetour__GetHkSrc(a),myAddrOriginal=myAddr; (((unsigned long long)(myAddr-myAddrOriginal))<(unsigned long long)0x80000000); myAddr=(((unsigned long long)mbi.AllocationBase) + ((unsigned long long)mbi.RegionSize) + ((unsigned long long)HOOK_ADD_TO_ADDRESS)))
+	for (myAddr = (unsigned long long)PLH__MyDetour__GetHkSrc(a),myAddrOriginal=myAddr; (((unsigned long long)(myAddr-myAddrOriginal))<(unsigned long long)0x80000000); myAddr=(((unsigned long long)mbi.AllocationBase) + ((unsigned long long)mbi.RegionSize)),myAddr+=(myAddr<myAddrOriginal)?((unsigned long long)4096):((unsigned long long)HOOK_ADD_TO_ADDRESS))
 	#elif defined(OS_WIN)
 	for (Addr = (size_t)PLH__MyDetour__GetHkSrc(a); Addr > (size_t)(PLH__MyDetour__GetHkSrc(a) - 0x80000000); Addr = (size_t)((mbi.BaseAddress) - 1))
 	#else
@@ -784,6 +784,8 @@ BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 	#endif
 	{
 		#ifdef OS_UNIX_STRUCT
+			printf("aa: %016x\n",myAddr);
+			printf("bb: %016x\n",myAddrOriginal);
 			memset((void*)&mbi,0,sizeof(MEMORY_BASIC_INFORMATION));
 			memset((void*)&nbi,0,sizeof(MEMORY_BASIC_INFORMATION));
 			memset((void*)&a->extraData[0],0,1024);
@@ -791,29 +793,35 @@ BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 			sset=FALSE;
 			if(!VirtualQueryUnix((LPCVOID)myAddr,&mbi,HOOK_REGION_SIZE))
 			{
+				printf("dd\n");
 				break;
 			}
-			printf("%016x\n",mbi.BaseAddress);
-			printf("%d\n",mbi.State==MEM_FREE?1:0);
+			printf("ba: %016x\n",mbi.BaseAddress);
+			printf("st: %d\n",mbi.State==MEM_FREE?1:0);
+			printf("rs: %d\n",mbi.RegionSize);
 			if(mbi.State!=MEM_FREE)
 			{
 				if(mbi.RegionSize<HOOK_REGION_SIZE)
 				{
+					printf("fuck off\n");
 					continue;
 				}
 				//return (BOOL)mbi.RegionSize;
 				sset=VirtualQueryUnixAdjustment((PMEMORY_BASIC_INFORMATION)&mbi,(PMEMORY_BASIC_INFORMATION)&nbi,HOOK_REGION_SIZE);
 				if(sset==FALSE||nbi.State!=MEM_FREE)
  				{
+					printf("fuck here off 1\n");
 					continue;
 				}
 				sset=VirtualProtect((LPVOID)mbi.BaseAddress,mbi.RegionSize,PAGE_EXECUTE_READWRITE,&oldPr);
 				if(sset==FALSE)
 				{
+					printf("fuck here off 2\n");
 					continue;
 				}
 				if(nbi.BaseAddress==NULL)
 				{
+					printf("fuck here off 3\n");
 					continue;
 				}
 				my_memory_holder * my = (my_memory_holder*)&a->extraData[0];
@@ -853,6 +861,7 @@ BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 	}
 	if (!PLH__MyDetour__GetTrampoline(a))
 	{
+		printf("fuck me\n");
 		return FALSE;
 	}
 	PLH__MyDetour__SetNeedFree(a,TRUE);

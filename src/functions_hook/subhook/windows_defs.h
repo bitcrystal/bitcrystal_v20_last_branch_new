@@ -397,6 +397,8 @@ typedef struct _vma_it_func
 	unsigned int base_flags;
 	unsigned char ret;
 	unsigned char complete_free_region;
+	//unsigned long long rest;
+	//unsigned long long last_rest;
 } vma_it_func;
 int vma_iterate_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
 int vma_iterate_full_addressing_func(void *data,unsigned long long start, unsigned long long end,unsigned int flags);
