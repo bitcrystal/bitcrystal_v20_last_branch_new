@@ -790,6 +790,7 @@ BOOL PLH__X64Detour__Hook(PLH_ALL_S_t a)
 			memset((void*)&nbi,0,sizeof(MEMORY_BASIC_INFORMATION));
 			memset((void*)&a->extraData[0],0,1024);
 			mbi.State=MEM_FREE;
+			mbi.AllocationProtect=PAGE_WRITECOPY;
 			sset=FALSE;
 			if(!VirtualQueryUnix((LPCVOID)myAddr,&mbi,HOOK_REGION_SIZE))
 			{

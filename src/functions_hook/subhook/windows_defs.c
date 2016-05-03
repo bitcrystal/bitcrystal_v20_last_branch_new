@@ -1120,7 +1120,7 @@ SIZE_T WINAPI VirtualQuery(LPCVOID lpAddress,PMEMORY_BASIC_INFORMATION lpBuffer,
 #if defined(OS_UNIX_STRUCT) && defined(USE_UNIX_IMAGE_EXTENSION_VQ)
 		BOOL is_imaged = (lpBuffer->Type==MEM_IMAGE)?(TRUE):(FALSE);
 #endif
-		unsigned char free_mem=lpBuffer->State==MEM_FREE?1:0;
+		unsigned char free_mem=(lpBuffer->State==MEM_FREE&&lpBuffer->AllocationProtect==PAGE_WRITECOPY)?1:0;
 		memset((void*)lpBuffer,0,sizeof(MEMORY_BASIC_INFORMATION));
                 unsigned long long pagesize=MY_GET_SYSTEM_PAGE_SIZE();
 		vma_it_func zz;
